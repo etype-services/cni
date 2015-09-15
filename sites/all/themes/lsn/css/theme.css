@@ -534,7 +534,7 @@ h3.site-slogan {
 
     #main-menu ul.menu li a {
         background: url("../images/mobile_menu.png") no-repeat scroll 7px 8px transparent;
-        color: #FFFFFF;
+        color: #ffffff;
         display: block;
         font-weight: bold;
         height: 30px;
@@ -550,6 +550,7 @@ h3.site-slogan {
 
     #main-menu ul.menu li a:hover {
         background: url("../images/mobile_menu.png") no-repeat scroll 7px 8px transparent;
+        color: #ffffff;
     }
 
 }
