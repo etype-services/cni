@@ -11,6 +11,7 @@ body {
 
 a {
     font-weight: normal;
+    colr: blue;
 }
 
 a:hover {
@@ -464,7 +465,7 @@ h3.site-slogan {
 @media only screen and (min-width: 959px) {
 
     #block-superfish-1 .content {
-        width: 888px;
+        width: 900px;
     }
 }
 
@@ -673,7 +674,7 @@ h3.site-slogan {
 }
 
 .node .content a {
-    color: #000;
+    color: blue;
 }
 
 .node ul.inline li {
@@ -1387,7 +1388,6 @@ blockquote {
 }
 
 .page-classifieds .views-fluid-grid h3 a {
-    color: blue;
     text-decoration: underline;
 }
 
