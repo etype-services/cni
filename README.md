@@ -1,3 +1,3 @@
-# lsn-theme
-Drupal code for LSN default theme
+# cni-theme
+Default Drupal theme for CNI
 # charliellewellin@gmail.com
