@@ -49,7 +49,7 @@ body.admin-menu {
 /* All lists */
 #admin-menu,
 #admin-menu .dropdown {
-  line-height: 1.4em;
+  line-height: 2.4em;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -66,6 +66,7 @@ body.admin-menu {
   font-weight: normal;
   text-align: left; /* LTR */
   text-decoration: none;
+  font-size: 1.3em;
 }
 #admin-menu .dropdown a,
 #admin-menu .dropdown li > span {
@@ -182,7 +183,7 @@ body.admin-menu {
   -moz-border-radius: 5px;
   border-radius: 5px;
   font-size: 10px;
-  margin: 1px 0;
+  margin: 6px 0;
   outline: none;
   padding: 2px 22px 2px 4px;
   width: 158px;
