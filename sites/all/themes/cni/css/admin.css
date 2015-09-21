@@ -1,0 +1,11 @@
+#admin-menu .admin-menu-search input {
+    margin: 6px 0px;
+}
+
+#admin-menu, #admin-menu .dropdown {
+    line-height: 2.4em;
+}
+
+#admin-menu .dropdown a, #admin-menu .dropdown li > span {
+    font-size: 1.3em;
+}
