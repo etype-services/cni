@@ -176,10 +176,34 @@ h3.site-slogan {
     margin-right: 0;
 }
 
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+    #views_slideshow_cycle_main_slideshow-block {
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+    .views-slideshow-controls-bottom {
+        margin-top: 44px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    #views_slideshow_cycle_main_slideshow-block {
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+    .views-slideshow-controls-bottom {
+        margin-top: 34px;
+    }
+}
+
 /* PREFACE 
 --------------------------------------------------------------------------*/
 .preface-wrapper .block .content {
     height: 300px;
+}
+
+.preface-wrapper-top .block .content {
+    height: auto;
 }
 
 .preface-wrapper .content {
@@ -472,7 +496,7 @@ h3.site-slogan {
 @media only screen and (max-width: 958px) {
 
     #block-superfish-1 .content {
-        width: 847px;
+        width: 887px;
     }
 }
 
@@ -1427,15 +1451,6 @@ blockquote {
     padding: 0;
 }
 
-#dfp-ad-banner_top, #dfp-ad-banner {
-    margin: 0 auto;
-}
-
-#dfp-ad-banner_top {
-    width: 728px;
-    margin-top: 20px;
-}
-
 #dfp-ad-banner_top > img {
     max-width: 100% !important;
 }
@@ -1449,17 +1464,34 @@ blockquote {
     overflow: hidden;
 }
 
-@media only screen and (min-width: 959px) {
-
+@media only screen and (min-width: 960px) {
+    #dfp-ad-banner_top {
+        width: 728px;
+        margin: 20px auto 0 auto;
+    }
     #dfp-ad-banner {
         width: 468px;
+        margin: 0px auto 0px 83px;
     }
-
 }
 
-@media only screen and (max-width: 759px) {
+@media only screen and (min-width: 768px) and (max-width: 959px) {
     #dfp-ad-banner_top {
-        margin-bottom: 20px;
+        width: 728px;
+        margin: 20px auto 0;
+    }
+    #dfp-ad-banner {
+        margin: 0px auto 0px 15px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    #dfp-ad-banner_top {
+        width: 728px;
+        margin: 20px auto;
+    }
+    #dfp-ad-banner {
+        margin: 0px auto 0px 15px;
     }
 }
 

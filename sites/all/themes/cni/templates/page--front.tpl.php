@@ -98,7 +98,8 @@
                             <?php endif; ?>
 
                             <?php if ($page['preface_1']): ?>
-                                <div class="preface-wrapper clearfix">
+                                <div class="preface-wrapper
+                                preface-wrapper-top clearfix">
                                     <div class="preface-wrapper-inner">
                                         <div class="preface-wrapper-inner-inner">
                                             <section id="preface_1">
