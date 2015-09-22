@@ -127,7 +127,7 @@ h3.site-slogan {
     width: 578px;
     top: -20px;
     left: -20px;
-    background: url(../images/style2/trans.png);
+    background: url(../images/trans.png);
     color: #ffffff;
 }
 
@@ -135,8 +135,7 @@ h3.site-slogan {
     color: #ffffff;
     text-transform: uppercase;
     text-decoration: none;
-    font-weight: bold;
-    font-size: 14px;
+    font-size: 18px;
 }
 
 .view-slideshow .views_slideshow_main .views-field-body {
@@ -146,9 +145,8 @@ h3.site-slogan {
     padding: 20px;
     top: 290px;
     left: -20px;
-    background: url(../images/style2/trans.png);
-    color: #fff;
-    text-shadow: -1px -1px #000000;
+    background: url(../images/trans.png);
+    color: #ffffff;
 }
 
 /* Slideshow controls */
@@ -198,12 +196,53 @@ h3.site-slogan {
 
 /* PREFACE 
 --------------------------------------------------------------------------*/
+
+.preface-wrapper .views-row {
+    padding: 10px 10px 0 10px;
+    background: url(../images/preface-view.png);
+    overflow: hidden;
+}
+
+.preface-wrapper .views-row a {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.preface-wrapper .views-row .views-field-field-image img {
+    display: block;
+    float: left;
+    margin-right: 10px;
+    border: 5px solid #ffffff;
+}
+
+.preface-wrapper .attachment {
+    padding: 10px 10px 0 10px;
+    background: #f9f9f9;
+}
+
+.preface-wrapper .attachment .views-row {
+    padding: 5px 0;
+    background: 0;
+    border-bottom: 1px dotted #999;
+}
+
+.preface-wrapper .attachment .views-row-last {
+    border-bottom: 0 dotted #999;
+}
+
+.preface-wrapper .attachment .views-row a {
+    font-weight: normal;
+    font-size: 12px;
+}
+
 .preface-wrapper .block .content {
-    height: 300px;
+    /*height: 300px;*/
 }
 
 .preface-wrapper-top .block .content {
     height: auto;
+    background: transparent url("../images/preface-view.png") repeat scroll 0% 0%;
+    margin-top: 20px;
 }
 
 .preface-wrapper .content {
@@ -212,12 +251,11 @@ h3.site-slogan {
 }
 
 .preface-wrapper h3 {
-    background: url(../images/h3-bg.png) right center repeat-x;
+    font-size: 18px;
 }
 
 .preface-wrapper h3 span {
     padding-right: 5px;
-    background: #f9f9f9;
 }
 
 /* MAIN CONTENT 
@@ -1051,85 +1089,9 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
 /* VIEWS
 --------------------------------------------------------------------------*/
 
-.preface-wrapper .views-row {
-    padding: 10px 10px 0 10px;
-    background: url(../images/preface-view.png);
-    overflow: hidden;
-}
-
-.preface-wrapper .views-row a {
-    font-size: 12px;
-    font-weight: bold;
-}
-
-.preface-wrapper .views-row .views-field-field-image img {
-    display: block;
-    float: left;
-    margin-right: 10px;
-    border: 5px solid #ffffff;
-}
-
-.preface-wrapper .attachment {
-    padding: 10px 10px 0 10px;
-    background: #f9f9f9;
-}
-
-.preface-wrapper .attachment .views-row {
-    padding: 5px 0;
-    background: 0;
-    border-bottom: 1px dotted #999;
-}
-
-.preface-wrapper .attachment .views-row-last {
-    border-bottom: 0 dotted #999;
-}
-
-.preface-wrapper .attachment .views-row a {
-    font-weight: normal;
-    font-size: 12px;
-}
-
 .quicktabs_main.quicktabs-style-nostyle .content {
     color: #999999;
     padding: 0 0 0 0;
-}
-
-.preface-wrapper .views-row {
-    padding: 10px 10px 0 10px;
-    background: url(../images/preface-view.png);
-    overflow: hidden;
-}
-
-.preface-wrapper .views-row a {
-    font-size: 12px;
-    font-weight: bold;
-}
-
-.preface-wrapper .views-row .views-field-field-image img {
-    display: block;
-    float: left;
-    margin-right: 10px;
-    border: 5px solid #ffffff;
-}
-
-.preface-wrapper .attachment {
-    padding: 10px 10px 0 10px;
-    background: #f9f9f9;
-}
-
-.preface-wrapper .attachment .views-row {
-    padding: 5px 0;
-    background: 0;
-    border-bottom: 1px dotted #999;
-}
-
-.preface-wrapper .attachment .views-row-last {
-    border-bottom: 0 dotted #999;
-}
-
-.preface-wrapper .attachment .views-row a {
-    font-weight: normal;
-    font-size: 12px;
 }
 
 .obituaries .field-image {
