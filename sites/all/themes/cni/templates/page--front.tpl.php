@@ -27,7 +27,7 @@
                         </div><?php print render($page['header']) ?>
                     <?php endif; ?>
 
-                    <hgroup>
+                    <!--<hgroup>
 
                         <?php if ($site_name): ?>
                             <?php if ($is_front) { ?>
@@ -45,7 +45,7 @@
                             <h3 class="site-slogan"><?php print $site_slogan; ?></h3>
                         <?php endif; ?>
 
-                    </hgroup>
+                    </hgroup>-->
 
                 </header>
 
@@ -97,6 +97,19 @@
                                 </div>
                             <?php endif; ?>
 
+                            <?php if ($page['preface_1']): ?>
+                                <div class="preface-wrapper clearfix">
+                                    <div class="preface-wrapper-inner">
+                                        <div class="preface-wrapper-inner-inner">
+                                            <section id="preface_1">
+                                                <div><?php print render
+                                                    ($page['preface_1']); ?></div>
+                                            </section>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endif; ?>
+
                         </div>
                         <?php if ($page['sidebar_first']): ?>
                             <aside class="sidebar first-sidebar grid_4 clearfix">
@@ -116,12 +129,11 @@
                         <div class="main clearfix">
                             <div class="main-inner grid_8">
 
-                                <?php if ($page['preface_1'] || $page['preface_2'] || $page['preface_3'] || $page['preface_4']): ?>
+                                <?php if ($page['preface_2'] || $page['preface_3']): ?>
                                     <div class="preface-wrapper clearfix">
                                         <div class="preface-wrapper-inner">
                                             <div class="preface-wrapper-inner-inner">
                                                 <section id="preface">
-                                                    <div><?php print render($page['preface_1']); ?></div>
                                                     <div><?php print render($page['preface_2']); ?></div>
                                                     <div><?php print render($page['preface_3']); ?></div>
                                                 </section>
