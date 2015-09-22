@@ -1440,6 +1440,11 @@ blockquote {
     max-width: 100% !important;
 }
 
+#dfp-ad-sidebar_1 {
+    max-width: 300px;
+    overflow: hidden;
+}
+
 @media only screen and (min-width: 959px) {
 
     #dfp-ad-banner {
