@@ -80,7 +80,7 @@ header {
 }
 
 .site-logo img {
-    max-width: 100%;
+    width: 100%;
 }
 
 h1.site-name, h2.site-name {
