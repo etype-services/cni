@@ -40,11 +40,11 @@ Note: Design for a width of 768px
     }
 
     .view-slideshow .views_slideshow_main .views-field-title {
-        width: 450px;
+        width: 410px;
     }
 
     .view-slideshow .views_slideshow_main .views-field-body {
-        width: 450px;
+        width: 410px;
         top: 130px;
         font-size: 11px;
     }
@@ -124,7 +124,7 @@ Note: Design for a width of 300px
     }
 
     .view-slideshow .views_slideshow_main .views-field-title {
-        width: 260px;
+        width: 200px;
     }
 
     .view-slideshow .views_slideshow_main .views-field-body {
@@ -201,7 +201,7 @@ Note: Design for a width of 420px
     }
 
     .view-slideshow .views_slideshow_main .views-field-title {
-        width: 380px;
+        width: 340px;
     }
 
     .view-slideshow .views_slideshow_main .views-field-body {
@@ -220,4 +220,3 @@ Note: Design for a width of 420px
     }
 
 }
-

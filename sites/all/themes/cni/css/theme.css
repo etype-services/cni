@@ -507,12 +507,6 @@ h3.site-slogan {
     background-color: #cccccc;
 }
 
-/* Main Menu Drop Down */
-
-#main-menu ul.menu li ul {
-    display: none;
-}
-
 /* Custom Menu styling */
 
 #block-superfish-1 {
@@ -562,9 +556,34 @@ h3.site-slogan {
 /* mobile menu setup */
 @media only screen and (min-width: 759px) {
 
-    #block-superfish-1 ul li:first-child {
+    #block-superfish-1 ul #menu-1797-1 {
         display: none;
     }
+    
+    /* drop-down menu */
+    .sf-menu.sf-style-space.sf-navbar li ul {
+   		background-color: transparent;
+	}
+	
+	#main-menu ul.menu li ul {
+		background: transparent none repeat scroll 0% 0%;
+		width: inherit;
+	}
+	
+	#main-menu ul.menu li ul li {
+		background-color: #cccccc;
+	}
+	
+	#main-menu ul.menu li li a, #main-menu ul.menu li li a.active {
+		padding: 0 10px;
+		color: #000000;
+	}
+	
+	#main-menu ul.menu li ul li a:hover, 
+	#main-menu ul.menu li li a:hover,
+	#main-menu ul.menu li ul li a.active:hover {
+		background-color: #eaeaea;
+	}
 }
 
 /* narrower screen */
