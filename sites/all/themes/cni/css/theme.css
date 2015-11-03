@@ -204,7 +204,7 @@ h3.site-slogan {
 }
 
 .preface-wrapper .views-row a {
-    font-size: 12px;
+    font-size: 18px;
     font-weight: bold;
 }
 
@@ -247,7 +247,8 @@ h3.site-slogan {
 
 .preface-wrapper .content {
     padding: 20px 0 0 0;
-    color: #999999;
+    color: #000000;
+    font-size: 1.3em;
 }
 
 .preface-wrapper h3 {
@@ -269,7 +270,7 @@ h3.site-slogan {
     padding: 20px;
     margin-bottom: 20px;
     border: 1px solid #ddd;
-    border-bottom: 3px solid #007DBF;
+    border-bottom: 3px solid #355E3B;
     background: #ffffff;
     box-shadow: 0 1px 5px #bbbbbb;
 }
@@ -510,8 +511,12 @@ h3.site-slogan {
 /* Custom Menu styling */
 
 #block-superfish-1 {
-    background-color: #007DBF;
+    background-color: #355E3B;
     height: 33px;
+}
+
+.sf-menu.sf-style-space li, .sf-menu.sf-style-space li li, .sf-menu.sf-style-space li li li, .sf-menu.sf-style-space.sf-navbar {
+	background: #355E3B none repeat scroll 0% 0%;
 }
 
 #block-superfish-1 .content {
@@ -1105,6 +1110,52 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
     padding: 0 0 0 0;
 }
 
+/* TICKER 
+--------------------------------------------------------------------------*/
+#block-views-ticker-block h3 {
+	background: #F00; 
+	padding: 5px; 
+	text-indent: 10px; 
+	color: #ffffff; 
+	font-size:1.2em;
+}
+
+#block-views-ticker-block #views-ticker-bbc-ticker li a, 
+#block-views-upcoming-events-block #views-ticker-bbc-upcoming_events li a {
+	color: #000000;
+	font-size: 1.1em;
+}
+
+#block-views-ticker-block .view-id-ticker,
+#block-views-upcoming-events-block .view-id-upcoming_events {
+	margin-top: 1em;
+}
+
+#block-views-upcoming-events-block h3 {background: #003c96; padding: 5px; text-indent: 10px; color: #fff; font-size:1.2em;}
+
+/* CAROUSEL
+--------------------------------------------------------------------------*/
+.jcarousel-skin-default {
+  font-size: 1.2em;
+}
+
+.jcarousel-skin-default .jcarousel-container-horizontal {
+  height: 150px;
+}
+
+.jcarousel-skin-default .jcarousel-item {
+  height: 150px;
+}
+
+#block-views-slideshow-block .views-more-link {
+  color: #ffffff;
+  font-size: 1.1em;
+}
+
+#block-views-slideshow-block .views-field-body .field-content div {
+  display: inline;
+}
+
 /* VIEWS
 --------------------------------------------------------------------------*/
 
@@ -1113,9 +1164,7 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
     padding: 0 0 0 0;
 }
 
-.obituaries .field-image {
-    display: none;
-}
+
 
 .field-name-field-mugshot {
     float: left;
@@ -1143,7 +1192,7 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
 }
 
 #block-block-1 .content {
-    padding: 18px 0 17px;
+    padding: 0px 0 0px;
     color: #999;
 }
 
@@ -1476,3 +1525,26 @@ blockquote {
     }
 }
 
+#block-dfp-cni-claytonleaderboard {
+  max-width:728px; 
+  margin: 10px auto 0;
+}
+
+#dfp-ad-cni_claytonbanner {
+  max-width: 468px;
+  margin: 0px auto;
+}
+
+#block-dfp-cni-claytonsidebar1 {width:300px;}
+#block-dfp-cni-claytonsidebar1 iframe {width:300px; height:250px;}
+
+#block-dfp-cni-claytonsidebar2 {width:300px;}
+#block-dfp-cni-claytonsidebar2 iframe {width:300px; height:250px;}
+
+#block-dfp-cni-claytonfooter {
+	max-width:728px;
+	margin: 5px auto 15px;
+}
+#block-dfp-cni-claytonfooter iframe{width:728px; height:90px;}
+
+.block-dfp .content {padding-top: 0;)

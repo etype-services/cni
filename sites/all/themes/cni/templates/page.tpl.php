@@ -88,7 +88,6 @@
                             <?php print render($page['content']); ?>
                             <?php if ($action_links): ?>
                                 <ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
-                            <?php print render($page['content_bottom']); ?>
                         </div>
 
                             <aside class="sidebar second-sidebar grid_4 clearfix">
@@ -100,6 +99,9 @@
                 </section>
             </div>
         </div>
+        
+         <?php print render($page['content_bottom']); ?>
+         
         <?php if ($page['postscript_1'] || $page['postscript_2'] || $page['postscript_3'] || $page['postscript_4']): ?>
             <div class="postscript-wrapper clearfix">
                 <div class="postscript-wrapper-inner">

@@ -9,7 +9,9 @@
                     <ul class="social-links">
                         <li><a class="rss" href="<?php print $base_path ?>rss.xml"></a></li>
 
-                        <!-- <li><a class="twitter" href="<?php echo $twitter ?>"></a></li> -->
+                         <li><a class="twitter" href="<?php echo $twitter ?>"></a></li>
+                   
+                            
                         <li><a class="facebook" href="<?php echo $facebook ?>"></a></li>
                     </ul>
                 </div>
@@ -136,6 +138,8 @@
                 </section>
             </div>
         </div>
+        
+        <?php print render($page['content_bottom']); ?>
 
         <?php if ($page['postscript_1'] || $page['postscript_2'] || $page['postscript_3'] || $page['postscript_4']): ?>
             <div class="postscript-wrapper clearfix">

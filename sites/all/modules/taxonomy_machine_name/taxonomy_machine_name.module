@@ -44,7 +44,7 @@ function taxonomy_machine_name_migrate_api() {
 function taxonomy_machine_name_entity_property_info_alter(&$infos) {
   $infos['taxonomy_term']['properties']['machine_name'] = array(
     'label'              => t('Machine name'),
-    'type'               => 'varchar',
+    'type'               => 'text',
     'required'           => FALSE,
     'description'        => 'The taxonomy term machine name.',
     'schema field'       => 'machine_name',

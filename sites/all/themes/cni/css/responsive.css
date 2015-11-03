@@ -142,6 +142,12 @@ Note: Design for a width of 300px
         width: 260px;
         height: 180px;
     }
+    
+    /* Hide some DFP ads on non full-size browsers */
+    #block-dfp-cni-claytonleaderboard, #block-dfp-cni-claytonfooter, #block-dfp-cni-claytonbanner {
+  		display: none;
+  		visibility: hidden;
+	}
 
 }
 
@@ -220,3 +226,4 @@ Note: Design for a width of 420px
     }
 
 }
+

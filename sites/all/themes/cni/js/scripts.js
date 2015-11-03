@@ -50,11 +50,11 @@
 (function ($) {
     Drupal.behaviors.superfish = {
         attach: function (context) {
-            var obj = $('#block-superfish-1 ul li:first-child a');
+            var obj = $('#block-superfish-1 ul li.sf-depth-1:first-child a');
             obj.click(function(e){
                 var text = $(this).text();
                 e.preventDefault();
-                $('#block-superfish-1 ul li:not(:first-child)').toggle();
+                $('#block-superfish-1 ul li.sf-depth-1:not(:first-child)').toggle();
                 if (text == 'Show Menu') {
                     $(this).text('Hide Menu');
                 } else {
@@ -65,10 +65,11 @@
             $(window).resize(function(){
                 var w = $(window).width();
                 if (w > 759) {
-                    $('#block-superfish-1 ul li:not(:first-child)').css("display", "list-item").show();
+                    $('#block-superfish-1 ul li.sf-depth-1:not(:first-child)').css("display", "list-item").show();
                 } else {
-                    $('#block-superfish-1 ul li:first-child a').text('Show Menu');
-                    $('#block-superfish-1 ul li:not(:first-child)').hide();
+                    $('#block-superfish-1 ul li.sf-depth-1:first-child a').text('Show Menu');
+                    $('#block-superfish-1 ul li.sf-depth-1:not(:first-child)').hide();
+                    $('#block-superfish-1 ul li.sf-depth-1 ul').hide();
                 }
             });
         }
