@@ -10,7 +10,7 @@ favicon.ico
 error_log
 
 # Ignore CNI theme folder
-sites/all/themes/cni
+# sites/all/themes/cni
 
 # Odds and sods
 keys
