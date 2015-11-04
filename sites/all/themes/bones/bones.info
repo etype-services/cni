@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 name = Bones
 description = Bones for Drupal 7.x by ThemeShark.com
 core = 7.x
@@ -126,5 +125,4 @@ settings[postscript_2_grid_width] = 3
 settings[postscript_3_grid_width] = 3
 settings[postscript_4_grid_width] = 3
 settings[facebook] = 'http://www.facebook.com'
->>>>>>> origin/master
 settings[twitter] = 'http://www.twitter.com'
