@@ -5,15 +5,9 @@ engine = phptemplate
 screenshot = screenshot.png
 base theme = bones
 
-<<<<<<< HEAD
 stylesheets[all][] = css/theme.css
 stylesheets[all][] = css/responsive.css
 # stylesheets[all][] = css/jcarousel.css
-=======
-stylesheets[all][] = css/jcarousel.css
-stylesheets[all][] = css/theme.css
-stylesheets[all][] = css/responsive.css
->>>>>>> origin/master
 
 scripts[] = js/scripts.js
 scripts[] = js/jquery.color.js
@@ -30,10 +24,7 @@ features[] = main_menu
 features[] = secondary_menu
 
 regions[header]         = Header
-<<<<<<< HEAD
 regions[headerad]         = Header Ad
-=======
->>>>>>> origin/master
 regions[user_menu]      = User Menu
 regions[main_menu]      = Main Menu
 regions[main_menu_second_level]       = Main Menu Second Level (via Menublock)
@@ -41,21 +32,13 @@ regions[search_box]     = Search Box
 regions[highlighted]    = Highlighted
 regions[help]           = Help
 regions[sidebar_first]  = First sidebar
-<<<<<<< HEAD
 # regions[sidebar_second] = Second sidebar
-=======
-regions[sidebar_second] = Second sidebar
->>>>>>> origin/master
 regions[slideshow]      = Slideshow
 regions[preface_1]      = Preface First
 regions[preface_2]      = Preface Second
 regions[preface_3]      = Preface Third
 regions[content]        = Content
-<<<<<<< HEAD
 # regions[content_middle] = Content Middle
-=======
-regions[content_middle] = Content Middle
->>>>>>> origin/master
 regions[content_bottom] = Content Bottom
 regions[postscript_1]   = Postscript First
 regions[postscript_2]   = Postscript Second
@@ -66,11 +49,7 @@ regions[footer]         = Footer
 settings[style] = 1
 settings[sidebar_layout] = 'sidebars-split'
 settings[sidebar_first_width] = 4
-<<<<<<< HEAD
 # settings[sidebar_second_width] = 4
-=======
-settings[sidebar_second_width] = 4
->>>>>>> origin/master
 settings[grid_size] = 12
 settings[preface_1_grid_width] = 6
 settings[preface_2_grid_width] = 6

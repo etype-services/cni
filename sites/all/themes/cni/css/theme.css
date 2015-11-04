@@ -10,11 +10,7 @@ body {
 }
 
 a {
-<<<<<<< HEAD
     font-weight: normal; color: #333;
-=======
-    font-weight: normal;
->>>>>>> origin/master
 }
 
 a:hover {
@@ -29,11 +25,7 @@ h1, h2, h3, h4, h5 {
 }
 
 h1 {
-<<<<<<< HEAD
     font-size: 2em;
-=======
-    font-size: 24px;
->>>>>>> origin/master
 }
 
 h1#page-title {
@@ -84,22 +76,16 @@ td {
 }
 
 header {
-<<<<<<< HEAD
     width: 100%;
 }
 
 .site-logo {
-=======
->>>>>>> origin/master
     float: left;
 }
 
 .site-logo img {
     width: 100%;
-<<<<<<< HEAD
     max-width: 513px;
-=======
->>>>>>> origin/master
 }
 
 h1.site-name, h2.site-name {
@@ -113,13 +99,10 @@ h3.site-slogan {
     text-shadow: 1px 1px #ffffff;
 }
 
-<<<<<<< HEAD
 .region-headerad .block {
 	float: left;
 }
 
-=======
->>>>>>> origin/master
 /* SLIDESHOW 
 --------------------------------------------------------------------------*/
 
@@ -200,29 +183,6 @@ h3.site-slogan {
     margin-right: 0;
 }
 
-<<<<<<< HEAD
-=======
-@media only screen and (min-width: 768px) and (max-width: 959px) {
-    #views_slideshow_cycle_main_slideshow-block {
-        margin-left: 20px;
-        margin-top: 20px;
-    }
-    .views-slideshow-controls-bottom {
-        margin-top: 44px;
-    }
-}
-
-@media only screen and (max-width: 767px) {
-    #views_slideshow_cycle_main_slideshow-block {
-        margin-left: 20px;
-        margin-top: 20px;
-    }
-    .views-slideshow-controls-bottom {
-        margin-top: 34px;
-    }
-}
-
->>>>>>> origin/master
 /* PREFACE 
 --------------------------------------------------------------------------*/
 
@@ -233,11 +193,7 @@ h3.site-slogan {
 }
 
 .preface-wrapper .views-row a {
-<<<<<<< HEAD
     font-size: 1em;
-=======
-    font-size: 18px;
->>>>>>> origin/master
     font-weight: bold;
 }
 
@@ -265,11 +221,7 @@ h3.site-slogan {
 
 .preface-wrapper .attachment .views-row a {
     font-weight: normal;
-<<<<<<< HEAD
     font-size: 1em;
-=======
-    font-size: 12px;
->>>>>>> origin/master
 }
 
 .preface-wrapper .block .content {
@@ -284,12 +236,7 @@ h3.site-slogan {
 
 .preface-wrapper .content {
     padding: 20px 0 0 0;
-<<<<<<< HEAD
     color: #999999;
-=======
-    color: #000000;
-    font-size: 1.3em;
->>>>>>> origin/master
 }
 
 .preface-wrapper h3 {
@@ -311,22 +258,15 @@ h3.site-slogan {
     padding: 20px;
     margin-bottom: 20px;
     border: 1px solid #ddd;
-<<<<<<< HEAD
     border-bottom: 3px solid #007DBF;
-=======
-    border-bottom: 3px solid #355E3B;
->>>>>>> origin/master
     background: #ffffff;
     box-shadow: 0 1px 5px #bbbbbb;
 }
 
-<<<<<<< HEAD
 article .field-image {
 	margin-bottom: 1em;
 }
 
-=======
->>>>>>> origin/master
 /* SIDEBARS 
 --------------------------------------------------------------------------*/
 
@@ -563,147 +503,16 @@ article .field-image {
 /* Custom Menu styling */
 
 #block-superfish-1 {
-<<<<<<< HEAD
     background-color: #007DBF;
     height: 33px;
 }
 
-=======
-    background-color: #355E3B;
-    height: 33px;
-}
-
-.sf-menu.sf-style-space li, .sf-menu.sf-style-space li li, .sf-menu.sf-style-space li li li, .sf-menu.sf-style-space.sf-navbar {
-	background: #355E3B none repeat scroll 0% 0%;
-}
-
->>>>>>> origin/master
 #block-superfish-1 .content {
     margin: 0 auto;
 }
 
-<<<<<<< HEAD
 #mm0 {
     display: none !important;
-=======
-@media only screen and (min-width: 959px) {
-
-    #block-superfish-1 .content {
-        width: 900px;
-    }
-}
-
-@media only screen and (max-width: 958px) {
-
-    #block-superfish-1 .content {
-        width: 887px;
-    }
-}
-
-@media only screen and (max-width: 949px) {
-
-    #main-menu ul.menu li a {
-        padding: 0 10px;
-    }
-
-}
-
-@media only screen and (max-width: 910px) {
-
-    #main-menu ul.menu li a {
-        font-size: 10px;
-        font-weight: bold;
-    }
-
-    #block-superfish-1 .content {
-        width: 744px;
-    }
-
-}
-
-/* mobile menu setup */
-@media only screen and (min-width: 759px) {
-
-    #block-superfish-1 ul #menu-1797-1 {
-        display: none;
-    }
-    
-    /* drop-down menu */
-    .sf-menu.sf-style-space.sf-navbar li ul {
-   		background-color: transparent;
-	}
-	
-	#main-menu ul.menu li ul {
-		background: transparent none repeat scroll 0% 0%;
-		width: inherit;
-	}
-	
-	#main-menu ul.menu li ul li {
-		background-color: #cccccc;
-	}
-	
-	#main-menu ul.menu li li a, #main-menu ul.menu li li a.active {
-		padding: 0 10px;
-		color: #000000;
-	}
-	
-	#main-menu ul.menu li ul li a:hover, 
-	#main-menu ul.menu li li a:hover,
-	#main-menu ul.menu li ul li a.active:hover {
-		background-color: #eaeaea;
-	}
-}
-
-/* narrower screen */
-@media only screen and (max-width: 759px) {
-
-    #superfish-1 {
-        display: block !important;
-    }
-
-    #block-superfish-1 {
-        height: auto;
-    }
-
-    #block-superfish-1 .content {
-        width: auto;
-    }
-
-    #block-superfish-1 ul li {
-        display: none;
-    }
-
-    #block-superfish-1 ul li:first-child {
-        display: list-item;
-    }
-
-    #main-menu ul.menu li  {
-        float: none;
-        list-style: disc;
-    }
-
-    #main-menu ul.menu li a {
-        background: url("../images/mobile_menu.png") no-repeat scroll 7px 8px transparent;
-        color: #ffffff;
-        display: block;
-        font-weight: bold;
-        height: 30px;
-        margin-top: 0;
-        padding: 7px 15px 0 26px;
-        line-height: 22px;
-        text-decoration: none;
-        -moz-transition: background-color 0.5s ease-out;
-        -o-transition: background-color 0.5s ease-out;
-        -webkit-transition: background-color 0.5s ease-out;
-        transition: background-color 0.5s ease-out;
-    }
-
-    #main-menu ul.menu li a:hover {
-        background: url("../images/mobile_menu.png") no-repeat scroll 7px 8px transparent;
-        color: #ffffff;
-    }
-
->>>>>>> origin/master
 }
 
 /* MAIN MENU SECOND LEVEL
@@ -824,11 +633,7 @@ article .field-image {
 }
 
 .node .content a {
-<<<<<<< HEAD
     color: #333;
-=======
-    color: blue;
->>>>>>> origin/master
 }
 
 .node ul.inline li {
@@ -1178,55 +983,6 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
     padding: 0 0 0 0;
 }
 
-<<<<<<< HEAD
-=======
-/* TICKER 
---------------------------------------------------------------------------*/
-#block-views-ticker-block h3 {
-	background: #F00; 
-	padding: 5px; 
-	text-indent: 10px; 
-	color: #ffffff; 
-	font-size:1.2em;
-}
-
-#block-views-ticker-block #views-ticker-bbc-ticker li a, 
-#block-views-upcoming-events-block #views-ticker-bbc-upcoming_events li a {
-	color: #000000;
-	font-size: 1.1em;
-}
-
-#block-views-ticker-block .view-id-ticker,
-#block-views-upcoming-events-block .view-id-upcoming_events {
-	margin-top: 1em;
-}
-
-#block-views-upcoming-events-block h3 {background: #003c96; padding: 5px; text-indent: 10px; color: #fff; font-size:1.2em;}
-
-/* CAROUSEL
---------------------------------------------------------------------------*/
-.jcarousel-skin-default {
-  font-size: 1.2em;
-}
-
-.jcarousel-skin-default .jcarousel-container-horizontal {
-  height: 150px;
-}
-
-.jcarousel-skin-default .jcarousel-item {
-  height: 150px;
-}
-
-#block-views-slideshow-block .views-more-link {
-  color: #ffffff;
-  font-size: 1.1em;
-}
-
-#block-views-slideshow-block .views-field-body .field-content div {
-  display: inline;
-}
-
->>>>>>> origin/master
 /* VIEWS
 --------------------------------------------------------------------------*/
 
@@ -1356,10 +1112,7 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
     padding: 0;
     color: #000;
 }
-<<<<<<< HEAD
 #block-block-1 {float: right; display: block. width: 300px; clear: none;}
-=======
->>>>>>> origin/master
 
 #block-block-17 .block-inner {
     padding: 5px;
@@ -1569,7 +1322,6 @@ blockquote {
     overflow: hidden;
 }
 
-<<<<<<< HEAD
 #block-dfp-cni-fernandinaleaderboard {width:728px; margin: 1.6em auto 0 auto;}
 #block-dfp-cni-fernandinaleaderboard iframe {width:728px; height:90px;}
 
@@ -1597,59 +1349,3 @@ blockquote {
 	width:130px; 
 	margin: 1.6em auto 1.6em auto;
 }
-=======
-@media only screen and (min-width: 960px) {
-    #dfp-ad-banner_top {
-        width: 728px;
-        margin: 20px auto 0 auto;
-    }
-    #dfp-ad-banner {
-        width: 468px;
-        margin: 0px auto 0px 83px;
-    }
-}
-
-@media only screen and (min-width: 768px) and (max-width: 959px) {
-    #dfp-ad-banner_top {
-        width: 728px;
-        margin: 20px auto 0;
-    }
-    #dfp-ad-banner {
-        margin: 0px auto 0px 15px;
-    }
-}
-
-@media only screen and (max-width: 767px) {
-    #dfp-ad-banner_top {
-        width: 728px;
-        margin: 20px auto;
-    }
-    #dfp-ad-banner {
-        margin: 0px auto 0px 15px;
-    }
-}
-
-#block-dfp-cni-claytonleaderboard {
-  max-width:728px; 
-  margin: 10px auto 0;
-}
-
-#dfp-ad-cni_claytonbanner {
-  max-width: 468px;
-  margin: 0px auto;
-}
-
-#block-dfp-cni-claytonsidebar1 {width:300px;}
-#block-dfp-cni-claytonsidebar1 iframe {width:300px; height:250px;}
-
-#block-dfp-cni-claytonsidebar2 {width:300px;}
-#block-dfp-cni-claytonsidebar2 iframe {width:300px; height:250px;}
-
-#block-dfp-cni-claytonfooter {
-	max-width:728px;
-	margin: 5px auto 15px;
-}
-#block-dfp-cni-claytonfooter iframe{width:728px; height:90px;}
-
-.block-dfp .content {padding-top: 0;)
->>>>>>> origin/master
