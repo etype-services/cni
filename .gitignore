@@ -2,9 +2,16 @@
 sites/*/*settings*.php
 
 # Ignore paths that contain generated content.
-files/
 sites/*/files
 sites/*/private
 
-#Ignore sql backups
-*.sql
+# Ignore default files
+favicon.ico
+error_log
+
+# Ignore CNI theme folder
+sites/all/themes/cni
+
+# Odds and sods
+keys
+temp
