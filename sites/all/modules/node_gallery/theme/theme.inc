@@ -56,7 +56,9 @@ function theme_node_gallery_api_manage_items_form($variables) {
     $row[] = drupal_render($element['remove']);
     $file = $element['item_file']['#value'];
     if (!empty($file)) {
-      $row[] = drupal_render(file_view((object) $file, 'node_gallery_api_admin_thumbnail'));
+      $file_object = (object) $file;
+      $file_view = file_view($file_object, 'node_gallery_api_admin_thumbnail');
+      $row[] = drupal_render($file_view);
     }
     else {
       $row[] = '';
@@ -69,7 +71,7 @@ function theme_node_gallery_api_manage_items_form($variables) {
     if ($enable_rotation && !empty($file) && $file['type'] == 'image') {
       $row[] = drupal_render($element['rotate']);
     }
-    else {
+    elseif ($enable_rotation) {
       drupal_render($element['rotate']);
       $row[] = '';
     }
@@ -223,13 +225,24 @@ function theme_node_gallery_api_sort_items_form($variables) {
     t('Published'),
     t('Weight'),
   );
+  if (variable_get('node_gallery_api_display_exif_creation_date', FALSE)) {
+    array_splice($header, 3, 0, t('Creation date'));
+  }
   $i = 0;
   foreach ($form['#images'] as $image) {
     $published = ($image['status']) ? t('Yes') : t('No');
+    if (!empty($image['file_object'])) {
+      $file_object = (object) $image['file_object'];
+      $file_view = file_view($file_object, 'node_gallery_api_admin_thumbnail');
+    }
+    else {
+      $file_view = '';
+    }
+
     $row = array(
       // The placeholder for the tabledrag icon.
       '',
-      drupal_render(file_view((object) $image['file_object'], 'node_gallery_api_admin_thumbnail')),
+      drupal_render($file_view),
       $image['title'],
       format_date($image['created'], 'short'),
       format_date($image['changed'], 'short'),
@@ -237,6 +250,10 @@ function theme_node_gallery_api_sort_items_form($variables) {
       // The weight drop down.
       drupal_render($form['images-sort-' . $i]),
     );
+    if (variable_get('node_gallery_api_display_exif_creation_date', FALSE)) {
+      $exif_created = isset($image['exif_created']) ? format_date($image['exif_created']->getTimestamp(), 'short') : t('Unavailable');
+      array_splice($row, 3, 0, $exif_created);
+    }
     $rows[] = array(
       'data' => $row,
       'class' => array('draggable'),
