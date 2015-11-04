@@ -16,14 +16,9 @@
             </nav>
         <?php endif; ?>
 
-<<<<<<< HEAD
 		
         <div class="header-wrapper ">
             <div class="header-wrapper-inner ">
-=======
-        <div class="header-wrapper clearfix">
-            <div class="header-wrapper-inner <?php echo $grid_full_width ?>">
->>>>>>> origin/master
                 <header>
 
                     <?php if ($logo): ?>
@@ -32,11 +27,8 @@
                                                                               alt="<?php print $site_name; ?>"/></a>
                         </div><?php print render($page['header']) ?>
                     <?php endif; ?>
-<<<<<<< HEAD
                     
                     <?php print render($page['headerad']) ?>
-=======
->>>>>>> origin/master
 
                 </header>
 
@@ -45,10 +37,7 @@
     </div>
 </div>
 
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/master
 <?php if ($page['main_menu']): ?>
     <div class="main-menu-wrapper clearfix">
         <div class="main-menu-wrapper-inner">
@@ -103,10 +92,7 @@
                             <?php print render($page['content']); ?>
                             <?php if ($action_links): ?>
                                 <ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
-<<<<<<< HEAD
                             <?php print render($page['content_bottom']); ?>
-=======
->>>>>>> origin/master
                         </div>
 
                             <aside class="sidebar second-sidebar grid_4 clearfix">
@@ -118,12 +104,6 @@
                 </section>
             </div>
         </div>
-<<<<<<< HEAD
-=======
-        
-         <?php print render($page['content_bottom']); ?>
-         
->>>>>>> origin/master
         <?php if ($page['postscript_1'] || $page['postscript_2'] || $page['postscript_3'] || $page['postscript_4']): ?>
             <div class="postscript-wrapper clearfix">
                 <div class="postscript-wrapper-inner">
