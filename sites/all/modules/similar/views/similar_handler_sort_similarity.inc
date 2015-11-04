@@ -23,13 +23,8 @@ class similar_handler_sort_similarity extends views_handler_sort {
    * Defines query elements.
    */
   public function query() {
-<<<<<<< HEAD
     if (in_array('similar_entries', $this->query->tags)) {
       $this->query->add_orderby(NULL, NULL, $this->options['order'], 'score');
-=======
-    if (in_array('similar_entries', $this->query->tags)) {
-      $this->query->add_orderby(NULL, NULL, $this->options['order'], 'score');
->>>>>>> origin/master
       $this->query->add_groupby('score');
     }
   }

@@ -37,11 +37,7 @@ function similar_views_default_views() {
   $handler->display->display_options['sorts']['similarity']['table'] = 'similar_entries';
   $handler->display->display_options['sorts']['similarity']['field'] = 'similarity';
   $handler->display->display_options['sorts']['similarity']['order'] = 'DESC';
-<<<<<<< HEAD
 
-=======
-
->>>>>>> origin/master
   // Sets the Similar entries node ID argument.
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'similar_entries';
@@ -63,7 +59,6 @@ function similar_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['link_to_node'] = 1;
-<<<<<<< HEAD
 
   // Provides node->moderated and node->published filters.  
   $handler->display->display_options['filters']['status']['id'] = 'status';
@@ -71,15 +66,6 @@ function similar_views_default_views() {
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 0;
-=======
-
-  // Provides node->moderated and node->published filters.  
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 0;
->>>>>>> origin/master
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
 
   // Filter by similarity score.

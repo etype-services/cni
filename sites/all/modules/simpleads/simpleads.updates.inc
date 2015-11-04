@@ -533,11 +533,7 @@ function simpleads_update_7004(&$sandbox) {
 }
 
 /**
-<<<<<<< HEAD
  * Create a new field for Ad status. Disable comments in SimpleAds content type.
-=======
- * Create a new field for Ad status. Disalbe comments on SimpleAds content type.
->>>>>>> origin/master
  */
 function simpleads_update_7005(&$sandbox) {
 
@@ -609,10 +605,7 @@ function simpleads_update_7005(&$sandbox) {
   $result = db_select('node', 'n')
     ->fields('n', array('nid'))
     ->condition('n.status', 1)
-<<<<<<< HEAD
     ->condition('n.type', 'simpleads')
-=======
->>>>>>> origin/master
     ->execute();
   foreach ($result as $row) {
     $node = node_load($row->nid);
@@ -624,7 +617,6 @@ function simpleads_update_7005(&$sandbox) {
   variable_set('menu_options_simpleads', array());
   variable_set('node_options_simpleads', array());
   variable_set('comment_simpleads', 1);
-<<<<<<< HEAD
 }
 
 /**
@@ -674,6 +666,3 @@ function simpleads_update_7006(&$sandbox) {
   db_create_table('simpleads_stats', $schema['simpleads_stats']);
 
 }
-=======
-}
->>>>>>> origin/master

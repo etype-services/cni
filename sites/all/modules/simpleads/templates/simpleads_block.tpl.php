@@ -6,11 +6,7 @@
  *
  * Use Javascript code below when you enable caching,
  * otherwise it will be cached and rotating will not work.
-<<<<<<< HEAD
  *
-=======
- * 
->>>>>>> origin/master
  * $ads_page
  *   Url to Advertise page (configurable in block settings).
  *
@@ -45,21 +41,13 @@
 ?>
 <?php if (count($ads) > 0) : ?>
 <div class="header">
-<<<<<<< HEAD
   <div class="ad-link"><?php if (!is_null($ads_page) && !empty($ads_page)) : print l(t('Advertise with us'), $ads_page); endif; ?></div>
-=======
-  <div class="ad-link"><?php if(!is_null($ads_page) && !empty($ads_page)) : print l(t('Advertise with us'), $ads_page); endif; ?></div>
->>>>>>> origin/master
 </div>
 <div class="adslist">
   <script type="text/javascript">
     _simpelads_load('.simpleads-<?php print $tid; ?><?php if ($prefix) : ?>-<?php print $prefix; ?><?php endif; ?>', <?php print $tid; ?>, <?php print check_plain($ads_limit); ?>);
   </script>
-<<<<<<< HEAD
   <?php /* If you would like to modify class attrbiute, please don't forget to update
-=======
-  <?php /* If you would like to modify class attrbiute, please don't forget to update 
->>>>>>> origin/master
     the first argument in function call above (_simpleads_load(...)).
   */
   ?>

@@ -91,11 +91,7 @@ Drupal.behaviors.trackingSettingsSummary = {
         vals.push(Drupal.t('AdSense ads'));
       }
       if ($('input#edit-googleanalytics-trackdoubleclick', context).is(':checked')) {
-<<<<<<< HEAD
-        vals.push(Drupal.t('DoubleClick data'));
-=======
         vals.push(Drupal.t('Display features'));
->>>>>>> origin/master
       }
       if (!vals.length) {
         return Drupal.t('Not tracked');

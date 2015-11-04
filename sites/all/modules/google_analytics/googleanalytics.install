@@ -6,46 +6,20 @@
  */
 
 /**
-<<<<<<< HEAD
- * Implements hook_install().
- */
-function googleanalytics_install() {
-  // By German laws it's always best to enable the anonymizing of IP addresses.
-  // NOTE: If this is also an important default setting in other countries, please let us know!
-  $countries = array(
-    'DE',
-  );
-  if (in_array(variable_get('site_default_country', ''), $countries)) {
-    variable_set('googleanalytics_tracker_anonymizeip', 1);
-  }
-}
-
-/**
-=======
->>>>>>> origin/master
  * Implements hook_uninstall().
  */
 function googleanalytics_uninstall() {
   variable_del('googleanalytics_account');
   variable_del('googleanalytics_cache');
-<<<<<<< HEAD
-=======
   variable_del('googleanalytics_codesnippet_create');
->>>>>>> origin/master
   variable_del('googleanalytics_codesnippet_before');
   variable_del('googleanalytics_codesnippet_after');
   variable_del('googleanalytics_cross_domains');
   variable_del('googleanalytics_custom');
-<<<<<<< HEAD
-  variable_del('googleanalytics_custom_var');
-  variable_del('googleanalytics_domain_mode');
-  variable_del('googleanalytics_js_scope');
-=======
   variable_del('googleanalytics_custom_dimension');
   variable_del('googleanalytics_custom_metric');
   variable_del('googleanalytics_debug');
   variable_del('googleanalytics_domain_mode');
->>>>>>> origin/master
   variable_del('googleanalytics_last_cache');
   variable_del('googleanalytics_pages');
   variable_del('googleanalytics_roles');
@@ -55,32 +29,20 @@ function googleanalytics_uninstall() {
   variable_del('googleanalytics_tracker_anonymizeip');
   variable_del('googleanalytics_trackfiles');
   variable_del('googleanalytics_trackfiles_extensions');
-<<<<<<< HEAD
-  variable_del('googleanalytics_trackmailto');
-=======
   variable_del('googleanalytics_tracklinkid');
   variable_del('googleanalytics_trackurlfragments');
   variable_del('googleanalytics_trackuserid');
   variable_del('googleanalytics_trackmailto');
   variable_del('googleanalytics_trackmessages');
->>>>>>> origin/master
   variable_del('googleanalytics_trackoutbound');
   variable_del('googleanalytics_translation_set');
   variable_del('googleanalytics_visibility_pages');
   variable_del('googleanalytics_visibility_roles');
-<<<<<<< HEAD
-
-  // Remove backup variables if exist. Remove this code in D8.
-  variable_del('googleanalytics_codesnippet_after_backup_6300');
-  variable_del('googleanalytics_codesnippet_before_backup_6300');
-  variable_del('googleanalytics_segmentation');
-=======
   variable_del('googleanalytics_privacy_donottrack');
 
   // Remove backup variables if exist. Remove this code in D8.
   variable_del('googleanalytics_codesnippet_after_backup_7200');
   variable_del('googleanalytics_codesnippet_before_backup_7200');
->>>>>>> origin/master
 }
 
 /**
@@ -101,21 +63,14 @@ function googleanalytics_requirements($phase) {
 
   if ($phase == 'runtime') {
     // Raise warning if Google user account has not been set yet.
-<<<<<<< HEAD
-    if (!preg_match('/^UA-\d{4,}-\d+$/', variable_get('googleanalytics_account', 'UA-'))) {
-      $requirements['googleanalytics'] = array(
-=======
     if (!preg_match('/^UA-\d+-\d+$/', variable_get('googleanalytics_account', 'UA-'))) {
       $requirements['googleanalytics_account'] = array(
->>>>>>> origin/master
         'title' => $t('Google Analytics module'),
         'description' => $t('Google Analytics module has not been configured yet. Please configure its settings from the <a href="@url">Google Analytics settings page</a>.', array('@url' => url('admin/config/system/googleanalytics'))),
         'severity' => REQUIREMENT_WARNING,
         'value' => $t('Not configured'),
       );
     }
-<<<<<<< HEAD
-=======
 
     // Raise warning if debugging is enabled.
     if (variable_get('googleanalytics_debug', 0)) {
@@ -126,7 +81,6 @@ function googleanalytics_requirements($phase) {
         'value' => $t('Debugging enabled'),
       );
     }
->>>>>>> origin/master
   }
 
   return $requirements;
@@ -473,20 +427,13 @@ function googleanalytics_update_7006() {
 }
 
 /**
-<<<<<<< HEAD
-* Delete obsolete googleanalytics_trackpageloadtime variable.
-*/
-=======
  * Delete obsolete googleanalytics_trackpageloadtime variable.
  */
->>>>>>> origin/master
 function googleanalytics_update_7007() {
   variable_del('googleanalytics_trackpageloadtime');
 
   return t('Deleted obsolete googleanalytics_trackpageloadtime variable.');
 }
-<<<<<<< HEAD
-=======
 
 /**
  * Delete custom ga.js code snipptes to prevent malfunctions in new Universal Analytics tracker. A backup of your snippets will be created.
@@ -588,4 +535,3 @@ function googleanalytics_update_7205() {
     return t('Custom extensions for download tracking setting found. Update skipped!');
   }
 }
->>>>>>> origin/master

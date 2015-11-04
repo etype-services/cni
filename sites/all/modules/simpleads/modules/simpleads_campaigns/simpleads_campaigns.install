@@ -12,28 +12,10 @@ include_once("campaign.updates.inc");
  */
 function simpleads_campaigns_install() {
 
-<<<<<<< HEAD
   node_types_rebuild();
 
   $t = get_t();
 
-=======
-  $t = get_t();
-
-  $type = array(
-    'type' => 'simpleads_campaign',
-    'name' => $t('Simple Ad Campaign'),
-    'base' => 'node_content',
-    'description' => $t('Advertisement Campaign'),
-    'custom' => 1,
-    'modified' => 1,
-    'locked' => 0,
-  );
-
-  $type = node_type_set_defaults($type);
-  node_type_save($type);
-
->>>>>>> origin/master
   $fields = array(
     array(
       'field_name' => 'field_adcamp_list',
@@ -411,15 +393,10 @@ function simpleads_campaigns_uninstall() {
   field_delete_field('field_adcamp_day');
   field_delete_field('field_adcamp_days');
   field_delete_field('field_adcamp_start');
-<<<<<<< HEAD
-=======
-  node_type_delete('simpleads_campaign');
->>>>>>> origin/master
   // Remove variables.
   variable_del('menu_options_simpleads_campaign');
   variable_del('node_options_simpleads_campaign');
   variable_del('comment_simpleads_campaign');
-<<<<<<< HEAD
 }
 
 /**
@@ -434,6 +411,4 @@ function simpleads_campaigns_enable() {
  */
 function simpleads_campaigns_disable() {
   _simpleads_hide_field('field_adcamp_list');
-=======
->>>>>>> origin/master
 }

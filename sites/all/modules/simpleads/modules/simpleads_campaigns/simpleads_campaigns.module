@@ -8,7 +8,6 @@
 require_once("campaigns.helper.inc");
 
 /**
-<<<<<<< HEAD
  * Implements hook_node_info().
  */
 function simpleads_campaigns_node_info() {
@@ -31,8 +30,6 @@ function simpleads_campaign_form($node, $form_state) {
 }
 
 /**
-=======
->>>>>>> origin/master
  * Implements hook_menu().
  */
 function simpleads_campaigns_menu() {
@@ -84,11 +81,7 @@ function simpleads_campaigns_permission() {
  */
 function simpleads_campaigns_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'simpleads_node_form') {
-<<<<<<< HEAD
     $lang = array_key_exists('#value', $form['language']) ? $form['language']['#value'] : $form['language']['#default_value'];
-=======
-    $lang = $form['language']['#value'];
->>>>>>> origin/master
     $campaigns = array(
       '_none' => t('- None -'),
     );

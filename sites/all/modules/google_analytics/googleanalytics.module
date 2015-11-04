@@ -1,31 +1,15 @@
 <?php
 
-<<<<<<< HEAD
-/*
- * @file
- * Drupal Module: GoogleAnalytics
- * Adds the required Javascript to the bottom of all your Drupal pages
- * to allow tracking by the Google Analytics statistics package.
-=======
 /**
  * @file
  * Drupal Module: Google Analytics
  *
  * Adds the required Javascript to all your Drupal pages to allow tracking by
  * the Google Analytics statistics package.
->>>>>>> origin/master
  *
  * @author: Alexander Hass <http://drupal.org/user/85918>
  */
 
-<<<<<<< HEAD
-define('GOOGLEANALYTICS_TRACKFILES_EXTENSIONS', '7z|aac|arc|arj|asf|asx|avi|bin|csv|doc|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls|xml|z|zip');
-
-// Remove tracking from all administrative pages, see http://drupal.org/node/34970.
-define('GOOGLEANALYTICS_PAGES', "admin\nadmin/*\nbatch\nnode/add*\nnode/*/*\nuser/*/*");
-
-/**
-=======
 /**
  * Define the default file extension list that should be tracked as download.
  */
@@ -47,7 +31,6 @@ function googleanalytics_api() {
 }
 
 /**
->>>>>>> origin/master
  * Implements hook_help().
  */
 function googleanalytics_help($path, $arg) {
@@ -121,21 +104,6 @@ function googleanalytics_page_alter(&$page) {
     '404 Not Found',
   );
 
-<<<<<<< HEAD
-  // 1. Check if the GA account number has a value.
-  // 2. Track page views based on visibility value.
-  // 3. Check if we should track the currently active user's role.
-  // 4. Ignore pages visibility filter for 404 or 403 status codes.
-  if (!empty($id) && (_googleanalytics_visibility_pages() || in_array($status, $trackable_status_codes)) && _googleanalytics_visibility_user($user)) {
-
-    // We allow different scopes. Default to 'header' but allow user to override if they really need to.
-    $scope = variable_get('googleanalytics_js_scope', 'header');
-
-    if (variable_get('googleanalytics_trackadsense', FALSE)) {
-      // Custom tracking. Prepend before all other JavaScript.
-      drupal_add_js('window.google_analytics_uacct = ' . drupal_json_encode($id) . ';', array('type' => 'inline', 'group' => JS_LIBRARY-1));
-    }
-=======
   // 1. Check if the GA account number has a valid value.
   // 2. Track page views based on visibility value.
   // 3. Check if we should track the currently active user's role.
@@ -144,7 +112,6 @@ function googleanalytics_page_alter(&$page) {
 
     $debug = variable_get('googleanalytics_debug', 0);
     $url_custom = '';
->>>>>>> origin/master
 
     // Add link tracking.
     $link_settings = array();
@@ -164,12 +131,6 @@ function googleanalytics_page_alter(&$page) {
     if ($track_cross_domains = variable_get('googleanalytics_cross_domains', '')) {
       $link_settings['trackCrossDomains'] = preg_split('/(\r\n?|\n)/', $track_cross_domains);
     }
-<<<<<<< HEAD
-
-    if (!empty($link_settings)) {
-      drupal_add_js(array('googleanalytics' => $link_settings), 'setting');
-      drupal_add_js(drupal_get_path('module', 'googleanalytics') . '/googleanalytics.js');
-=======
     if ($track_url_fragments = variable_get('googleanalytics_trackurlfragments', 0)) {
       $link_settings['trackUrlFragments'] = $track_url_fragments;
       $url_custom = 'location.pathname + location.search + location.hash';
@@ -187,7 +148,6 @@ function googleanalytics_page_alter(&$page) {
       else {
         drupal_add_js(drupal_get_path('module', 'googleanalytics') . '/googleanalytics.js');
       }
->>>>>>> origin/master
     }
 
     // Add messages tracking.
@@ -204,26 +164,17 @@ function googleanalytics_page_alter(&$page) {
         // Track only the selected message types.
         if (in_array($type, $message_types)) {
           foreach ($messages as $message) {
-<<<<<<< HEAD
-            $message_events .= '_gaq.push(["_trackEvent", ' . drupal_json_encode(t('Messages')) . ', ' . drupal_json_encode($status_heading[$type]) . ', ' . drupal_json_encode(strip_tags($message)) . ']);';
-=======
             // @todo: Track as exceptions?
             $message_events .= 'ga("send", "event", ' . drupal_json_encode(t('Messages')) . ', ' . drupal_json_encode($status_heading[$type]) . ', ' . drupal_json_encode(strip_tags($message)) . ');';
->>>>>>> origin/master
           }
         }
       }
     }
 
     // Site search tracking support.
-<<<<<<< HEAD
-    $url_custom = '';
-    if (module_exists('search') && variable_get('googleanalytics_site_search', FALSE) && arg(0) == 'search' && $keys = googleanalytics_search_get_keys()) {
-=======
     if (module_exists('search') && variable_get('googleanalytics_site_search', FALSE) && arg(0) == 'search' && $keys = googleanalytics_search_get_keys()) {
       // hook_preprocess_search_results() is not executed if search result is
       // empty. Make sure the counter is set to 0 if there are no results.
->>>>>>> origin/master
       $url_custom = '(window.googleanalytics_search_results) ? ' . drupal_json_encode(url('search/' . arg(1), array('query' => array('search' => $keys)))) . ' : ' . drupal_json_encode(url('search/' . arg(1), array('query' => array('search' => 'no-results:' . $keys, 'cat' => 'no-results'))));
     }
 
@@ -249,48 +200,6 @@ function googleanalytics_page_alter(&$page) {
       $url_custom = '"/404.html?page=" + document.location.pathname + document.location.search + "&from=" + document.referrer';
     }
 
-<<<<<<< HEAD
-    // Add any custom code snippets if specified.
-    $codesnippet_before = variable_get('googleanalytics_codesnippet_before', '');
-    $codesnippet_after = variable_get('googleanalytics_codesnippet_after', '');
-
-    // Add custom variables.
-    $googleanalytics_custom_vars = variable_get('googleanalytics_custom_var', array());
-    $custom_var = '';
-    for ($i = 1; $i < 6; $i++) {
-      $custom_var_name = !empty($googleanalytics_custom_vars['slots'][$i]['name']) ? $googleanalytics_custom_vars['slots'][$i]['name'] : '';
-      if (!empty($custom_var_name)) {
-        $custom_var_value = !empty($googleanalytics_custom_vars['slots'][$i]['value']) ? $googleanalytics_custom_vars['slots'][$i]['value'] : '';
-        $custom_var_scope = !empty($googleanalytics_custom_vars['slots'][$i]['scope']) ? $googleanalytics_custom_vars['slots'][$i]['scope'] : 3;
-
-        $types = array();
-        $node = menu_get_object();
-        if (is_object($node)) {
-          $types += array('node' => $node);
-        }
-        $custom_var_name = token_replace($custom_var_name, $types, array('clear' => TRUE));
-        $custom_var_value = token_replace($custom_var_value, $types, array('clear' => TRUE));
-
-        // Suppress empty custom names and/or variables.
-        if (!drupal_strlen(trim($custom_var_name)) || !drupal_strlen(trim($custom_var_value))) {
-          continue;
-        }
-
-        // The length of the string used for the 'name' and the length of the
-        // string used for the 'value' must not exceed 128 bytes after url encoding.
-        $name_length = drupal_strlen(rawurlencode($custom_var_name));
-        $tmp_value = rawurlencode($custom_var_value);
-        $value_length = drupal_strlen($tmp_value);
-        if ($name_length + $value_length > 128) {
-          // Trim value and remove fragments of url encoding.
-          $tmp_value = rtrim(substr($tmp_value, 0, 127 - $name_length), '%0..9A..F');
-          $custom_var_value = urldecode($tmp_value);
-        }
-
-        $custom_var_name = drupal_json_encode($custom_var_name);
-        $custom_var_value = drupal_json_encode($custom_var_value);
-        $custom_var .= "_gaq.push(['_setCustomVar', $i, $custom_var_name, $custom_var_value, $custom_var_scope]);";
-=======
     // Add custom dimensions and metrics.
     $custom_var = '';
     foreach (array('dimension', 'metric') as $googleanalytics_custom_type) {
@@ -328,20 +237,10 @@ function googleanalytics_page_alter(&$page) {
           // Add variables to tracker.
           $custom_var .= 'ga("set", ' . drupal_json_encode($googleanalytics_custom_type . $googleanalytics_custom_var['index']) . ', ' . drupal_json_encode($googleanalytics_custom_var['value']) . ');';
         }
->>>>>>> origin/master
       }
     }
 
     // Build tracker code.
-<<<<<<< HEAD
-    $script = 'var _gaq = _gaq || [];';
-    $script .= '_gaq.push(["_setAccount", ' . drupal_json_encode($id) . ']);';
-    if (variable_get('googleanalytics_tracker_anonymizeip', 0)) {
-      // FIXME: The Google API is currently broken and "_gat._anonymizeIp" is only
-      // a workaround until "_anonymizeIp" has been implemented/fixed.
-      $script .= '_gaq.push(["_gat._anonymizeIp"]);';
-    }
-=======
     $script = '(function(i,s,o,g,r,a,m){';
     $script .= 'i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){';
     $script .= '(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),';
@@ -375,26 +274,15 @@ function googleanalytics_page_alter(&$page) {
     // Build the create only fields list.
     $create_only_fields = array('cookieDomain' => 'auto');
     $create_only_fields = array_merge($create_only_fields, $codesnippet_create);
->>>>>>> origin/master
 
     // Domain tracking type.
     global $cookie_domain;
     $domain_mode = variable_get('googleanalytics_domain_mode', 0);
-<<<<<<< HEAD
-=======
     $googleanalytics_adsense_script = '';
->>>>>>> origin/master
 
     // Per RFC 2109, cookie domains must contain at least one dot other than the
     // first. For hosts such as 'localhost' or IP Addresses we don't set a cookie domain.
     if ($domain_mode == 1 && count(explode('.', $cookie_domain)) > 2 && !is_numeric(str_replace('.', '', $cookie_domain))) {
-<<<<<<< HEAD
-      $script .= '_gaq.push(["_setDomainName", ' . drupal_json_encode($cookie_domain) . ']);';
-    }
-    elseif ($domain_mode == 2) {
-      $script .= '_gaq.push(["_setDomainName", "none"]);';
-      $script .= '_gaq.push(["_setAllowLinker", true]);';
-=======
       $create_only_fields = array_merge($create_only_fields, array('cookieDomain' => $cookie_domain));
       $googleanalytics_adsense_script .= 'window.google_analytics_domain_name = ' . drupal_json_encode($cookie_domain) . ';';
     }
@@ -440,7 +328,6 @@ function googleanalytics_page_alter(&$page) {
 
     if (variable_get('googleanalytics_tracker_anonymizeip', 1)) {
       $script .= 'ga("set", "anonymizeIp", true);';
->>>>>>> origin/master
     }
 
     if (!empty($custom_var)) {
@@ -449,20 +336,11 @@ function googleanalytics_page_alter(&$page) {
     if (!empty($codesnippet_before)) {
       $script .= $codesnippet_before;
     }
-<<<<<<< HEAD
-    if (empty($url_custom)) {
-      $script .= '_gaq.push(["_trackPageview"]);';
-    }
-    else {
-      $script .= '_gaq.push(["_trackPageview", ' . $url_custom . ']);';
-    }
-=======
     if (!empty($url_custom)) {
       $script .= 'ga("set", "page", ' . $url_custom . ');';
     }
     $script .= 'ga("send", "pageview");';
 
->>>>>>> origin/master
     if (!empty($message_events)) {
       $script .= $message_events;
     }
@@ -470,47 +348,6 @@ function googleanalytics_page_alter(&$page) {
       $script .= $codesnippet_after;
     }
 
-<<<<<<< HEAD
-    $script .= '(function() {';
-    $script .= 'var ga = document.createElement("script");';
-    $script .= 'ga.type = "text/javascript";';
-    $script .= 'ga.async = true;';
-
-    // Which version of the tracking library should be used?
-    if ($trackdoubleclick = variable_get('googleanalytics_trackdoubleclick', FALSE)) {
-      $library_tracker_url = 'stats.g.doubleclick.net/dc.js';
-      $library_cache_url = 'http://' . $library_tracker_url;
-    }
-    else {
-      $library_tracker_url = '.google-analytics.com/ga.js';
-      $library_cache_url = 'http://www' . $library_tracker_url;
-    }
-
-    // Should a local cached copy of ga.js be used?
-    if (variable_get('googleanalytics_cache', 0) && $url = _googleanalytics_cache($library_cache_url)) {
-      // A dummy query-string is added to filenames, to gain control over
-      // browser-caching. The string changes on every update or full cache
-      // flush, forcing browsers to load a new copy of the files, as the
-      // URL changed.
-      $query_string = '?' . variable_get('css_js_query_string', '0');
-
-      $script .= 'ga.src = "' . $url . $query_string . '";';
-    }
-    else {
-      // Library paths do not follow the same naming convention.
-      if ($trackdoubleclick) {
-        $script .= 'ga.src = ("https:" == document.location.protocol ? "https://" : "http://") + "' . $library_tracker_url . '";';
-      }
-      else {
-        $script .= 'ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + "' . $library_tracker_url . '";';
-      }
-    }
-    $script .= 'var s = document.getElementsByTagName("script")[0];';
-    $script .= 's.parentNode.insertBefore(ga, s);';
-    $script .= '})();';
-
-    drupal_add_js($script, array('scope' => $scope, 'type' => 'inline'));
-=======
     if (variable_get('googleanalytics_trackadsense', FALSE)) {
       // Custom tracking. Prepend before all other JavaScript.
       // @TODO: https://support.google.com/adsense/answer/98142
@@ -519,7 +356,6 @@ function googleanalytics_page_alter(&$page) {
     }
 
     drupal_add_js($script, array('scope' => 'header', 'type' => 'inline'));
->>>>>>> origin/master
   }
 }
 
@@ -604,17 +440,7 @@ function googleanalytics_user_presave(&$edit, $account, $category) {
 function googleanalytics_cron() {
   // Regenerate the tracking code file every day.
   if (REQUEST_TIME - variable_get('googleanalytics_last_cache', 0) >= 86400 && variable_get('googleanalytics_cache', 0)) {
-<<<<<<< HEAD
-    // Which version of the tracking library should be used?
-    if (variable_get('googleanalytics_trackdoubleclick', FALSE)) {
-      _googleanalytics_cache('http://stats.g.doubleclick.net/dc.js', TRUE);
-    }
-    else {
-      _googleanalytics_cache('http://www.google-analytics.com/ga.js', TRUE);
-    }
-=======
     _googleanalytics_cache('http://www.google-analytics.com/analytics.js', TRUE);
->>>>>>> origin/master
     variable_set('googleanalytics_last_cache', REQUEST_TIME);
   }
 }
@@ -625,13 +451,6 @@ function googleanalytics_cron() {
  * Collects and adds the number of search results to the head.
  */
 function googleanalytics_preprocess_search_results(&$variables) {
-<<<<<<< HEAD
-  // There is no search result $variable available that hold the number of items
-  // found. But the pager item mumber can tell the number of search results.
-  global $pager_total_items;
-
-  drupal_add_js('window.googleanalytics_search_results = ' . intval($pager_total_items[0]) . ';', array('type' => 'inline', 'group' => JS_LIBRARY-1));
-=======
   if (variable_get('googleanalytics_site_search', FALSE)) {
     // There is no search result $variable available that hold the number of items
     // found. But the pager item mumber can tell the number of search results.
@@ -639,7 +458,6 @@ function googleanalytics_preprocess_search_results(&$variables) {
 
     drupal_add_js('window.googleanalytics_search_results = ' . intval($pager_total_items[0]) . ';', array('type' => 'inline', 'group' => JS_LIBRARY-1));
   }
->>>>>>> origin/master
 }
 
 /**
@@ -664,18 +482,6 @@ function googleanalytics_search_get_keys() {
  *
  * @param $location
  *   The full URL to the external javascript file.
-<<<<<<< HEAD
- * @param $sync_cached_file
- *   Synchronize tracking code and update if remote file have changed.
- * @return mixed
- *   The path to the local javascript file on success, boolean FALSE on failure.
- */
-function _googleanalytics_cache($location, $sync_cached_file = FALSE) {
-  $path = 'public://googleanalytics';
-  $file_destination = $path . '/' . basename($location);
-
-  if (!file_exists($file_destination) || $sync_cached_file) {
-=======
  * @param $synchronize
  *   Synchronize to local cache if remote file has changed.
  * @return mixed
@@ -686,7 +492,6 @@ function _googleanalytics_cache($location, $synchronize = FALSE) {
   $file_destination = $path . '/' . basename($location);
 
   if (!file_exists($file_destination) || $synchronize) {
->>>>>>> origin/master
     // Download the latest tracking code.
     $result = drupal_http_request($location);
 

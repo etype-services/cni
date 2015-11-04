@@ -62,7 +62,6 @@ class similar_handler_argument_nid extends views_handler_argument_numeric {
       '#type' => 'fieldset',
       '#title' => t('FULLTEXT search options'),
     );
-<<<<<<< HEAD
 
     // Add fields for increasing or decreasing relevance of destination ndoe fields.
     $relevance_options = array(
@@ -87,32 +86,6 @@ class similar_handler_argument_nid extends views_handler_argument_numeric {
         '1.8' => '180%',
         '1.9' => '190%',
         '2.0' => '200%',
-=======
-
-    // Add fields for increasing or decreasing relevance of destination ndoe fields.
-    $relevance_options = array(
-        '0' => '0%',
-        '0.1' => '10%',
-        '0.2' => '20%',
-        '0.3' => '30%',
-        '0.4' => '40%',
-        '0.5' => '50%',
-        '0.6' => '60%',
-        '0.7' => '70%',
-        '0.8' => '80%',
-        '0.9' => '90%',
-        '1.0' => '100%',
-        '1.1' => '110%',
-        '1.2' => '120%',
-        '1.3' => '130%',
-        '1.4' => '140%',
-        '1.5' => '150%',
-        '1.6' => '160%',
-        '1.7' => '170%',
-        '1.8' => '180%',
-        '1.9' => '190%',
-        '2.0' => '200%',
->>>>>>> origin/master
     );
     $form['adjust_relevance'] = array(
       '#type' => 'checkbox',
@@ -270,7 +243,6 @@ class similar_handler_argument_nid extends views_handler_argument_numeric {
     $this->view->nids = $this->value;
     return TRUE;
   }
-<<<<<<< HEAD
   
   /**
    * Override the behavior of title(). Get the title of the node.
@@ -283,20 +255,6 @@ class similar_handler_argument_nid extends views_handler_argument_numeric {
       $titles[] = check_plain($term->title);
     }
     return $titles;
-=======
-  
-  /**
-   * Override the behavior of title(). Get the title of the node.
-   */
-  function title_query() {
-    $titles = array();
-  
-    $result = db_query("SELECT n.title FROM {node} n WHERE n.nid IN (:nids)", array(':nids' => $this->value));
-    foreach ($result as $term) {
-      $titles[] = check_plain($term->title);
-    }
-    return $titles;
->>>>>>> origin/master
   }
 
   /**
@@ -319,13 +277,8 @@ class similar_handler_argument_nid extends views_handler_argument_numeric {
           $title = $this->alter_node_title($title);
         }
 
-<<<<<<< HEAD
         // Strip tags and add slashes only to the body before adding the title.
         $body = trim(addslashes(strip_tags($node->body[$node->language][0]['value'])));
-=======
-        // Strip tags and add slashes only to the body before adding the title.
-        $body = trim(addslashes(strip_tags($node->body[$node->language][0]['value'])));
->>>>>>> origin/master
         $text .= " $title $body";
       }
     }
@@ -341,11 +294,7 @@ class similar_handler_argument_nid extends views_handler_argument_numeric {
     $this->ensure_my_table();
 
     $query = $boolean ? $this->similar_build_query($text, 'IN BOOLEAN MODE') : $this->similar_build_query($text);
-<<<<<<< HEAD
     
-=======
-    
->>>>>>> origin/master
     // An empty string is passed for the table to bypass the table alias.
     $this->query->add_field('', $query, 'score');
 
@@ -427,7 +376,6 @@ class similar_handler_argument_nid extends views_handler_argument_numeric {
    * @see similar_handler_argument_nid::query()
    */
   private function alter_node_title($title) {
-<<<<<<< HEAD
     switch ($this->options['title_operator']) {
       case 'increase':
         return '>'. implode(' >', explode(' ', $title));
@@ -443,23 +391,6 @@ class similar_handler_argument_nid extends views_handler_argument_numeric {
         return '-'. implode(' -', explode(' ', $title));
       case 'exclude_some':
         return "-($title)";
-=======
-    switch ($this->options['title_operator']) {
-      case 'increase':
-        return '>'. implode(' >', explode(' ', $title));
-      case 'decrease':
-        return '<'. implode(' <', explode(' ', $title));
-      case 'require_all':
-        return '+'. implode(' +', explode(' ', $title));
-      case 'require_some':
-        return "+($title)";
-      case 'require_complete':
-        return '"'. $title .'"';
-      case 'exclude_all':
-        return '-'. implode(' -', explode(' ', $title));
-      case 'exclude_some':
-        return "-($title)";
->>>>>>> origin/master
       case 'exclude_complete':
         return '-("'. $title .'")';
       default:
@@ -471,7 +402,6 @@ class similar_handler_argument_nid extends views_handler_argument_numeric {
    * Returns an array of fields that have been indexed by Similar Entries.
    */
   private static function get_field_options() {
-<<<<<<< HEAD
     $field_options = array();
     $indices = similar_get_indices();
     foreach (field_info_fields() as $field => $info) {
@@ -481,17 +411,6 @@ class similar_handler_argument_nid extends views_handler_argument_numeric {
           $field_options[$table] = $field;
         }
       }
-=======
-    $field_options = array();
-    $indices = similar_get_indices();
-    foreach (field_info_fields() as $field => $info) {
-      if ($info['type'] == 'text') {
-        $table = key($info['storage']['details']['sql'][FIELD_LOAD_CURRENT]);
-        if (isset($indices[$table])) {
-          $field_options[$table] = $field;
-        }
-      }
->>>>>>> origin/master
     }
     return $field_options;
   }
