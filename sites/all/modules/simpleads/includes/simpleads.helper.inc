@@ -223,6 +223,7 @@ function _simpleads_delete_impression($node) {
 }
 
 /**
+<<<<<<< HEAD
  * Helper procedure.
  * Deletes aggregates stats.
  *
@@ -235,6 +236,8 @@ function _simpleads_delete_aggregated($node) {
 }
 
 /**
+=======
+>>>>>>> origin/master
  * Helper functon.
  * Increases impressions counter.
  *
@@ -252,7 +255,11 @@ function _simpleads_increase_impression($node) {
  * @return boolean
  */
 function _simpleads_bot_detect() {
+<<<<<<< HEAD
   if (isset($_SERVER['HTTP_USER_AGENT']) && preg_match('/bot|crawl|slurp|spider/i', $_SERVER['HTTP_USER_AGENT'])) {
+=======
+  if (preg_match('/bot|crawl|slurp|spider/i', $_SERVER['HTTP_USER_AGENT'])) {
+>>>>>>> origin/master
     return TRUE;
   }
   else {
@@ -279,21 +286,32 @@ function _simpleads_activate_deactive_ad($node, $who = 'cron') {
     $end_time = $node->field_ad_end_date[$node->language][0]['value'];
   }
 
+<<<<<<< HEAD
   $current_status = _simpleads_get_node_status($node->nid);
 
+=======
+>>>>>>> origin/master
   $start_time = (int)strtotime($start_time);
   $end_time = (int)strtotime($end_time);
 
   $now = REQUEST_TIME;
 
   if ($start_time != '' && $end_time != '') {
+<<<<<<< HEAD
     if ($now >= $start_time && $end_time > $now && $current_status == 0) {
+=======
+    if ($now >= $start_time && $end_time > $now) {
+>>>>>>> origin/master
       $node->status = 1;
       if ($who == 'cron') {
         node_save($node);
       }
     }
+<<<<<<< HEAD
     elseif ($end_time <= $now && $current_status == 1) {
+=======
+    elseif ($end_time <= $now) {
+>>>>>>> origin/master
       $node->status = 0;
       if ($who == 'cron') {
         node_save($node);
@@ -301,7 +319,11 @@ function _simpleads_activate_deactive_ad($node, $who = 'cron') {
     }
   }
   elseif ($start_time == '' && $end_time != '') {
+<<<<<<< HEAD
     if ($end_time <= $now && $current_status == 1) {
+=======
+    if ($end_time <= $now) {
+>>>>>>> origin/master
       $node->status = 0;
       if ($who == 'cron') {
         node_save($node);
@@ -315,7 +337,11 @@ function _simpleads_activate_deactive_ad($node, $who = 'cron') {
     }
   }
   else {
+<<<<<<< HEAD
     if ($now >= $start_time && $start_time != '' && $current_status == 0) {
+=======
+    if ($now >= $start_time && $start_time != '') {
+>>>>>>> origin/master
       $node->status = 1;
       if ($who == 'cron') {
         node_save($node);
@@ -424,7 +450,11 @@ function _simpleads_ads_listing_query($filter = array()) {
 function _simpleads_validate_url($url) {
   if (!preg_match("~^(?:f|ht)tps?://~i", $url)) {
     // Allow internal url if user has access to it.
+<<<<<<< HEAD
     if (drupal_valid_path(drupal_get_normal_path($url))) {
+=======
+    if (drupal_valid_path($url)) {
+>>>>>>> origin/master
       $url = url($url, array('absolute' => TRUE));
     }
     else {
@@ -439,6 +469,7 @@ function _simpleads_validate_url($url) {
 
 /**
  * Helper function.
+<<<<<<< HEAD
  * Hide field from simpleads node form if some other module disabled,
  * but not uninstalled yet.
  * See hook_simpleads_form().
@@ -478,6 +509,8 @@ function _simpleads_show_field($field_name) {
 }
 /**
  * Helper function.
+=======
+>>>>>>> origin/master
  */
 function _simpleads_theme_attributes_init($vars) {
   $vars['attributes_array'] = array();
@@ -491,6 +524,7 @@ function _simpleads_theme_attributes_init($vars) {
     $vars['css_attributes'] = '';
   }
   return $vars;
+<<<<<<< HEAD
 }
 
 /**
@@ -503,4 +537,6 @@ function _simpleads_get_node_status($nid) {
     ->execute()
     ->fetchField();
   return (int)$node_status;
+=======
+>>>>>>> origin/master
 }

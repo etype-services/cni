@@ -37,7 +37,11 @@ class similar_handler_filter_similarity extends views_handler_filter_numeric {
         '#default_value' => !empty($this->value['value']) ? $this->value['value'] : 1,
       );
     }
+<<<<<<< HEAD
     $form['value']['value']['#prefix'] = '<div id="edit-options-value-wrapper">';
+=======
+    $form['value']['value']['#prefix'] = '<div id="edit-options-value-wrapper">';
+>>>>>>> origin/master
     $form['value']['value']['#suffix'] = '</div>';
   }
 

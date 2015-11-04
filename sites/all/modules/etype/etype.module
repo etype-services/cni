@@ -17,11 +17,17 @@ function etype_feeds_presave(FeedsSource $source, $entity, $item, $entity_id) {
 
   /* ad categories */
   $categories = array(
+<<<<<<< HEAD
     "4010" => "210",
     "4020" => "211",
     "1660" => "212",
     "100" => "213",
     "4030" => "214",
+=======
+    "1660" => "212",
+    "100" => "213",
+    "4030" => "362",
+>>>>>>> origin/master
     "0410" => "215",
     "0710" => "216",
     "0420" => "217",
@@ -39,17 +45,28 @@ function etype_feeds_presave(FeedsSource $source, $entity, $item, $entity_id) {
     "1710" => "229",
     "0740" => "230",
     "0830" => "231",
+<<<<<<< HEAD
     "4040" => "232",
     "0725" => "233",
     "0820" => "234",
     "0215" => "235",
     "4050" => "236",
     "4060" => "237",
+=======
+    "4040" => "362",
+    "0725" => "233",
+    "0820" => "234",
+    "0215" => "235",
+    "4020" => "362",
+    "4050" => "362",
+    "4060" => "362",
+>>>>>>> origin/master
     "3040" => "238",
     "1650" => "239",
     "1640" => "240",
     "1590" => "362",
     "1740" => "242",
+<<<<<<< HEAD
     "4070" => "243",
     "4080" => "244",
     "1580" => "362",
@@ -59,6 +76,17 @@ function etype_feeds_presave(FeedsSource $source, $entity, $item, $entity_id) {
     "1630" => "249",
     "0300" => "250",
     "4100" => "251",
+=======
+    "4070" => "362",
+    "4080" => "362",
+    "4090" => "362",
+    "1580" => "362",
+    "1730" => "246",
+    "0325" => "247",
+    "1630" => "249",
+    "0300" => "250",
+    "4100" => "362",
+>>>>>>> origin/master
     "0425" => "252",
     "0825" => "253",
     "1620" => "254",
@@ -66,11 +94,28 @@ function etype_feeds_presave(FeedsSource $source, $entity, $item, $entity_id) {
     "0310" => "256",
     "0910" => "258",
     "0400" => "259",
+<<<<<<< HEAD
     "0905" => "260",
     "1005" => "261",
     "1010" => "262",
     "4110" => "263",
     "4120" => "264",
+=======
+    "0905" => "286",
+    "1005" => "261",
+    "1010" => "262",
+    "4010" => "362",
+    "4110" => "362",
+    "4120" => "362",
+    "4130" => "362",
+    "4140" => "362",
+    "4150" => "362",
+    "4160" => "362",
+    "4170" => "362",
+    "4180" => "362",
+    "4190" => "362",
+    "4200" => "362",
+>>>>>>> origin/master
     "1510" => "362",
     "1600" => "266",
     "0615" => "267",
@@ -93,14 +138,20 @@ function etype_feeds_presave(FeedsSource $source, $entity, $item, $entity_id) {
     "1535" => "362",
     "1500" => "362",
     "3000" => "362",
+<<<<<<< HEAD
     "4130" => "294",
+=======
+>>>>>>> origin/master
     "0105" => "296",
     "0610" => "297",
     "0745" => "298",
     "0915" => "299",
     "0315" => "300",
     "0125" => "301",
+<<<<<<< HEAD
     "4140" => "303",
+=======
+>>>>>>> origin/master
     "0445" => "304",
     "0245" => "305",
     "0735" => "306",
@@ -108,7 +159,10 @@ function etype_feeds_presave(FeedsSource $source, $entity, $item, $entity_id) {
     "0525" => "308",
     "1520" => "362",
     "1655" => "310",
+<<<<<<< HEAD
     "4150" => "311",
+=======
+>>>>>>> origin/master
     "1550" => "362",
     "1700" => "313",
     "1530" => "362",
@@ -121,8 +175,11 @@ function etype_feeds_presave(FeedsSource $source, $entity, $item, $entity_id) {
     "0110" => "321",
     "0600" => "324",
     "0605" => "325",
+<<<<<<< HEAD
     "4180" => "326",
     "4160" => "327",
+=======
+>>>>>>> origin/master
     "3030" => "328",
     "4170" => "329",
     "0800" => "330",
@@ -132,9 +189,13 @@ function etype_feeds_presave(FeedsSource $source, $entity, $item, $entity_id) {
     "0540" => "359",
     "0720" => "337",
     "0200" => "338",
+<<<<<<< HEAD
     "4190" => "339",
     "0515" => "340",
     "4200" => "341",
+=======
+    "0515" => "340",
+>>>>>>> origin/master
     "0115" => "342",
     "0240" => "343",
     "0500" => "344",
@@ -153,6 +214,7 @@ function etype_feeds_presave(FeedsSource $source, $entity, $item, $entity_id) {
     "0405" => "358"
   );
 
+<<<<<<< HEAD
   $xml_cat = $entity->classified_category['und'][0]['tid'];
 
   $ad_cat = 0;
@@ -170,4 +232,43 @@ function etype_feeds_presave(FeedsSource $source, $entity, $item, $entity_id) {
     $entity->feeds_item->skip = TRUE;
   }
   
+=======
+  if (! isset($item['xpathparser:5'])) {
+    drupal_set_message(t("No category id for item"), 'error');
+    $entity->feeds_item->skip = TRUE;
+  } else {
+    $xml_cat = $item['xpathparser:5'];
+
+  	$ad_cat = 0;
+
+  	foreach ($categories as $k => $v) {
+      if ($xml_cat == $k) {
+     	$ad_cat = $v;
+        continue;
+      }
+    }
+
+    if ($ad_cat > 0) {
+      $entity->classified_category['und'][0]['tid'] = $ad_cat;
+    } else {
+  	  drupal_set_message(t("$xml_cat not matched"), 'error');
+      $entity->feeds_item->skip = TRUE;
+    }
+  }
+  
+}
+
+/* feeds cron job */
+function etype_cron() {
+  $interval = variable_get('etype_custom_interval', 60 * 60 * 24); // 1 day
+  // We usually don't want to act every time cron runs (which could be every
+  // minute) so keep a time for the next run in a variable.
+  if (time() >= variable_get('etype_custom_next_execution', 0))
+  {
+	$name = 'classified_ad_importer';
+  	$source = feeds_source($name);
+	$source->import();
+	variable_set('etype_custom_next_execution', time() + $interval);
+  }
+>>>>>>> origin/master
 }

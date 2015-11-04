@@ -37,7 +37,11 @@
 .sf-menu.sf-style-space li li,
 .sf-menu.sf-style-space li li li,
 .sf-menu.sf-style-space.sf-navbar {
+<<<<<<< HEAD
   background: #007DBF; font-size:13px; text-transform:uppercase;
+=======
+  background: #8EC742; font-size:13px; text-transform:uppercase;
+>>>>>>> origin/master
 }
 .sf-menu.sf-style-space li:hover,
 .sf-menu.sf-style-space li.sfHover,

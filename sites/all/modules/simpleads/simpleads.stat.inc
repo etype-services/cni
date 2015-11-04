@@ -11,8 +11,12 @@
 function _simpleads_stat_tab($nid) {
   $result = " ";
 
+<<<<<<< HEAD
   $stats_form = drupal_get_form('_simpleads_after_stats_form');
   $form_after_stats = drupal_render($stats_form);
+=======
+  $form_after_stats = drupal_render(drupal_get_form('_simpleads_after_stats_form'));
+>>>>>>> origin/master
 
   if (is_numeric($nid)) {
     $node = node_load($nid);
@@ -313,6 +317,7 @@ function _simpleads_date_diff($node) {
 function _simpleads_get_statistics($table, $nid) {
   $stats = array();
 
+<<<<<<< HEAD
   if ( $table == 'simpleads_clicks' ) {
 
     $stats['Yesterday'] = db_query("SELECT IFNULL(SUM(sc.clicks), 0) FROM {simpleads_stats} sc
@@ -421,6 +426,60 @@ function _simpleads_get_statistics($table, $nid) {
 
   }
 
+=======
+  $stats['Last Hour'] = db_select($table, 'sc')
+  ->where("FROM_UNIXTIME(sc.timestamp) <= NOW() AND FROM_UNIXTIME(sc.timestamp) >= SUBDATE(NOW(), INTERVAL 1 HOUR)")->condition("sc.nid", $nid)
+  ->countQuery()->execute()->fetchField() . '/' . db_select($table, 'sc')
+  ->where("FROM_UNIXTIME(sc.timestamp) <= NOW() AND FROM_UNIXTIME(sc.timestamp) >= SUBDATE(NOW(), INTERVAL 1 HOUR)")->condition("sc.nid", $nid)->groupBy('sc.ip_address')
+  ->countQuery()->execute()->fetchField();
+
+  $stats['Today'] = db_select($table, 'sc')
+  ->where("FROM_UNIXTIME(sc.timestamp, '%d%m%Y') = FROM_UNIXTIME(UNIX_TIMESTAMP(), '%d%m%Y')")->condition("sc.nid", $nid)
+  ->countQuery()->execute()->fetchField() . '/' . db_select($table, 'sc')
+  ->where("FROM_UNIXTIME(sc.timestamp, '%d%m%Y') = FROM_UNIXTIME(UNIX_TIMESTAMP(), '%d%m%Y')")->condition("sc.nid", $nid)->groupBy('sc.ip_address')
+  ->countQuery()->execute()->fetchField();
+
+  $stats['Yesterday'] = db_select($table, 'sc')
+  ->where("FROM_UNIXTIME(sc.timestamp) <= NOW() AND FROM_UNIXTIME(sc.timestamp) >= SUBDATE(NOW(), INTERVAL 1 DAY)")->condition("sc.nid", $nid)
+  ->countQuery()->execute()->fetchField() . '/' . db_select($table, 'sc')
+  ->where("FROM_UNIXTIME(sc.timestamp) <= NOW() AND FROM_UNIXTIME(sc.timestamp) >= SUBDATE(NOW(), INTERVAL 1 DAY)")->condition("sc.nid", $nid)->groupBy('sc.ip_address')
+  ->countQuery()->execute()->fetchField();
+
+  $stats['Last Week'] = db_select($table, 'sc')
+  ->where("FROM_UNIXTIME(sc.timestamp) <= NOW() AND FROM_UNIXTIME(sc.timestamp) >= SUBDATE(NOW(), INTERVAL 1 WEEK)")->condition("sc.nid", $nid)
+  ->countQuery()->execute()->fetchField() . '/' . db_select($table, 'sc')
+  ->where("FROM_UNIXTIME(sc.timestamp) <= NOW() AND FROM_UNIXTIME(sc.timestamp) >= SUBDATE(NOW(), INTERVAL 1 WEEK)")->condition("sc.nid", $nid)->groupBy('sc.ip_address')
+  ->countQuery()->execute()->fetchField();
+
+  $stats['Last Month'] = db_select($table, 'sc')
+  ->where("FROM_UNIXTIME(sc.timestamp) <= NOW() AND FROM_UNIXTIME(sc.timestamp) >= SUBDATE(NOW(), INTERVAL 1 MONTH)")->condition("sc.nid", $nid)
+  ->countQuery()->execute()->fetchField() . '/' . db_select($table, 'sc')
+  ->where("FROM_UNIXTIME(sc.timestamp) <= NOW() AND FROM_UNIXTIME(sc.timestamp) >= SUBDATE(NOW(), INTERVAL 1 MONTH)")->condition("sc.nid", $nid)->groupBy('sc.ip_address')
+  ->countQuery()->execute()->fetchField();
+
+  $stats['3 Months'] = db_select($table, 'sc')
+  ->where("FROM_UNIXTIME(sc.timestamp) <= NOW() AND FROM_UNIXTIME(sc.timestamp) >= SUBDATE(NOW(), INTERVAL 3 MONTH)")->condition("sc.nid", $nid)
+  ->countQuery()->execute()->fetchField() . '/' . db_select($table, 'sc')
+  ->where("FROM_UNIXTIME(sc.timestamp) <= NOW() AND FROM_UNIXTIME(sc.timestamp) >= SUBDATE(NOW(), INTERVAL 3 MONTH)")->condition("sc.nid", $nid)->groupBy('sc.ip_address')
+  ->countQuery()->execute()->fetchField();
+
+  $stats['6 Months'] = db_select($table, 'sc')
+  ->where("FROM_UNIXTIME(sc.timestamp) <= NOW() AND FROM_UNIXTIME(sc.timestamp) >= SUBDATE(NOW(), INTERVAL 6 MONTH)")->condition("sc.nid", $nid)
+  ->countQuery()->execute()->fetchField() . '/' . db_select($table, 'sc')
+  ->where("FROM_UNIXTIME(sc.timestamp) <= NOW() AND FROM_UNIXTIME(sc.timestamp) >= SUBDATE(NOW(), INTERVAL 6 MONTH)")->condition("sc.nid", $nid)->groupBy('sc.ip_address')
+  ->countQuery()->execute()->fetchField();
+
+  $stats['1 year'] = db_select($table, 'sc')
+  ->where("FROM_UNIXTIME(sc.timestamp) <= NOW() AND FROM_UNIXTIME(sc.timestamp) >= SUBDATE(NOW(), INTERVAL 1 YEAR)")->condition("sc.nid", $nid)
+  ->countQuery()->execute()->fetchField() . '/' . db_select($table, 'sc')
+  ->where("FROM_UNIXTIME(sc.timestamp) <= NOW() AND FROM_UNIXTIME(sc.timestamp) >= SUBDATE(NOW(), INTERVAL 1 YEAR)")->condition("sc.nid", $nid)->groupBy('sc.ip_address')
+  ->countQuery()->execute()->fetchField();
+
+  $stats['All Time'] = db_select($table)->condition('nid', $nid)->countQuery()->execute()->fetchField() . '/' . db_select($table)->condition('nid', $nid)->groupBy('ip_address')->countQuery()->execute()->fetchField();
+
+  t('Last Hour');
+  t('Today');
+>>>>>>> origin/master
   t('Yesterday');
   t('Last Week');
   t('Last Month');

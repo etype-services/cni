@@ -1,9 +1,17 @@
+<<<<<<< HEAD
+=======
+#mm0 {
+    display: none !important;
+}
+
+>>>>>>> origin/master
 /** 
 
 Note: Design for a width of 768px
 
 **/
 
+<<<<<<< HEAD
 @media only screen and (min-width: 959px) {
 
     #block-superfish-1 .content {
@@ -43,6 +51,9 @@ Note: Design for a width of 768px
 
 @media only screen and (min-width: 768px) and (max-width: 959px) {
 
+=======
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+>>>>>>> origin/master
     #block-block-1 {
         display: none
     }
@@ -82,6 +93,7 @@ Note: Design for a width of 768px
         top: 130px;
         font-size: 11px;
     }
+<<<<<<< HEAD
     
     #views_slideshow_cycle_main_slideshow-block {
         margin-left: 20px;
@@ -90,6 +102,8 @@ Note: Design for a width of 768px
     .views-slideshow-controls-bottom {
         margin-top: 44px;
     }
+=======
+>>>>>>> origin/master
 
     /* Slideshow controls */
     .view-slideshow .views-slideshow-controls-bottom .views-field-field-image img, .view-slideshow .views-slideshow-controls-bottom .views-field-field-video img {
@@ -102,11 +116,14 @@ Note: Design for a width of 768px
         width: 195px;
         height: 120px;
     }
+<<<<<<< HEAD
     
     #block-dfp-cni-fernandinamobile {
 		display: none;
   		visibility: hidden;
 	}
+=======
+>>>>>>> origin/master
 
 }
 
@@ -190,6 +207,7 @@ Note: Design for a width of 300px
         height: 180px;
     }
     
+<<<<<<< HEAD
     #views_slideshow_cycle_main_slideshow-block {
         margin-left: 20px;
         margin-top: 20px;
@@ -197,6 +215,13 @@ Note: Design for a width of 300px
     .views-slideshow-controls-bottom {
         margin-top: 34px;
     }
+=======
+    /* Hide some DFP ads on non full-size browsers */
+    #block-dfp-cni-claytonleaderboard, #block-dfp-cni-claytonfooter, #block-dfp-cni-claytonbanner {
+  		display: none;
+  		visibility: hidden;
+	}
+>>>>>>> origin/master
 
 }
 
@@ -276,6 +301,7 @@ Note: Design for a width of 420px
 
 }
 
+<<<<<<< HEAD
 @media only screen and (max-width: 479px) {
 	.site-logo {
 		width: 320px;
@@ -432,3 +458,5 @@ Note: Design for a width of 420px
   		visibility: visible;
 	}
 }
+=======
+>>>>>>> origin/master
