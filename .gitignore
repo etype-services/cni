@@ -16,8 +16,4 @@ error_log
 keys
 temp
 Archive.zip
-<<<<<<< HEAD
 *Rate_Card*.pdf
-=======
-*Rate_Card*.pdf
->>>>>>> origin/master
