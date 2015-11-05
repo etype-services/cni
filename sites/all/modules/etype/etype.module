@@ -156,6 +156,6 @@ function etype_cron() {
 	$name = 'classified_ad_importer';
   	$source = feeds_source($name);
 	$source->import();
-	variable_set('etype_custom_next_execution', time() + $interval);
+	// variable_set('etype_custom_next_execution', time() + $interval);
   // }
 }
