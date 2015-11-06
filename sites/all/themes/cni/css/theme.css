@@ -2,9 +2,9 @@
 --------------------------------------------------------------------------*/
 
 body {
-    font-size: 12px;
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.5em;
+    font-size: 1em;
+    font-family: "Adobe Garamond Pro", Arial, Helvetica, sans-serif;
+    line-height: 1.3em;
     color: #444444;
     background: #ffffff;
 }
@@ -138,6 +138,7 @@ h3.site-slogan {
     left: -20px;
     background: url(../images/trans.png);
     color: #ffffff;
+    font-family: 'Lato', sans-serif;
 }
 
 .view-slideshow .views_slideshow_main .views-field-title a {
@@ -156,6 +157,10 @@ h3.site-slogan {
     left: -20px;
     background: url(../images/trans.png);
     color: #ffffff;
+}
+
+.view-slideshow .views_slideshow_main .views-more-link {
+	color: #ffffff;
 }
 
 /* Slideshow controls */
@@ -239,12 +244,21 @@ h3.site-slogan {
     color: #999999;
 }
 
-.preface-wrapper h3 {
-    font-size: 18px;
+.preface-wrapper .block-inner h3.title {
+    font-size: 2em;
 }
 
-.preface-wrapper h3 span {
-    padding-right: 5px;
+.preface-wrapper .block-inner .views-field-title h3 {
+	line-height: 1.5em;
+	margin-bottom: 3pt;
+}
+
+.preface-wrapper .block-inner .views-field-title h3 a {
+	
+}
+
+.preface-wrapper .block-inner .views-field-body {
+    
 }
 
 /* MAIN CONTENT 
@@ -258,7 +272,7 @@ h3.site-slogan {
     padding: 20px;
     margin-bottom: 20px;
     border: 1px solid #ddd;
-    border-bottom: 3px solid #007DBF;
+    border-bottom: 3px solid #111111;
     background: #ffffff;
     box-shadow: 0 1px 5px #bbbbbb;
 }
@@ -276,12 +290,7 @@ article .field-image {
 }
 
 .sidebar h3 {
-    background: url(../images/h3-bg.png) right center repeat-x;
-}
-
-.sidebar h3 span {
-    padding-right: 5px;
-    background: #f9f9f9;
+    font-size: 2em;
 }
 
 /* POSTSCRIPT 
@@ -478,6 +487,7 @@ article .field-image {
     min-height:33px;
     max-height: 85px;
     margin: 0;
+    font-family: 'Lato', sans-serif;
 }
 
 #main-menu ul.menu li a {
@@ -503,8 +513,12 @@ article .field-image {
 /* Custom Menu styling */
 
 #block-superfish-1 {
-    background-color: #007DBF;
+    background-color: #111111;
     height: 33px;
+}
+
+.sf-menu.sf-style-space li, .sf-menu.sf-style-space li li, .sf-menu.sf-style-space li li li, .sf-menu.sf-style-space.sf-navbar {
+    background: #111111;
 }
 
 #block-superfish-1 .content {
