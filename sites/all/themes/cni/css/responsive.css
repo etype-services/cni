@@ -198,6 +198,13 @@ Note: Design for a width of 300px
         margin-top: 34px;
     }
 
+    /* DFP ADS
+    --------------------------------------------------------------------------*/
+    /* Hide some DFP ads on non full-size browsers */
+    #block-dfp-cni-toccoaleaderboard {
+        display: none;
+        visibility: hidden;
+    }
 }
 
 /** 
