@@ -1323,43 +1323,13 @@ blockquote {
     padding: 0;
 }
 
-#dfp-ad-banner_top > img {
-    max-width: 100% !important;
-}
+#block-dfp-cni-toccoaleaderboard {width:728px; margin: 1.6em auto 0 auto;}
+#block-dfp-cni-toccoaleaderboard iframe {width:728px; height:90px;}
 
-#block-dfp-sidebar-1 .block-inner .content {
-    padding: 0;
-}
+#block-dfp-cni-toccoapromo {width:300px;}
+#block-dfp-cni-toccoapromo iframe {width:300px; height:250px;}
 
-#dfp-ad-sidebar_1 {
-    max-width: 300px;
-    overflow: hidden;
-}
-
-#block-dfp-cni-fernandinaleaderboard {width:728px; margin: 1.6em auto 0 auto;}
-#block-dfp-cni-fernandinaleaderboard iframe {width:728px; height:90px;}
-
-#block-dfp-cni-fernandinasidebar1 {width:300px;}
-#block-dfp-cni-fernandinasidebar1 iframe {width:300px; height:250px;}
-
-#block-dfp-cni-fernandinasidebar2 {width:300px;}
-#block-dfp-cni-fernandinasidebar2 iframe {width:300px; height:250px;}
-
-#block-dfp-cin-fernandinaministrip {width:300px;}
-#block-dfp-cin-fernandinaministrip iframe {width:300px; height:100px;}
-
-#block-dfp-cni-fernandinafooter {width:728px; margin: 5px auto;}
-#block-dfp-cni-fernandinafooter iframe {width:728px; height:90px;}
 
 .block-dfp .content {
-	padding-top: 0;
-}
-
-#block-dfp-cni-fernaninaweather {
-	margin-right: 1em;
-}
-
-#block-dfp-cni-fernandinamobile {
-	width:130px; 
-	margin: 1.6em auto 1.6em auto;
+    padding-top: 0;
 }
