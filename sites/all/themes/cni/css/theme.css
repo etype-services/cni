@@ -1126,7 +1126,8 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
     padding: 0;
     color: #000;
 }
-#block-block-1 {float: right; display: block. width: 300px; clear: none;}
+
+#block-block-1 {float: right; display: block; width: 300px; clear: none;}
 
 #block-block-17 .block-inner {
     padding: 5px;
@@ -1331,9 +1332,6 @@ blockquote {
 
 #block-dfp-cni-toccoasidebar2 {width:300px;}
 #block-dfp-cni-toccoasidebar2 iframe {width:300px; height:250px;}
-
-
-
 
 .block-dfp .content {
     padding-top: 0;
