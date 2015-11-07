@@ -201,7 +201,7 @@ Note: Design for a width of 300px
     /** DFP ADS
     --------------------------------------------------------------------------*/
     /* Hide some DFP ads on non full-size browsers */
-    #block-dfp-cni-toccoaleaderboard {
+    #block-dfp-cni-toccoaleaderboard, #block-dfp-cni-toccoabanner {
         display: none;
         visibility: hidden;
     }
@@ -428,13 +428,13 @@ Note: Design for a width of 420px
     }
     
     /* Hide some DFP ads on non full-size browsers */
-    #block-dfp-cni-fernandinaleaderboard, #block-dfp-cni-whitebanner, #block-dfp-cni-whitefooter1 {
+    #block-dfp-cni-toccoaleaderboard, #block-dfp-cni-toccoabanner, #block-dfp-cni-toccoafooter {
   		display: none;
   		visibility: hidden;
 	}
 	
 	/* show mobile ad on smaller windows */
-	#block-dfp-cni-fernandinamobile {
+	#block-dfp-cni-toccoamobile {
 		display: block;
   		visibility: visible;
 	}
