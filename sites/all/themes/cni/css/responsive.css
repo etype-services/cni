@@ -382,7 +382,7 @@ Note: Design for a width of 420px
     	margin-left: 1em;
     }
     
-    #block-dfp-cni-fernandinamobile {
+    #block-dfp-cni-__site__mobile {
 		display: none;
   		visibility: hidden;
 	}
@@ -421,13 +421,13 @@ Note: Design for a width of 420px
     }
     
     /* Hide some DFP ads on non full-size browsers */
-    #block-dfp-cni-fernandinaleaderboard, #block-dfp-cni-whitebanner, #block-dfp-cni-whitefooter1 {
+    #block-dfp-cni-__site__leaderboard, #block-dfp-cni-__site__banner, #block-dfp-cni-__site__footer {
   		display: none;
   		visibility: hidden;
 	}
 	
 	/* show mobile ad on smaller windows */
-	#block-dfp-cni-fernandinamobile {
+	#block-dfp-cni-__site__mobile {
 		display: block;
   		visibility: visible;
 	}
