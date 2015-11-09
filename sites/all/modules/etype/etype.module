@@ -6,12 +6,17 @@
  *
  */
 
-$items['etype_cron'] = array(
-  'description' => 'Import Classified Ads',
-  'rule' => '0 6 * * * *',
-  'callback' => 'etype_classified_ad_importer',
-  'arguments' => array('all'),
-);
+function etype_cronapi($op, $job = NULL) {
+
+  $items['etype_cron'] = array(
+    'description' => 'Import Classified Ads',
+    'rule' => '0 6 * * * *',
+    'callback' => 'etype_classified_ad_importer',
+    'arguments' => array('all'),
+  );
+
+  return $items;
+}
 
 /**
  * map xml classified categories to Drupal taxonomy items
