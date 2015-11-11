@@ -59,7 +59,6 @@ Note: Design for a width of 768px
 
     .node .content img {
         max-width: 450px;
-        max-height: auto;
     }
 
     /* SLIDESHOW
@@ -296,7 +295,7 @@ Note: Design for a width of 420px
         display: none;
     }
 
-    #block-superfish-1 ul {
+    #main-menu ul.menu {
         margin: 0;
     }
     
