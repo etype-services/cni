@@ -257,8 +257,14 @@ h3.site-slogan {
 	
 }
 
-.preface-wrapper .block-inner .views-field-body {
-    padding-bottom: 0.1em;
+.preface-wrapper .block-inner .views-field-body p {
+    padding-bottom: 0em;
+}
+
+.preface-wrapper .block-inner .views-field-field-dateline {
+    font-family: "Lato";
+    font-size: 0.8em;
+    font-style: italic;
 }
 
 /* MAIN CONTENT 
