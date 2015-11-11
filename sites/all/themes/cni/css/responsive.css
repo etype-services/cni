@@ -294,10 +294,6 @@ Note: Design for a width of 420px
     #block-superfish-1 ul #menu-1797-1 {
         display: none;
     }
-
-    #main-menu ul.menu {
-        margin: 0;
-    }
     
     /* drop-down menu */
     .sf-menu.sf-style-space.sf-navbar li ul {
@@ -346,6 +342,10 @@ Note: Design for a width of 420px
 
     #block-superfish-1 ul li:first-child {
         display: list-item;
+    }
+
+    #main-menu ul.menu {
+        margin: 0;
     }
 
     #main-menu ul.menu li  {
