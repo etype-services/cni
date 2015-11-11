@@ -278,7 +278,7 @@ h3.site-slogan {
     padding-bottom: 0em;
 }
 
-.preface-wrapper .block-inner .views-field-field-dateline p {
+.preface-wrapper .block-inner .views-field-field-dateline {
     font-family: "Lato";
     font-size: 0.8em;
     font-style: italic;
