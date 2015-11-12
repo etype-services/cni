@@ -227,7 +227,8 @@ function etype_classified_ad_importer() {
         $query->entityCondition('entity_type', 'clasified')
           ->fieldCondition('field_guid', 'value', $ad->ItemId, '=');
         $result = $query->execute();
-        echo $result . '<br /><br />';
+        print_r($result);
+        echo '<br /><br />';
       }
     }
   }
