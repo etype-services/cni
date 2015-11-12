@@ -1,10 +1,48 @@
-/**
+/** 
 
 Note: Design for a width of 768px
 
 **/
 
+@media only screen and (min-width: 959px) {
+
+    #block-superfish-1 .content {
+        width: 900px;
+    }
+
+}
+
+@media only screen and (max-width: 958px) {
+
+    #block-superfish-1 .content {
+        width: 887px;
+    }
+
+}
+
+@media only screen and (max-width: 949px) {
+
+    #main-menu ul.menu li a {
+        padding: 0 10px;
+    }
+
+}
+
+@media only screen and (max-width: 910px) {
+
+    #main-menu ul.menu li a {
+        font-size: 10px;
+        font-weight: bold;
+    }
+
+    #block-superfish-1 .content {
+        width: 744px;
+    }
+
+}
+
 @media only screen and (min-width: 768px) and (max-width: 959px) {
+
     #block-block-1 {
         display: none
     }
@@ -43,6 +81,14 @@ Note: Design for a width of 768px
         top: 130px;
         font-size: 11px;
     }
+    
+    #views_slideshow_cycle_main_slideshow-block {
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+    .views-slideshow-controls-bottom {
+        margin-top: 44px;
+    }
 
     /* Slideshow controls */
     .view-slideshow .views-slideshow-controls-bottom .views-field-field-image img, .view-slideshow .views-slideshow-controls-bottom .views-field-field-video img {
@@ -55,12 +101,12 @@ Note: Design for a width of 768px
         width: 195px;
         height: 120px;
     }
+    
+    #block-dfp-cni-fernandinamobile {
+		display: none;
+  		visibility: hidden;
+	}
 
-    /* DFP Ads */
-    #block-dfp-cni-__site__mobile {
-        display: none;
-        visibility: hidden;
-    }
 }
 
 /** 
@@ -68,7 +114,6 @@ Note: Design for a width of 300px
 **/
 
 @media only screen and (max-width: 767px) {
-
     #block-block-1 {
         display: none
     }
@@ -144,17 +189,21 @@ Note: Design for a width of 300px
         height: 180px;
     }
     
-    /* Hide some DFP ads on non full-size browsers */
-    #block-dfp-cni-__site__leaderboard, #block-dfp-cni-__site__banner, #block-dfp-cni-__site__footer {
-  		display: none;
-  		visibility: hidden;
-	}
-
-    #block-dfp-cni-__site__mobile {
-        display: block;
-        visibility: visible;
+    #views_slideshow_cycle_main_slideshow-block {
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+    .views-slideshow-controls-bottom {
+        margin-top: 34px;
     }
 
+    /** DFP ADS
+    --------------------------------------------------------------------------*/
+    /* Hide some DFP ads on non full-size browsers */
+    #block-dfp-cni-toccoaleaderboard, #block-dfp-cni-toccoabanner {
+        display: none;
+        visibility: hidden;
+    }
 }
 
 /** 
@@ -168,6 +217,7 @@ Note: Design for a width of 420px
 
     .node .content img {
         max-width: 380px;
+        max-height: auto;
     }
 
     .node-teaser .field-name-field-image img {
@@ -232,3 +282,163 @@ Note: Design for a width of 420px
 
 }
 
+@media only screen and (max-width: 479px) {
+	.site-logo {
+		width: 320px;
+	}
+}
+
+/* mobile menu setup */
+@media only screen and (min-width: 759px) {
+
+    #block-superfish-1 ul #menu-1797-1 {
+        display: none;
+    }
+    
+    /* drop-down menu */
+    .sf-menu.sf-style-space.sf-navbar li ul {
+   		background-color: transparent;
+	}
+	
+	#main-menu ul.menu li ul {
+		background: transparent none repeat scroll 0% 0%;
+		width: inherit;
+	}
+	
+	#main-menu ul.menu li ul li {
+		background-color: #cccccc;
+	}
+	
+	#main-menu ul.menu li li a, #main-menu ul.menu li li a.active {
+		padding: 0 10px;
+		color: #000000;
+	}
+	
+	#main-menu ul.menu li ul li a:hover, 
+	#main-menu ul.menu li li a:hover,
+	#main-menu ul.menu li ul li a.active:hover {
+		background-color: #eaeaea;
+	}
+}
+
+/* narrower screen */
+@media only screen and (max-width: 759px) {
+
+    #superfish-1 {
+        display: block !important;
+    }
+
+    #block-superfish-1 {
+        height: auto;
+    }
+
+    #block-superfish-1 .content {
+        width: auto;
+    }
+
+    #block-superfish-1 ul li {
+        display: none;
+    }
+
+    #block-superfish-1 ul li:first-child {
+        display: list-item;
+    }
+
+    #main-menu ul.menu {
+        margin: 0;
+    }
+
+    #main-menu ul.menu li  {
+        float: none;
+        list-style: disc;
+    }
+
+    #main-menu ul.menu li a {
+        background: url("../images/mobile_menu.png") no-repeat scroll 7px 8px transparent;
+        color: #ffffff;
+        display: block;
+        font-weight: bold;
+        height: 30px;
+        margin-top: 0;
+        padding: 7px 15px 0 26px;
+        line-height: 22px;
+        text-decoration: none;
+        -moz-transition: background-color 0.5s ease-out;
+        -o-transition: background-color 0.5s ease-out;
+        -webkit-transition: background-color 0.5s ease-out;
+        transition: background-color 0.5s ease-out;
+    }
+
+    #main-menu ul.menu li a:hover {
+        background: url("../images/mobile_menu.png") no-repeat scroll 7px 8px transparent;
+        color: #ffffff;
+    }
+
+}
+
+@media only screen and (min-width: 960px) {
+    #dfp-ad-banner_top {
+        width: 728px;
+        margin: 20px auto 0 auto;
+    }
+    #dfp-ad-banner {
+        width: 468px;
+        margin: 0px auto 0px 83px;
+    }
+    
+    .region-headerad {
+    	float: right;
+    	margin-top: 2em;
+    	margin-left: 1em;
+    }
+    
+    #block-dfp-cni-fernandinamobile {
+		display: none;
+  		visibility: hidden;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+
+    #dfp-ad-banner_top {
+        width: 728px;
+        margin: 20px auto 0;
+    }
+    #dfp-ad-banner {
+        margin: 0px auto 0px 15px;
+    }
+    
+    .site-logo {
+    	width: 448px;
+    	margin-left: 2em;
+    	margin-right: 1em;
+    }
+    
+    .region-headerad {
+    	float: right;
+    	margin-top: 2em;
+    	margin-left: 1em;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    #dfp-ad-banner_top {
+        width: 728px;
+        margin: 20px auto;
+    }
+    #dfp-ad-banner {
+        margin: 0px auto 0px 15px;
+    }
+    
+    /* Hide some DFP ads on non full-size browsers */
+    #block-dfp-cni-toccoaleaderboard, #block-dfp-cni-toccoabanner, #block-dfp-cni-toccoafooter {
+  		display: none;
+  		visibility: hidden;
+	}
+	
+	/* show mobile ad on smaller windows */
+	#block-dfp-cni-toccoamobile {
+		display: block;
+  		visibility: visible;
+	}
+}
