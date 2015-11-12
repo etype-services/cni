@@ -222,7 +222,7 @@ function etype_classified_ad_importer() {
     $ad_obj = simplexml_load_string($xml, 'SimpleXMLElement', LIBXML_NOCDATA);
     if (count($ad_obj) > 0) {
       foreach($ad_obj as $ad) {
-        var_dump($ad);
+        echo $ad->ItemId . '<br />';
       }
     }
   }
