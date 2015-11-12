@@ -6,6 +6,19 @@
  *
  */
 
+/* runs at 2 am */
+function etype_cronapi($op, $job = NULL) {
+
+  $items['etype_cron'] = array(
+    'description' => 'Import Classified Ads',
+    'rule' => '0 2 * * * *',
+    'callback' => 'etype_classified_ad_importer',
+    'arguments' => array('all'),
+  );
+
+  return $items;
+}
+
 /**
  * map xml classified categories to Drupal taxonomy items
  * @param FeedsSource $source
@@ -154,7 +167,6 @@ function etype_feeds_presave(FeedsSource $source, $entity, $item, $entity_id) {
     "0405" => "358"
   );
 
-
   if (! isset($item['xpathparser:5'])) {
     drupal_set_message(t("No category id for item"), 'error');
     $entity->feeds_item->skip = TRUE;
@@ -181,15 +193,8 @@ function etype_feeds_presave(FeedsSource $source, $entity, $item, $entity_id) {
 }
 
 /* feeds cron job */
-function etype_cron() {
-  // $interval = variable_get('etype_custom_interval', 60 * 60 * 24); // 1 day
-  // We usually don't want to act every time cron runs (which could be every
-  // minute) so keep a time for the next run in a variable.
-  // if (time() >= variable_get('etype_custom_next_execution', 0))
-  // {
-	$name = 'classified_ad_importer';
-  	$source = feeds_source($name);
-	$source->import();
-	// variable_set('etype_custom_next_execution', time() + $interval);
-  // }
+function etype_classified_ad_importer() {
+  $name = 'classified_ad_importer';
+  $source = feeds_source($name);
+  $source->import();
 }
