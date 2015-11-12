@@ -16,9 +16,8 @@
             </nav>
         <?php endif; ?>
 
-		
-        <div class="header-wrapper ">
-            <div class="header-wrapper-inner ">
+        <div class="header-wrapper clearfix">
+            <div class="header-wrapper-inner <?php echo $grid_full_width ?>">
                 <header>
 
                     <?php if ($logo): ?>
@@ -27,8 +26,6 @@
                                                                               alt="<?php print $site_name; ?>"/></a>
                         </div><?php print render($page['header']) ?>
                     <?php endif; ?>
-                    
-                    <?php print render($page['headerad']) ?>
 
                 </header>
 
@@ -36,7 +33,6 @@
         </div>
     </div>
 </div>
-
 
 <?php if ($page['main_menu']): ?>
     <div class="main-menu-wrapper clearfix">
@@ -92,7 +88,6 @@
                             <?php print render($page['content']); ?>
                             <?php if ($action_links): ?>
                                 <ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
-                            <?php print render($page['content_bottom']); ?>
                         </div>
 
                             <aside class="sidebar second-sidebar grid_4 clearfix">
@@ -104,6 +99,9 @@
                 </section>
             </div>
         </div>
+        
+         <?php print render($page['content_bottom']); ?>
+         
         <?php if ($page['postscript_1'] || $page['postscript_2'] || $page['postscript_3'] || $page['postscript_4']): ?>
             <div class="postscript-wrapper clearfix">
                 <div class="postscript-wrapper-inner">
