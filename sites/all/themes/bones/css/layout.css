@@ -23,7 +23,7 @@
 
 /* Sidebars Both Second */
 
-.sidebars-both-second .first-sidebar, sidebars-both-second .main-inner, .sidebars-both-second .second-sidebar  {
+.sidebars-both-second .first-sidebar, .sidebars-both-second .main-inner, .sidebars-both-second .second-sidebar  {
 	float: right;
 }
 
