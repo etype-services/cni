@@ -1333,3 +1333,10 @@ blockquote {
 .block-dfp .content {
     padding-top: 0;
 }
+
+/* Captcha remonder */
+#edit-captcha.collapsed {
+    width: 265px;
+    position: relative;
+    top: 0.7em;
+}
