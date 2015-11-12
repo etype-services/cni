@@ -1,8 +1,4 @@
-#mm0 {
-    display: none !important;
-}
-
-/** 
+/**
 
 Note: Design for a width of 768px
 
@@ -25,7 +21,6 @@ Note: Design for a width of 768px
 
     .node .content img {
         max-width: 450px;
-        max-height: auto;
     }
 
     /* SLIDESHOW
@@ -61,6 +56,11 @@ Note: Design for a width of 768px
         height: 120px;
     }
 
+    /* DFP Ads */
+    #block-dfp-cni-__site__mobile {
+        display: none;
+        visibility: hidden;
+    }
 }
 
 /** 
@@ -68,6 +68,7 @@ Note: Design for a width of 300px
 **/
 
 @media only screen and (max-width: 767px) {
+
     #block-block-1 {
         display: none
     }
@@ -144,10 +145,15 @@ Note: Design for a width of 300px
     }
     
     /* Hide some DFP ads on non full-size browsers */
-    #block-dfp-cni-whiteleaderboard1, #block-dfp-cni-whitebanner, #block-dfp-cni-whitefooter1 {
+    #block-dfp-cni-__site__leaderboard, #block-dfp-cni-__site__banner, #block-dfp-cni-__site__footer {
   		display: none;
   		visibility: hidden;
 	}
+
+    #block-dfp-cni-__site__mobile {
+        display: block;
+        visibility: visible;
+    }
 
 }
 
@@ -162,7 +168,6 @@ Note: Design for a width of 420px
 
     .node .content img {
         max-width: 380px;
-        max-height: auto;
     }
 
     .node-teaser .field-name-field-image img {

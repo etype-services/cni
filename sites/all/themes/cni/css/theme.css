@@ -1335,6 +1335,7 @@ blockquote {
     overflow: hidden;
 }
 
+/*
 #block-dfp-cni-__site__leaderboard {width:728px; margin: 1.6em auto 0 auto;}
 #block-dfp-cni-__site__leaderboard iframe {width:728px; height:90px;}
 
@@ -1349,11 +1350,13 @@ blockquote {
 
 #block-dfp-cni-__site__footer {width:728px; margin: 5px auto;}
 #block-dfp-cni-__site__footer iframe {width:728px; height:90px;}
+*/
 
 .block-dfp .content {
 	padding-top: 0;
 }
 
+/*
 #block-dfp-cni-__site__weather {
 	margin-right: 1em;
 }
@@ -1362,3 +1365,4 @@ blockquote {
 	width:130px; 
 	margin: 1.6em auto 1.6em auto;
 }
+*/
