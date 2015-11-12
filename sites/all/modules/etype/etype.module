@@ -6,6 +6,21 @@
  *
  */
 
+/**
+ * Implements hook_menu().
+ */
+function etype_menu() {
+
+  $items = array();
+
+  $items['etype_cron'] = array(
+    'title' => 'Import Classified Ads',
+    'page callback' => 'etype_classified_ad_importer',
+    'type' => MENU_CALLBACK,
+  );
+
+}
+
 /* run job at 3:00 am */
 function etype_cronapi($op, $job = NULL) {
 
