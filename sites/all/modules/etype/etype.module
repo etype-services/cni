@@ -223,6 +223,11 @@ function etype_classified_ad_importer() {
     if (count($ad_obj) > 0) {
       foreach($ad_obj as $ad) {
         echo $ad->ItemId . '<br />';
+        $query = new EntityFieldQuery();
+        $query->entityCondition('entity_type', 'clasified')
+          ->fieldCondition('field_guid', 'value', $ad->ItemId, '=');
+        $result = $query->execute();
+        echo $result . '<br /><br />';
       }
     }
   }
