@@ -13,10 +13,11 @@ function etype_menu() {
 
   $items = array();
 
-  $items['etype_cron'] = array(
-    'title' => 'Import Classified Ads',
+  $items['etype-classified-import'] = array(
+    'title' => t('Import Classified Ads'),
     'page callback' => 'etype_classified_ad_importer',
     'type' => MENU_CALLBACK,
+    'access arguments' => array('access administration pages')
   );
 
 }
