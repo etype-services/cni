@@ -181,11 +181,47 @@ function etype_feeds_presave(FeedsSource $source, $entity, $item, $entity_id) {
   
 }
 
+function etype_entity_create($item = array(), $values = array(), $entity_type =
+'node')
+{
+
+  // entity_create replaces the procedural steps in the first example of
+  // creating a new object $node and setting its 'type' and uid property
+
+  $entity = entity_create($entity_type, $values);
+  // The entity is now created, but we have not yet simplified use of it.
+  // Now create an entity_metadata_wrapper around the new node entity
+  // to make getting and setting values easier
+  $ewrapper = entity_metadata_wrapper($entity_type, $entity);
+  // Using the wrapper, we do not have to worry about telling Drupal
+  // what language we are using. The Entity API handles that for us.
+  if (count($item) > 0)
+  {
+    foreach ($item as $k => $v)
+    {
+      switch ($k)
+      {
+        case 'title':
+          $title = html_entity_decode($v); // for some reason & are being inserted as '&amp;'
+          $ewrapper->$k->set($title);
+          break;
+
+        default:
+          $ewrapper->$k->set($v);
+
+      }
+    }
+  }
+  $ewrapper->save(TRUE);
+}
+
 /* feeds cron job */
 function etype_classified_ad_importer() {
   $xml = file_get_contents('http://www.etypeclassifieds.com/toccoaxml/CNI_CTR.xml');
   if ($xml !== FALSE) {
     $ads = new SimpleXMLElement($xml);
-    var_dump($ads);
+    if (count($ads) > 0) {
+      print_r($ads);
+    }
   }
 }
