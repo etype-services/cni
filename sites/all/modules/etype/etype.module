@@ -221,7 +221,7 @@ function etype_classified_ad_importer() {
   if ($xml !== FALSE) {
     $ads = new SimpleXMLElement($xml);
     if (count($ads) > 0) {
-      print_r($ads);
+      var_dump($ads);
     }
   }
 }
