@@ -224,7 +224,7 @@ function etype_classified_ad_importer() {
       foreach($ad_obj as $ad) {
         echo $ad->ItemId . '<br />';
         $query = new EntityFieldQuery();
-        $query->entityCondition('entity_type', 'clasified')
+        $query->entityCondition('entity_type', 'classified')
           ->fieldCondition('field_guid', 'value', $ad->ItemId, '=');
         $result = $query->execute();
         print_r($result);
