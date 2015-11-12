@@ -20,6 +20,8 @@ function etype_menu() {
     'access arguments' => array('access administration pages')
   );
 
+  return $items;
+
 }
 
 /* run job at 3:00 am */
