@@ -183,8 +183,7 @@ function etype_feeds_presave(FeedsSource $source, $entity, $item, $entity_id) {
 
 /* feeds cron job */
 function etype_classified_ad_importer() {
-  $xml = file_get_contents('http://www.etypeclassifieds
-  .com/toccoaxml/CNI_CTR.xml');
+  $xml = file_get_contents('http://www.etypeclassifieds.com/toccoaxml/CNI_CTR.xml');
   if ($xml !== FALSE) {
     echo $xml;
   }
