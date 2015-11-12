@@ -6,11 +6,12 @@
  *
  */
 
+/* run job at 3:00 am */
 function etype_cronapi($op, $job = NULL) {
 
   $items['etype_cron'] = array(
     'description' => 'Import Classified Ads',
-    'rule' => '0 6 * * * *',
+    'rule' => '0 3 * * * *',
     'callback' => 'etype_classified_ad_importer',
     'arguments' => array('all'),
   );
