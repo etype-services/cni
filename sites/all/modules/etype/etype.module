@@ -266,9 +266,9 @@ function etype_classified_ad_importer() {
             'category' => $array['categoryId'],
             'field_guid' => $array['ItemId']
           );
-          print_r($node);
-          // $values['created'] = strtotime($ad->startDate);
-          // etype_entity_create($node, $values);
+          // print_r($node);
+          $values['created'] = strtotime($ad->startDate);
+          etype_entity_create($node, $values);
           $i++;
         }
         echo "\r\n\r\n";
