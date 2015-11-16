@@ -11,7 +11,7 @@ function etype_cronapi($op, $job = NULL) {
 
   $items['etype_cron'] = array(
     'description' => 'Import Classified Ads',
-    'rule' => '0 3 * * * *',
+    'rule' => '0 3 * * *',
     'callback' => 'etype_classified_ad_importer',
     'arguments' => array('all'),
   );
