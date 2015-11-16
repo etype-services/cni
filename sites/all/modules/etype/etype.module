@@ -237,7 +237,12 @@ function etype_classified_ad_importer() {
     $i = 0;
     if (count($ad_obj) > 0) {
       foreach($ad_obj as $ad) {
-        var_dump($ad);
+        $array = array();
+        foreach($ad as $k => $v) {
+          $array[$k] = $v[0];
+        }
+
+        print_r($array);
         // echo $ad->ItemId . "\r\n";
         $query = new EntityFieldQuery();
         $query->entityCondition('entity_type', 'node')
@@ -249,7 +254,7 @@ function etype_classified_ad_importer() {
           echo 'No node found' . "\r\n";
           // save new node
           $node = array(
-            'title' => $ad->ItemTitle['0'],
+            'title' => str$ad->ItemTitle,
             'body' => $ad->ItemDesc,
             'field_expires' => $ad->expDate,
             'category' => $ad->categoryId,
