@@ -260,14 +260,14 @@ function etype_classified_ad_importer() {
           // echo 'No node found' . "\r\n";
           // save new node
           $node = array(
-            'title' => $array['ItemTitle'],
+            'title' => $array['ItemTitle']/*,
             'body' => $array['ItemDesc'],
             'field_expires' => $array['expDate'],
             'category' => $array['categoryId'],
-            'field_guid' => $array['ItemId']
+            'field_guid' => $array['ItemId']*/
           );
           // print_r($node);
-          $values['created'] = strtotime($array['startDate']);
+          // $values['created'] = strtotime($array['startDate']);
           etype_entity_create($node, $values);
           $i++;
         }
