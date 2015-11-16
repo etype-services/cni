@@ -197,7 +197,6 @@ function etype_entity_create($item = array(), $values = array(), $entity_type = 
 
         case 'body':
           $ewrapper->body->set(array('value' => $v));
-          $ewrapper->body->summary->set($v);
           break;
 
         case 'field_expires':
@@ -272,7 +271,7 @@ function etype_classified_ad_importer() {
             'field_guid' => $array['ItemId']*/
           );
           // print_r($node);
-          // $values['created'] = strtotime($array['startDate']);
+          $values['created'] = strtotime($array['startDate']);
           etype_entity_create($node, $values);
           $i++;
         }
