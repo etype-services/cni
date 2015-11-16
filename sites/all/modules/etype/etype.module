@@ -224,7 +224,7 @@ function etype_classified_ad_importer() {
   global $user;
 
   $values = array(
-    'type' => 'member_company',
+    'type' => 'classified',
     'uid' => $user->uid,
     'status' => 1,
     'comment' => 0,
