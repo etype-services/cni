@@ -44,7 +44,7 @@ function etype_cronapi($op, $job = NULL) {
  * @param $item
  * @param $entity_id
  */
-function etype_feeds_presave(FeedsSource $source, $entity, $item, $entity_id) {
+function etype_classfied_mapping ($vid) {
 
   /* ad categories */
   $categories = array(
@@ -156,28 +156,25 @@ function etype_feeds_presave(FeedsSource $source, $entity, $item, $entity_id) {
   );
 
 
-  if (! isset($item['xpathparser:5'])) {
+  if (! isset($vid)) {
     drupal_set_message(t("No category id for item"), 'error');
-    $entity->feeds_item->skip = TRUE;
+    return;
   } else {
-    $xml_cat = $item['xpathparser:5'];
 
   	$ad_cat = 0;
 
   	foreach ($categories as $k => $v) {
-      if ($xml_cat == $k) {
+      if ($vid == $k) {
      	$ad_cat = $v;
         continue;
       }
     }
 
-    if ($ad_cat > 0) {
-      $entity->classified_category['und'][0]['tid'] = $ad_cat;
-    } else {
-  	  drupal_set_message(t("$xml_cat not matched"), 'error');
-      $entity->feeds_item->skip = TRUE;
+    if ($ad_cat == 0) {
+  	  drupal_set_message(t("$vid not matched"), 'error');
     }
   }
+  return $ad_cat;
   
 }
 
@@ -270,7 +267,7 @@ function etype_classified_ad_importer() {
             'title' => $array['ItemTitle'],
             'body' => $array['ItemDesc'],
             'field_expires' => $array['expDate'],
-            'category' => $array['categoryId'],
+            'category' => etype_classfied_mapping($array['categoryId']),
             'field_guid' => $array['ItemId']
           );
           // print_r($node);
