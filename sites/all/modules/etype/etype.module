@@ -234,6 +234,7 @@ function etype_classified_ad_importer() {
   $xml = file_get_contents('http://www.etypeclassifieds.com/toccoaxml/CNI_CTR.xml');
   if ($xml !== FALSE) {
     $ad_obj = simplexml_load_string($xml, 'SimpleXMLElement', LIBXML_NOCDATA);
+    $i = 0;
     if (count($ad_obj) > 0) {
       foreach($ad_obj as $ad) {
         var_dump($ad);
@@ -257,6 +258,7 @@ function etype_classified_ad_importer() {
           var_dump($node);
           // $values['created'] = strtotime($ad->startDate);
           // etype_entity_create($node, $values);
+          $i++;
         }
         echo "\r\n\r\n";
       }
