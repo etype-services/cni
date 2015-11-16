@@ -258,7 +258,7 @@ function etype_classified_ad_importer() {
         $query = new EntityFieldQuery();
         $query->entityCondition('entity_type', 'node')
           ->entityCondition('bundle', 'classified')
-          ->fieldCondition('field_guid', 'value', $ad->ItemId, '=');
+          ->fieldCondition('field_guid', 'value', $array['ItemId'], '=');
         $result = $query->execute();
         // print_r($result);
 
