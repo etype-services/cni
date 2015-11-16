@@ -213,7 +213,7 @@ function etype_entity_create($item = array(), $values = array(), $entity_type = 
       }
     }
   }
-  $ewrapper->save(TRUE);
+  return $ewrapper->save(TRUE);
 }
 
 /**
@@ -244,7 +244,7 @@ function etype_classified_ad_importer() {
         $result = $query->execute();
         // print_r($result);
         if (count($result) === 0) {
-          // echo 'No node found' . "\r\n";
+          echo 'No node found' . "\r\n";
           // save new node
           $node = array(
             'title' => $ad->ItemTitle,
@@ -254,8 +254,8 @@ function etype_classified_ad_importer() {
             'field_guid' => $ad->ItemId
           );
           $values['created'] = strtotime($ad->startDate);
-          etype_entity_create($node, $values);
-
+          $res = etype_entity_create($node, $values);
+          echo $res;
         }
         echo "\r\n\r\n";
       }
