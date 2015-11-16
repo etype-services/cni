@@ -237,29 +237,34 @@ function etype_classified_ad_importer() {
     $i = 0;
     if (count($ad_obj) > 0) {
       foreach($ad_obj as $ad) {
+        // funky xml
         $array = array();
         foreach($ad as $k => $v) {
           $v = (array) $v ;
           $array[$k] = $v[0];
         }
 
-        print_r($array);
+        // print_r($array);
         // echo $ad->ItemId . "\r\n";
+
+        /* looking for existing nodes with the same ItemId */
         $query = new EntityFieldQuery();
         $query->entityCondition('entity_type', 'node')
           ->entityCondition('bundle', 'classified')
           ->fieldCondition('field_guid', 'value', $ad->ItemId, '=');
         $result = $query->execute();
         // print_r($result);
+
+        /* if no node found, save a new one */
         if (count($result) === 0) {
-          echo 'No node found' . "\r\n";
+          // echo 'No node found' . "\r\n";
           // save new node
           $node = array(
-            'title' => $ad->ItemTitle,
-            'body' => $ad->ItemDesc,
-            'field_expires' => $ad->expDate,
-            'category' => $ad->categoryId,
-            'field_guid' => $ad->ItemId
+            'title' => $array['ItemTitle'],
+            'body' => $array['ItemDesc'],
+            'field_expires' => $array['expDate'],
+            'category' => $array['categoryId'],
+            'field_guid' => $array['ItemId']
           );
           print_r($node);
           // $values['created'] = strtotime($ad->startDate);
