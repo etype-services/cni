@@ -239,6 +239,7 @@ function etype_classified_ad_importer() {
       foreach($ad_obj as $ad) {
         $array = array();
         foreach($ad as $k => $v) {
+          $v = (array) $v ;
           $array[$k] = $v[0];
         }
 
