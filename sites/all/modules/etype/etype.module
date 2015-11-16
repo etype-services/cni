@@ -197,11 +197,11 @@ function etype_entity_create($item = array(), $values = array(), $entity_type = 
 
         case 'field_expires':
           $my_date = new DateTime($v);
-          /*$entity->field_expires[LANGUAGE_NONE][0] = array(
+          $entity->field_expires[LANGUAGE_NONE][0] = array(
             'value' => date_format($my_date, 'Y-m-d'),
             'timezone' => 'UTC',
             'timezone_db' => 'UTC',
-          );*/
+          );
           break;
 
         case 'category':
