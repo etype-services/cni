@@ -237,7 +237,7 @@ function etype_classified_ad_importer() {
     $i = 0;
     if (count($ad_obj) > 0) {
       foreach($ad_obj as $ad) {
-        // funky xml
+        // xml object processing to make array
         $array = array();
         foreach($ad as $k => $v) {
           $v = (array) $v ;
