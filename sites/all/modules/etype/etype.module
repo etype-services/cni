@@ -260,8 +260,8 @@ function etype_classified_ad_importer() {
           // echo 'No node found' . "\r\n";
           // save new node
           $node = array(
-            'title' => $array['ItemTitle']/*,
-            'body' => $array['ItemDesc'],
+            'title' => $array['ItemTitle'],
+            'body' => $array['ItemDesc']/*,
             'field_expires' => $array['expDate'],
             'category' => $array['categoryId'],
             'field_guid' => $array['ItemId']*/
