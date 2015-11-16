@@ -229,6 +229,9 @@ function etype_classified_ad_importer() {
           ->fieldCondition('field_guid', 'value', $ad->ItemId, '=');
         $result = $query->execute();
         print_r($result);
+        if (count($result) === 0) {
+          echo 'No node found' . "\r\n";
+        }
         echo "\r\n\r\n";
       }
     }
