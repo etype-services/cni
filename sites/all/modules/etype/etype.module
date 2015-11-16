@@ -204,15 +204,6 @@ function etype_entity_create($item = array(), $values = array(), $entity_type = 
           );
           break;
 
-        case 'published_date':
-          $my_date = new DateTime($v);
-          $entity->field_my_date[LANGUAGE_NONE][0] = array(
-            'value' => date_format($my_date, 'Y-m-d'),
-            'timezone' => 'UTC',
-            'timezone_db' => 'UTC',
-          );
-          break;
-
         case 'category':
           $ewrapper->field_my_term_reference->set($v);
           break;
