@@ -232,6 +232,7 @@ function etype_classified_ad_importer() {
     'uid' => $user->uid,
     'status' => 1,
     'comment' => 0,
+    'promote' => 0,
     'language' => LANGUAGE_NONE,
   );
 
@@ -265,8 +266,8 @@ function etype_classified_ad_importer() {
           // save new node
           $node = array(
             'title' => $array['ItemTitle'],
-            'body' => $array['ItemDesc']/*,
-            'field_expires' => $array['expDate'],
+            'body' => $array['ItemDesc'],
+            'field_expires' => $array['expDate']/*,
             'category' => $array['categoryId'],
             'field_guid' => $array['ItemId']*/
           );
