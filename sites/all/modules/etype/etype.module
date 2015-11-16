@@ -205,15 +205,15 @@ function etype_entity_create($item = array(), $values = array(), $entity_type = 
           break;
 
         case 'category':
-          $ewrapper->classified_category->set($v);
+          // $ewrapper->classified_category->set($v);
           break;
 
         default:
           $ewrapper->$k->set($v);
       }
     }
+    $ewrapper->save(TRUE);
   }
-  return $ewrapper->save(TRUE);
 }
 
 /**
@@ -254,8 +254,7 @@ function etype_classified_ad_importer() {
             'field_guid' => $ad->ItemId
           );
           $values['created'] = strtotime($ad->startDate);
-          $res = etype_entity_create($node, $values);
-          echo $res;
+          etype_entity_create($node, $values);
         }
         echo "\r\n\r\n";
       }
