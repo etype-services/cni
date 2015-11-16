@@ -222,14 +222,14 @@ function etype_classified_ad_importer() {
     $ad_obj = simplexml_load_string($xml, 'SimpleXMLElement', LIBXML_NOCDATA);
     if (count($ad_obj) > 0) {
       foreach($ad_obj as $ad) {
-        echo $ad->ItemId . '\r';
+        echo $ad->ItemId . "\r";
         $query = new EntityFieldQuery();
         $query->entityCondition('entity_type', 'node')
           ->entityCondition('bundle', 'classified')
           ->fieldCondition('field_guid', 'value', $ad->ItemId, '=');
         $result = $query->execute();
         print_r($result);
-        echo '\r\r';
+        echo "\r\r";
       }
     }
   }
