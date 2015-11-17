@@ -278,6 +278,8 @@ function etype_classified_ad_importer() {
         }
         // echo "\r\n\r\n";
       }
+      watchdog('etype', "EType Classified Importer added %num nodes", $variables = array('%num' => $i), $severity = WATCHDOG_NOTICE);
+      drupal_set_message(t("EType Classified Importer added $i nodes"), 'status');
     }
   }
 
@@ -289,5 +291,15 @@ function etype_classified_ad_importer() {
     ->entityCondition('bundle', 'classified')
     ->fieldCondition('field_expires', 'value', $formatted_date, '<');
   $result = $query->execute();
-  print_r($result);
+  dpm($query);
+  if (count($result) > 0) {
+    $i = 0;
+    $nids = array_keys($result['node']);
+    foreach ($nids as $nid) {
+      node_delete($nid);
+      $i++;
+    }
+    watchdog('etype', "EType Classified Importer deleted %num expired nodes", $variables = array('%num' => $i), $severity = WATCHDOG_NOTICE);
+    drupal_set_message(t("EType Classified Importer deleted $i expired nodes"), 'status');
+  }
 }
