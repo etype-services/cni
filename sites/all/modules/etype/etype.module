@@ -224,7 +224,7 @@ function etype_entity_create($item = array(), $values = array(), $entity_type = 
 function etype_classified_ad_importer() {
 
   global $user;
-  $url = 'http://www.etypeclassifieds.com/toccoaxml/CNI_CTR.xml';
+  $url = 'http://www.etypeclassifieds.com/toccoaxml/CNI_TEST.xml';
 
   $values = array(
     'type' => 'classified',
