@@ -197,9 +197,9 @@ function etype_entity_create($item = array(), $values = array(), $entity_type = 
           break;
 
         case 'field_expires':
-          $my_date = new DateTime($v);
+          $date = new DateTime($v);
           $entity->field_expires[LANGUAGE_NONE][0] = array(
-            'value' => date_format($my_date, 'Y-m-d'),
+            'value' => date_format($date, 'Y-m-d'),
             'timezone' => 'UTC',
             'timezone_db' => 'UTC',
           );
@@ -239,6 +239,7 @@ function etype_classified_ad_importer() {
     $ad_obj = simplexml_load_string($xml, 'SimpleXMLElement', LIBXML_NOCDATA);
     $i = 0;
     if (count($ad_obj) > 0) {
+
       foreach($ad_obj as $ad) {
 
         // xml object processing to make array
@@ -275,8 +276,18 @@ function etype_classified_ad_importer() {
           etype_entity_create($node, $values);
           $i++;
         }
-        echo "\r\n\r\n";
+        // echo "\r\n\r\n";
       }
     }
   }
+
+  /* Delete Expired Nodes */
+  $date = new DateTime();
+  $formatted_date = date_format($date, 'Y-m-d');
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'classified')
+    ->fieldCondition('field_expires', 'value', $formatted_date, '<');
+  $result = $query->execute();
+  print_r($result);
 }
