@@ -259,7 +259,7 @@ function etype_classified_ad_importer() {
           ->entityCondition('bundle', 'classified')
           ->fieldCondition('field_guid', 'value', $array['ItemId'], '=');
         $result = $query->execute();
-        dpq($query);
+        // dpq($query);
         // print_r($result);
 
         /* if no node found, save a new one */
@@ -295,7 +295,7 @@ function etype_classified_ad_importer() {
     ->entityCondition('bundle', 'classified')
     ->fieldCondition('field_expires', 'value', $formatted_date, '<');
   $result = $query->execute();
-  dpq($query);
+  // dpq($query);
   if (count($result) > 0) {
     $i = 0;
     $nids = array_keys($result['node']);
