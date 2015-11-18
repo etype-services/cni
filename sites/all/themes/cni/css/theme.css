@@ -82,11 +82,12 @@ header {
 .site-logo {
     width: 80%;
     margin: 0 auto;
+    max-width: 516px;
 }
 
 .site-logo img {
     width: 100%;
-    max-width: 513px;
+    max-width: 516px;
 }
 
 h1.site-name, h2.site-name {
