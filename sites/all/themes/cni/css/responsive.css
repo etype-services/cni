@@ -145,15 +145,17 @@ Note: Design for a width of 300px
     }
     
     /* Hide some DFP ads on non full-size browsers */
-    #block-dfp-cni-__site__leaderboard, #block-dfp-cni-__site__banner, #block-dfp-cni-__site__footer {
+    #block-dfp-cni-franklinleaderboard, #block-dfp-cni-franklinbanner/*, #block-dfp-cni-__site__footer*/ {
   		display: none;
   		visibility: hidden;
 	}
 
+    /*
     #block-dfp-cni-__site__mobile {
         display: block;
         visibility: visible;
     }
+    */
 
 }
 
