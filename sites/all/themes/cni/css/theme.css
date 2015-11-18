@@ -80,7 +80,8 @@ header {
 }
 
 .site-logo {
-    float: left;
+    width: 80%;
+    margin: 0 auto;
 }
 
 .site-logo img {
