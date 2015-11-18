@@ -16,7 +16,7 @@ error_log
 keys
 temp
 Archive.zip
-*Rate_Card*.pdf
+*Rate*Card*.pdf
 .ftpquota
 400.shtml
 401.shtml
