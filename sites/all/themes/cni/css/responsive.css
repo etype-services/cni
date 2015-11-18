@@ -55,7 +55,6 @@
     }
 
     /* dfp ads */
-
     #dfp-ad-cni_franklinbanner {
         width: 468px;
         margin: 0px auto 0px 83px;
@@ -127,10 +126,6 @@
     }
 
     /* other */
-    #block-block-1 {
-        display: none
-    }
-
     .page-node .field-name-field-image img {
         width: 490px;
         height: auto;
@@ -176,6 +171,17 @@
     .view-featured-view iframe {
         width: 195px;
         height: 120px;
+    }
+
+    /* dfp ads */
+    #dfp-ad-cni_franklinbanner {
+        width: 468px;
+        margin: 0px auto 0px 83px;
+    }
+
+    #block-dfp-cni-franklinmobile {
+        display: none;
+        visibility: hidden;
     }
 
 }
@@ -258,10 +264,6 @@
     #legals-0-2 {
         float:left;
         margin: 0.3em 0 2em;
-    }
-
-    #block-block-1 {
-        display: none
     }
 
     .main-content-wrapper {
@@ -355,6 +357,16 @@
     #block-block-1 .block-inner {
         border: none;
         box-shadow: none;
+    }
+
+    #dfp-ad-cni_franklinbanner {
+        width: 468px;
+        margin: 0px auto 0px 83px;
+    }
+
+    #block-dfp-cni-franklinmobile {
+        display: none;
+        visibility: hidden;
     }
 
 }
