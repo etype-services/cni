@@ -1472,11 +1472,6 @@ blockquote {
     padding: 0;
 }
 
-#dfp-ad-sidebar_1 {
-    max-width: 300px;
-    overflow: hidden;
-}
-
 #block-dfp-cni-franklinleaderboard {
     width:728px;
     margin: 1.6em auto 0 auto;
@@ -1521,10 +1516,6 @@ blockquote {
 }
 
 /*
-#block-dfp-cni-__site__weather {
-	margin-right: 1em;
-}
-
 #block-dfp-cni-__site__mobile {
 	width:130px; 
 	margin: 1.6em auto 1.6em auto;
