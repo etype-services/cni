@@ -68,7 +68,6 @@ function etype_classfied_mapping($vid)
 
         if ($ad_cat == 0) {
             drupal_set_message(t("$vid not matched"), 'error');
-            $ad_cat = $default_cat;
         }
     }
     return $ad_cat;
@@ -157,7 +156,7 @@ function etype_classified_ad_importer()
                 watchdog('etype', "EType Classified Importer found no Classified Ads to delete", $variables = array(), $severity = WATCHDOG_NOTICE);
             }
 
-            /* loop over xml and ad new Classified Ads */
+            /* loop over xml and add new Classified Ads */
             foreach ($ad_obj as $ad) {
 
                 // xml object processing to make array
@@ -167,23 +166,9 @@ function etype_classified_ad_importer()
                     $array[$k] = $v[0];
                 }
 
-                // print_r($array);
-                // echo $ad->ItemId . "\r\n";
-
-                /* looking for existing nodes with the same ItemId
-                $query = new EntityFieldQuery();
-                $query->entityCondition('entity_type', 'node')
-                    ->entityCondition('bundle', 'classified')
-                    ->fieldCondition('field_guid', 'value', $array['ItemId'], '=');
-                $result = $query->execute();
-                // dpq($query);
-                // print_r($result);
-                */
-
-                /* if no node found, save a new one */
-                // if (count($result) === 0) {
-                    // echo 'No node found' . "\r\n";
-                    // save new node
+                /* check for valid matched category, otherwise there will be an error in node creation */
+                $category = etype_classfied_mapping($array['categoryId']);
+                if ($category > 0) {
                     $node = array(
                         'title' => $array['ItemTitle'],
                         'body' => $array['ItemDesc'],
@@ -195,8 +180,9 @@ function etype_classified_ad_importer()
                     $values['created'] = strtotime($array['startDate']);
                     etype_entity_create($node, $values);
                     $i++;
-                // }
-                // echo "\r\n\r\n";
+                }
+
+
             }
         }
         watchdog('etype', "EType Classified Importer added %num nodes", $variables = array('%num' => $i), $severity = WATCHDOG_NOTICE);

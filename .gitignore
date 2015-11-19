@@ -9,8 +9,8 @@ sites/*/private
 favicon.ico
 error_log
 
-# Ignore CNI theme folder
-# sites/all/themes/cni
+# Ignore site specific css
+sites/all/themes/cni/css/site.css
 sites/all/themes/etype/etype_mapping.php
 
 # Odds and sods
