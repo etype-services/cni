@@ -46,7 +46,7 @@
       ?>
     </div>
     
-    <div class="view-more-digital"><a href="http://www.etypeservices.com/Franklin%20County%20Citizen%20LeaderID578/">To view more please log in or subscribe to the digital edition.</a></div>
+    <div class="view-more-digital"><a href="http://www.etypeservices.com/The%20Clayton%20TribuneID566/">To view more please log in or subscribe to the digital edition.</a></div>
     
     <?php if (isset($content['links'])): ?>  
       <?php print render($content['links']); ?>
