@@ -48,7 +48,7 @@ function etype_cronapi($op, $job = NULL)
  */
 function etype_classfied_mapping($vid)
 {
-    global $categories;
+    include_once('etype_mapping.php');
     print_r($categories);
 
     if (!isset($vid)) {
