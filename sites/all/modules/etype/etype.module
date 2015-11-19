@@ -48,7 +48,7 @@ function etype_cronapi($op, $job = NULL)
  */
 function etype_classfied_mapping($vid)
 {
-    include('etype_mapping.php');
+    include(__DIR__ . 'etype_mapping.php');
 
     if (!isset($vid)) {
         drupal_set_message(t("No category id for item"), 'error');
