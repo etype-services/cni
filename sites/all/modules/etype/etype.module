@@ -113,7 +113,8 @@ function etype_classified_ad_importer()
 {
 
     global $user;
-    $url = 'http://www.etypeclassifieds.com/toccoaxml/CNI_CTR.xml';
+    $url = '';
+    include(__DIR__ . '/etype_mapping.php');
 
     $values = array(
         'type' => 'classified',

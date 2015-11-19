@@ -1,5 +1,8 @@
 <?php
 
+/* import _url */
+$url = 'http://www.etypeclassifieds.com/toccoaxml/CNI_CTR.xml';
+
 /* ad categories */
 $categories = array(
     "4010" => "210",
