@@ -10,8 +10,8 @@ favicon.ico
 error_log
 
 # Ignore site specific css
-sites/all/themes/cni/css/site.css
-sites/all/modules/etype/etype_mapping.php
+#sites/all/themes/cni/css/site.css
+#sites/all/modules/etype/etype_mapping.php
 
 # Odds and sods
 keys
