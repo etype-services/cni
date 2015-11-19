@@ -134,28 +134,27 @@ function etype_classified_ad_importer()
     $xml = file_get_contents($url);
     if ($xml !== FALSE) {
 
-        /* delete all current ads */
-        $query = new EntityFieldQuery();
-        $query->entityCondition('entity_type', 'node')
-            ->entityCondition('bundle', 'classified');
-        $result = $query->execute();
-        // dpq($query);
-        if (count($result) > 0) {
-            $nids = array_keys($result['node']);
-            $i = count($nids);
-            node_delete_multiple($nids);
-            watchdog('etype', "EType Classified Importer deleted %num Classified Ads", $variables = array('%num' => $i), $severity = WATCHDOG_NOTICE);
-            // drupal_set_message(t("EType Classified Importer deleted $i expired nodes"), 'status');
-        } else {
-            watchdog('etype', "EType Classified Importer found no Classified Ads to delete", $variables = array(), $severity = WATCHDOG_NOTICE);
-        }
-        return;
-
-
         $ad_obj = simplexml_load_string($xml, 'SimpleXMLElement', LIBXML_NOCDATA);
         $i = 0;
         if (count($ad_obj) > 0) {
 
+            /* delete all current ads */
+            $query = new EntityFieldQuery();
+            $query->entityCondition('entity_type', 'node')
+                ->entityCondition('bundle', 'classified');
+            $result = $query->execute();
+            // dpq($query);
+            if (count($result) > 0) {
+                $nids = array_keys($result['node']);
+                $i = count($nids);
+                node_delete_multiple($nids);
+                watchdog('etype', "EType Classified Importer deleted %num Classified Ads", $variables = array('%num' => $i), $severity = WATCHDOG_NOTICE);
+                // drupal_set_message(t("EType Classified Importer deleted $i expired nodes"), 'status');
+            } else {
+                watchdog('etype', "EType Classified Importer found no Classified Ads to delete", $variables = array(), $severity = WATCHDOG_NOTICE);
+            }
+
+            /* loop over xml and ad new Classified Ads */
             foreach ($ad_obj as $ad) {
 
                 // xml object processing to make array
@@ -168,7 +167,7 @@ function etype_classified_ad_importer()
                 // print_r($array);
                 // echo $ad->ItemId . "\r\n";
 
-                /* looking for existing nodes with the same ItemId */
+                /* looking for existing nodes with the same ItemId
                 $query = new EntityFieldQuery();
                 $query->entityCondition('entity_type', 'node')
                     ->entityCondition('bundle', 'classified')
@@ -176,9 +175,10 @@ function etype_classified_ad_importer()
                 $result = $query->execute();
                 // dpq($query);
                 // print_r($result);
+                */
 
                 /* if no node found, save a new one */
-                if (count($result) === 0) {
+                // if (count($result) === 0) {
                     // echo 'No node found' . "\r\n";
                     // save new node
                     $node = array(
@@ -192,7 +192,7 @@ function etype_classified_ad_importer()
                     $values['created'] = strtotime($array['startDate']);
                     etype_entity_create($node, $values);
                     $i++;
-                }
+                // }
                 // echo "\r\n\r\n";
             }
         }
