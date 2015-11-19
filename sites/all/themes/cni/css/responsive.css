@@ -55,7 +55,7 @@
     }
 
     /* dfp ads */
-    #block-dfp-cni-franklinbanner {
+    #block-dfp-banner {
         width: 468px;
         margin: 0px auto 0px 83px;
     }
@@ -174,7 +174,7 @@
     }
 
     /* dfp ads */
-    #block-dfp-cni-franklinbanner {
+    #block-dfp-banner {
         width: 468px;
         margin: 0px auto 0px 83px;
     }
@@ -190,7 +190,7 @@
 @media only screen and (max-width: 767px) and (min-width: 480px) {
 
     /* Hide some DFP ads on non full-size browsers */
-    #block-dfp-cni-franklinleaderboard, #block-dfp-cni-franklinbanner, #block-dfp-cni-franklinfooter {
+    #block-dfp-cni-franklinleaderboard, #block-dfp-banner, #block-dfp-cni-franklinfooter {
         display: none;
         visibility: hidden;
     }
@@ -351,7 +351,7 @@
         box-shadow: none;
     }
 
-    #block-dfp-cni-franklinbanner {
+    #block-dfp-banner {
         width: 468px;
         margin: 0px auto 0px 83px;
     }
@@ -367,7 +367,7 @@
 @media only screen and (max-width: 479px) and (min-width: 421px) {
 
     /* Hide some DFP ads on non full-size browsers */
-    #block-dfp-cni-franklinleaderboard, #block-dfp-cni-franklinbanner, #block-dfp-cni-franklinfooter {
+    #block-dfp-cni-franklinleaderboard, #block-dfp-banner, #block-dfp-cni-franklinfooter {
         display: none;
         visibility: hidden;
     }
@@ -536,7 +536,7 @@
 @media only screen and (max-width: 420px) {
 
     /* Hide some DFP ads on non full-size browsers */
-    #block-dfp-cni-franklinleaderboard, #block-dfp-cni-franklinbanner, #dfp-ad-cni_franklinfooter {
+    #block-dfp-cni-franklinleaderboard, #block-dfp-banner, #dfp-ad-cni_franklinfooter {
         display: none;
         visibility: hidden;
     }
