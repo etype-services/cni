@@ -25,7 +25,7 @@ function etype_menu()
 
 }
 
-/* run job at 3:00 am */
+/* run job at 6:00 am every Wednesday */
 function etype_cronapi($op, $job = NULL)
 {
 
