@@ -171,8 +171,6 @@ function etype_classified_ad_importer()
                     etype_entity_create($node, $values);
                     $i++;
                 }
-
-
             }
         }
         watchdog('etype', "EType Classified Importer added %num nodes", $variables = array('%num' => $i), $severity = WATCHDOG_NOTICE);
