@@ -9,12 +9,20 @@ sites/*/private
 favicon.ico
 error_log
 
-# Ignore CNI theme folder
-# sites/all/themes/cni
+# Ignore site specific css
+#sites/all/themes/cni/css/site.css
+#sites/all/modules/etype/etype_mapping.php
 
 # Odds and sods
 keys
 temp
 Archive.zip
-*Rate_Card*.pdf
+*Rate*Card*.pdf
 .ftpquota
+400.shtml
+401.shtml
+403.shtml
+404.shtml
+500.php
+500.shtml
+index_test.php

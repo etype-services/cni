@@ -3,19 +3,23 @@
 /* First and Last Classes on Teasers */
 
 function cni_preprocess_page(&$variables) {
-  $nodes = $variables['page']['content']['system_main']['nodes'];
-  $i = 1;
-  $len = count($nodes);
-  foreach (array_keys($nodes) as $nid) {
-    if ($i == 1) {
-      $variables['page']['content']['system_main']['nodes'][$nid]['#node']->classes_array = array('first');
+  if (isset ($variables['page']['content']['system_main']['nodes'])) {
+    $nodes = $variables['page']['content']['system_main']['nodes'];
+    $i = 1;
+    $len = count($nodes);
+    if ($len > 0) {
+      foreach (array_keys($nodes) as $nid) {
+        if ($i == 1) {
+          $variables['page']['content']['system_main']['nodes'][$nid]['#node']->classes_array = array('first');
+        }
+        if ($i == $len - 1) {
+          $variables['page']['content']['system_main']['nodes'][$nid]['#node']->classes_array = array('last');
+        }
+        $i++;
+        /* So I don't get "Warning: Cannot use a scalar value as an array" */
+        unset($nodes,$nid);
+      }
     }
-    if ($i == $len - 1) {
-      $variables['page']['content']['system_main']['nodes'][$nid]['#node']->classes_array = array('last');
-    }
-    $i++;
-    /* So I don't get "Warning: Cannot use a scalar value as an array" */
-    unset($nodes,$nid);
   }
 }
 

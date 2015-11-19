@@ -3,7 +3,7 @@
 
 /* Sidebars Split */
 
-.sidebars-split .main-inner, .sidebars-split .first-sidebar,  {
+.sidebars-split .main-inner, .sidebars-split .first-sidebar {
 	float: left;
 }
 
