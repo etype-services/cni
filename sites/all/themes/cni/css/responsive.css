@@ -43,7 +43,7 @@
         background-color: #eaeaea;
     }
 
-    /* legal forms */
+    /* legal forms for fernandina */
     #legals-0-1 {
         float:left;
         margin: 2em 0.5em 2em 0;
@@ -56,17 +56,6 @@
 
     #legals-0-2 ::after {
         clear: left;
-    }
-
-    /* dfp ads */
-    #block-dfp-banner {
-        width: 468px;
-        margin: 0px auto 0px 83px;
-    }
-
-    #block-dfp-cni-toccoamobile {
-        display: none;
-        visibility: hidden;
     }
 
 }
@@ -189,33 +178,10 @@
         height: 120px;
     }
 
-    /* dfp ads */
-    #block-dfp-banner {
-        width: 468px;
-        margin: 0px auto 0px 12px;
-    }
-
-    #block-dfp-cni-toccoamobile {
-        display: none;
-        visibility: hidden;
-    }
-
 }
 
 /* smaller browsers, tablets */
 @media only screen and (max-width: 767px) and (min-width: 480px) {
-
-    /* Hide some DFP ads on non full-size browsers */
-    #block-dfp-cni-toccoaleaderboard, #block-dfp-banner, #block-dfp-cni-toccoafooter {
-        display: none;
-        visibility: hidden;
-    }
-
-    /* show mobile ad on smaller windows */
-    #block-dfp-cni-toccoamobile {
-        display: block;
-        visibility: visible;
-    }
 
     #superfish-1 {
         display: block !important;
@@ -366,33 +332,10 @@
         border: none;
         box-shadow: none;
     }
-
-    #block-dfp-banner {
-        width: 468px;
-        margin: 0px auto 0px 83px;
-    }
-
-    #block-dfp-cni-toccoamobile {
-        display: none;
-        visibility: hidden;
-    }
-
 }
 
 /* larger phones */
 @media only screen and (max-width: 479px) and (min-width: 421px) {
-
-    /* Hide some DFP ads on non full-size browsers */
-    #block-dfp-cni-toccoaleaderboard, #block-dfp-banner, #block-dfp-cni-toccoafooter {
-        display: none;
-        visibility: hidden;
-    }
-
-    /* show mobile ad on smaller windows */
-    #block-dfp-cni-toccoamobile {
-        display: block;
-        visibility: visible;
-    }
 
     .region-headerad {
         float: left;
@@ -550,18 +493,6 @@
 
 /* smaller phones */
 @media only screen and (max-width: 420px) {
-
-    /* Hide some DFP ads on non full-size browsers */
-    #block-dfp-cni-toccoaleaderboard, #block-dfp-banner, #dfp-ad-cni_toccoafooter {
-        display: none;
-        visibility: hidden;
-    }
-
-    /* show mobile ad on smaller windows */
-    #block-dfp-cni-toccoamobile {
-        display: block;
-        visibility: visible;
-    }
 
     .region-headerad {
         float: left;
