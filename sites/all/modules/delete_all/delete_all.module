@@ -292,7 +292,8 @@ function _delete_all_quick($types) {
     set_time_limit(240);
 
     // determine how many items will be deleted
-    $count = db_result(db_query("SELECT COUNT(*) FROM {node} WHERE type = '%s'", $type));
+    $count = db_query("SELECT COUNT(*) FROM {node} WHERE type = :type", array(':type' => $type))->fetchField();
+    // $count = db_result(db_query("SELECT COUNT(*) FROM {node} WHERE type = '%s'", $type));
     if ($count) { // should always be positive
       /**
        * build a list of tables that need to be deleted from
