@@ -59,6 +59,11 @@
         margin: 0px auto 0px 83px;
     }
 
+    /* main menu */
+    #main-menu ul.menu {
+        margin-left: 7em;
+    }
+
 }
 
 /* desktop browsers */
