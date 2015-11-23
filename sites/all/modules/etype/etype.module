@@ -165,8 +165,7 @@ function etype_classified_ad_importer()
                     $node = array(
                         'title' => $array['ItemTitle'],
                         'body' => $array['ItemDesc'],
-                        'category' => etype_classfied_mapping($array['categoryId']),
-                        'field_guid' => $array['ItemId']
+                        'category' => etype_classfied_mapping($array['categoryId'])
                     );
                     // print_r($node);
                     $values['created'] = strtotime($array['startDate']);
