@@ -156,7 +156,7 @@ function etype_classified_ad_importer()
                 $array = array();
                 foreach ($ad as $k => $v) {
                     $v = (array)$v;
-                    $array[$k] = $v[0];
+                    isset($v[0]) ? $array[$k] = $v[0]: $array[$k] = '';
                 }
 
                 /* check for valid matched category, otherwise there will be an error in node creation */
