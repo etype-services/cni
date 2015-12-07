@@ -8,44 +8,44 @@
     padding: 0;
 }
 
-#block-dfp-cni-toccoaleaderboard {
+#block-dfp-cni-hartwellleaderboard {
     width:728px;
     margin: 1.6em auto 0 auto;
 }
 
-#block-dfp-cni-toccoaleaderboard iframe {
+#block-dfp-cni-hartwellleaderboard iframe {
     width:728px;
     height:90px;
 }
 
-#block-dfp-cni-toccoasidebar1 {
+#block-dfp-cni-hartwellsidebar1 {
     width:300px;
 }
 
-#block-dfp-cni-toccoasidebar1 iframe {
+#block-dfp-cni-hartwellsidebar1 iframe {
     width:300px;
     height:250px;
 }
 
-#block-dfp-cni-toccoasidebar2 {
+#block-dfp-cni-hartwellsidebar2 {
     width:300px;
 }
 
-#block-dfp-cni-toccoasidebar2 iframe {
+#block-dfp-cni-hartwellsidebar2 iframe {
     width:300px; height:250px;
 }
 
-#block-dfp-cni-toccoafooter {
+#block-dfp-cni-hartwellfooter {
     width:728px;
     margin: 5px auto 1.4em;
 }
 
-#block-dfp-cni-toccoafooter iframe {
+#block-dfp-cni-hartwellfooter iframe {
     width:728px;
     height:90px;
 }
 
-#block-dfp-cni-toccoamobile {
+#block-dfp-cni-hartwellmobile {
 	width:130px;
 	margin: 1.6em auto 1.6em auto;
 }
@@ -85,13 +85,13 @@
 @media only screen and (max-width: 767px) {
 
     /* Hide larger DFP ads on non full-size browsers */
-    #block-dfp-cni-toccoaleaderboard, #block-dfp-banner, #block-dfp-cni-toccoafooter {
+    #block-dfp-cni-hartwellleaderboard, #block-dfp-banner, #block-dfp-cni-hartwellfooter {
         display: none;
         visibility: hidden;
     }
 
     /* show mobile ad on smaller windows */
-    #block-dfp-cni-toccoamobile {
+    #block-dfp-cni-hartwellmobile {
         display: block;
         visibility: visible;
     }
@@ -100,13 +100,13 @@
 @media only screen and (min-width: 768px) {
 
     /* Hide larger DFP ads on non full-size browsers */
-    #block-dfp-cni-toccoaleaderboard, #block-dfp-banner, #block-dfp-cni-toccoafooter {
+    #block-dfp-cni-hartwellleaderboard, #block-dfp-banner, #block-dfp-cni-hartwellfooter {
         display: block;
         visibility: visible;
     }
 
     /* show mobile ad on smaller windows */
-    #block-dfp-cni-toccoamobile {
+    #block-dfp-cni-hartwellmobile {
         display: none;
         visibility: hidden;
     }
@@ -117,7 +117,7 @@
 .site-logo {
     width: 80%;
     margin: 0 auto;
-    max-width: 516px;
+    max-width: 623px;
 }
 
 .site-logo img {
