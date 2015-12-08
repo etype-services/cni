@@ -4,6 +4,7 @@ sites/default/files/.htaccess
 
 # Ignore paths that contain generated content.
 sites/*/files
+sites/default/files
 sites/*/private
 
 # Ignore default files
