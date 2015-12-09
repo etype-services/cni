@@ -13,7 +13,7 @@ error_log
 #sites/all/themes/cni/css/site.css
 #sites/all/modules/etype/etype_mapping.php
 # Ignore site specific templates
-sites/all/themes/cni/css/node--*tpl.php
+sites/all/themes/cni/templates/node--*tpl.php
 
 # Odds and sods
 keys
