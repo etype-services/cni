@@ -22,18 +22,11 @@ h1, h2, h3, h4, h5 {
     line-height: 1.0em;
     font-weight: normal;
     text-transform: uppercase;
+    margin-bottom: 0.6em;
 }
 
 h1 {
     font-size: 2em;
-}
-
-h1#page-title {
-    padding-bottom: 20px;
-}
-
-.front h1#page-title {
-    display: none;
 }
 
 h1.title {
