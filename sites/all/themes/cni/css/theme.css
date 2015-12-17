@@ -36,6 +36,10 @@ h1#page-title {
     display: none;
 }
 
+h1.title {
+    margin-bottom: 0.6em;
+}
+
 h2 {
     font-size: 24px;
 }
@@ -1004,14 +1008,6 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
 .field-name-field-mugshot {
     float: left;
     margin-right: 10px;
-}
-
-.will-maines .field-image, .byron-mcnutt .field-image, .cal-thomas .field-image, .andy-rooney .field-image, .rock-doc .field-image, .robert-reich .field-image {
-    display: none;
-}
-
-.will-maines h1#page-title, .byron-mcnutt h1#page-title, .cal-thomas h1#page-title, .andy-rooney h1#page-title, .rock-doc h1#page-title, .robert-reich h1#page-title {
-    display: none;
 }
 
 .field-name-field-mug {
