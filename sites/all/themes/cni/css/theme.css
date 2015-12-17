@@ -393,6 +393,12 @@ article .field-image {
     list-style-type: decimal;
 }
 
+/* normalize lists on Basic Pages */
+.content .node-page ul {
+    margin: 0 0 1em 1em;
+    list-style: disc inside;
+}
+
 /* USER MENU
 --------------------------------------------------------------------------*/
 
