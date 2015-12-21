@@ -22,18 +22,15 @@ h1, h2, h3, h4, h5 {
     line-height: 1.0em;
     font-weight: normal;
     text-transform: uppercase;
+    margin-bottom: 0.6em;
 }
 
 h1 {
     font-size: 2em;
 }
 
-h1#page-title {
-    padding-bottom: 20px;
-}
-
-.front h1#page-title {
-    display: none;
+h1.title {
+    margin-bottom: 0.6em;
 }
 
 h2 {
@@ -387,6 +384,12 @@ article .field-image {
 
 .view-popular .item-list ul li {
     list-style-type: decimal;
+}
+
+/* normalize lists on Basic Pages */
+.content .node-page ul {
+    margin: 0 0 1em 1em;
+    list-style: disc inside;
 }
 
 /* USER MENU
@@ -1006,14 +1009,6 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
     margin-right: 10px;
 }
 
-.will-maines .field-image, .byron-mcnutt .field-image, .cal-thomas .field-image, .andy-rooney .field-image, .rock-doc .field-image, .robert-reich .field-image {
-    display: none;
-}
-
-.will-maines h1#page-title, .byron-mcnutt h1#page-title, .cal-thomas h1#page-title, .andy-rooney h1#page-title, .rock-doc h1#page-title, .robert-reich h1#page-title {
-    display: none;
-}
-
 .field-name-field-mug {
     float: right;
 }
@@ -1034,6 +1029,8 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
 #block-block-1 .block-inner {
     padding: 0;
     margin: 0 0 20px 0;
+    border: none;
+    box-shadow: none;
 }
 
 #block-block-28 .content {
