@@ -1029,6 +1029,8 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
 #block-block-1 .block-inner {
     padding: 0;
     margin: 0 0 20px 0;
+    border: none;
+    box-shadow: none;
 }
 
 #block-block-28 .content {
