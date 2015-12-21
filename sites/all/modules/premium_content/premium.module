@@ -470,6 +470,7 @@ function premium_theme() {
  */
 function theme_premium_body($arguments) {
   $node = $arguments['node'];
+  dpm($node);
   node_build_content($node, 'teaser');
   $level = premium_level_load($node->premium);
   if ($level->denied_message) {
