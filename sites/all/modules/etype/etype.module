@@ -181,6 +181,6 @@ function etype_classified_ad_importer() {
 
 function etype_menu_alter(&$items) {
   dsm($items);
-  watchdog('etype', "etype_menu_alter called", $severity = WATCHDOG_NOTICE);
+  watchdog('etype', "etype_menu_alter called", $variables = array(), $severity = WATCHDOG_NOTICE);
   $items['login']['access callback'] = 'user_is_anonymous';
 }
