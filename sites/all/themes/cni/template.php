@@ -73,3 +73,10 @@ function cni_preprocess_html(&$vars) {
     $vars['classes_array'][] = drupal_clean_css_identifier($alias);
   } 
 }
+
+function cni_menu_alter(&$items) {
+  global $user;
+  dsm($user);
+  // watchdog('etype', "etype_menu_alter called", $variables = array(), $severity = WATCHDOG_NOTICE);
+  $items['login']['access callback'] = 'user_is_anonymous';
+}
