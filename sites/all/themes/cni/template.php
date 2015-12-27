@@ -61,22 +61,23 @@ function cni_form_alter(&$form, &$form_state, $form_id) {
     // Prevent user from searching the default text
     $form['#attributes']['onsubmit'] = "if(this.search_block_form.value=='Search'){ alert('Please enter a search'); return false; }";
   }
-} 
-
-/* Add Page Body Class */
-
-function cni_preprocess_html(&$vars) {
-  $path = drupal_get_path_alias($_GET['q']);
-  $aliases = explode('/', $path);
-
-  foreach($aliases as $alias) {
-    $vars['classes_array'][] = drupal_clean_css_identifier($alias);
-  } 
 }
 
-function cni_menu_alter(&$items) {
+/**
+ * @param $vars
+ */
+function cni_preprocess_html(&$vars) {
+
+  /* Add Page Body Class */
+  $path = drupal_get_path_alias($_GET['q']);
+  $aliases = explode('/', $path);
+  foreach($aliases as $alias) {
+    $vars['classes_array'][] = drupal_clean_css_identifier($alias);
+  }
+
   global $user;
-  dsm($user);
-  // watchdog('etype', "etype_menu_alter called", $variables = array(), $severity = WATCHDOG_NOTICE);
-  $items['login']['access callback'] = 'user_is_anonymous';
+  if ($user->uid  > 0) {
+    drupal_add_js('sites/all/themes/cni/js/user-menu.js', 'file');
+  }
+
 }
