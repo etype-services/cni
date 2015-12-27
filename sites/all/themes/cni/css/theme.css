@@ -367,6 +367,7 @@ article .field-image {
 
 .item-list ul li {
     padding: 5px 0;
+    margin-bottom: 1em;
     list-style-position: outside;
     list-style-type: square;
     color: #000;
