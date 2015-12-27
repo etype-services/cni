@@ -20,8 +20,8 @@ function etype_menu() {
     'access arguments' => array('access administration pages')
   );
 
-  $items['login'] = array(
-    'title' => 'Login',
+  $items['custom-login'] = array(
+    'title' => 'Log In',
     'access callback' => 'user_is_anonymous',
     'menu_name' => 'user-menu',  // This is the changed line.
     'type' => MENU_NORMAL_ITEM,
