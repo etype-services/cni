@@ -180,8 +180,6 @@ function etype_classified_ad_importer() {
 }
 
 function etype_menu_alter(&$items) {
-  var_dump($items);
-  exit;
   dsm($items);
   $items['login']['access callback'] = 'user_is_anonymous';
 }
