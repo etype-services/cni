@@ -1,4 +1,4 @@
-﻿<?php 
+﻿<?php
 
 if(isset($_POST['send']))
 {
@@ -9,11 +9,11 @@ $param12=array('UserName'=>"$uname");
 		//echo "<pre>";
 		//print_r($response12);
 		//echo "</pre>";
-	
+
 		 if($response12->GetPublicationIDResult== -9)
 		{
 		$msg="Invalid UserName ";
-		}	 
+		}
 		else if($response12->GetPublicationIDResult== 3193)
 		{
 $param=array('UserName'=>$uname);
