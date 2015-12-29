@@ -1034,6 +1034,19 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
     box-shadow: none;
 }
 
+/* Facebook Block */
+#block-block-20 .block-inner {
+    padding: 0;
+    margin: 0 0 20px 0;
+    border: none;
+    box-shadow: none;
+}
+
+/* Twitter Block */
+#block-block-36 .block-inner {
+
+}
+
 #block-block-28 .content {
     padding: 0 0 0 0;
     color: #999999;
