@@ -24,14 +24,19 @@ function etype_menu() {
 
 }
 
-/* run job at 6:00 am every Wednesday */
+/* run job at 7:20 am every Thursday */
 function etype_cronapi($op, $job = NULL) {
 
   $items['etype_cron'] = array(
-    'description' => 'Import Classified Ads',
-    'rule' => '10 7 * * 4',
+    'title' => 'Import Classified Ads',
+    'module' => 'etype',
     'callback' => 'etype_classified_ad_importer',
-    'arguments' => array('all'),
+    'scheduler' => array(
+      'name' => 'crontab',
+      'crontab' => array(
+        'rules' => array('20 7 * * 4'),
+      ),
+    ),
   );
 
   return $items;
