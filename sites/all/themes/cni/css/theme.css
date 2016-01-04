@@ -1330,3 +1330,20 @@ blockquote {
 .block-dfp .content {
 	padding-top: 0;
 }
+
+/* PREMIUM CONTENT
+--------------------------------------------------------------------------*/
+.premium-message {
+    margin-top: 1em;
+    font-family: 'Lato', sans-serif;
+    line-height: 1.5em;
+}
+
+.premium-message a {
+    text-decoration: underline;
+}
+
+.not-logged-in.node-type-article .view-more-digital, .not-logged-in.node-type-article .links {
+    display: none;
+    visibility: hidden;
+}
