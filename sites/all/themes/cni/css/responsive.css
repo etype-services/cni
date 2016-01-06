@@ -418,7 +418,7 @@
     }
 
     .node .content img {
-        max-width: 380px;
+        max-width: 100%;
     }
 
     .node-teaser .field-name-field-image img {
