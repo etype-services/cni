@@ -124,3 +124,9 @@
     width: 100%;
     max-width: 630px;
 }
+
+/* nie page */
+.page-node-191327 #node-191327 .field-image {
+    display: none;
+    visibility: hidden;
+}
