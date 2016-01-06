@@ -1034,6 +1034,11 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
     box-shadow: none;
 }
 
+/* e-edition in sidebar */
+#block-block-5 .block-inner img {
+    max-width: 100%;
+}
+
 /* Facebook Block */
 #block-block-20 .block-inner {
     padding: 0;
