@@ -503,7 +503,7 @@
     }
 
     /* e-edition in sidebar */
-    .block-block-5 .block-inner img {
+    #block-block-5 .block-inner img {
         max-width: 100%;
     }
 
