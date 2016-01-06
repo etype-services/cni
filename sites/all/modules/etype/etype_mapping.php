@@ -1,7 +1,7 @@
 <?php
 
 /* import _url */
-$url = 'http://www.etypeclassifieds.com/cherokeexml/CNI_HRT.xml';
+$url = 'http://www.etypeclassifieds.com/cherokeexml/CNI_CSC.xml';
 
 /* ad categories */
 $categories = array(
