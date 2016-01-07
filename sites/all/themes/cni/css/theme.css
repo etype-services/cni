@@ -1039,6 +1039,10 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
     max-width: 100%;
 }
 
+#block-block-5 .block-inner h4 {
+    text-align: center;
+}
+
 /* Facebook Block */
 #block-block-20 .block-inner {
     padding: 0;
