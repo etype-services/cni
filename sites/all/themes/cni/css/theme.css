@@ -1034,6 +1034,28 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
     box-shadow: none;
 }
 
+/* e-edition in sidebar */
+#block-block-5 .block-inner img {
+    max-width: 100%;
+}
+
+#block-block-5 .block-inner h4 {
+    text-align: center;
+}
+
+/* Facebook Block */
+#block-block-20 .block-inner {
+    padding: 0;
+    margin: 0 0 20px 0;
+    border: none;
+    box-shadow: none;
+}
+
+/* Twitter Block */
+#block-block-36 .block-inner {
+
+}
+
 #block-block-28 .content {
     padding: 0 0 0 0;
     color: #999999;
@@ -1316,4 +1338,21 @@ blockquote {
 
 .block-dfp .content {
 	padding-top: 0;
+}
+
+/* PREMIUM CONTENT
+--------------------------------------------------------------------------*/
+.premium-message {
+    margin-top: 1em;
+    font-family: 'Lato', sans-serif;
+    line-height: 1.5em;
+}
+
+.premium-message a {
+    text-decoration: underline;
+}
+
+.not-logged-in.node-type-article .view-more-digital, .not-logged-in.node-type-article .links {
+    display: none;
+    visibility: hidden;
 }

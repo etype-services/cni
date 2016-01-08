@@ -470,7 +470,6 @@ function premium_theme() {
  */
 function theme_premium_body($arguments) {
   $node = $arguments['node'];
-  dpm($node);
   node_build_content($node, 'teaser');
   $level = premium_level_load($node->premium);
   if ($level->denied_message) {
@@ -483,6 +482,6 @@ function theme_premium_body($arguments) {
   }
   // Only display the premium message, if we actual have any content.
   if (!empty($node->content['body'])) {
-    return '<div class="premium-message">' . check_markup($denied_message, $denied_message_format) . '</div>';
+    return $node->content['body'][0]['#markup'] . '<div class="premium-message">' . check_markup($denied_message, $denied_message_format) . '</div>';
   }
 }

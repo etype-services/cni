@@ -58,6 +58,10 @@
         clear: left;
     }
 
+    .page-node.not-logged-in .content .node-content-wrapper {
+        margin-top: -13px;
+    }
+
 }
 
 /* desktop browsers */
@@ -125,6 +129,15 @@
     .page-node .field-name-field-image img {
         width: 490px;
         height: auto;
+    }
+
+    .page-node.not-logged-in .field-name-field-image img {
+        width: auto;
+        height: auto;
+    }
+
+    .page-node.not-logged-in .content .node-content-wrapper {
+        margin-top: -13px;
     }
 
     .page-node .field-name-field-video iframe {
@@ -405,7 +418,7 @@
     }
 
     .node .content img {
-        max-width: 380px;
+        max-width: 100%;
     }
 
     .node-teaser .field-name-field-image img {
@@ -562,7 +575,7 @@
     }
 
     .node .content img {
-        max-width: 380px;
+        max-width: 100%;
     }
 
     .node-teaser .field-name-field-image img {
