@@ -24,7 +24,7 @@ function etype_menu() {
 
 }
 
-/* run job at 6:30 am every Wednesday */
+/* run job at 7:30am Eastern every Wednesday */
 function etype_cronapi($op, $job = NULL) {
 
   $items['etype_cron'] = array(
@@ -34,7 +34,7 @@ function etype_cronapi($op, $job = NULL) {
     'scheduler' => array(
       'name' => 'crontab',
       'crontab' => array(
-        'rules' => array('30 6 * * 3'),
+        'rules' => array('30 7 * * 3'),
       ),
     ),
   );
