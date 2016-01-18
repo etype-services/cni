@@ -8,12 +8,12 @@
     padding: 0;
 }
 
-#block-dfp-banner-top {
+#block-dfp-cni-cherokeeleaderboard {
     width:728px;
     margin: 1.6em auto 0 auto;
 }
 
-#block-dfp-banner-top iframe {
+#block-dfp-cni-cherokeeleaderboard iframe {
     width:728px;
     height:90px;
 }
@@ -77,7 +77,7 @@
 
     /* main menu */
     #main-menu ul.menu {
-        margin-left: 7em;
+        margin-left: 2em;
     }
 
 }
@@ -85,7 +85,7 @@
 @media only screen and (max-width: 767px) {
 
     /* Hide larger DFP ads on non full-size browsers */
-    #block-dfp-banner-top, #block-dfp-banner, #block-dfp-cni-cherokeefooter {
+    #block-dfp-cni-cherokeeleaderboard, #block-dfp-banner, #block-dfp-cni-cherokeefooter {
         display: none;
         visibility: hidden;
     }
@@ -100,7 +100,7 @@
 @media only screen and (min-width: 768px) {
 
     /* Hide larger DFP ads on non full-size browsers */
-    #block-dfp-banner-top, #block-dfp-banner, #block-dfp-cni-cherokeefooter {
+    #block-dfp-cni-cherokeeleaderboard, #block-dfp-banner, #block-dfp-cni-cherokeefooter {
         display: block;
         visibility: visible;
     }
@@ -123,4 +123,10 @@
 .site-logo img {
     width: 100%;
     max-width: 630px;
+}
+
+/* nie page */
+.page-node-191327 #node-191327 .field-image {
+    display: none;
+    visibility: hidden;
 }
