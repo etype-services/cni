@@ -91,6 +91,12 @@ h3.site-slogan {
 	float: left;
 }
 
+/* hide theme default drop-down nav */
+#mm0 {
+    display: none;
+    visibility: hidden;
+}
+
 /* SLIDESHOW 
 --------------------------------------------------------------------------*/
 
@@ -1215,10 +1221,16 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
     padding-left: 50px;
 }
 
+/* removes quote icons from bones layout.css */
 blockquote {
-    background-image: none;
-    margin: 0;
+    background: none;
+    margin: 0 0 0.5em 1em;
     padding: 0;
+}
+
+blockquote p {
+    padding-right: 1em;
+    background: none;
 }
 
 #block-menu-block-2 ul.menu li, #block-menu-block-2 #main-menu ul.menu li, #block-menu-block-2 #user-menu ul.menu li, #block-menu-block-2 #nav-menu ul.menu li {
@@ -1355,4 +1367,25 @@ blockquote {
 .not-logged-in.node-type-article .view-more-digital, .not-logged-in.node-type-article .links {
     display: none;
     visibility: hidden;
+}
+
+/* WEBFORMS
+--------------------------------------------------------------------------*/
+
+/* excludes captcha froms by inclusion of .webform-component-fieldset */
+.webform-client-form .webform-component-fieldset .fieldset-legend {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.0em;
+    font-weight: normal;
+    text-transform: uppercase;
+    margin-bottom: 0.6em;
+    font-size: 1.2em;
+}
+
+.webform-client-form .webform-component-fieldset .fieldset-wrapper {
+    margin-left: 0.5em;
+}
+
+textarea, select, input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"] {
+    font-family: 'Lato', sans-serif;
 }
