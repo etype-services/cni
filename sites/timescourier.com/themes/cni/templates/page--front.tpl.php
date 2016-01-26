@@ -11,6 +11,7 @@
                         <li><a class="facebook" href="<?php echo $facebook ?>"></a></li>
                         <li><a class="rss" href="<?php print $base_path ?>rss.xml"></a></li>
                     </ul>
+                    pp
                 </div>
             </nav>
         <?php endif; ?>
