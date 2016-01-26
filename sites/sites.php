@@ -39,9 +39,9 @@
  * Edit the lines below to define directory aliases. Remove the leading hash
  * signs to enable.
  */
+
+$sites['timescourier.etypegoogle3.com'] = 'timescourier.com';
 $sites['timescourier.com'] = 'timescourier.com';
 $sites['www.timescourier.com'] = 'timescourier.com';
 $sites['prod.timescourier.com'] = 'timescourier.com';
 $sites['dev.timescourier.com'] = 'timescourier.com';
-
-# $sites['localhost.example'] = 'example.com';
