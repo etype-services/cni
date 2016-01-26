@@ -10,7 +10,6 @@
                         <li><a class="twitter" href="<?php echo $twitter ?>"></a></li>
                         <li><a class="facebook" href="<?php echo $facebook ?>"></a></li>
                     </ul>
-                    pp
                 </div>
             </nav>
         <?php endif; ?>
