@@ -65,8 +65,6 @@ CKEDITOR.editorConfig = function (config) {
         config.height = this.element.$.rows * 20 + 'px';
     }
 
-    // allow attributes in div tags
-    config.extraAllowedContent = 'div(*)';
 }
 
 /*
