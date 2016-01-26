@@ -105,3 +105,6 @@ Drupal.settings.cke_toolbar_DrupalFull = [
   ['Maximize', 'ShowBlocks'],
   ['DrupalBreak', 'DrupalPageBreak']
 ];
+
+// allow attributes in div tags
+config.extraAllowedContent = 'div(*)';
