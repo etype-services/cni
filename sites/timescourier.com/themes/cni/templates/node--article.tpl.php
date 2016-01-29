@@ -46,8 +46,7 @@
       ?>
     </div>
     
-    <div class="view-more-digital"><a href="http://www.etypeservices.com/Times-CourierID603">To view more please log in or subscribe to the digital edition.</a></div>
-    
+        
     <?php if (isset($content['links'])): ?>  
       <?php print render($content['links']); ?>
     <?php endif; ?>
