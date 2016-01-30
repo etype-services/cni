@@ -40,6 +40,12 @@
  * signs to enable.
  */
 
+$sites['claycountyprogress.etypegoogle3.com'] = 'claycountyprogress.com';
+$sites['claycountyprogress.com'] = 'claycountyprogress.com';
+$sites['www.claycountyprogress.com'] = 'claycountyprogress.com';
+$sites['prod.claycountyprogress.com'] = 'claycountyprogress.com';
+$sites['dev.claycountyprogress.com'] = 'claycountyprogress.com';
+
 $sites['timescourier.etypegoogle3.com'] = 'timescourier.com';
 $sites['timescourier.com'] = 'timescourier.com';
 $sites['www.timescourier.com'] = 'timescourier.com';
