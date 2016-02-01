@@ -39,6 +39,12 @@
  * Edit the lines below to define directory aliases. Remove the leading hash
  * signs to enable.
  */
+ 
+$sites['thenewsobserver.etypegoogle3.com'] = 'thenewsobserver.com';
+$sites['thenewsobserver.com'] = 'thenewsobserver.com';
+$sites['www.thenewsobserver.com'] = 'thenewsobserver.com';
+$sites['prod.thenewsobserver.com'] = 'thenewsobserver.com';
+$sites['dev.thenewsobserver.com'] = 'thenewsobserver.com';
 
 $sites['claycountyprogress.etypegoogle3.com'] = 'claycountyprogress.com';
 $sites['claycountyprogress.com'] = 'claycountyprogress.com';
