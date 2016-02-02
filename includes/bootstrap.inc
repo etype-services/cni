@@ -2250,11 +2250,9 @@ function drupal_bootstrap($phase = NULL, $new_phase = TRUE) {
 
         case DRUPAL_BOOTSTRAP_SESSION:
           require_once DRUPAL_ROOT . '/' . variable_get('session_inc', 'includes/session.inc');
-          session_set_save_handler("sess_open", "sess_close", "sess_read", "sess_write", "sess_destroy", "sess_gc");
-          // Add a unique session name. Session names only accept alphanumeric characters.
-          session_name(preg_replace('/[^a-zA-Z0-9]/', '', conf_init()));
-          session_start();
+          drupal_session_initialize();
           break;
+
         case DRUPAL_BOOTSTRAP_PAGE_HEADER:
           _drupal_bootstrap_page_header();
           break;
