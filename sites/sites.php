@@ -39,6 +39,90 @@
  * Edit the lines below to define directory aliases. Remove the leading hash
  * signs to enable.
  */
+
+$sites['whitecountynews.etypegoogle3.com'] = 'whitecountynews.net';
+$sites['whitecountynews.net'] = 'whitecountynews.net';
+$sites['www.whitecountynews.net'] = 'whitecountynews.net';
+$sites['prod.whitecountynews.net'] = 'whitecountynews.net';
+$sites['dev.whitecountynews.net'] = 'whitecountynews.net';
+
+$sites['tribune-georgian.etypegoogle3.com'] = 'tribune-georgian.com';
+$sites['tribune-georgian.com'] = 'tribune-georgian.com';
+$sites['www.tribune-georgian.com'] = 'tribune-georgian.com';
+$sites['prod.tribune-georgian.com'] = 'tribune-georgian.com';
+$sites['dev.tribune-georgian.com'] = 'tribune-georgian.com';
+
+$sites['thetoccoarecord.etypegoogle3.com'] = 'thetoccoarecord.com';
+$sites['thetoccoarecord.com'] = 'thetoccoarecord.com';
+$sites['www.thetoccoarecord.com'] = 'thetoccoarecord.com';
+$sites['prod.thetoccoarecord.com'] = 'thetoccoarecord.com';
+$sites['dev.thetoccoarecord.com'] = 'thetoccoarecord.com';
+
+$sites['thenortheastgeorgian.etypegoogle3.com'] = 'thenortheastgeorgian.com';
+$sites['thenortheastgeorgian.com'] = 'thenortheastgeorgian.com';
+$sites['www.thenortheastgeorgian.com'] = 'thenortheastgeorgian.com';
+$sites['prod.thenortheastgeorgian.com'] = 'thenortheastgeorgian.com';
+$sites['dev.thenortheastgeorgian.com'] = 'thenortheastgeorgian.com';
+
+$sites['myandrewsjournal.etypegoogle3.com'] = 'myandrewsjournal.com';
+$sites['myandrewsjournal.com'] = 'myandrewsjournal.com';
+$sites['www.myandrewsjournal.com'] = 'myandrewsjournal.com';
+$sites['prod.myandrewsjournal.com'] = 'myandrewsjournal.com';
+$sites['dev.myandrewsjournal.com'] = 'myandrewsjournal.com';
+
+$sites['lakecityreporter.etypegoogle3.com'] = 'lakecityreporter.com';
+$sites['lakecityreporter.com'] = 'lakecityreporter.com';
+$sites['www.lakecityreporter.com'] = 'lakecityreporter.com';
+$sites['prod.lakecityreporter.com'] = 'lakecityreporter.com';
+$sites['dev.lakecityreporter.com'] = 'lakecityreporter.com';
+
+$sites['thehartwellsun.etypegoogle3.com'] = 'thehartwellsun.com';
+$sites['thehartwellsun.com'] = 'thehartwellsun.com';
+$sites['www.thehartwellsun.com'] = 'thehartwellsun.com';
+$sites['prod.thehartwellsun.com'] = 'thehartwellsun.com';
+$sites['dev.thehartwellsun.com'] = 'thehartwellsun.com';
+ 
+$sites['franklincountycitizen.etypegoogle3.com'] = 'franklincountycitizen.com';
+$sites['franklincountycitizen.com'] = 'franklincountycitizen.com';
+$sites['www.franklincountycitizen.com'] = 'franklincountycitizen.com';
+$sites['prod.franklincountycitizen.com'] = 'franklincountycitizen.com';
+$sites['dev.franklincountycitizen.com'] = 'franklincountycitizen.com';
+
+$sites['fbnewsleader.etypegoogle3.com'] = 'fbnewsleader.com';
+$sites['fbnewsleader.com'] = 'fbnewsleader.com';
+$sites['www.fbnewsleader.com'] = 'fbnewsleader.com';
+$sites['prod.fbnewsleader.com'] = 'fbnewsleader.com';
+$sites['dev.fbnewsleader.com'] = 'fbnewsleader.com';
+
+$sites['elberton.etypegoogle3.com'] = 'elberton.com';
+$sites['elberton.com'] = 'elberton.com';
+$sites['www.elberton.com'] = 'elberton.com';
+$sites['prod.elberton.com'] = 'elberton.com';
+$sites['dev.elberton.com'] = 'elberton.com';
+
+$sites['thedahloneganugget.etypegoogle3.com'] = 'thedahloneganugget.com';
+$sites['thedahloneganugget.com'] = 'thedahloneganugget.com';
+$sites['www.thedahloneganugget.com'] = 'thedahloneganugget.com';
+$sites['prod.thedahloneganugget.com'] = 'thedahloneganugget.com';
+$sites['dev.thedahloneganugget.com'] = 'thedahloneganugget.com';
+
+$sites['theclaytontribune.etypegoogle3.com'] = 'theclaytontribune.com';
+$sites['theclaytontribune.com'] = 'theclaytontribune.com';
+$sites['www.theclaytontribune.com'] = 'theclaytontribune.com';
+$sites['prod.theclaytontribune.com'] = 'theclaytontribune.com';
+$sites['dev.theclaytontribune.com'] = 'theclaytontribune.com';
+
+$sites['cherokeescout.etypegoogle3.com'] = 'cherokeescout.com';
+$sites['cherokeescout.com'] = 'cherokeescout.com';
+$sites['www.cherokeescout.com'] = 'cherokeescout.com';
+$sites['prod.cherokeescout.com'] = 'cherokeescout.com';
+$sites['dev.cherokeescout.com'] = 'cherokeescout.com';
+
+$sites['beachesleader.etypegoogle3.com'] = 'beachesleader.com';
+$sites['beachesleader.com'] = 'beachesleader.com';
+$sites['www.beachesleader.com'] = 'beachesleader.com';
+$sites['prod.beachesleader.com'] = 'beachesleader.com';
+$sites['dev.beachesleader.com'] = 'beachesleader.com';
  
 $sites['thenewsobserver.etypegoogle3.com'] = 'thenewsobserver.com';
 $sites['thenewsobserver.com'] = 'thenewsobserver.com';

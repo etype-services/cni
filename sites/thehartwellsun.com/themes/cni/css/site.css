@@ -1,0 +1,126 @@
+/* dfp ads */
+
+#dfp-ad-banner > img {
+    max-width: 100% !important;
+}
+
+#block-dfp-sidebar-1 .block-inner .content {
+    padding: 0;
+}
+
+#block-dfp-banner-top {
+    width:728px;
+    margin: 1.6em auto 0 auto;
+}
+
+#block-dfp-banner-top iframe {
+    width:728px;
+    height:90px;
+}
+
+#block-dfp-cni-hartwellsidebar1 {
+    width:300px;
+}
+
+#block-dfp-cni-hartwellsidebar1 iframe {
+    width:300px;
+    height:250px;
+}
+
+#block-dfp-cni-hartwellsidebar2 {
+    width:300px;
+}
+
+#block-dfp-cni-hartwellsidebar2 iframe {
+    width:300px; height:250px;
+}
+
+#block-dfp-cni-hartwellfooter {
+    width:728px;
+    margin: 5px auto 1.4em;
+}
+
+#block-dfp-cni-hartwellfooter iframe {
+    width:728px;
+    height:90px;
+}
+
+#block-dfp-cni-hartwellmobile {
+	width:130px;
+	margin: 1.6em auto 1.6em auto;
+}
+
+/* desktop browsers */
+@media only screen and (min-width: 959px) {
+
+    /* dfp ads */
+    #block-dfp-banner {
+        width: 468px;
+        margin: 0px auto 0px 83px;
+    }
+
+    /* main menu */
+    #main-menu ul.menu {
+        margin-left: 2em;
+    }
+
+}
+
+/* desktop browsers */
+@media only screen and (min-width: 768px) and (max-width: 958px) {
+
+    /* dfp ads */
+    #block-dfp-banner {
+        width: 468px;
+        margin: 0px auto 0px 12px;
+    }
+
+    /* main menu */
+    #main-menu ul.menu {
+        margin-left: 0;
+    }
+
+}
+
+@media only screen and (max-width: 767px) {
+
+    /* Hide larger DFP ads on non full-size browsers */
+    #block-dfp-banner-top, #block-dfp-banner, #block-dfp-cni-hartwellfooter {
+        display: none;
+        visibility: hidden;
+    }
+
+    /* show mobile ad on smaller windows */
+    #block-dfp-cni-hartwellmobile {
+        display: block;
+        visibility: visible;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+    /* Hide larger DFP ads on non full-size browsers */
+    #block-dfp-banner-top, #block-dfp-banner, #block-dfp-cni-hartwellfooter {
+        display: block;
+        visibility: visible;
+    }
+
+    /* show mobile ad on smaller windows */
+    #block-dfp-cni-hartwellmobile {
+        display: none;
+        visibility: hidden;
+    }
+}
+
+
+/* logo */
+.site-logo {
+    width: 80%;
+    margin: 0 auto;
+    max-width: 623px;
+}
+
+.site-logo img {
+    width: 100%;
+    max-width: 623px;
+}
