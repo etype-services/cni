@@ -60,5 +60,5 @@ settings[postscript_1_grid_width] = 3
 settings[postscript_2_grid_width] = 3
 settings[postscript_3_grid_width] = 3
 settings[postscript_4_grid_width] = 3
-settings[facebook] = 'http://www.facebook.com'
-settings[twitter] = 'http://www.twitter.com'
+# settings[facebook] = 'http://www.facebook.com'
+# settings[twitter] = 'http://www.twitter.com'
