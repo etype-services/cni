@@ -204,4 +204,5 @@ function etype_classified_ad_importer() {
 
 function etype_clear_cache() {
   drupal_flush_all_caches();
+  watchdog('etype', "Cache cleared", $variables = array(), $severity = WATCHDOG_NOTICE);
 }
