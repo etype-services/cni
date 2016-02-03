@@ -11,3 +11,8 @@
 	display: none;
 }
 
+/* hide theme default mobile drop-down nav */
+#mm0 {
+	display: none;
+	visibility: hidden;
+}
