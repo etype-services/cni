@@ -40,6 +40,18 @@
  * signs to enable.
  */
 
+$sites['nassaucountyrecord.etypegoogle3.com'] = 'nassaucountyrecord.com';
+$sites['nassaucountyrecord.com'] = 'nassaucountyrecord.com';
+$sites['www.nassaucountyrecord.com'] = 'nassaucountyrecord.com';
+$sites['prod.nassaucountyrecord.com'] = 'nassaucountyrecord.com';
+$sites['dev.nassaucountyrecord.com'] = 'nassaucountyrecord.com';
+
+$sites['grahamstar.etypegoogle3.com'] = 'grahamstar.com';
+$sites['grahamstar.com'] = 'grahamstar.com';
+$sites['www.grahamstar.com'] = 'grahamstar.com';
+$sites['prod.grahamstar.com'] = 'grahamstar.com';
+$sites['dev.grahamstar.com'] = 'grahamstar.com';
+
 $sites['whitecountynews.etypegoogle3.com'] = 'whitecountynews.net';
 $sites['whitecountynews.net'] = 'whitecountynews.net';
 $sites['www.whitecountynews.net'] = 'whitecountynews.net';
