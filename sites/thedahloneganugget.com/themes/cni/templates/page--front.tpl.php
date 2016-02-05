@@ -61,40 +61,7 @@
                 <section id="main-content">
 
                     <!-- Main 1 -->
-                    <div class="main clearfix">
-                        <div class="main-inner grid_8">
 
-                            <?php if ($page['slideshow']): ?>
-                                <div class="slideshow-wrapper clearfix">
-                                    <div class="slideshow-wrapper-inner">
-                                        <div id="slideshow">
-                                            <?php print render($page['slideshow']); ?>
-                                        </div>
-                                    </div>
-                                </div>
-                            <?php endif; ?>
-
-                            <?php if ($page['preface_1']): ?>
-                                <div class="preface-wrapper
-                                preface-wrapper-top clearfix">
-                                    <div class="preface-wrapper-inner">
-                                        <div class="preface-wrapper-inner-inner">
-                                            <section id="preface_1">
-                                                <div><?php print render
-                                                    ($page['preface_1']); ?></div>
-                                            </section>
-                                        </div>
-                                    </div>
-                                </div>
-                            <?php endif; ?>
-
-                        </div></div>
-                        <?php if ($page['sidebar_first']): ?>
-                            <aside class="sidebar first-sidebar grid_4 clearfix">
-                                <?php print render($page['sidebar_first']); ?>
-                            </aside>
-                        <?php endif; ?>
-                    </div>
 
                     <!-- Main 2 Editor's Pick-->
                     <div class="main clearfix">
