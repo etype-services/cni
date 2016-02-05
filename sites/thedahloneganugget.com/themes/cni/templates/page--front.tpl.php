@@ -7,7 +7,7 @@
                 <?php print render($page['search_box']); ?>
                 <div id="social">
                     <ul class="social-links">
-                        <li><a class="rss" href="<?php print $base_path ?>rss.xml"></a></li>
+                        <li><a class="facebook" href="<?php echo $facebook ?>"></a></li>
                     </ul>
                 </div>
             </nav>
@@ -74,19 +74,7 @@
                                 </div>
                             <?php endif; ?>
 
-                            <?php if ($page['preface_1']): ?>
-                                <div class="preface-wrapper
-                                preface-wrapper-top clearfix">
-                                    <div class="preface-wrapper-inner">
-                                        <div class="preface-wrapper-inner-inner">
-                                            <section id="preface_1">
-                                                <div><?php print render
-                                                    ($page['preface_1']); ?></div>
-                                            </section>
-                                        </div>
-                                    </div>
-                                </div>
-                            <?php endif; ?>
+
 
                         </div>
                         <?php if ($page['sidebar_first']): ?>
