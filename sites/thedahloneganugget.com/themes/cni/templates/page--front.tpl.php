@@ -88,7 +88,7 @@
                                 </div>
                             <?php endif; ?>
 
-                        </div>
+                        </div></div>
                         <?php if ($page['sidebar_first']): ?>
                             <aside class="sidebar first-sidebar grid_4 clearfix">
                                 <?php print render($page['sidebar_first']); ?>
