@@ -1317,30 +1317,26 @@ blockquote {
     overflow: hidden;
 }
 
-#block-dfp-cni-fernandinaleaderboard {width:728px; margin: 1.6em auto 0 auto;}
-#block-dfp-cni-fernandinaleaderboard iframe {width:728px; height:90px;}
+#block-dfp-cni-nassauleaderboard {width:728px; margin: 1.6em auto 0 auto;}
+#block-dfp-cni-nassauleaderboard iframe {width:728px; height:90px;}
 
-#block-dfp-cni-fernandinasidebar1 {width:300px;}
-#block-dfp-cni-fernandinasidebar1 iframe {width:300px; height:250px;}
+#block-dfp-cni-nassausidebar1 {width:300px;}
+#block-dfp-cni-nassausidebar1 iframe {width:300px; height:250px;}
 
-#block-dfp-cni-fernandinasidebar2 {width:300px;}
-#block-dfp-cni-fernandinasidebar2 iframe {width:300px; height:250px;}
+#block-dfp-cni-nassausidebar2 {width:300px;}
+#block-dfp-cni-nassausidebar2 iframe {width:300px; height:250px;}
 
-#block-dfp-cin-fernandinaministrip {width:300px;}
-#block-dfp-cin-fernandinaministrip iframe {width:300px; height:100px;}
+#block-dfp-cin-nassauministrip {width:300px;}
+#block-dfp-cin-nassauministrip iframe {width:300px; height:100px;}
 
-#block-dfp-cni-fernandinafooter {width:728px; margin: 5px auto 1em;}
-#block-dfp-cni-fernandinafooter iframe {width:728px; height:90px;}
+#block-dfp-cni-nassaufooter {width:728px; margin: 5px auto 1em;}
+#block-dfp-cni-nassaufooter iframe {width:728px; height:90px;}
 
 .block-dfp .content {
 	padding-top: 0;
 }
 
-#block-dfp-cni-fernaninaweather {
-    margin-right: 1em;
-}
-
-#block-dfp-cni-fernandinamobile {
+#block-dfp-cni-nassaumobile {
 	width: 320px;
 	margin: 1.6em auto 1.6em auto;
 }
