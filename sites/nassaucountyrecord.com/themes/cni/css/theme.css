@@ -1294,7 +1294,6 @@ blockquote {
     margin-bottom: 1.5em;
 }
 
-
 /* DFP ADS
 --------------------------------------------------------------------------*/
 #main-content .block-dfp .block-inner {
@@ -1302,49 +1301,6 @@ blockquote {
     border-bottom: none;
     box-shadow: none;
     padding: 0;
-}
-
-#dfp-ad-banner_top > img {
-    max-width: 100% !important;
-}
-
-#block-dfp-sidebar-1 .block-inner .content {
-    padding: 0;
-}
-
-#dfp-ad-sidebar_1 {
-    max-width: 300px;
-    overflow: hidden;
-}
-
-#block-dfp-cni-nassauleaderboard {width:728px; margin: 1.6em auto 0 auto;}
-#block-dfp-cni-nassauleaderboard iframe {width:728px; height:90px;}
-
-#block-dfp-cni-nassausidebar1 {width:300px;}
-#block-dfp-cni-nassausidebar1 iframe {width:300px; height:250px;}
-
-#block-dfp-cni-nassausidebar2 {width:300px;}
-#block-dfp-cni-nassausidebar2 iframe {width:300px; height:250px;}
-
-#block-dfp-cin-nassauministrip {width:300px;}
-#block-dfp-cin-nassauministrip iframe {width:300px; height:100px;}
-
-#block-dfp-cni-nassaufooter {width:728px; margin: 5px auto 1em;}
-#block-dfp-cni-nassaufooter iframe {width:728px; height:90px;}
-
-.block-dfp .content {
-	padding-top: 0;
-}
-
-#block-dfp-cni-nassaumobile {
-	width: 320px;
-	margin: 1.6em auto 1.6em auto;
-}
-
-/* ad in header */
-#block-dfp-cni-nassaupromo {
-    position: relative;
-    top: -9px;
 }
 
 /* WEATHER BLOCK IN WEATHER
