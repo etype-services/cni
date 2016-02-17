@@ -1341,6 +1341,12 @@ blockquote {
 	margin: 1.6em auto 1.6em auto;
 }
 
+/* ad in header */
+#block-dfp-cni-nassaupromo {
+    position: relative;
+    top: -9px;
+}
+
 /* WEATHER BLOCK IN WEATHER
 --------------------------------------------------------------------------*/
 #block-block-35 .block-inner {
