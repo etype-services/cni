@@ -78,6 +78,11 @@
         margin-left: 180px;
     }
 
+    #block-dfp-cni-nassaumobile {
+        display: none;
+        visibility: hidden;
+    }
+
 }
 
 /* desktop browsers */
