@@ -284,7 +284,12 @@ article .field-image {
 }
 
 .sidebar h3 {
-    font-size: 2em;
+    font-size: 1.5em;
+}
+
+/* Poll */
+.sidebar .node-advpoll h2 {
+    font-size: 1.2em;
 }
 
 /* POSTSCRIPT 
