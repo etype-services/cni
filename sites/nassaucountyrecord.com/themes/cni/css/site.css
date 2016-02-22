@@ -123,3 +123,14 @@
     }
 }
 
+/* logo */
+.site-logo {
+    width: 80%;
+    margin: 0 auto;
+    max-width: 584px;
+}
+
+.site-logo img {
+    width: 100%;
+    max-width: 584px;
+}
