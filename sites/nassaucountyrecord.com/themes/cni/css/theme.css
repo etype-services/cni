@@ -258,7 +258,7 @@ h3.site-slogan {
     padding: 20px;
     margin-bottom: 20px;
     border: 1px solid #ddd;
-    border-bottom: 3px solid #007DBF;
+    border-bottom: 3px solid #4f7bf2;
     background: #ffffff;
     box-shadow: 0 1px 5px #bbbbbb;
 }
@@ -497,7 +497,7 @@ article .field-image {
 /* Custom Menu styling */
 
 #block-superfish-1 {
-    background-color: #007DBF;
+    background-color: #4f7bf2;
     height: 33px;
 }
 
