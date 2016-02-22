@@ -55,7 +55,7 @@
 
     /* dfp ads */
     #block-dfp-cni-nassaupromo2 {
-        margin-top: 20px;
+        margin-top: 0;
     }
 
     /* main menu */
@@ -64,7 +64,7 @@
     }
 
     /* ad in header */
-    #block-dfp-cni-nassaupromo2 {
+    #block-dfp-cni-nassaupromo {
         position: relative;
         top: -9px;
     }
@@ -75,8 +75,8 @@
 @media only screen and (min-width: 768px) and (max-width: 958px) {
 
     /* dfp ads */
-    #block-dfp-cni-nassaupromo2 {
-        margin-top: 20px;
+    #block-dfp-cni-nassaupromo {
+        margin-top: 0;
     }
 
     /* main menu */
@@ -85,7 +85,7 @@
     }
 
     /* ad in header */
-    #block-dfp-cni-nassaupromo2 {
+    #block-dfp-cni-nassaupromo {
         position: relative;
         top: -9px;
     }
@@ -110,7 +110,7 @@
 @media only screen and (min-width: 768px) {
 
     /* Hide larger DFP ads on non full-size browsers */
-    #block-dfp-cni-nassauleaderboard, #blcok-dfp-cni-nassaubanner #block-dfp-cni-nassaufooter {
+    #block-dfp-cni-nassauleaderboard, #block-dfp-cni-nassaubanner #block-dfp-cni-nassaufooter {
         display: block;
         visibility: visible;
     }
