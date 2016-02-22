@@ -8,6 +8,7 @@
                 <div id="social">
                     <ul class="social-links">
                         <li><a class="rss" href="<?php print $base_path ?>rss.xml"></a></li>
+                        <li><a class="twitter" href="<?php print $twitter ?>"></a></li>
                     </ul>
                 </div>
             </nav>
