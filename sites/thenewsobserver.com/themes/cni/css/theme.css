@@ -691,7 +691,15 @@ article .field-image {
     margin-left: 180px;
 }
 
-.node-teaser .field-name-field-image img {
+.node-teaser .field-image .field-name-field-image .field-items .field-item {
+    display: none;
+}
+
+.node-teaser .field-image .field-name-field-image .field-items .field-item:first-child {
+    display: block;
+}
+
+.node-teaser .field-image .field-name-field-image .field-items .field-item:first-child img {
     display: block;
     padding: 10px;
     float: left;
