@@ -153,3 +153,9 @@ $sites['timescourier.com'] = 'timescourier.com';
 $sites['www.timescourier.com'] = 'timescourier.com';
 $sites['prod.timescourier.com'] = 'timescourier.com';
 $sites['dev.timescourier.com'] = 'timescourier.com';
+
+$sites['gracefulcarega.etypegoogle3.com'] = 'gracefulcarega.com';
+$sites['gracefulcarega.com'] = 'gracefulcarega.com';
+$sites['www.gracefulcarega.com'] = 'gracefulcarega.com';
+$sites['prod.gracefulcarega.com'] = 'gracefulcarega.com';
+$sites['dev.gracefulcarega.com'] = 'gracefulcarega';
