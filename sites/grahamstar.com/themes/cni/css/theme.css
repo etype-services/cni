@@ -287,6 +287,11 @@ article .field-image {
     font-size: 2em;
 }
 
+.sidebar .block-inner h3.title {
+    font-size: 1em;
+    margin-bottom: 0;
+}
+
 /* POSTSCRIPT 
 --------------------------------------------------------------------------*/
 
