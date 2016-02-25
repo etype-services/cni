@@ -68,11 +68,6 @@
         width: 468px;
         margin: 0px auto 0px 83px;
     }
-
-    #block-dfp-cni-fernandinamobile {
-        display: none;
-        visibility: hidden;
-    }
     
     .node-teaser .node-content-wrapper {
         margin-left: 180px;
@@ -181,11 +176,6 @@
         margin: 0 0 0.6em 0;
     }
 
-    #block-dfp-cni-fernandinamobile {
-        display: none;
-        visibility: hidden;
-    }
-
     /* SLIDESHOW
     --------------------------------------------------------------------------*/
     .view-slideshow .views_slideshow_main {
@@ -238,18 +228,6 @@
     }
     #dfp-ad-banner {
         margin: 0px auto 0px 15px;
-    }
-
-    /* Hide some DFP ads on non full-size browsers */
-    #block-dfp-cni-fernandinaleaderboard, #block-dfp-cni-whitebanner, #dfp-ad-cni_fernandinafooter {
-        display: none;
-        visibility: hidden;
-    }
-
-    /* show mobile ad on smaller windows */
-    #block-dfp-cni-fernandinamobile {
-        display: block;
-        visibility: visible;
     }
 
     .region-headerad {
@@ -430,18 +408,6 @@
 
 /* larger phones */
 @media only screen and (max-width: 479px) and (min-width: 421px) {
-
-    /* Hide some DFP ads on non full-size browsers */
-    #block-dfp-cni-fernandinaleaderboard, #dfp-ad-banner, #dfp-ad-cni_fernandinafooter {
-        display: none;
-        visibility: hidden;
-    }
-
-    /* show mobile ad on smaller windows */
-    #block-dfp-cni-fernandinamobile {
-        display: block;
-        visibility: visible;
-    }
 
     .region-headerad {
         float: left;
@@ -631,18 +597,6 @@
 
 /* smaller phones */
 @media only screen and (max-width: 420px) {
-
-    /* Hide some DFP ads on non full-size browsers */
-    #block-dfp-cni-fernandinaleaderboard, #dfp-ad-banner, #dfp-ad-cni_fernandinafooter {
-        display: none;
-        visibility: hidden;
-    }
-
-    /* show mobile ad on smaller windows */
-    #block-dfp-cni-fernandinamobile {
-        display: block;
-        visibility: visible;
-    }
 
     .region-headerad {
         float: left;
