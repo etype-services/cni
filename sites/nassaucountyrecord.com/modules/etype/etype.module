@@ -7,7 +7,7 @@
  *
  */
 
-/* Add phone field to contact form */
+/* Add phone field to site contact form */
 function etype_form_contact_site_form_alter(&$form, &$form_state, $form_id) {
   $form['phone'] = array(
     '#type' => 'text',
