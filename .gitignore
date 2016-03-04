@@ -4,21 +4,7 @@ sites/*/settings*.php
 # Ignore paths that contain generated content.
 sites/*/files
 sites/*/private
+sites/*/tmp
 
 # Ignore default files
-favicon.ico
 error_log
-
-# Odds and sods
-keys
-temp
-Archive.zip
-*Rate*Card*.pdf
-.ftpquota
-400.shtml
-401.shtml
-403.shtml
-404.shtml
-500.php
-500.shtml
-index_test.php
