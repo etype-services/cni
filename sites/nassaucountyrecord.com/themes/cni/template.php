@@ -69,3 +69,12 @@ function cni_preprocess_html(&$vars) {
     $vars['classes_array'][] = drupal_clean_css_identifier($alias);
   } 
 }
+
+/* Add phone field to site contact form */
+function cni_form_contact_site_form_alter(&$form, &$form_state, $form_id) {
+  $form['phone'] = array(
+    '#type' => 'text',
+    '#title' => t("Phone Number"),
+    '#required' => TRUE,
+  );
+}
