@@ -8,10 +8,6 @@
  */
 
 /* Add phone field to site contact form */
-function etype_form_contact_site_form_alter(&$form, &$form_state, $form_id) {
-  $form['phone'] = array(
-    '#type' => 'text',
-    '#title' => t("Phone Number"),
-    '#required' => TRUE,
-  );
+function etype_form_alter(&$form, &$form_state, $form_id) {
+  echo $form_id;
 }
