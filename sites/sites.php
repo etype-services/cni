@@ -168,6 +168,6 @@ $sites['dev.thefranklinpress.com'] = 'thefranklinpress.com';
 
 $sites['highlandsleadingagents.etypegoogle3.com'] = 'highlandsleadingagents.com';
 $sites['highlandsleadingagents.com'] = 'highlandsleadingagents.com';
-$sites['www.highlandsleadingagents.om'] = 'highlandsleadingagents.com';
+$sites['www.highlandsleadingagents.com'] = 'highlandsleadingagents.com';
 $sites['prod.highlandsleadingagents.com'] = 'highlandsleadingagents.com';
 $sites['dev.highlandsleadingagents.com'] = 'highlandsleadingagents.com';
