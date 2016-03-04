@@ -7,3 +7,10 @@
  *
  */
 
+function etype_form_contact_site_form_alter(&$form, &$form_state, $form_id) {
+  $form['phone'] = array(
+    '#type' => 'text',
+    '#title' => t("Phone Number"),
+    '#required' => TRUE,
+  );
+}
