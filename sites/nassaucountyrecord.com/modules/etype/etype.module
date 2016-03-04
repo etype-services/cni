@@ -14,7 +14,6 @@ function etype_form_contact_site_form_alter(&$form, &$form_state, $form_id){
   $form['phone'] = array(
     '#title' => t('Phone number'),
     '#type' => 'textfield',
-    '#required' => TRUE,
-    '#weight' => 3
+    '#required' => TRUE
   );
 }
