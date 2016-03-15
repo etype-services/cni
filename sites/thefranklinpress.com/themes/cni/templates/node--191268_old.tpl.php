@@ -1,4 +1,4 @@
-<?php 
+﻿<?php
 
 if(isset($_POST['send']))
 {
@@ -9,12 +9,12 @@ $param12=array('UserName'=>"$uname");
 		//echo "<pre>";
 		//print_r($response12);
 		//echo "</pre>";
-	
+
 		 if($response12->GetPublicationIDResult== -9)
 		{
 		$msg="Invalid UserName ";
-		}	 
-		else if($response12->GetPublicationIDResult== 3475)
+		}
+		else if($response12->GetPublicationIDResult== 3193)
 		{
 $param=array('UserName'=>$uname);
 
@@ -53,4 +53,3 @@ Enter User Name <input type="text" name="mail" required="required">
 <input type="submit" name="send" value="Submit!" style="background-color: gainsboro;border-radius: 4px;width: 93px;height: 28px;border: 1px solid #CCC;text-decoration: none;color: #000;text-shadow: white 0 1px 1px;padding: 2px;">
 </p>
 </form>
-
