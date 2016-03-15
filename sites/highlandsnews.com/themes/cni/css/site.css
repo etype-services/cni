@@ -78,6 +78,9 @@
     /* main menu */
     #main-menu ul.menu {
         margin-left: 0;
+    }
+
+    #main-menu ul.menu li a {
         padding: 0 8px;
     }
 
