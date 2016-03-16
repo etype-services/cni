@@ -24,8 +24,8 @@
     }
 
     #main-menu ul.menu li ul {
-        background: transparent none repeat scroll 0% 0%;
-        width: inherit;
+        background: #cccccc none repeat scroll 0% 0%;
+        width: 220px;
     }
 
     #main-menu ul.menu li ul li {
@@ -92,8 +92,8 @@
     }
 
     #main-menu ul.menu li ul {
-        background: transparent none repeat scroll 0% 0%;
-        width: inherit;
+        background: #cccccc none repeat scroll 0% 0%;
+        width: 220px;
     }
 
     #main-menu ul.menu li ul li {
