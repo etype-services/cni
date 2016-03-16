@@ -150,14 +150,14 @@ function cmf_filters($user = FALSE) {
   }
   
   // The taxonomy filter.
-  if (module_exists('taxonomy')) {
+  if ($taxonomy = taxonomy_form_all(TRUE)) {
     $filters['category'] = array(
       'title' => t('category'),
       'single_use' => FALSE,
       'whole_value' => 'before',
       'query_build' => '_cmf_category_query_build',
       '#type' => 'select',
-      '#options' => taxonomy_form_all(TRUE),
+      '#options' => $taxonomy,
       );
   }
 
