@@ -149,7 +149,7 @@ function cmf_filters($user = FALSE) {
       );    
   }
   
-  // The taxonomy filter.
+  /* The taxonomy filter.
   if ($taxonomy = taxonomy_form_all(TRUE)) {
     $filters['category'] = array(
       'title' => t('category'),
@@ -159,7 +159,7 @@ function cmf_filters($user = FALSE) {
       '#type' => 'select',
       '#options' => $taxonomy,
       );
-  }
+  }*/
 
   // Cmf filters.
   $filters['title'] = array(
