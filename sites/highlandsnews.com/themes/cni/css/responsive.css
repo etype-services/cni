@@ -30,6 +30,7 @@
 
     #main-menu ul.menu li ul li {
         background-color: #cccccc;
+        width: 100%;
     }
 
     #main-menu ul.menu li li a, #main-menu ul.menu li li a.active {
@@ -98,6 +99,7 @@
 
     #main-menu ul.menu li ul li {
         background-color: #cccccc;
+        width: 100%;
     }
 
     #main-menu ul.menu li li a, #main-menu ul.menu li li a.active {
