@@ -61,7 +61,7 @@
 
     /* main menu */
     #main-menu ul.menu {
-        margin-left: 1em;
+        margin-left: 0;
     }
 
 }
@@ -121,16 +121,10 @@
 .site-logo {
     width: 80%;
     margin: 0 auto;
-    max-width: 630px;
+    max-width: 936px;
 }
 
 .site-logo img {
     width: 100%;
-    max-width: 630px;
-}
-
-/* nie page */
-.page-node-191327 #node-191327 .field-image {
-    display: none;
-    visibility: hidden;
+    max-width: 936px;
 }
