@@ -522,6 +522,10 @@
         box-shadow: none;
     }
 
+    .page-node.node-type-attraction .field-name-field-image img {
+        width: auto;
+    }
+
 }
 
 /* smaller phones */
@@ -626,6 +630,10 @@
     .page-node .field-name-field-video iframe {
         width: 418px;
         height: 300px;
+    }
+
+    .page-node.node-type-attraction .field-name-field-image img {
+        width: auto;
     }
 
     /* SLIDESHOW
