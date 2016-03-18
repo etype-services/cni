@@ -91,7 +91,7 @@
     }
 
     /* show mobile ad on smaller windows */
-    #block-dfp-cni-toccoamobile {
+    #block-dfp-cni_tribunegeorgianmobile1 {
         display: block;
         visibility: visible;
     }
@@ -106,7 +106,7 @@
     }
 
     /* show mobile ad on smaller windows */
-    #block-dfp-cni-toccoamobile {
+    #block-dfp-cni_tribunegeorgianmobile1 {
         display: none;
         visibility: hidden;
     }
