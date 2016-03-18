@@ -63,6 +63,14 @@
         margin-top: -13px;
     }
 
+    .node-type-attraction .node .field-image {
+        float: left;
+        margin: 1em;
+    }
+
+    .node-type-attraction .node .field-name-field-image img {
+        margin: 0;
+    }
 }
 
 /* desktop browsers */
