@@ -63,6 +63,7 @@
         margin-top: -13px;
     }
 
+    /* hiking guide */
     .node-type-attraction .node .field-image {
         float: left;
         margin: 0 1em 0 0;
@@ -197,7 +198,15 @@
         width: 195px;
         height: 120px;
     }
+    /* hiking guide */
+    .node-type-attraction .node .field-image {
+        float: left;
+        margin: 0 1em 0 0;
+    }
 
+    .node-type-attraction .node .field-name-field-image img {
+        margin: 0 0 0 0;
+    }
 }
 
 /* smaller browsers, tablets */
