@@ -65,11 +65,11 @@
 
     .node-type-attraction .node .field-image {
         float: left;
-        margin: 1em;
+        margin: 0 0 0 1em;
     }
 
     .node-type-attraction .node .field-name-field-image img {
-        margin: 0;
+        margin: 0 0 0 0;
     }
 }
 
