@@ -522,6 +522,15 @@
         box-shadow: none;
     }
 
+    /* hiking guide */
+    .node-type-attraction .node .field-image {
+        float: left;
+        margin: 0 1em 0 0;
+    }
+
+    .node-type-attraction .node .field-name-field-image img {
+        margin: 0 0 0 0;
+    }
     .page-node.node-type-attraction .field-name-field-image img {
         width: auto;
     }
@@ -632,6 +641,15 @@
         height: 300px;
     }
 
+    /* hiking guide */
+    .node-type-attraction .node .field-image {
+        float: left;
+        margin: 0 1em 0 0;
+    }
+
+    .node-type-attraction .node .field-name-field-image img {
+        margin: 0 0 0 0;
+    }
     .page-node.node-type-attraction .field-name-field-image img {
         width: auto;
     }
