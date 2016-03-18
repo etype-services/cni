@@ -656,8 +656,7 @@
 
     /* hiking guide */
     .node-type-attraction .node .field-image {
-        float: left;
-        margin: 0 1em 0 0;
+        margin: 0 0 1em 0;
     }
 
     .node-type-attraction .node .field-name-field-image img {
