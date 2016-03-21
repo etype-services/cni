@@ -360,7 +360,7 @@ article .field-image {
     margin-left: 0;
 }
 
-/* hine Show Menu link in footer */
+/* hide Show Menu link in footer */
 .region-postscript-2 #block-menu-block-2 .menu li.first {
     display: none;
     visibility: hidden;
