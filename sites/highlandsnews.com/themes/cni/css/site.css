@@ -129,6 +129,16 @@
     max-width: 936px;
 }
 
+/* hiking pages */
 .node-type-attraction p.attribution {
     font-style: italic;
+}
+
+.view-things-to-do-hiking .views-row {
+    margin-bottom: 1em;
+}
+
+.view-things-to-do-hiking .views-row .views-field-field-image {
+    margin-right: 0.6em;
+    float: left;
 }
