@@ -41,6 +41,7 @@
       print render($content);
       ?>
       <p class="attribution">Hike descriptions adapted from <a href="www.highlandhiker.com">the Highland Hiker’s Guide to Day Hikes</a>.</p>
+      
     </div>
     
     <?php if (isset($content['links'])): ?>  
