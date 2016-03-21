@@ -134,11 +134,11 @@
     font-style: italic;
 }
 
-.view-things-to-do-hiking .views-row {
+.view-things-to-do-hiking .views-row, .view-things-to-do-waterfalls .views-row  {
     margin-bottom: 1em;
 }
 
-.view-things-to-do-hiking .views-row .views-field-field-image {
+.view-things-to-do-hiking .views-row .views-field-field-image, .view-things-to-do-waterfalls .views-row .views-field-field-image {
     margin-right: 0.6em;
     float: left;
 }
