@@ -128,3 +128,7 @@
     width: 100%;
     max-width: 936px;
 }
+
+.node-type-attraction p.attribution {
+    font-style: italic;
+}
