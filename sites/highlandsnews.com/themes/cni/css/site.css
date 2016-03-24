@@ -142,3 +142,9 @@
     margin-right: 0.6em;
     float: left;
 }
+
+/* Advertise page */
+.advertise .field-name-field-download {
+    display: none;
+    visibility: hidden;
+}
