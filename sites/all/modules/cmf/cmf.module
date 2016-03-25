@@ -149,17 +149,17 @@ function cmf_filters($user = FALSE) {
       );    
   }
   
-  /* The taxonomy filter.
-  if ($taxonomy = taxonomy_form_all(TRUE)) {
+  // The taxonomy filter.
+  if (module_exists('taxonomy')) {
     $filters['category'] = array(
       'title' => t('category'),
       'single_use' => FALSE,
       'whole_value' => 'before',
       'query_build' => '_cmf_category_query_build',
       '#type' => 'select',
-      '#options' => $taxonomy,
+      '#options' => taxonomy_form_all(TRUE),
       );
-  }*/
+  }
 
   // Cmf filters.
   $filters['title'] = array(
