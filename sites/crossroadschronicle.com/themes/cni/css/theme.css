@@ -147,8 +147,8 @@ h3.site-slogan {
     color: #ffffff;
 }
 
-.view-slideshow .views_slideshow_main .views-more-link {
-	color: #ffffff;
+.view-slideshow .views_slideshow_main .views-field-body a {
+    color: #ffffff;
 }
 
 /* Slideshow controls */
