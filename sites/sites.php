@@ -183,3 +183,9 @@ $sites['crossroadschronicle.com'] = 'crossroadschronicle.com';
 $sites['www.crossroadschronicle.com'] = 'crossroadschronicle.com';
 $sites['prod.crossroadschronicle.com'] = 'crossroadschronicle.com';
 $sites['dev.crossroadschronicle.com'] = 'crossroadschronicle.com';
+
+$sites['mitchellnews.etypegoogle3.com'] = 'mitchellnews.com';
+$sites['mitchellnews.com'] = 'mitchellnews.com';
+$sites['www.mitchellnews.com'] = 'mitchellnews.com';
+$sites['prod.mitchellnews.com'] = 'mitchellnews.com';
+$sites['dev.mitchellnews.com'] = 'mitchellnews.com';
