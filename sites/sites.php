@@ -189,3 +189,9 @@ $sites['mitchellnews.com'] = 'mitchellnews.com';
 $sites['www.mitchellnews.com'] = 'mitchellnews.com';
 $sites['prod.mitchellnews.com'] = 'mitchellnews.com';
 $sites['dev.mitchellnews.com'] = 'mitchellnews.com';
+
+$sites['thesmokymountaintimes.etypegoogle3.com'] = 'thesmokymountaintimes.com';
+$sites['thesmokymountaintimes.com'] = 'thesmokymountaintimes.com';
+$sites['www.thesmokymountaintimes.com'] = 'thesmokymountaintimes.com';
+$sites['prod.thesmokymountaintimes.com'] = 'thesmokymountaintimes.com';
+$sites['dev.thesmokymountaintimes.com'] = 'thesmokymountaintimes.com';
