@@ -45,18 +45,6 @@ function etype_cronapi($op, $job = NULL) {
     ),
   );
 
-  $items['cache_clear_cron'] = array(
-    'title' => 'Clear Cache',
-    'module' => 'etype',
-    'callback' => 'etype_clear_cache',
-    'scheduler' => array(
-      'name' => 'crontab',
-      'crontab' => array(
-        'rules' => array('*/30 * * * *'),
-      ),
-    ),
-  );
-
   return $items;
 }
 
@@ -200,9 +188,4 @@ function etype_classified_ad_importer() {
   else {
     watchdog('etype', "EType Classified Importer found no xml at %url", $variables = array('%url' => $url), $severity = WATCHDOG_NOTICE);
   }
-}
-
-function etype_clear_cache() {
-  drupal_flush_all_caches();
-  watchdog('etype', "Cache cleared", $variables = array(), $severity = WATCHDOG_NOTICE);
 }
