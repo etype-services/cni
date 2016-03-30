@@ -644,6 +644,12 @@ article .field-image {
     border-bottom: 1px solid #dddddd;
 }
 
+.page-node .node h1.title {
+    border-bottom: 1px solid #dddddd;
+    padding-bottom: 0.2em;
+    line-height: 1.2em;
+}
+
 .node .content a {
     color: #333;
 }
