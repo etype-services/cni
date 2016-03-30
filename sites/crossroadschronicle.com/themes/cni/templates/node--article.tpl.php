@@ -25,7 +25,7 @@
       <?php endif; ?>
          
     <?php print render($title_suffix); ?>
-
+var_dump($content);
     <?php if ($display_submitted): ?>
       <div class="submitted">
         <?php print render($content['field_dateline']); ?>
