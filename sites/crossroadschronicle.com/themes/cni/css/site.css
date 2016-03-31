@@ -126,5 +126,19 @@
 
 .site-logo img {
     width: 100%;
-    max-width: 2084px;
+    max-width: 936px;
+}
+
+/* things to do pages */
+.node-type-attraction p.attribution {
+    font-style: italic;
+}
+
+.view-things-to-do-hiking .views-row, .view-visit-highlands-waterfalls .views-row  {
+    margin-bottom: 1em;
+}
+
+.view-things-to-do-hiking .views-row .views-field-field-image, .view-visit-highlands-waterfalls .views-row .views-field-field-image {
+    margin-right: 0.6em;
+    float: left;
 }
