@@ -30,9 +30,9 @@
       <div class="submitted">
           <span class="date"><?php print $date; ?></span>
           <?php print $name; ?>
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+        <div class="addthis_sharing_toolbox"></div>
       </div>
-      <!-- Go to www.addthis.com/dashboard to customize your tools -->
-      <div class="addthis_sharing_toolbox"></div>
     <?php endif; ?>
 
 
