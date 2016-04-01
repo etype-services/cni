@@ -1400,3 +1400,8 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
     color: #999999;
     border-bottom: 1px solid #dddddd;
 }
+
+.page-node .node-article .galleria-info-link {
+    display: none;
+    visibility: hidden;
+}
