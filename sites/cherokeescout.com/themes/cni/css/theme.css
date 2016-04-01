@@ -677,7 +677,7 @@ article .field-image {
     text-transform: uppercase;
 }
 
-/* Teasers */
+/* TEASERS */
 
 .node-teaser {
     margin-bottom: 20px;
@@ -685,10 +685,6 @@ article .field-image {
 
 .node-teaser h2.title {
     font-size: 18px;
-}
-
-.node-teaser .node-content-wrapper {
-    margin-left: 180px;
 }
 
 .node-teaser .field-name-field-image img {
