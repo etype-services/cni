@@ -1356,3 +1356,22 @@ blockquote {
     display: none;
     visibility: hidden;
 }
+
+/* ARTICLE
+--------------------------------------------------------------------------*/
+.page-node .node-article .field-name-field-dateline {
+    float: left;
+}
+
+.page-node .node-article .addthis_sharing_toolbox {
+    float: right;
+}
+
+.page-node .node-article .field-name-body {
+    margin-top: 1em;
+}
+
+.node-teaser .addthis_sharing_toolbox {
+    display: none;
+    visibility: hidden;
+}
