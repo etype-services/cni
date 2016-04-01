@@ -54,9 +54,9 @@
 @media only screen and (min-width: 959px) {
 
     /* dfp ads */
-    #block-dfp-banner {
+    #dfp-ad-cni_cherokeebanner {
         width: 468px;
-        margin: 0px auto 0px 83px;
+        margin: 0px auto;
     }
 
     /* main menu */
