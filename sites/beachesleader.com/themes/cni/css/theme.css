@@ -147,8 +147,8 @@ h3.site-slogan {
     color: #ffffff;
 }
 
-.view-slideshow .views_slideshow_main .views-more-link {
-	color: #ffffff;
+.view-slideshow .views_slideshow_main .views-field-body a {
+    color: #ffffff;
 }
 
 /* Slideshow controls */
@@ -689,10 +689,8 @@ article .field-image {
 
 .node-teaser h2.title {
     font-size: 18px;
-}
-
-.node-teaser .node-content-wrapper {
-    margin-left: 180px;
+    line-height: 1.2em;
+    margin-bottom: 0.2em;
 }
 
 .node-teaser .field-name-field-image img {
