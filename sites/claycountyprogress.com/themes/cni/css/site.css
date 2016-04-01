@@ -61,7 +61,7 @@
 
     /* main menu */
     #main-menu ul.menu {
-        margin-left: 7\4em;
+        margin-left: 7em;
     }
 
 }
@@ -124,10 +124,3 @@
     width: 100%;
     max-width: 800px;
 }
-
-/* nie page
-.page-node-191327 #node-191327 .field-image {
-    display: none;
-    visibility: hidden;
-}
- */

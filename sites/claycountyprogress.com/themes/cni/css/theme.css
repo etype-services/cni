@@ -151,6 +151,10 @@ h3.site-slogan {
 	color: #ffffff;
 }
 
+.view-slideshow .views_slideshow_main .views-field-body a {
+    color: #ffffff;
+}
+
 /* Slideshow controls */
 
 .view-slideshow .views-slideshow-controls-bottom .views-field-field-image img, .view-slideshow .views-slideshow-controls-bottom .views-field-field-video img {
@@ -284,7 +288,12 @@ article .field-image {
 }
 
 .sidebar h3 {
-    font-size: 2em;
+    font-size: 1.5em;
+}
+
+.sidebar .block-inner h3.title {
+    font-size: 1em;
+    margin-bottom: 0;
 }
 
 /* POSTSCRIPT 
@@ -637,13 +646,6 @@ article .field-image {
     margin-bottom: 10px;
 }
 
-.submitted {
-    padding: 5px 0;
-    margin-bottom: 10px;
-    color: #999999;
-    border-bottom: 1px solid #dddddd;
-}
-
 .node .content a {
     color: #333;
 }
@@ -659,6 +661,12 @@ article .field-image {
     padding: 0 5px 0 5px;
     font-size: 0.9em;
     background: #eeeeee;
+}
+
+.node ul.links li.node-readmore a {
+    font-size: 0.8em;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
 }
 
 .node .taxonomy .field-type-taxonomy-term-reference {
@@ -680,10 +688,8 @@ article .field-image {
 
 .node-teaser h2.title {
     font-size: 18px;
-}
-
-.node-teaser .node-content-wrapper {
-    margin-left: 180px;
+    line-height: 1.2em;
+    margin-bottom: 0.2em;
 }
 
 .node-teaser .field-name-field-image img {
@@ -1391,7 +1397,8 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
 /* ARTICLE
 --------------------------------------------------------------------------*/
 .page-node .node-article .field-name-field-dateline {
-    float: left;
+    float: none;
+    display: block;
 }
 
 .page-node .node-article .addthis_sharing_toolbox {
@@ -1403,6 +1410,18 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
 }
 
 .node-teaser .addthis_sharing_toolbox {
+    display: none;
+    visibility: hidden;
+}
+
+.submitted {
+    padding: 5px 0;
+    margin-bottom: 10px;
+    color: #999999;
+    border-bottom: 1px solid #dddddd;
+}
+
+.page-node .node-article .galleria-info-link {
     display: none;
     visibility: hidden;
 }
