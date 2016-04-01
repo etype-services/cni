@@ -1336,3 +1336,8 @@ blockquote {
 .page-node .node-article .field-name-body {
 	margin-top: 1em;
 }
+
+.node-teaser .addthis_sharing_toolbox {
+    display: none;
+    visibility: hidden;
+}
