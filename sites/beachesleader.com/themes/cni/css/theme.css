@@ -653,13 +653,6 @@ article .field-image {
     margin-bottom: 10px;
 }
 
-.submitted {
-    padding: 5px 0;
-    margin-bottom: 10px;
-    color: #999999;
-    border-bottom: 1px solid #dddddd;
-}
-
 .node .content a {
     color: #333;
 }
@@ -1385,6 +1378,7 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
 --------------------------------------------------------------------------*/
 .page-node .node-article .field-name-field-dateline {
     float: none;
+    display: block;
 }
 
 .page-node .node-article .addthis_sharing_toolbox {
@@ -1398,4 +1392,11 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
 .node-teaser .addthis_sharing_toolbox {
     display: none;
     visibility: hidden;
+}
+
+.submitted {
+    padding: 5px 0;
+    margin-bottom: 10px;
+    color: #999999;
+    border-bottom: 1px solid #dddddd;
 }

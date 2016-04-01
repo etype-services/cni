@@ -72,6 +72,11 @@
         height: auto;
     }
 
+    .node-article .galleria-container {
+        width: 578px;
+        height: 400px;
+    }
+
 }
 
 /* desktop browsers */
