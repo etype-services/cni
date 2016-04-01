@@ -74,7 +74,7 @@
 
     .node-article .galleria-container {
         width: 578px;
-        height: 400px;
+        height: 371px;
     }
 
 }
@@ -157,9 +157,9 @@
         height: 300px;
     }
 
-    .node .content img {
-        max-width: 450px;
-        height: auto;
+    .node-article .galleria-container {
+        width: 578px;
+        height: 371px;
     }
 
     /* SLIDESHOW
