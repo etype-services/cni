@@ -1,19 +1,20 @@
 <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>> 
+
   
-  <?php if (isset($content['field_image'])): ?>
-    <div class="field-image">
-      <?php print render($content['field_image']); ?>
-    </div>
-  <?php endif; ?>
-  
-  <?php if (isset($content['field_video'])): ?>
-    <div class="field-video">
-      <?php print render($content['field_video']); ?>
-    </div>
-  <?php endif; ?>    
-  
-  <div class="node-content-wrapper">                    
-  
+  <div class="node-content-wrapper">
+
+    <?php if (isset($content['field_image'])): ?>
+      <div class="field-image">
+        <?php print render($content['field_image']); ?>
+      </div>
+    <?php endif; ?>
+
+    <?php if (isset($content['field_video'])): ?>
+      <div class="field-video">
+        <?php print render($content['field_video']); ?>
+      </div>
+    <?php endif; ?>
+
     <?php print render($title_prefix); ?>
           
       <?php if (!$page): ?>
