@@ -1383,10 +1383,6 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
 
 /* ARTICLE
 --------------------------------------------------------------------------*/
-.page-node .node-article .field-name-field-dateline {
-    float: left;
-}
-
 .page-node .node-article .addthis_sharing_toolbox {
     float: right;
 }
