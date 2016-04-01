@@ -70,9 +70,9 @@
 @media only screen and (min-width: 768px) and (max-width: 958px) {
 
     /* dfp ads */
-    #block-dfp-banner {
+    #dfp-ad-cni_cherokeebanner {
         width: 468px;
-        margin: 0px auto 0px 12px;
+        margin: 0px auto;
     }
 
     /* main menu */
@@ -85,7 +85,7 @@
 @media only screen and (max-width: 767px) {
 
     /* Hide larger DFP ads on non full-size browsers */
-    #block-dfp-cni-cherokeeleaderboard, #block-dfp-banner, #block-dfp-cni-cherokeefooter {
+    #block-dfp-cni-cherokeeleaderboard, #dfp-ad-cni_cherokeebanner, #block-dfp-cni-cherokeefooter {
         display: none;
         visibility: hidden;
     }
@@ -100,7 +100,7 @@
 @media only screen and (min-width: 768px) {
 
     /* Hide larger DFP ads on non full-size browsers */
-    #block-dfp-cni-cherokeeleaderboard, #block-dfp-banner, #block-dfp-cni-cherokeefooter {
+    #block-dfp-cni-cherokeeleaderboard, #dfp-ad-cni_cherokeebanner, #block-dfp-cni-cherokeefooter {
         display: block;
         visibility: visible;
     }
