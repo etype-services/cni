@@ -995,19 +995,9 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
     padding: 0 0 0 0;
 }
 
-
-
 .field-name-field-mugshot {
     float: left;
     margin-right: 10px;
-}
-
-.will-maines .field-image, .byron-mcnutt .field-image, .cal-thomas .field-image, .andy-rooney .field-image, .rock-doc .field-image, .robert-reich .field-image {
-    display: none;
-}
-
-.will-maines h1#page-title, .byron-mcnutt h1#page-title, .cal-thomas h1#page-title, .andy-rooney h1#page-title, .rock-doc h1#page-title, .robert-reich h1#page-title {
-    display: none;
 }
 
 .field-name-field-mug {
@@ -1331,4 +1321,18 @@ blockquote {
 .not-logged-in.node-type-article .view-more-digital, .not-logged-in.node-type-article .links {
     display: none;
     visibility: hidden;
+}
+
+/* ARTICLE
+--------------------------------------------------------------------------*/
+.page-node .node-article .field-name-field-dateline {
+	float: left;
+}
+
+.page-node .node-article .addthis_sharing_toolbox {
+	float: right;
+}
+
+.page-node .node-article .field-name-body {
+	margin-top: 1em;
 }
