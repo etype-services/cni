@@ -154,6 +154,10 @@ h3.site-slogan {
     color: #ffffff;
 }
 
+.view-slideshow .views_slideshow_main .views-field-body a {
+    color: #ffffff;
+}
+
 /* Slideshow controls */
 
 .view-slideshow .views-slideshow-controls-bottom .views-field-field-image img, .view-slideshow .views-slideshow-controls-bottom .views-field-field-video img {
@@ -331,8 +335,15 @@ article .field-image {
     border-bottom: 0 dotted #555555;
 }
 
-#block-block-34 .content div > a {
-    margin-left: 1.7em;
+/* title in first column of footer */
+.region-postscript-1 h3.title {
+    margin-left: 0;
+}
+
+/* hide Show Menu link in footer */
+.region-postscript-2 #block-menu-block-2 .menu li.first {
+    display: none;
+    visibility: hidden;
 }
 
 /* FOOTER
@@ -628,6 +639,12 @@ article .field-image {
     background: #eeeeee;
 }
 
+.node ul.links li.node-readmore a {
+    font-size: 0.8em;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+}
+
 .node .taxonomy .field-type-taxonomy-term-reference {
     margin: 5px 0;
     background: #f9f9f9;
@@ -750,8 +767,8 @@ article .field-image {
 }
 
 #search-block-form .form-item, #search-block-form .form-actions {
-    margin-bottom: 0em;
-    margin-top: 0em;
+    margin-bottom: 0;
+    margin-top: 0;
 }
 
 #search-block-form .form-text, #search-block-form .form-submit {
@@ -875,12 +892,12 @@ ul.primary li a {
 
 .profile {
     clear: both;
-    margin: 0em 0;
+    margin: 0;
 }
 
 .profile .user-picture {
     float: none;
-    margin: 0 0em 1em 0;
+    margin: 0 0 1em 0;
 }
 
 /* QUICKTABS
@@ -966,8 +983,6 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
     padding: 0 0 0 0;
 }
 
-
-
 .field-name-field-mugshot {
     float: left;
     margin-right: 10px;
@@ -986,7 +1001,7 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
 }
 
 #block-block-1 .content {
-    padding: 0px 0 0px;
+    padding: 0;
     color: #999;
 }
 
@@ -1155,6 +1170,7 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
     padding-left: 50px;
 }
 
+/* removes quote icons from bones layout.css */
 blockquote {
     background-image: none;
     margin: 0;
