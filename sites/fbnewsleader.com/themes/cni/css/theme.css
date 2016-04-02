@@ -649,21 +649,12 @@ article .field-image {
     font-size: 18px;
 }
 
-.node-teaser .node-content-wrapper {
-    margin-left: 180px;
-}
-
 .node-teaser .field-name-field-image img {
     display: block;
     padding: 10px;
     float: left;
     margin: 0 20px 0 0;
     background: url(../images/image-background.png);
-}
-
-.node-teaser .node-content-wrapper .field-type-image {
-	display: none;
-	visibility: hidden;
 }
 
 .node-teaser .field-name-field-video iframe {
