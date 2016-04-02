@@ -611,13 +611,6 @@ article .field-image {
     margin-bottom: 10px;
 }
 
-.submitted {
-    padding: 5px 0;
-    margin-bottom: 10px;
-    color: #999999;
-    border-bottom: 1px solid #dddddd;
-}
-
 .node .content a {
     color: #333;
 }
@@ -1367,6 +1360,18 @@ blockquote {
 }
 
 .node-teaser .addthis_sharing_toolbox {
+    display: none;
+    visibility: hidden;
+}
+
+.submitted {
+    padding: 5px 0;
+    margin-bottom: 10px;
+    color: #999999;
+    border-bottom: 1px solid #dddddd;
+}
+
+.page-node .node-article .galleria-info-link {
     display: none;
     visibility: hidden;
 }
