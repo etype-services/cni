@@ -1223,6 +1223,7 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
     padding-left: 50px;
 }
 
+/* removes quote icons from bones layout.css */
 blockquote {
     background-image: none;
     margin: 0;
