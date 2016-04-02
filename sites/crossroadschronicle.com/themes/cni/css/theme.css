@@ -1374,10 +1374,6 @@ blockquote {
     display: block;
 }
 
-.page-node .node-article .addthis_sharing_toolbox {
-    float: right;
-}
-
 .page-node .node-article .field-name-body {
     margin-top: 1em;
 }
