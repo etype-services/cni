@@ -153,10 +153,6 @@
         height: 300px;
     }
 
-    .node .content img {
-        max-width: 450px;
-    }
-
     /* SLIDESHOW
     --------------------------------------------------------------------------*/
     .view-slideshow .views_slideshow_main {
@@ -293,18 +289,9 @@
         margin: 0 0 20px 0;
     }
 
-    .page-node .field-name-field-image img {
-        width: 300px;
-        height: auto;
-    }
-
     .page-node .field-name-field-video iframe {
         width: 300px;
         height: 200px;
-    }
-
-    .node .content img {
-        max-width: 380px;
     }
 
     /* SLIDESHOW

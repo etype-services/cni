@@ -17,6 +17,11 @@
       </div>
     <?php endif; ?>
 
+    <?php if ($page) { ?>
+      <!-- Go to www.addthis.com/dashboard to customize your tools -->
+      <div class="addthis_sharing_toolbox"></div>
+    <?php } ?>
+
     <?php if (isset($content['field_image'])): ?>
       <div class="field-image">
         <?php print render($content['field_image']); ?>
