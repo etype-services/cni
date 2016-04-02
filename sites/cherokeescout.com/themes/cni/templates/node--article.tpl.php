@@ -56,7 +56,6 @@
       ?>
     </div>
 
-
     <?php if (isset($content['links'])): ?>
       <?php print render($content['links']); ?>
     <?php endif; ?>
