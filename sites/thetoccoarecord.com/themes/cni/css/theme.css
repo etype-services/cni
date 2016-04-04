@@ -150,8 +150,8 @@ h3.site-slogan {
     color: #ffffff;
 }
 
-.view-slideshow .views_slideshow_main .views-more-link {
-	color: #ffffff;
+.view-slideshow .views_slideshow_main .views-field-body a {
+    color: #ffffff;
 }
 
 /* Slideshow controls */
@@ -287,7 +287,12 @@ article .field-image {
 }
 
 .sidebar h3 {
-    font-size: 2em;
+    font-size: 1.5em;
+}
+
+.sidebar .block-inner h3.title {
+    font-size: 1em;
+    margin-bottom: 0;
 }
 
 /* POSTSCRIPT 
@@ -351,6 +356,17 @@ article .field-image {
     margin-left: 1.7em;
 }
 
+/* title in first column of footer */
+.region-postscript-1 h3.title {
+    margin-left: 0;
+}
+
+/* hide Show Menu link in footer */
+.region-postscript-2 #block-menu-block-2 .menu li.first {
+    display: none;
+    visibility: hidden;
+}
+
 /* FOOTER
 --------------------------------------------------------------------------*/
 
@@ -387,6 +403,12 @@ article .field-image {
 
 .view-popular .item-list ul li {
     list-style-type: decimal;
+}
+
+/* normalize lists on Basic Pages */
+.content .node-page ul {
+    margin: 0 0 1em 1em;
+    list-style: disc inside;
 }
 
 /* USER MENU
@@ -633,13 +655,6 @@ article .field-image {
     margin-bottom: 10px;
 }
 
-.submitted {
-    padding: 5px 0;
-    margin-bottom: 10px;
-    color: #999999;
-    border-bottom: 1px solid #dddddd;
-}
-
 .node .content a {
     color: #333;
 }
@@ -655,6 +670,12 @@ article .field-image {
     padding: 0 5px 0 5px;
     font-size: 0.9em;
     background: #eeeeee;
+}
+
+.node ul.links li.node-readmore a {
+    font-size: 0.8em;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
 }
 
 .node .taxonomy .field-type-taxonomy-term-reference {
@@ -676,13 +697,23 @@ article .field-image {
 
 .node-teaser h2.title {
     font-size: 18px;
+    line-height: 1.2em;
+    margin-bottom: 0.2em;
 }
 
 .node-teaser .node-content-wrapper {
     margin-left: 180px;
 }
 
-.node-teaser .field-name-field-image img {
+.node-teaser .field-image .field-name-field-image .field-items .field-item {
+    display: none;
+}
+
+.node-teaser .field-image .field-name-field-image .field-items .field-item:first-child {
+    display: block;
+}
+
+.node-teaser .field-image .field-name-field-image .field-items .field-item:first-child img {
     display: block;
     padding: 10px;
     float: left;
@@ -999,19 +1030,9 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
     padding: 0 0 0 0;
 }
 
-
-
 .field-name-field-mugshot {
     float: left;
     margin-right: 10px;
-}
-
-.will-maines .field-image, .byron-mcnutt .field-image, .cal-thomas .field-image, .andy-rooney .field-image, .rock-doc .field-image, .robert-reich .field-image {
-    display: none;
-}
-
-.will-maines h1#page-title, .byron-mcnutt h1#page-title, .cal-thomas h1#page-title, .andy-rooney h1#page-title, .rock-doc h1#page-title, .robert-reich h1#page-title {
-    display: none;
 }
 
 .field-name-field-mug {
@@ -1195,10 +1216,16 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
     padding-left: 50px;
 }
 
+/* removes quote icons from bones layout.css */
 blockquote {
     background-image: none;
     margin: 0;
     padding: 0;
+}
+
+blockquote p {
+    padding-right: 1em;
+    background: none;
 }
 
 #block-menu-block-2 ul.menu li, #block-menu-block-2 #main-menu ul.menu li, #block-menu-block-2 #user-menu ul.menu li, #block-menu-block-2 #nav-menu ul.menu li {
@@ -1337,10 +1364,32 @@ blockquote {
     visibility: hidden;
 }
 
+/* WEBFORMS
+--------------------------------------------------------------------------*/
+
+/* excludes captcha froms by inclusion of .webform-component-fieldset */
+.webform-client-form .webform-component-fieldset .fieldset-legend {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.0em;
+    font-weight: normal;
+    text-transform: uppercase;
+    margin-bottom: 0.6em;
+    font-size: 1.2em;
+}
+
+.webform-client-form .webform-component-fieldset .fieldset-wrapper {
+    margin-left: 0.5em;
+}
+
+textarea, select, input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"] {
+    font-family: 'Lato', sans-serif;
+}
+
 /* ARTICLE
 --------------------------------------------------------------------------*/
 .page-node .node-article .field-name-field-dateline {
-    float: left;
+    float: none;
+    display: block;
 }
 
 .page-node .node-article .addthis_sharing_toolbox {
@@ -1352,6 +1401,18 @@ blockquote {
 }
 
 .node-teaser .addthis_sharing_toolbox {
+    display: none;
+    visibility: hidden;
+}
+
+.submitted {
+    padding: 5px 0;
+    margin-bottom: 10px;
+    color: #999999;
+    border-bottom: 1px solid #dddddd;
+}
+
+.page-node .node-article .galleria-info-link {
     display: none;
     visibility: hidden;
 }

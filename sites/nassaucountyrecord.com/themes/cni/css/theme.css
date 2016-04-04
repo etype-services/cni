@@ -158,6 +158,10 @@ h3.site-slogan {
     color: #ffffff;
 }
 
+.view-slideshow .views_slideshow_main .views-field-body a {
+    color: #ffffff;
+}
+
 /* Slideshow controls */
 
 .view-slideshow .views-slideshow-controls-bottom .views-field-field-image img, .view-slideshow .views-slideshow-controls-bottom .views-field-field-video img {
@@ -337,6 +341,17 @@ article .field-image {
 
 #block-block-34 .content div > a {
     margin-left: 1.7em;
+}
+
+/* title in first column of footer */
+.region-postscript-1 h3.title {
+    margin-left: 0;
+}
+
+/* hide Show Menu link in footer */
+.region-postscript-2 #block-menu-block-2 .menu li.first {
+    display: none;
+    visibility: hidden;
 }
 
 /* FOOTER
@@ -619,13 +634,6 @@ article .field-image {
     margin-bottom: 10px;
 }
 
-.submitted {
-    padding: 5px 0;
-    margin-bottom: 10px;
-    color: #999999;
-    border-bottom: 1px solid #dddddd;
-}
-
 .node .content a {
     color: #333;
 }
@@ -641,6 +649,12 @@ article .field-image {
     padding: 0 5px 0 5px;
     font-size: 0.9em;
     background: #eeeeee;
+}
+
+.node ul.links li.node-readmore a {
+    font-size: 0.8em;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
 }
 
 .node .taxonomy .field-type-taxonomy-term-reference {
@@ -662,10 +676,8 @@ article .field-image {
 
 .node-teaser h2.title {
     font-size: 18px;
-}
-
-.node-teaser .node-content-wrapper {
-    margin-left: 180px;
+    line-height: 1.2em;
+    margin-bottom: 0.2em;
 }
 
 .node-teaser .field-name-field-image img {
@@ -990,19 +1002,9 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
     padding: 0 0 0 0;
 }
 
-
-
 .field-name-field-mugshot {
     float: left;
     margin-right: 10px;
-}
-
-.will-maines .field-image, .byron-mcnutt .field-image, .cal-thomas .field-image, .andy-rooney .field-image, .rock-doc .field-image, .robert-reich .field-image {
-    display: none;
-}
-
-.will-maines h1#page-title, .byron-mcnutt h1#page-title, .cal-thomas h1#page-title, .andy-rooney h1#page-title, .rock-doc h1#page-title, .robert-reich h1#page-title {
-    display: none;
 }
 
 .field-name-field-mug {
@@ -1018,7 +1020,7 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
 }
 
 #block-block-1 .content {
-    padding: 0px 0 0px;
+    padding: 0;
     color: #999;
 }
 
@@ -1193,6 +1195,11 @@ blockquote {
     padding: 0;
 }
 
+blockquote p {
+    padding-right: 1em;
+    background: none;
+}
+
 #block-menu-block-2 ul.menu li, #block-menu-block-2 #main-menu ul.menu li, #block-menu-block-2 #user-menu ul.menu li, #block-menu-block-2 #nav-menu ul.menu li {
     float: none;
     padding-top: 0;
@@ -1318,11 +1325,29 @@ blockquote {
     padding:0;
 }
 
+/* excludes captcha froms by inclusion of .webform-component-fieldset */
+.webform-client-form .webform-component-fieldset .fieldset-legend {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.0em;
+    font-weight: normal;
+    text-transform: uppercase;
+    margin-bottom: 0.6em;
+    font-size: 1.2em;
+}
+
+.webform-client-form .webform-component-fieldset .fieldset-wrapper {
+    margin-left: 0.5em;
+}
+
+textarea, select, input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"] {
+    font-family: 'Lato', sans-serif;
+}
 
 /* ARTICLE
 --------------------------------------------------------------------------*/
 .page-node .node-article .field-name-field-dateline {
-    float: left;
+    float: none;
+    display: block;
 }
 
 .page-node .node-article .addthis_sharing_toolbox {
@@ -1334,6 +1359,18 @@ blockquote {
 }
 
 .node-teaser .addthis_sharing_toolbox {
+    display: none;
+    visibility: hidden;
+}
+
+.submitted {
+    padding: 5px 0;
+    margin-bottom: 10px;
+    color: #999999;
+    border-bottom: 1px solid #dddddd;
+}
+
+.page-node .node-article .galleria-info-link {
     display: none;
     visibility: hidden;
 }

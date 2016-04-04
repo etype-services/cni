@@ -142,18 +142,9 @@
         display: none
     }
 
-    .page-node .field-name-field-image img {
-        width: 490px;
-        height: auto;
-    }
-
     .page-node .field-name-field-video iframe {
         width: 490px;
         height: 300px;
-    }
-
-    .node .content img {
-        max-width: 450px;
     }
 
     /* dfp ads */
@@ -331,18 +322,9 @@
         margin: 0 0 20px 0;
     }
 
-    .page-node .field-name-field-image img {
-        width: 300px;
-        height: auto;
-    }
-
     .page-node .field-name-field-video iframe {
         width: 300px;
         height: 200px;
-    }
-
-    .node .content img {
-        max-width: 380px;
     }
 
     /* SLIDESHOW
@@ -526,11 +508,6 @@
         width: 360px;
         height: 220px;
         margin: 0 0 20px 0;
-    }
-
-    .page-node .field-name-field-image img {
-        width: 418px;
-        height: auto;
     }
 
     .page-node .field-name-field-video iframe {

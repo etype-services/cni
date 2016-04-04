@@ -147,8 +147,8 @@ h3.site-slogan {
     color: #ffffff;
 }
 
-.view-slideshow .views_slideshow_main .views-more-link {
-	color: #ffffff;
+.view-slideshow .views_slideshow_main .views-field-body a {
+    color: #ffffff;
 }
 
 /* Slideshow controls */
@@ -351,6 +351,17 @@ article .field-image {
 
 #block-block-34 .content div > a {
     margin-left: 1.7em;
+}
+
+/* title in first column of footer */
+.region-postscript-1 h3.title {
+    margin-left: 0;
+}
+
+/* hide Show Menu link in footer */
+.region-postscript-2 #block-menu-block-2 .menu li.first {
+    display: none;
+    visibility: hidden;
 }
 
 /* FOOTER
@@ -642,13 +653,6 @@ article .field-image {
     margin-bottom: 10px;
 }
 
-.submitted {
-    padding: 5px 0;
-    margin-bottom: 10px;
-    color: #999999;
-    border-bottom: 1px solid #dddddd;
-}
-
 .node .content a {
     color: #333;
 }
@@ -664,6 +668,12 @@ article .field-image {
     padding: 0 5px 0 5px;
     font-size: 0.9em;
     background: #eeeeee;
+}
+
+.node ul.links li.node-readmore a {
+    font-size: 0.8em;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
 }
 
 .node .taxonomy .field-type-taxonomy-term-reference {
@@ -685,6 +695,8 @@ article .field-image {
 
 .node-teaser h2.title {
     font-size: 18px;
+    line-height: 1.2em;
+    margin-bottom: 0.2em;
 }
 
 .node-teaser .node-content-wrapper {
@@ -1015,8 +1027,6 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
     color: #999999;
     padding: 0 0 0 0;
 }
-
-
 
 .field-name-field-mugshot {
     float: left;
@@ -1401,11 +1411,11 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
     font-family: 'Lato', sans-serif;
 }
 
-
 /* ARTICLE
 --------------------------------------------------------------------------*/
 .page-node .node-article .field-name-field-dateline {
-    float: left;
+    float: none;
+    display: block;
 }
 
 .page-node .node-article .addthis_sharing_toolbox {
@@ -1417,6 +1427,18 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
 }
 
 .node-teaser .addthis_sharing_toolbox {
+    display: none;
+    visibility: hidden;
+}
+
+.submitted {
+    padding: 5px 0;
+    margin-bottom: 10px;
+    color: #999999;
+    border-bottom: 1px solid #dddddd;
+}
+
+.page-node .node-article .galleria-info-link {
     display: none;
     visibility: hidden;
 }
