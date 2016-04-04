@@ -1426,3 +1426,8 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
     display: none;
     visibility: hidden;
 }
+
+/* galleria on article pages */
+.page-node .node-article .galleria-info {
+    top: 308px
+}
