@@ -1,7 +1,8 @@
 /* dfp ads */
 
-#dfp-ad-banner > img {
-    max-width: 100% !important;
+#dfp-ad-cni_lakecbanner > img {
+    width: 468px;
+    margin: 0 auto;
 }
 
 #block-dfp-sidebar-1 .block-inner .content {
