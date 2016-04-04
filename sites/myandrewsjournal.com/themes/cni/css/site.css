@@ -1,9 +1,5 @@
 /* dfp ads */
 
-#dfp-ad-banner > img {
-    max-width: 100% !important;
-}
-
 #block-dfp-sidebar-1 .block-inner .content {
     padding: 0;
 }
@@ -70,9 +66,9 @@
 @media only screen and (min-width: 768px) and (max-width: 958px) {
 
     /* dfp ads */
-    #block-dfp-banner {
+    #dfp-ad-cni_andrewsbanner {
         width: 468px;
-        margin: 0px auto 0px 12px;
+        margin: 0px auto;
     }
 
     /* main menu */
@@ -85,7 +81,7 @@
 @media only screen and (max-width: 767px) {
 
     /* Hide larger DFP ads on non full-size browsers */
-    #block-dfp-cni-andrewsleaderboard, #block-dfp-banner, #block-dfp-cni-andrewsfooter {
+    #block-dfp-cni-andrewsleaderboard, #dfp-ad-cni_andrewsbanner, #block-dfp-cni-andrewsfooter {
         display: none;
         visibility: hidden;
     }
@@ -100,7 +96,7 @@
 @media only screen and (min-width: 768px) {
 
     /* Hide larger DFP ads on non full-size browsers */
-    #block-dfp-cni-andrewsleaderboard, #block-dfp-banner, #block-dfp-cni-andrewsfooter {
+    #block-dfp-cni-andrewsleaderboard, #dfp-ad-cni_andrewsbanner, #block-dfp-cni-andrewsfooter {
         display: block;
         visibility: visible;
     }
