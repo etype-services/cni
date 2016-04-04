@@ -28,6 +28,10 @@ function cni_preprocess_node(&$variables) {
   if (!empty($node->classes_array)) {
     $variables['classes_array'] = array_merge($variables['classes_array'], $node->classes_array);
   }
+  
+  if (node_is_page($node) !== false) {
+  	drupal_add_js('//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-56e774978692f861', 'external');
+  	}
 }
 
 /* Breadcrumbs */
@@ -83,5 +87,4 @@ function cni_preprocess_html(&$vars) {
   if ($user->uid > 0) {
     drupal_add_js('sites/all/themes/cni/js/user-menu.js', 'file');
   }
-
 }
