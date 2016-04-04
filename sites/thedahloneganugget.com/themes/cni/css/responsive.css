@@ -147,7 +147,7 @@
     }
 
     .view-slideshow .views_slideshow_main .views-field-field-image img, .view-slideshow .views_slideshow_main .views-field-field-video img {
-        width: 492px;
+        width: 472px;
         height: auto;
     }
 
@@ -274,6 +274,15 @@
 
     .view-slideshow .views_slideshow_main {
         height: 200px;
+    }
+
+    .view-slideshow .views_slideshow_main .views-field-field-image img, .view-slideshow .views_slideshow_main .views-field-field-video img {
+        width: 379px;
+        height: auto;
+    }
+
+    .view-slideshow .views_slideshow_main .views-field-title {
+        width: 339px;
     }
 
     .view-slideshow .views_slideshow_main .views-field-body {
