@@ -35,6 +35,14 @@ print_r($submission);
 
 [submission:values]
 
+
+<?php
+$body = preg_replace("/<br><br>/", 'xxxx', $submission->data[6][0]);
+$body = preg_replace("/<br>/", ' ', $body);
+$body = preg_replace("/xxxx/", '<br><br>', $body);
+print ($email['html'] ? '<p>' : '') . $body . ($email['html'] ? '</p>' : '') ?>
+?>
+
 <?php print ($email['html'] ? '<p>' : '') . t('The results of this submission may be viewed at:') . ($email['html'] ? '</p>' : '') ?>
 
 <?php print ($email['html'] ? '<p>' : ''); ?>[submission:url]<?php print ($email['html'] ? '</p>' : ''); ?>
