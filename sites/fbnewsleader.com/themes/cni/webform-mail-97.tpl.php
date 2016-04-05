@@ -38,7 +38,7 @@
 
 <?php
 $body = preg_replace("/<br><br>/", 'xxxx', $submission->data[6][0]);
-$body = preg_replace("/<br>/", ' ', $body);
+$body = preg_replace("/[\\r\\n]*/", ' ', $body);
 $body = preg_replace("/xxxx/", '<br><br>', $body);
 print ($email['html'] ? '<p>' : 'New body<br><br>') . $body . ($email['html'] ? '</p>' : '') ?>
 ?>
