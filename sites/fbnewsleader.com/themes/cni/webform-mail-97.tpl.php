@@ -40,7 +40,7 @@
 $body = preg_replace("/<br><br>/", 'xxxx', $submission->data[6][0]);
 $body = preg_replace("/<br>/", ' ', $body);
 $body = preg_replace("/xxxx/", '<br><br>', $body);
-print ($email['html'] ? '<p>' : 'New body<br><br>') . $body . ($email['html'] ? '</p>' : '') ?>
+// print ($email['html'] ? '<p>' : 'New body<br><br>') . $body . ($email['html'] ? '</p>' : '') ?>
 ?>
 
 <?php print ($email['html'] ? '<p>' : '') . t('The results of this submission may be viewed at:') . ($email['html'] ? '</p>' : '') ?>
