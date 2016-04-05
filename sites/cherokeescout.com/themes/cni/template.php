@@ -31,7 +31,7 @@ function cni_preprocess_node(&$variables) {
   
   if (node_is_page($node) !== false) {
   	drupal_add_js('//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-56e774978692f861', 'external');
-  	}
+  }
 }
 
 /* Breadcrumbs */
