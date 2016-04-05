@@ -711,7 +711,7 @@ article .field-image {
     display: block;
 }
 
-.node-teaser .field-image .field-name-field-image .field-items .field-item:first-child img {
+.node-teaser .field-image .field-name-field-image .field-items .field-item:first-child img, .node-teaser .views-field-field img {
     display: block;
     padding: 10px;
     float: left;
