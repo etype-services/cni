@@ -163,7 +163,7 @@ function etype_classified_ad_importer() {
         $array = array();
         foreach ($ad as $k => $v) {
           $v = (array) $v;
-          if (isset($V[0])) {
+          if (isset($v[0])) {
             $array[$k] = $v[0];
           }
         }
