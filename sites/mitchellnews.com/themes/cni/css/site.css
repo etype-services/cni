@@ -1,7 +1,8 @@
 /* dfp ads */
 
-#dfp-ad-banner > img {
-    max-width: 100% !important;
+#block-dfp-cni-mitchellbanner {
+    width: 468px;
+    margin: 0 auto;
 }
 
 #block-dfp-sidebar-1 .block-inner .content {
@@ -69,12 +70,6 @@
 /* desktop browsers */
 @media only screen and (min-width: 768px) and (max-width: 958px) {
 
-    /* dfp ads */
-    #block-dfp-banner {
-        width: 468px;
-        margin: 0px auto 0px 12px;
-    }
-
     /* main menu */
     #main-menu ul.menu {
         margin-left: 2em;
@@ -85,7 +80,7 @@
 @media only screen and (max-width: 767px) {
 
     /* Hide larger DFP ads on non full-size browsers */
-    #block-dfp-cni-cherokeeleaderboard, #block-dfp-banner, #block-dfp-cni-cherokeefooter {
+    #block-dfp-cni-cherokeeleaderboard, #block-dfp-cni-mitchellbanner, #block-dfp-cni-cherokeefooter {
         display: none;
         visibility: hidden;
     }
@@ -100,7 +95,7 @@
 @media only screen and (min-width: 768px) {
 
     /* Hide larger DFP ads on non full-size browsers */
-    #block-dfp-cni-cherokeeleaderboard, #block-dfp-banner, #block-dfp-cni-cherokeefooter {
+    #block-dfp-cni-cherokeeleaderboard, #block-dfp-cni-mitchellbanner, #block-dfp-cni-cherokeefooter {
         display: block;
         visibility: visible;
     }
