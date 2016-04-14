@@ -9,44 +9,44 @@
     padding: 0;
 }
 
-#block-dfp-cni-cherokeeleaderboard {
+#block-dfp-cni-mitchellleaderboard {
     width:728px;
     margin: 1.6em auto 0 auto;
 }
 
-#block-dfp-cni-cherokeeleaderboard iframe {
+#block-dfp-cni-mitchellleaderboard iframe {
     width:728px;
     height:90px;
 }
 
-#block-dfp-cni-cherokeesidebar1 {
+#block-dfp-cni-mitchellsidebar1 {
     width:300px;
 }
 
-#block-dfp-cni-cherokeesidebar1 iframe {
+#block-dfp-cni-mitchellsidebar1 iframe {
     width:300px;
     height:250px;
 }
 
-#block-dfp-cni-cherokeesidebar2 {
+#block-dfp-cni-mitchellsidebar2 {
     width:300px;
 }
 
-#block-dfp-cni-cherokeesidebar2 iframe {
+#block-dfp-cni-mitchellsidebar2 iframe {
     width:300px; height:250px;
 }
 
-#block-dfp-cni-cherokeefooter {
+#block-dfp-cni-mitchellfooter {
     width:728px;
     margin: 5px auto 1.4em;
 }
 
-#block-dfp-cni-cherokeefooter iframe {
+#block-dfp-cni-mitchellfooter iframe {
     width:728px;
     height:90px;
 }
 
-#block-dfp-cni-cherokeemobile {
+#block-dfp-cni-mitchellmobile {
 	width:130px;
 	margin: 1.6em auto 1.6em auto;
 }
@@ -80,13 +80,13 @@
 @media only screen and (max-width: 767px) {
 
     /* Hide larger DFP ads on non full-size browsers */
-    #block-dfp-cni-cherokeeleaderboard, #block-dfp-cni-mitchellbanner, #block-dfp-cni-cherokeefooter {
+    #block-dfp-cni-mitchellleaderboard, #block-dfp-cni-mitchellbanner, #block-dfp-cni-mitchellfooter {
         display: none;
         visibility: hidden;
     }
 
     /* show mobile ad on smaller windows */
-    #block-dfp-cni-cherokeemobile {
+    #block-dfp-cni-mitchellmobile {
         display: block;
         visibility: visible;
     }
@@ -95,13 +95,13 @@
 @media only screen and (min-width: 768px) {
 
     /* Hide larger DFP ads on non full-size browsers */
-    #block-dfp-cni-cherokeeleaderboard, #block-dfp-cni-mitchellbanner, #block-dfp-cni-cherokeefooter {
+    #block-dfp-cni-mitchellleaderboard, #block-dfp-cni-mitchellbanner, #block-dfp-cni-mitchellfooter {
         display: block;
         visibility: visible;
     }
 
     /* show mobile ad on smaller windows */
-    #block-dfp-cni-cherokeemobile {
+    #block-dfp-cni-mitchellmobile {
         display: none;
         visibility: hidden;
     }
