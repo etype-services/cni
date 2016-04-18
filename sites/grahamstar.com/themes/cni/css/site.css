@@ -8,9 +8,13 @@
     padding: 0;
 }
 
-#block-dfp-cni-cherokeeleaderboard {
+#dfp-ad-cni_cherokeeleaderboard-wrapper {
+    width:100%;
+}
+
+#dfp-ad-cni_cherokeeleaderboard {
     width:728px;
-    margin: 1.6em auto 0 auto;
+    margin: 0 auto;
 }
 
 #block-dfp-cni-cherokeeleaderboard iframe {
