@@ -195,3 +195,9 @@ $sites['thesmokymountaintimes.com'] = 'thesmokymountaintimes.com';
 $sites['www.thesmokymountaintimes.com'] = 'thesmokymountaintimes.com';
 $sites['prod.thesmokymountaintimes.com'] = 'thesmokymountaintimes.com';
 $sites['dev.thesmokymountaintimes.com'] = 'thesmokymountaintimes.com';
+
+$sites['palatkadailynews.etypegoogle3.com'] = 'palatkadailynews.com';
+$sites['palatkadailynews.com'] = 'palatkadailynews.com';
+$sites['www.palatkadailynews.com'] = 'palatkadailynews.com';
+$sites['prod.palatkadailynews.com'] = 'palatkadailynews.com';
+$sites['dev.palatkadailynews.com'] = 'palatkadailynews.com';

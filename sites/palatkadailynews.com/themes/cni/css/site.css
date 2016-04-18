@@ -1,0 +1,131 @@
+/* dfp ads */
+
+#dfp-ad-cni_lakecbanner {
+    width: 468px;
+    margin: 0 auto;
+}
+
+#block-dfp-sidebar-1 .block-inner .content {
+    padding: 0;
+}
+
+#block-dfp-cni-lakecleaderboard {
+    width:728px;
+    margin: 1.6em auto 0 auto;
+}
+
+#block-dfp-cni-lakecleaderboard iframe {
+    width:728px;
+    height:90px;
+}
+
+#block-dfp-cni-lakecsidebar1 {
+    width:300px;
+}
+
+#block-dfp-cni-lakecsidebar1 iframe {
+    width:300px;
+    height:250px;
+}
+
+#block-dfp-cni-lakecsidebar2 {
+    width:300px;
+}
+
+#block-dfp-cni-lakecsidebar2 iframe {
+    width:300px; height:250px;
+}
+
+#block-dfp-cni-lakecfooter {
+    width:728px;
+    margin: 5px auto 1.4em;
+}
+
+#block-dfp-cni-lakecfooter iframe {
+    width:728px;
+    height:90px;
+}
+
+#block-dfp-cni-lakecmobile {
+	width:130px;
+	margin: 1.6em auto 1.6em auto;
+}
+
+/* desktop browsers */
+@media only screen and (min-width: 959px) {
+
+    /* dfp ads */
+    #block-dfp-cni-lakecitypromo {
+        margin-top: 20px;
+    }
+
+    /* main menu */
+    #main-menu ul.menu {
+        margin-left: 5.5em;
+    }
+
+}
+
+/* desktop browsers */
+@media only screen and (min-width: 768px) and (max-width: 958px) {
+
+    /* dfp ads */
+    #block-dfp-cni-lakecitypromo {
+        margin-top: 20px;
+    }
+
+    /* main menu */
+    #main-menu ul.menu {
+        margin-left: 2.5em;
+    }
+
+}
+
+@media only screen and (max-width: 767px) {
+
+    /* Hide larger DFP ads on non full-size browsers */
+    #block-dfp-cni-lakecleaderboard, #block-dfp-cni-lakecfooter {
+        display: none;
+        visibility: hidden;
+    }
+
+    /* show mobile ad on smaller windows */
+    #block-dfp-cni-lakecmobile {
+        display: block;
+        visibility: visible;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+    /* Hide larger DFP ads on non full-size browsers */
+    #block-dfp-cni-lakecleaderboard, #blcok-dfp-cni-lakecbanner #block-dfp-cni-lakecfooter {
+        display: block;
+        visibility: visible;
+    }
+
+    /* show mobile ad on smaller windows */
+    #block-dfp-cni-lakecmobile {
+        display: none;
+        visibility: hidden;
+    }
+}
+
+
+/* logo */
+.site-logo {
+    width: 80%;
+    margin: 0 auto;
+    max-width: 630px;
+}
+
+.site-logo img {
+    width: 100%;
+    max-width: 630px;
+}
+
+/* nie page */
+.page-node-191327 #node-191327 .field-image {
+    display: none;
+    visibility: hidden;
+}
