@@ -24,7 +24,7 @@ function etype_menu() {
 
 }
 
-/* run job at 7:00am Eastern every day */
+/* run job at 7:21am every day */
 function etype_cronapi($op, $job = NULL) {
 
   $items['etype_cron'] = array(
