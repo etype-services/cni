@@ -34,7 +34,7 @@ function etype_cronapi($op, $job = NULL) {
     'scheduler' => array(
       'name' => 'crontab',
       'crontab' => array(
-        'rules' => array('0 7 * * *'),
+        'rules' => array('21 7 * * *'),
       ),
     ),
   );
