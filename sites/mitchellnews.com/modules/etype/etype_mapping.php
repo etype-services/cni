@@ -1,7 +1,7 @@
 <?php
 
 /* import _url */
-$url = 'http://www.etypeclassifieds.com/lakecityxml/CNI_LCR.xml';
+$url = 'http://www.etypeclassifieds.com/murphyxml/CNI_MNJ.xml';
 
 /* ad categories */
 $categories = array(
