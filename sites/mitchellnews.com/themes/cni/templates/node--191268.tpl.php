@@ -14,7 +14,7 @@ $param12=array('UserName'=>"$uname");
 		{
 		$msg="Invalid UserName ";
 		}	 
-		else if($response12->GetPublicationIDResult== 3475)
+		else if($response12->GetPublicationIDResult== 3533)
 		{
 $param=array('UserName'=>$uname);
 
