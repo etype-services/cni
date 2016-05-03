@@ -1,6 +1,6 @@
 /* dfp ads */
 
-#dfp-ad-cni_lakecbanner {
+#dfp-ad-cni_palatkabanner {
     width: 468px;
     margin: 0 auto;
 }
@@ -9,44 +9,44 @@
     padding: 0;
 }
 
-#block-dfp-cni-lakecleaderboard {
+#block-dfp-cni-palatkaleaderboard {
     width:728px;
     margin: 1.6em auto 0 auto;
 }
 
-#block-dfp-cni-lakecleaderboard iframe {
+#block-dfp-cni-palatkaleaderboard iframe {
     width:728px;
     height:90px;
 }
 
-#block-dfp-cni-lakecsidebar1 {
+#block-dfp-cni-palatkasidebar1 {
     width:300px;
 }
 
-#block-dfp-cni-lakecsidebar1 iframe {
+#block-dfp-cni-palatkasidebar1 iframe {
     width:300px;
     height:250px;
 }
 
-#block-dfp-cni-lakecsidebar2 {
+#block-dfp-cni-palatkasidebar2 {
     width:300px;
 }
 
-#block-dfp-cni-lakecsidebar2 iframe {
+#block-dfp-cni-palatkasidebar2 iframe {
     width:300px; height:250px;
 }
 
-#block-dfp-cni-lakecfooter {
+#block-dfp-cni-palatkafooter {
     width:728px;
     margin: 5px auto 1.4em;
 }
 
-#block-dfp-cni-lakecfooter iframe {
+#block-dfp-cni-palatkafooter iframe {
     width:728px;
     height:90px;
 }
 
-#block-dfp-cni-lakecmobile {
+#block-dfp-cni-palatkamobile {
 	width:130px;
 	margin: 1.6em auto 1.6em auto;
 }
@@ -55,7 +55,7 @@
 @media only screen and (min-width: 959px) {
 
     /* dfp ads */
-    #block-dfp-cni-lakecitypromo {
+    #block-dfp-cni-palatkaitypromo {
         margin-top: 20px;
     }
 
@@ -65,7 +65,7 @@
 @media only screen and (min-width: 768px) and (max-width: 958px) {
 
     /* dfp ads */
-    #block-dfp-cni-lakecitypromo {
+    #block-dfp-cni-palatkaitypromo {
         margin-top: 20px;
     }
 
@@ -74,13 +74,13 @@
 @media only screen and (max-width: 767px) {
 
     /* Hide larger DFP ads on non full-size browsers */
-    #block-dfp-cni-lakecleaderboard, #block-dfp-cni-lakecfooter {
+    #block-dfp-cni-palatkaleaderboard, #block-dfp-cni-palatkafooter {
         display: none;
         visibility: hidden;
     }
 
     /* show mobile ad on smaller windows */
-    #block-dfp-cni-lakecmobile {
+    #block-dfp-cni-palatkamobile {
         display: block;
         visibility: visible;
     }
@@ -89,13 +89,13 @@
 @media only screen and (min-width: 768px) {
 
     /* Hide larger DFP ads on non full-size browsers */
-    #block-dfp-cni-lakecleaderboard, #blcok-dfp-cni-lakecbanner #block-dfp-cni-lakecfooter {
+    #block-dfp-cni-palatkaleaderboard, #blcok-dfp-cni-palatkabanner #block-dfp-cni-palatkafooter {
         display: block;
         visibility: visible;
     }
 
     /* show mobile ad on smaller windows */
-    #block-dfp-cni-lakecmobile {
+    #block-dfp-cni-palatkamobile {
         display: none;
         visibility: hidden;
     }
