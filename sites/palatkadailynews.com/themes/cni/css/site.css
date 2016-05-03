@@ -59,11 +59,6 @@
         margin-top: 20px;
     }
 
-    /* main menu */
-    #main-menu ul.menu {
-        margin-left: 5.5em;
-    }
-
 }
 
 /* desktop browsers */
@@ -72,11 +67,6 @@
     /* dfp ads */
     #block-dfp-cni-lakecitypromo {
         margin-top: 20px;
-    }
-
-    /* main menu */
-    #main-menu ul.menu {
-        margin-left: 2.5em;
     }
 
 }
@@ -122,10 +112,4 @@
 .site-logo img {
     width: 100%;
     max-width: 630px;
-}
-
-/* nie page */
-.page-node-191327 #node-191327 .field-image {
-    display: none;
-    visibility: hidden;
 }
