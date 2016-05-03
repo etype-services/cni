@@ -68,16 +68,13 @@ function _etype_social_content() {
   $twitter = theme_get_setting('twitter','cni');
   $pinterest = theme_get_setting('pinterest','cni');
   if ( ! empty($facebook)) {
-  	$fixed = str_replace('https://www.facebook.com/', '', $facebook);
-    $output .= '<li><a class="facebook" href="https://www.facebook.com/' . $fixed . '"></a></li>';
+    $output .= '<li><a class="facebook" href="https://www.facebook.com/' . $facebook . '"></a></li>';
   }
   if ( ! empty($twitter)) {
-  	$fixed = str_replace('https://twitter.com/', '', $twitter);
-    $output .= '<li><a class="twitter" href="https://twitter.com/' . $fixed . '"></a></li>';
+    $output .= '<li><a class="twitter" href="https://twitter.com/' . $twitter . '"></a></li>';
   }
   if ( ! empty($pinterest)) {
-  	$fixed = str_replace('ttps://www.pinterest.com/', '', $pinterest);
-    $output .= '<li><a class="pinterest" href="https://www.pinterest.com/' . $fixed . '"></a></li>';
+    $output .= '<li><a class="pinterest" href="https://www.pinterest.com/' . $pinterest . '"></a></li>';
   }
   $output .= '</ul></div>';
   return $output;
@@ -93,16 +90,13 @@ function _etype_follow_content() {
   $twitter = theme_get_setting('twitter','cni');
   $pinterest = theme_get_setting('pinterest','cni');
   if ( ! empty($facebook)) {
-  	$fixed = str_replace('https://www.facebook.com/', '', $facebook);
-    $output .= '<div class="facebook"><a href="https://www.facebook.com/' . $fixed . '">Like us on Facebook</a></div>';
+    $output .= '<div class="facebook"><a href="https://www.facebook.com/' . $facebook . '">Like us on Facebook</a></div>';
   }
   if ( ! empty($twitter)) {
-  	$fixed = str_replace('https://twitter.com/', '', $twitter);
-    $output .= '<div class="twitter"><a href="https://twitter.com/' . $fixed . '">Follow us on Twitter</a></div>';
+    $output .= '<div class="twitter"><a href="https://twitter.com/' . $twitter . '">Follow us on Twitter</a></div>';
   }
   if ( ! empty($pinterest)) {
-  	$fixed = str_replace('ttps://www.pinterest.com/', '', $pinterest);
-    $output .= '<div class="pinterest"><a href="https://www.pinterest.com/' . $fixed . '">Follow us on Pinterest</a></div>';
+    $output .= '<div class="pinterest"><a href="https://www.pinterest.com/' . $pinterest . '">Follow us on Pinterest</a></div>';
   }
   return $output;
 }
@@ -115,9 +109,8 @@ function _etype_facebook_content() {
   $facebook = theme_get_setting('facebook','cni');
 
   if ( ! empty($facebook)) {
-  	$fixed = str_replace('https://www.facebook.com/', '', $facebook);
     $output .= '
- <div class="fb-page" data-href="https://www.facebook.com/' . $fixed . '" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"></div>
+ <div class="fb-page" data-href="https://www.facebook.com/' . $facebook . '" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"></div>
     ';
   }
 
