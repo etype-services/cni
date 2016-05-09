@@ -43,21 +43,6 @@
         background-color: #eaeaea;
     }
 
-    /* legal forms for fernandina */
-    #legals-0-1 {
-        float:left;
-        margin: 2em 0.5em 2em 0;
-    }
-
-    #legals-0-2 {
-        float:left;
-        margin: 2em 0 2em 0.5em;
-    }
-
-    #legals-0-2 ::after {
-        clear: left;
-    }
-
     .page-node.not-logged-in .content .node-content-wrapper {
         margin-top: -13px;
     }
@@ -67,9 +52,6 @@
 /* desktop browsers */
 @media only screen and (max-width: 958px) and (min-width: 768px) {
 
-    #block-superfish-1 .content {
-        width: 744px;
-    }
     /* main menu */
     #block-superfish-1 .content {
         width: 760px;
@@ -101,6 +83,7 @@
 
     #main-menu ul.menu li ul li {
         background-color: #cccccc;
+        width: 100%;
     }
 
     #main-menu ul.menu li li a, #main-menu ul.menu li li a.active {
@@ -112,17 +95,6 @@
     #main-menu ul.menu li li a:hover,
     #main-menu ul.menu li ul li a.active:hover {
         background-color: #eaeaea;
-    }
-
-    /* legal forms */
-    #legals-0-1 {
-        float:left;
-        margin: 2em 0 0.3em;
-    }
-
-    #legals-0-2 {
-        float:left;
-        margin: 0.3em 0 2em;
     }
 
     /* other */
@@ -196,7 +168,7 @@
     }
 
     #block-superfish-1 .content {
-        width: auto;
+        width: 710px;
     }
 
     #block-superfish-1 ul li {
@@ -209,7 +181,7 @@
 
     #main-menu ul.menu li  {
         float: none;
-        list-style: disc;
+        list-style: none;
     }
 
     #main-menu ul.menu li a {
@@ -231,17 +203,6 @@
     #main-menu ul.menu li a:hover {
         background: url("../images/mobile_menu.png") no-repeat scroll 7px 8px transparent;
         color: #ffffff;
-    }
-
-    /* legal forms */
-    #legals-0-1 {
-        float:left;
-        margin: 2em 0 0.3em;
-    }
-
-    #legals-0-2 {
-        float:left;
-        margin: 0.3em 0 2em;
     }
 
     .main-content-wrapper {
@@ -364,7 +325,7 @@
 
     #main-menu ul.menu li  {
         float: none;
-        list-style: disc;
+        list-style: none;
     }
 
     #main-menu ul.menu li a {
@@ -388,23 +349,10 @@
         color: #ffffff;
     }
 
-    /* legal forms */
-    #legals-0-1 {
-        float:left;
-        margin: 2em 0 0.3em;
-    }
-
-    #legals-0-2 {
-        float:left;
-        margin: 0.3em 0 2em;
-    }
-
     .node-teaser .field-name-field-image img {
         float: left;
         margin: 0 20px 0 0;
     }
-
-
 
     .video .node-teaser .node-content-wrapper {
         margin-left: 0px;
@@ -510,7 +458,7 @@
 
     #main-menu ul.menu li  {
         float: none;
-        list-style: disc;
+        list-style: none;
     }
 
     #main-menu ul.menu li a {
@@ -534,23 +482,10 @@
         color: #ffffff;
     }
 
-    /* legal forms */
-    #legals-0-1 {
-        float:left;
-        margin: 2em 0 0.3em;
-    }
-
-    #legals-0-2 {
-        float:left;
-        margin: 0.3em 0 2em;
-    }
-
     .node-teaser .field-name-field-image img {
         float: left;
         margin: 0 20px 0 0;
     }
-
-
 
     .video .node-teaser .node-content-wrapper {
         margin-left: 0px;
