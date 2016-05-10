@@ -115,18 +115,23 @@
 }
 
 /* about us */
+
+.about-us .node-content-wrapper .field-name-body table {
+    width: 100%;
+}
 .about-us .node-content-wrapper .field-name-body td {
     vertical-align: top;
     border: none;
+    width: 50%;
 }
 
 .about-us .node-content-wrapper .field-name-body td:first-child {
     margin-right: 2em;
-    width: 57%;
 }
 
 .about-us .node-content-wrapper .field-name-body td div {
     clear: both;
+    margin-top: 1em;
 }
 
 .about-us .node-content-wrapper .field-name-body td img {
