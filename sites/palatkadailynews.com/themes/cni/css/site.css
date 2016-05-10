@@ -118,11 +118,15 @@
 .about-us .node-content-wrapper .field-name-body td {
     vertical-align: top;
     border: none;
-    width: 50%;
 }
 
 .about-us .node-content-wrapper .field-name-body td:first-child {
     margin-right: 2em;
+    width: 57%;
+}
+
+.about-us .node-content-wrapper .field-name-body td div {
+    clear: both;
 }
 
 .about-us .node-content-wrapper .field-name-body td img {
