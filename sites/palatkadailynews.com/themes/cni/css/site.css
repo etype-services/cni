@@ -113,3 +113,17 @@
     width: 100%;
     max-width: 630px;
 }
+
+/* about us */
+.about-us .node-content-wrapper .field-name-body td {
+    vertical-align: top;
+    border: none;
+    width: 50%;
+}
+
+.about-us .node-content-wrapper .field-name-body td img {
+    float: left;
+    width: 150px;
+    height: auto;
+    margin-right: 1em;
+}
