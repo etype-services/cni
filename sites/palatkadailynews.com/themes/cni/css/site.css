@@ -126,6 +126,8 @@
     width: 70px;
     height: auto;
     margin-right: 0.5em;
+    margin-top: 0.9em;
+    clear: both;
 }
 
 .about-us .node-content-wrapper .field-name-body td p {
