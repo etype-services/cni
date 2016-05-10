@@ -130,6 +130,10 @@
     clear: both;
 }
 
+.about-us .node-content-wrapper .field-name-body td h2 {
+    clear: both;
+}
+
 .about-us .node-content-wrapper .field-name-body td p {
     font-size: 0.8em;
 }
