@@ -330,7 +330,7 @@ function _classified_get_timestamp_from_date($date) {
 function _classified_get_vars() {
   $vars = array(
     'vid' => 0,
-    'max-length' => 5000,
+    'max-length' => 0,
     'list-body' => 'empty',
     'date-format' => t('%d/%m/%Y'),
     // 2 weeks lifetime.
