@@ -1479,3 +1479,8 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
     max-width: 100%;
     height: auto;
 }
+
+/* Webforms */
+.webforms .item-list {
+    list-style-type: none;
+}
