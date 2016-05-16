@@ -1,8 +1,9 @@
 <?php
+
 /**
  * Implements hook_block_info().
  */
-function etype_block_info() {
+function etype_cni_block_info() {
   $blocks = array();
 
   $blocks['Social'] = array(
@@ -21,36 +22,43 @@ function etype_block_info() {
     'info' => t('Twitter'),
   );
 
+  $blocks['e-Edition'] = array(
+    'info' => t('e-Edition'),
+  );
   return $blocks;
 }
 
 /**
  * Implements hook_block_view().
  */
-function etype_block_view($delta = '') {
+function etype_cni_block_view($delta = '') {
   $block = array();
   switch ($delta) {
 
     case 'Social':
       $block['subject'] = '';
-      $block['content'] = _etype_social_content();
+      $block['content'] = _etype_cni_social_content();
       break;
     
     case 'Follow':
       $block['subject'] = 'Follow Us';
-      $block['content'] = _etype_follow_content();
+      $block['content'] = _etype_cni_follow_content();
       break;
     
     case 'Facebook':
       $block['subject'] = 'Facebook';
-      $block['content'] = _etype_facebook_content();
+      $block['content'] = _etype_cni_facebook_content();
       break;
 
     case 'Twitter':
       $block['subject'] = 'Twitter';
-      $block['content'] = _etype_twitter_content();
+      $block['content'] = _etype_cni_twitter_content();
       break;
 
+    case 'e-Edition':
+      $block['subject'] = '';
+      $block['content'] = _etype_cni_e_edition_content();
+      break;
   }
   return $block;
 }
@@ -59,7 +67,7 @@ function etype_block_view($delta = '') {
  * Social Block
  * @return null
  */
-function _etype_social_content() {
+function _etype_cni_social_content() {
   $output = '
 <div id="social">
     <ul class="social-links">';
@@ -83,7 +91,7 @@ function _etype_social_content() {
  * Follow Block
  * @return null
  */
-function _etype_follow_content() {
+function _etype_cni_follow_content() {
   $output = '';
   $facebook = theme_get_setting('facebook','cni');
   $twitter = theme_get_setting('twitter','cni');
@@ -103,7 +111,7 @@ function _etype_follow_content() {
 /**
  * @return string
  */
-function _etype_facebook_content() {
+function _etype_cni_facebook_content() {
   $output = '';
   $facebook = theme_get_setting('facebook','cni');
 
@@ -119,7 +127,7 @@ function _etype_facebook_content() {
 /**
  * @return string
  */
-function _etype_twitter_content() {
+function _etype_cni_twitter_content() {
   $output = '';
   $twitter = theme_get_setting('twitter','cni');
   $twitter_widget_id = theme_get_setting('twitter_widget_id','cni');
@@ -137,3 +145,46 @@ function _etype_twitter_content() {
 
   return $output;
 }
+
+/**
+ * @return string
+ */
+
+
+function _etype_cni_e_edition_content() {
+  $e_edition = theme_get_setting('e_edition','cni');
+  $site_name = variable_get('site_name', 'Drupal');
+  $arr = preg_split("/ID[0-9]+/", $e_edition);
+  $fixed = $arr[0];
+
+  $output= '
+<p class="rtecenter" style="text-align: center;"><a href="http://etypeservices.com/' . $e_edition . '/"><img src="http://etypeservices.com/LandingPageImages/' . $fixed . '/currentpg1.jpg" width="193"></a></p><h4 class="rtecenter" style="text-align: center;"><a href="http://etypeservices.com/' . $e_edition . '/">Click here to read ' . $site_name . '</a></h4>
+';
+  return $output;
+}
+
+function etype_cni_menu() {
+
+  /* add e-Edition link to user menu */
+  $e_edition = theme_get_setting('e_edition','cni');
+  $path = 'http://etypeservices.com/' . $e_edition . '/';
+  
+  $items = array();
+
+  $items[$path] = array(
+      'type' => MENU_NORMAL_ITEM,
+      'menu_name' => 'user-menu',
+      'title' => t('e-Edition'),
+    );
+
+  $items['etype-classified-import'] = array(
+    'title' => t('Import Classified Ads'),
+    'page callback' => 'etype_classified_ad_importer',
+    'type' => MENU_CALLBACK,
+    'access arguments' => array('access administration pages')
+  );
+
+  return $items;
+}
+
+

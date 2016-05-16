@@ -6,24 +6,6 @@
  *
  */
 
-/**
- * Implements hook_menu().
- */
-function etype_menu() {
-
-  $items = array();
-
-  $items['etype-classified-import'] = array(
-    'title' => t('Import Classified Ads'),
-    'page callback' => 'etype_classified_ad_importer',
-    'type' => MENU_CALLBACK,
-    'access arguments' => array('access administration pages')
-  );
-
-  return $items;
-
-}
-
 /* run job at 7:00am Eastern every day */
 function etype_cronapi($op, $job = NULL) {
 
