@@ -1484,3 +1484,11 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
 .webforms .item-list ul li {
     list-style-type: none;
 }
+
+.webforms .item-list ul li {
+    list-style-type: none;
+}
+
+.webforms .item-list ul li.views-row-1 {
+    background: url(../images/red-file.png);
+}
