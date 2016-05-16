@@ -1481,6 +1481,6 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
 }
 
 /* Webforms */
-.webforms .item-list {
+.webforms .item-list ul li {
     list-style-type: none;
 }
