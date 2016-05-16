@@ -1487,39 +1487,39 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
 
 .webforms .item-list ul li {
     list-style-type: none;
+    height: 100px;
+}
 }
 
-.webforms .item-list ul li.views-row-1 h3.field-content {
+.webforms .item-list ul li h3.field-content {
     line-height: 100px;
     margin-left: 148px;
 }
 
+.webforms .item-list ul li {
+    background: url(../images/red-file.png) left center no-repeat;
+}
+
 .webforms .item-list ul li.views-row-1 {
     background: url(../images/red-file.png) left center no-repeat;
-    height: 100px;
 }
 
 .webforms .item-list ul li.views-row-2 {
     background: url(../images/blue-file.png) left center no-repeat;
-    height: 100px;
 }
 
 .webforms .item-list ul li.views-row-3 {
     background: url(../images/yellow-file.png) left center no-repeat;
-    height: 100px;
 }
 
 .webforms .item-list ul li.views-row-4 {
     background: url(../images/purple-file.png) left center no-repeat;
-    height: 100px;
 }
 
 .webforms .item-list ul li.views-row-10 {
     background: url(../images/green-file.png) left center no-repeat;
-    height: 100px;
 }
 
 .webforms .item-list ul li.views-row-11 {
     background: url(../images/dark-blue-file.png) left center no-repeat;
-    height: 100px;
 }
