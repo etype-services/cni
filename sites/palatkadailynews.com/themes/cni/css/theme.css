@@ -1489,6 +1489,12 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
     list-style-type: none;
 }
 
+.webforms .item-list ul li.views-row-1 h3.field-content {
+    line-height: 100px;
+    margin-left: 148px;
+}
+
 .webforms .item-list ul li.views-row-1 {
-    background: url(../images/red-file.png);
+    background: url(../images/red-file.png) left center no-repeat;
+    height: 100px;
 }
