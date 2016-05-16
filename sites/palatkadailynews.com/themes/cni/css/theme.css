@@ -1473,3 +1473,9 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
 .page-node .node-article .galleria-info {
     top: 308px
 }
+
+/* Public Notices Images */
+.page-classifieds-public-notices .view-real-estate .views-field-field-ad-image img {
+    max-width: 100%;
+    height: auto;
+}
