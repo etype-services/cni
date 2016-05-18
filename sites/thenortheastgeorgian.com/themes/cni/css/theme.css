@@ -1372,6 +1372,7 @@ blockquote p {
 
 .view-free-local-publications .views-field-field-image img {
     background: url(../images/image-background.png);
+    padding: 10px;
 }
 
 
