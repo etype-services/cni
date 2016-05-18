@@ -144,3 +144,9 @@
 .about-us .node-content-wrapper .field-name-body td p {
     font-size: 0.8em;
 }
+
+/* subscriber services */
+.subscriber-page-1 #becomeasubscriber {
+    padding: 1em;
+    background-color: #CCCCCC;
+}
