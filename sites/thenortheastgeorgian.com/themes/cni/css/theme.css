@@ -1371,6 +1371,14 @@ blockquote p {
     margin-right: 1em;
 }
 
+.view-free-local-publications .views-row {
+    clear: both;
+}
+
+.view-free-local-publications .views-field-title h2.title {
+    font-size: 1.2em;
+}
+
 
 /* DFP ADS
 --------------------------------------------------------------------------*/
