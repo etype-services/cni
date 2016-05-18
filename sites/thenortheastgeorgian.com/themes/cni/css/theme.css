@@ -1363,6 +1363,12 @@ blockquote p {
     margin-bottom: 1.5em;
 }
 
+/* Free Local Publications */
+.view-free-local-publications views-field-field-image {
+    float: left;
+    margin-right: 1em;
+}
+
 
 /* DFP ADS
 --------------------------------------------------------------------------*/
