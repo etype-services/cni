@@ -1368,7 +1368,7 @@ blockquote p {
 /* Free Local Publications */
 .view-free-local-publications .views-field-field-image {
     float: left;
-    padding-top: 1em;
+    margin-right: 1em;
 }
 
 .view-free-local-publications .views-row {
@@ -1377,7 +1377,7 @@ blockquote p {
 
 .view-free-local-publications .views-field-title h2.title {
     font-size: 1.2em;
-    line-height: 3em;
+    padding-top: 3em;
 }
 
 
