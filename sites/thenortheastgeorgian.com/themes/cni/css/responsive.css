@@ -506,6 +506,11 @@
         color: #ffffff;
     }
 
+    .node-teaser .field-image .field-name-field-image .field-items .field-item:first-child img {
+        float: none;
+    }
+
+
     .node-teaser .field-name-field-image img {
         float: none;
         margin: 0 20px 0 0;

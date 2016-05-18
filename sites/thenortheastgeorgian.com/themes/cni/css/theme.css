@@ -1370,6 +1370,10 @@ blockquote p {
     clear: both;
 }
 
+.view-free-local-publications .views-field-field-image {
+    background: url(../images/image-background.png);
+}
+
 
 /* DFP ADS
 --------------------------------------------------------------------------*/
