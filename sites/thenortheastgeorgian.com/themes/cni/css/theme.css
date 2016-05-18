@@ -918,9 +918,11 @@ article .field-image {
     background: url(../images/twitter.png) no-repeat;
 }
 
+/*
 .pinterest {
     background: url(../images/pinterest.png) no-repeat;
 }
+*/
 
 /* MISC
 --------------------------------------------------------------------------*/
@@ -1364,7 +1366,7 @@ blockquote p {
 }
 
 /* Free Local Publications */
-.view-free-local-publications views-field-field-image {
+.view-free-local-publications .views-field-field-image {
     float: left;
     margin-right: 1em;
 }
