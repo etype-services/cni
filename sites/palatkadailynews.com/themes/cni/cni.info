@@ -60,4 +60,5 @@ settings[postscript_1_grid_width] = 4
 settings[postscript_2_grid_width] = 4
 settings[postscript_3_grid_width] = 4
 settings[postscript_4_grid_width] = 0
-settings[facebook] = 'https://www.facebook.com/Lake-City-Reporter-135337236719'
+settings[facebook] = ''
+settings[e_edition] = 'Palatka%20Daily%20NewsID621'
