@@ -164,18 +164,8 @@ function _etype_cni_e_edition_content() {
 }
 
 function etype_cni_menu() {
-
-  /* add e-Edition link to user menu */
-  $e_edition = theme_get_setting('e_edition','cni');
-  $path = 'http://etypeservices.com/' . $e_edition . '/';
   
   $items = array();
-
-  $items[$path] = array(
-      'type' => MENU_NORMAL_ITEM,
-      'menu_name' => 'user-menu',
-      'title' => t('e-Edition'),
-    );
 
   $items['etype-classified-import'] = array(
     'title' => t('Import Classified Ads'),
