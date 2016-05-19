@@ -165,9 +165,6 @@ function _etype_cni_e_edition_content() {
 
 function etype_cni_menu() {
 
-    /* add e-Edition link to user menu */
-    $e_edition = theme_get_setting('e_edition', 'cni');
-    $path = 'http://etypeservices.com/' . $e_edition . '/';
     $items = array();
 
     $items['e-edition'] = array(
@@ -185,5 +182,24 @@ function etype_cni_menu() {
 
     return $items;
 }
+
+
+/* add e-Edition link to user menu */
+$e_edition = theme_get_setting('e_edition', 'cni');
+$path = 'http://etypeservices.com/' . $e_edition . '/';
+$redirect = new stdClass();
+module_invoke(
+    'redirect',
+    'object_prepare',
+    $redirect,
+    array(
+        'source' => 'e-edition',
+        'source_options' => array(),
+        'redirect' => $path,
+        'redirect_options' => array(),
+        'language' => LANGUAGE_NONE,
+    )
+);
+module_invoke('redirect', 'save', $redirect);
 
 
