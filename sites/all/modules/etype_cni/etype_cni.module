@@ -172,7 +172,7 @@ function etype_cni_menu() {
 
     $items = array();
 
-    $items[$path] = array(
+    $items["$path"] = array(
         'type' => MENU_NORMAL_ITEM,
         'menu_name' => 'user-menu',
         'title' => t('e-Edition'),
