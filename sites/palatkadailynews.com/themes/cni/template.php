@@ -88,20 +88,3 @@ function cni_preprocess_html(&$vars) {
     drupal_add_js(drupal_get_path('theme', 'cni'). '/js/user-menu.js', 'file');
   }
 }
-
-function cni_menu() {
-
-    /* add e-Edition link to user menu */
-    $e_edition = theme_get_setting('e_edition','cni');
-    $path = 'http://etypeservices.com/' . $e_edition . '/';
-
-    $items = array();
-
-    $items[$path] = array(
-        'type' => MENU_NORMAL_ITEM,
-        'menu_name' => 'user-menu',
-        'title' => t('e-Edition'),
-    );
-    
-    return $items;
-}
