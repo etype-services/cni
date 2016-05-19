@@ -168,9 +168,12 @@ function etype_cni_menu() {
     $items = array();
 
     $items['e-edition'] = array(
-        'type' => MENU_NORMAL_ITEM,
+        'title' => 'e-Edition',
+        'description' => 'Link to e-Edition.',
+        'page callback' => '_etype_e_edition',
+        'access arguments' => array('access content'),
         'menu_name' => 'user-menu',
-        'title' => t('e-Edition'),
+        'type' => MENU_NORMAL_ITEM,
     );
 
     $items['etype-classified-import'] = array(
@@ -183,23 +186,12 @@ function etype_cni_menu() {
     return $items;
 }
 
+function _etype_e_edition() {
+    /* add e-Edition link to user menu */
+    $e_edition = theme_get_setting('e_edition', 'cni');
+    $path = 'http://etypeservices.com/' . $e_edition . '/';
+    drupal_goto($path);
+}
 
-/* add e-Edition link to user menu */
-$e_edition = theme_get_setting('e_edition', 'cni');
-$path = 'http://etypeservices.com/' . $e_edition . '/';
-$redirect = new stdClass();
-module_invoke(
-    'redirect',
-    'object_prepare',
-    $redirect,
-    array(
-        'source' => 'e-edition',
-        'source_options' => array(),
-        'redirect' => $path,
-        'redirect_options' => array(),
-        'language' => LANGUAGE_NONE,
-    )
-);
-module_invoke('redirect', 'save', $redirect);
 
 
