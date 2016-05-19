@@ -156,3 +156,7 @@
 #menu-2004-1 {
     background-color: #CCCCCC;
 }
+
+#main-menu ul.menu li#menu-2004-1 a {
+    color: #000000;
+}
