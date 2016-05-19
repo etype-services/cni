@@ -183,23 +183,6 @@ function etype_cni_menu() {
         'access arguments' => array('access administration pages')
     );
 
-    $redirect = new stdClass();
-
-    module_invoke(
-        'redirect',
-        'object_prepare',
-        $redirect,
-        array(
-            'source' => 'e-edition',
-            'source_options' => array(),
-            'redirect' => $path,
-            'redirect_options' => array(),
-            'language' => LANGUAGE_NONE,
-        )
-    );
-
-    module_invoke('redirect', 'save', $redirect);
-
     return $items;
 }
 
