@@ -1383,6 +1383,16 @@ blockquote p {
     margin-bottom: 1.5em;
 }
 
+/* Free Local Publications */
+.view-free-local-publications .views-row {
+    clear: both;
+}
+
+.view-free-local-publications .views-field-field-image img {
+    background: url(../images/image-background.png);
+    padding: 10px;
+}
+
 
 /* DFP ADS
 --------------------------------------------------------------------------*/
@@ -1435,7 +1445,6 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
     font-family: 'Lato', sans-serif;
 }
 
-.page
 
 /* ARTICLE
 --------------------------------------------------------------------------*/
