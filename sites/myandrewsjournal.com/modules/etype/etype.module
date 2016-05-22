@@ -11,34 +11,31 @@
  */
 function etype_menu() {
 
-  $items = array();
+    $items = array();
 
-  $items['etype-classified-import'] = array(
-    'title' => t('Import Classified Ads'),
-    'page callback' => 'etype_classified_ad_importer',
-    'type' => MENU_CALLBACK,
-    'access arguments' => array('access administration pages')
-  );
+    $items['etype-classified-import'] = array(
+        'title' => t('Import Classified Ads'),
+        'page callback' => 'etype_classified_ad_importer',
+        'type' => MENU_CALLBACK,
+        'access arguments' => array('access administration pages')
+    );
 
-  return $items;
+    return $items;
 
 }
 
 /* run job at 7:50am Eastern every Thursday */
 function etype_cronapi($op, $job = NULL) {
 
-  $items['etype_cron'] = array(
-    'title' => 'Import Classified Ads',
-    'module' => 'etype',
-    'callback' => 'etype_classified_ad_importer',
-    'scheduler' => array(
-      'name' => 'crontab',
-      'crontab' => array(
-        'rules' => array('50 7 * * 4'),
-      ),
-    ),
-  );
-  return $items;
+    $items['etype_classified_cron'] = array(
+        'description' => 'Import Classified Ads',
+        'rule' => '50 7 * * 4',
+        'callback' => 'etype_classified_ad_importer',
+        'arguments' => array('all'),
+    );
+
+
+    return $items;
 }
 
 /**
@@ -49,30 +46,30 @@ function etype_cronapi($op, $job = NULL) {
  * @param $entity_id
  */
 function etype_classfied_mapping($vid) {
-  $categories = array();
+    $categories = array();
 
-  include(__DIR__ . '/etype_mapping.php');
+    include(__DIR__ . '/etype_mapping.php');
 
-  if (!isset($vid)) {
-    drupal_set_message(t("No category id for item"), 'error');
-    return;
-  }
-  else {
-
-    $ad_cat = 0;
-
-    foreach ($categories as $k => $v) {
-      if ($vid == $k) {
-        $ad_cat = $v;
-        continue;
-      }
+    if (!isset($vid)) {
+        drupal_set_message(t("No category id for item"), 'error');
+        return;
     }
+    else {
 
-    if ($ad_cat == 0) {
-      drupal_set_message(t("$vid not matched"), 'error');
+        $ad_cat = 0;
+
+        foreach ($categories as $k => $v) {
+            if ($vid == $k) {
+                $ad_cat = $v;
+                continue;
+            }
+        }
+
+        if ($ad_cat == 0) {
+            drupal_set_message(t("$vid not matched"), 'error');
+        }
     }
-  }
-  return $ad_cat;
+    return $ad_cat;
 
 }
 
@@ -84,27 +81,27 @@ function etype_classfied_mapping($vid) {
  */
 function etype_entity_create($item = array(), $values = array(), $entity_type = 'node') {
 
-  $entity = entity_create($entity_type, $values);
-  $ewrapper = entity_metadata_wrapper($entity_type, $entity);
-  if (count($item) > 0) {
-    foreach ($item as $k => $v) {
-      switch ($k) {
+    $entity = entity_create($entity_type, $values);
+    $ewrapper = entity_metadata_wrapper($entity_type, $entity);
+    if (count($item) > 0) {
+        foreach ($item as $k => $v) {
+            switch ($k) {
 
-        case 'body':
-          $ewrapper->body->set(array('value' => $v));
-          break;
+                case 'body':
+                    $ewrapper->body->set(array('value' => $v));
+                    break;
 
-        case 'category':
-          $v = intval($v);
-          $ewrapper->classified_category->set($v);
-          break;
+                case 'category':
+                    $v = intval($v);
+                    $ewrapper->classified_category->set($v);
+                    break;
 
-        default:
-          $ewrapper->$k->set($v);
-      }
+                default:
+                    $ewrapper->$k->set($v);
+            }
+        }
+        $ewrapper->save(TRUE);
     }
-    $ewrapper->save(TRUE);
-  }
 }
 
 /**
@@ -112,73 +109,73 @@ function etype_entity_create($item = array(), $values = array(), $entity_type = 
  */
 function etype_classified_ad_importer() {
 
-  global $user;
-  $url = '';
-  include(__DIR__ . '/etype_mapping.php');
+    global $user;
+    $url = '';
+    include(__DIR__ . '/etype_mapping.php');
 
-  $values = array(
-    'type' => 'classified',
-    'uid' => $user->uid,
-    'status' => 1,
-    'comment' => 0,
-    'promote' => 0,
-    'language' => LANGUAGE_NONE,
-  );
+    $values = array(
+        'type' => 'classified',
+        'uid' => $user->uid,
+        'status' => 1,
+        'comment' => 0,
+        'promote' => 0,
+        'language' => LANGUAGE_NONE,
+    );
 
-  $xml = file_get_contents($url);
-  if ($xml !== FALSE) {
+    $xml = file_get_contents($url);
+    if ($xml !== FALSE) {
 
-    $ad_obj = simplexml_load_string($xml, 'SimpleXMLElement', LIBXML_NOCDATA);
-    $i = 0;
-    if (count($ad_obj) > 0) {
+        $ad_obj = simplexml_load_string($xml, 'SimpleXMLElement', LIBXML_NOCDATA);
+        $i = 0;
+        if (count($ad_obj) > 0) {
 
-      /* delete all current ads */
-      $query = new EntityFieldQuery();
-      $query->entityCondition('entity_type', 'node')
-        ->entityCondition('bundle', 'classified');
-      $result = $query->execute();
-      // dpq($query);
-      if (count($result) > 0) {
-        $nids = array_keys($result['node']);
-        $i = count($nids);
-        node_delete_multiple($nids);
-        watchdog('etype', "EType Classified Importer deleted %num Classified Ads", $variables = array('%num' => $i), $severity = WATCHDOG_NOTICE);
-        // drupal_set_message(t("EType Classified Importer deleted $i expired nodes"), 'status');
-      }
-      else {
-        watchdog('etype', "EType Classified Importer found no Classified Ads to delete", $variables = array(), $severity = WATCHDOG_NOTICE);
-      }
+            /* delete all current ads */
+            $query = new EntityFieldQuery();
+            $query->entityCondition('entity_type', 'node')
+                ->entityCondition('bundle', 'classified');
+            $result = $query->execute();
+            // dpq($query);
+            if (count($result) > 0) {
+                $nids = array_keys($result['node']);
+                $i = count($nids);
+                node_delete_multiple($nids);
+                watchdog('etype', "EType Classified Importer deleted %num Classified Ads", $variables = array('%num' => $i), $severity = WATCHDOG_NOTICE);
+                // drupal_set_message(t("EType Classified Importer deleted $i expired nodes"), 'status');
+            }
+            else {
+                watchdog('etype', "EType Classified Importer found no Classified Ads to delete", $variables = array(), $severity = WATCHDOG_NOTICE);
+            }
 
-      $i = 0;
-      /* loop over xml and add new Classified Ads */
-      foreach ($ad_obj as $ad) {
+            $i = 0;
+            /* loop over xml and add new Classified Ads */
+            foreach ($ad_obj as $ad) {
 
-        // xml object processing to make array
-        $array = array();
-        foreach ($ad as $k => $v) {
-          $v = (array) $v;
-          isset($v[0]) ? $array[$k] = $v[0] : $array[$k] = '';
+                // xml object processing to make array
+                $array = array();
+                foreach ($ad as $k => $v) {
+                    $v = (array) $v;
+                    isset($v[0]) ? $array[$k] = $v[0] : $array[$k] = '';
+                }
+
+                /* check for valid matched category, otherwise there will be an error in node creation */
+                $category = etype_classfied_mapping($array['categoryId']);
+                if ($category > 0) {
+                    $node = array(
+                        'title' => $array['ItemTitle'],
+                        'body' => $array['ItemDesc'],
+                        'category' => etype_classfied_mapping($array['categoryId'])
+                    );
+                    // print_r($node);
+                    $values['created'] = strtotime($array['startDate']);
+                    etype_entity_create($node, $values);
+                    $i++;
+                }
+            }
         }
-
-        /* check for valid matched category, otherwise there will be an error in node creation */
-        $category = etype_classfied_mapping($array['categoryId']);
-        if ($category > 0) {
-          $node = array(
-            'title' => $array['ItemTitle'],
-            'body' => $array['ItemDesc'],
-            'category' => etype_classfied_mapping($array['categoryId'])
-          );
-          // print_r($node);
-          $values['created'] = strtotime($array['startDate']);
-          etype_entity_create($node, $values);
-          $i++;
-        }
-      }
+        watchdog('etype', "EType Classified Importer added %num Classified Ads", $variables = array('%num' => $i), $severity = WATCHDOG_NOTICE);
+        // drupal_set_message(t("EType Classified Importer added $i nodes"), 'status');
     }
-    watchdog('etype', "EType Classified Importer added %num Classified Ads", $variables = array('%num' => $i), $severity = WATCHDOG_NOTICE);
-    // drupal_set_message(t("EType Classified Importer added $i nodes"), 'status');
-  }
-  else {
-    watchdog('etype', "EType Classified Importer found no xml at %url", $variables = array('%url' => $url), $severity = WATCHDOG_NOTICE);
-  }
+    else {
+        watchdog('etype', "EType Classified Importer found no xml at %url", $variables = array('%url' => $url), $severity = WATCHDOG_NOTICE);
+    }
 }
