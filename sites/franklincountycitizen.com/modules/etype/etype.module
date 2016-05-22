@@ -35,7 +35,8 @@ function etype_menu() {
 /* run job at 7:45am Eastern every Thursday */
 function etype_cronapi($op, $job = NULL) {
 
-    $items['etype_cron'] = array(
+    /* Ulitmate Cron version
+     * $items['etype_cron'] = array(
         'title' => 'Import Classified Ads',
         'module' => 'etype',
         'callback' => 'etype_classified_ad_importer',
@@ -45,6 +46,13 @@ function etype_cronapi($op, $job = NULL) {
                 'rules' => array('45 7 * * 4'),
             ),
         ),
+    );*/
+
+    $items['etype_classified_cron'] = array(
+        'description' => 'Import Classified Ads',
+        'rule' => '38 7 * * 4', // Every 5 minutes
+        'callback' => 'etype_classified_ad_importer',
+        'arguments' => array('all'),
     );
 
     return $items;
