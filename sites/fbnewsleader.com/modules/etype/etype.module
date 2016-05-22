@@ -29,5 +29,8 @@ function etype_menu() {
 function etype_classified_cleanup() {
 
     $res = db_query('SELECT n.nid FROM node n LEFT JOIN node_revision nr ON nr.nid = n.nid WHERE nr.vid IS NULL');
-    var_dump($res);
+    foreach ($res as $record) {
+        // Do something with each $record
+        echo $record->nid;
+    }
 }
