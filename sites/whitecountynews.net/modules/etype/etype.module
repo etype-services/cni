@@ -42,11 +42,11 @@ function etype_cronapi($op, $job = NULL) {
 
     $items['etype_classified_cron'] = array(
         'description' => 'Import Classified Ads',
-        'rule' => '38 7 * * 4', // Every 5 minutes
+        'rule' => '38 7 * * 4',
         'callback' => 'etype_classified_ad_importer',
         'arguments' => array('all'),
     );
-    
+
     return $items;
 }
 
