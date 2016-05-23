@@ -66,7 +66,7 @@
                 var w = $(window).width();
                 if (w > 767) {
                     $('#block-superfish-1 ul li.sf-depth-1:not(:first-child)').css("display", "list-item").show();
-                    $('#menu-2013-1').hide();
+                    $('#menu-2070-1').hide();
                 } else {
                     $('#block-superfish-1 ul li.sf-depth-1:first-child a').text('Show Menu');
                     $('#block-superfish-1 ul li.sf-depth-1:not(:first-child)').hide();
