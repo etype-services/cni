@@ -43,6 +43,12 @@
     #main-menu ul.menu li ul li a.active:hover {
         background-color: #eaeaea;
     }
+    
+    /* hide login link in main menu */
+    #menu-2185-1 {
+        display: none;
+        visibility: hidden;
+    }
 
     /* legal forms */
     #legals-0-1 {
@@ -124,6 +130,12 @@
     #main-menu ul.menu li li a:hover,
     #main-menu ul.menu li ul li a.active:hover {
         background-color: #eaeaea;
+    }
+    
+    /* hide login link in main menu */
+    #menu-2185-1 {
+        display: none;
+        visibility: hidden;
     }
 
     /* legal forms */

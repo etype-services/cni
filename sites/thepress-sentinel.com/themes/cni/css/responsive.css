@@ -42,6 +42,12 @@
     #main-menu ul.menu li ul li a.active:hover {
         background-color: #eaeaea;
     }
+    
+    /* hide login link in main menu */
+    #menu-2185-1 {
+        display: none;
+        visibility: hidden;
+    }
 
     .page-node.not-logged-in .content .node-content-wrapper {
         margin-top: -13px;
@@ -95,6 +101,12 @@
     #main-menu ul.menu li li a:hover,
     #main-menu ul.menu li ul li a.active:hover {
         background-color: #eaeaea;
+    }
+    
+    /* hide login link in main menu */
+    #menu-2185-1 {
+        display: none;
+        visibility: hidden;
     }
 
     /* other */
