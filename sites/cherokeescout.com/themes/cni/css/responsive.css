@@ -117,6 +117,12 @@
         background-color: #eaeaea;
     }
 
+    /* hide login link in main menu */
+    #menu-2152-1 {
+        display: none;
+        visibility: hidden;
+    }
+
     /* legal forms */
     #legals-0-1 {
         float:left;
