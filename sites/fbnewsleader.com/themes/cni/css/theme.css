@@ -1320,6 +1320,10 @@ blockquote {
 #block-dfp-cni-fernandinafooter {width:728px; margin: 5px auto 1em;}
 #block-dfp-cni-fernandinafooter iframe {width:728px; height:90px;}
 
+#dfp-ad-cni_fernandinabanner {
+    text-align: center;
+}
+
 .block-dfp .content {
 	padding-top: 0;
 }

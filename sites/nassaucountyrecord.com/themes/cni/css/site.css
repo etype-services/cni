@@ -51,6 +51,10 @@
     margin: 1.6em auto 1.6em auto;
 }
 
+#dfp-ad-cni_nassaubanner {
+    text-align: center;
+}
+
 /* desktop browsers */
 @media only screen and (min-width: 959px) {
 
