@@ -8,40 +8,40 @@
     padding: 0;
 }
 
-#block-dfp-cni-negleaderboard {
+#block-dfp-cni-jesupleaderboard {
     width:728px;
     margin: 1.6em auto 0 auto;
 }
 
-#block-dfp-cni-negleaderboard iframe {
+#block-dfp-cni-jesupleaderboard iframe {
     width:728px;
     height:90px;
 }
 
-#block-dfp-cni-negsidebar1 {
+#block-dfp-cni-jesupsidebar1 {
     width:300px;
 }
 
-#block-dfp-cni-negsidebar1 iframe {
+#block-dfp-cni-jesupsidebar1 iframe {
     width:300px;
     height:250px;
 }
 
-#block-dfp-cni-negsidebar2 {
+#block-dfp-cni-jesupsidebar2 {
     width:300px;
 }
 
-#block-dfp-cni-negsidebar2 iframe {
+#block-dfp-cni-jesupsidebar2 iframe {
     width:300px; height:250px;
 }
 
 
-#block-dfp-cni-negfooter {
+#block-dfp-cni-jesupfooter {
     width:728px;
     margin: 5px auto 1.4em;
 }
 
-#block-dfp-cni-negfooter iframe {
+#block-dfp-cni-jesupfooter iframe {
     width:728px;
     height:90px;
 }
@@ -88,13 +88,13 @@
 @media only screen and (max-width: 767px) {
 
     /* Hide larger DFP ads on non full-size browsers */
-    #block-dfp-cni-negleaderboard, #block-dfp-banner, #block-dfp-cni-negfooter {
+    #block-dfp-cni-jesupleaderboard, #block-dfp-banner, #block-dfp-cni-jesupfooter {
         display: none;
         visibility: hidden;
     }
 
     /* show mobile ad on smaller windows */
-    #block-dfp-cni-negmobile {
+    #block-dfp-cni-jesupmobile {
         display: block;
         visibility: visible;
     }
@@ -103,13 +103,13 @@
 @media only screen and (min-width: 768px) {
 
     /* Hide larger DFP ads on non full-size browsers */
-    #block-dfp-cni-negleaderboard, #block-dfp-banner, #block-dfp-cni-negfooter {
+    #block-dfp-cni-jesupleaderboard, #block-dfp-banner, #block-dfp-cni-jesupfooter {
         display: block;
         visibility: visible;
     }
 
     /* show mobile ad on smaller windows */
-    #block-dfp-cni-negmobile {
+    #block-dfp-cni-jesupmobile {
         display: none;
         visibility: hidden;
     }
