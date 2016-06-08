@@ -1,4 +1,4 @@
-    <?php
+<?php
 
 /**
  * @file
@@ -50,7 +50,7 @@ function etype_cronapi($op, $job = NULL) {
 
     $items['etype_classified_cron'] = array(
         'description' => 'Import Classified Ads',
-        'rule' => '45 7 * * 3,5',
+        'rule' => '45 7 * * 4',
         'callback' => 'etype_classified_ad_importer',
         'arguments' => array('all'),
     );
