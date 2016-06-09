@@ -13,7 +13,7 @@ function etype_menu() {
 
     $items = array();
 
-    /* Drupal doesn't seem to like the double day entry, so giving access to anybody to run from system cron */
+    /* Giving access to anybody to run as url */
     $items['etype-classified-import'] = array(
         'title' => t('Import Classified Ads'),
         'page callback' => 'etype_classified_ad_importer',
@@ -32,7 +32,7 @@ function etype_menu() {
  */
 function etype_cronapi($op, $job = NULL) {
 
-    /*$items['etype_classified_cron'] = array(
+    $items['etype_classified_cron'] = array(
         'description' => 'Import Classified Ads',
         'rule' => '30 7 * * 3,5',
         'callback' => 'etype_classified_ad_importer',
@@ -40,7 +40,7 @@ function etype_cronapi($op, $job = NULL) {
     );
 
     return $items;
-    */
+
 }
 
 /**
