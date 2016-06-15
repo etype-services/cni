@@ -1,0 +1,150 @@
+/* dfp ads */
+
+#dfp-ad-banner > img {
+    max-width: 100% !important;
+}
+
+#block-dfp-sidebar-1 .block-inner .content {
+    padding: 0;
+}
+
+#block-dfp-cni-highlandsleaderboard {
+    width:728px;
+    margin: 1.6em auto 0 auto;
+}
+
+#block-dfp-cni-highlandsleaderboard iframe {
+    width:728px;
+    height:90px;
+}
+
+#block-dfp-cni-highlandssidebar1 {
+    width:300px;
+}
+
+#block-dfp-cni-highlandssidebar1 iframe {
+    width:300px;
+    height:250px;
+}
+
+#block-dfp-cni-highlandssidebar2 {
+    width:300px;
+}
+
+#block-dfp-cni-highlandssidebar2 iframe {
+    width:300px; height:250px;
+}
+
+#block-dfp-cni-highlandsfooter {
+    width:728px;
+    margin: 5px auto 1.4em;
+}
+
+#block-dfp-cni-highlandsfooter iframe {
+    width:728px;
+    height:90px;
+}
+
+#block-dfp-cni-highlandsmobile {
+	width:130px;
+	margin: 1.6em auto 1.6em auto;
+}
+
+/* desktop browsers */
+@media only screen and (min-width: 959px) {
+
+    /* dfp ads */
+    #block-dfp-banner {
+        width: 468px;
+        margin: 0px auto 0px 83px;
+    }
+
+    /* main menu */
+    #main-menu ul.menu {
+        margin-left: 0;
+    }
+
+}
+
+/* desktop browsers */
+@media only screen and (min-width: 768px) and (max-width: 958px) {
+
+    /* dfp ads */
+    #block-dfp-banner {
+        width: 468px;
+        margin: 0px auto 0px 12px;
+    }
+
+    /* main menu */
+    #main-menu ul.menu {
+        margin-left: 0;
+    }
+
+    #main-menu ul.menu li a {
+        padding: 0 8px;
+    }
+
+}
+
+@media only screen and (max-width: 767px) {
+
+    /* Hide larger DFP ads on non full-size browsers */
+    #block-dfp-cni-highlandsleaderboard, #block-dfp-banner, #block-dfp-cni-highlandsfooter {
+        display: none;
+        visibility: hidden;
+    }
+
+    /* show mobile ad on smaller windows */
+    #block-dfp-cni-highlandsmobile {
+        display: block;
+        visibility: visible;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+    /* Hide larger DFP ads on non full-size browsers */
+    #block-dfp-cni-highlandsleaderboard, #block-dfp-banner, #block-dfp-cni-highlandsfooter {
+        display: block;
+        visibility: visible;
+    }
+
+    /* show mobile ad on smaller windows */
+    #block-dfp-cni-highlandsmobile {
+        display: none;
+        visibility: hidden;
+    }
+}
+
+
+/* logo */
+.site-logo {
+    width: 80%;
+    margin: 0 auto;
+    max-width: 936px;
+}
+
+.site-logo img {
+    width: 100%;
+    max-width: 936px;
+}
+
+/* things to do pages */
+.node-type-attraction p.attribution {
+    font-style: italic;
+}
+
+.view-things-to-do-hiking .views-row, .view-visit-highlands-waterfalls .views-row  {
+    margin-bottom: 1em;
+}
+
+.view-things-to-do-hiking .views-row .views-field-field-image, .view-visit-highlands-waterfalls .views-row .views-field-field-image {
+    margin-right: 0.6em;
+    float: left;
+}
+
+/* Advertise page */
+.advertise .field-name-field-download {
+    display: none;
+    visibility: hidden;
+}
