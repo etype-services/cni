@@ -1382,3 +1382,12 @@ blockquote {
     display: none;
     visibility: hidden;
 }
+
+/* COMMUNUITY LINKS */
+#block-views-community-links-block table {
+    width: 100%;
+}
+
+#block-views-community-links-block td {
+    width: 50%;
+}
