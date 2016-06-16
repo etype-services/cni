@@ -30,6 +30,7 @@ function etype_menu() {
  */
 function etype_cronapi($op, $job = NULL) {
 
+    /*
     $items['etype_classified_cron'] = array(
         'description' => 'Import Classified Ads',
         'rule' => '0 4 * * 3,5',
@@ -38,6 +39,7 @@ function etype_cronapi($op, $job = NULL) {
     );
 
     return $items;
+    */
 }
 
 /**
