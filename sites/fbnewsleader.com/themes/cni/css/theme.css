@@ -1390,4 +1390,5 @@ blockquote {
 
 #block-views-community-links-block td {
     width: 50%;
+    border: none;
 }
