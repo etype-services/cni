@@ -53,7 +53,7 @@ if($Password==$resp->GetPasswordByUserNameResult)
             {
               $edit['pass'] = $Password;
               user_save($user, $edit);
-              $msg="Password Changed Successfully";
+              $msg="Password Change Successful";
     //drupal_goto('custom-login-page');
             }
             
@@ -173,7 +173,7 @@ $param=array('UserName' =>"$uname");
                             <p> <div class="login">
       
       <form name="change password" method="POST" action="">
-       
+        <p style="color:red"><?php echo $msg; ?></p>
         <table>
           <tr>
             <td><strong>UserName</strong>

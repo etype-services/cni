@@ -15,7 +15,7 @@ $param12=array('UserName'=>"$username");
     {
     $msg="Invalid UserName or Password. ";
     }  
-    else if($response12->GetPublicationIDResult== 3662)
+    else if($response12->GetPublicationIDResult== 3197)
     {
 $param=array('UserName' =>"$username",'Password' =>"$Password");
   $client= new soapclient('http://etypeservices.com/Service_SubscriberLogin.asmx?WSDL');
@@ -42,7 +42,7 @@ $useruid = $qu->uid;
 
 if($response->ValidateSubscriberResult == -1)
 {
-   $msg="Your Subscription has been expired  <a href='http://www.etypeservices.com/Subscriber/SignIn.aspx?IssueID=128604&ReturnUrl=http://www.etypeservices.com/Subscriber/ReSubscribe.aspx?PubID=3662'>Click here</a>  to re-subscribe.";
+   $msg="Your Subscription has been expired  <a href='http://www.etypeservices.com/Subscriber/SignIn.aspx?IssueID=107090&ReturnUrl=http://www.etypeservices.com/Subscriber/ReSubscribe.aspx?PubID=3197'>Click here</a>  to re-subscribe.";
 }
 else
 {
