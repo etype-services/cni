@@ -8,3 +8,5 @@ sites/*/tmp
 
 # Ignore default files
 error_log
+.idea/
+
