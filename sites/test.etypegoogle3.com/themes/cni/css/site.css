@@ -8,44 +8,44 @@
     padding: 0;
 }
 
-#block-dfp-cni-highlandsleaderboard {
+#block-dfp-cni-claytonleaderboard {
     width:728px;
     margin: 1.6em auto 0 auto;
 }
 
-#block-dfp-cni-highlandsleaderboard iframe {
+#block-dfp-cni-claytonleaderboard iframe {
     width:728px;
     height:90px;
 }
 
-#block-dfp-cni-highlandssidebar1 {
+#block-dfp-cni-claytonsidebar1 {
     width:300px;
 }
 
-#block-dfp-cni-highlandssidebar1 iframe {
+#block-dfp-cni-claytonsidebar1 iframe {
     width:300px;
     height:250px;
 }
 
-#block-dfp-cni-highlandssidebar2 {
+#block-dfp-cni-claytonsidebar2 {
     width:300px;
 }
 
-#block-dfp-cni-highlandssidebar2 iframe {
+#block-dfp-cni-claytonsidebar2 iframe {
     width:300px; height:250px;
 }
 
-#block-dfp-cni-highlandsfooter {
+#block-dfp-cni-claytonfooter {
     width:728px;
     margin: 5px auto 1.4em;
 }
 
-#block-dfp-cni-highlandsfooter iframe {
+#block-dfp-cni-claytonfooter iframe {
     width:728px;
     height:90px;
 }
 
-#block-dfp-cni-highlandsmobile {
+#block-dfp-cni-claytonmobile {
 	width:130px;
 	margin: 1.6em auto 1.6em auto;
 }
@@ -89,13 +89,13 @@
 @media only screen and (max-width: 767px) {
 
     /* Hide larger DFP ads on non full-size browsers */
-    #block-dfp-cni-highlandsleaderboard, #block-dfp-banner, #block-dfp-cni-highlandsfooter {
+    #block-dfp-cni-claytonleaderboard, #block-dfp-banner, #block-dfp-cni-claytonfooter {
         display: none;
         visibility: hidden;
     }
 
     /* show mobile ad on smaller windows */
-    #block-dfp-cni-highlandsmobile {
+    #block-dfp-cni-claytonmobile {
         display: block;
         visibility: visible;
     }
@@ -104,13 +104,13 @@
 @media only screen and (min-width: 768px) {
 
     /* Hide larger DFP ads on non full-size browsers */
-    #block-dfp-cni-highlandsleaderboard, #block-dfp-banner, #block-dfp-cni-highlandsfooter {
+    #block-dfp-cni-claytonleaderboard, #block-dfp-banner, #block-dfp-cni-claytonfooter {
         display: block;
         visibility: visible;
     }
 
     /* show mobile ad on smaller windows */
-    #block-dfp-cni-highlandsmobile {
+    #block-dfp-cni-claytonmobile {
         display: none;
         visibility: hidden;
     }
@@ -134,11 +134,11 @@
     font-style: italic;
 }
 
-.view-things-to-do-hiking .views-row, .view-visit-highlands-waterfalls .views-row  {
+.view-things-to-do-hiking .views-row, .view-visit-clayton-waterfalls .views-row  {
     margin-bottom: 1em;
 }
 
-.view-things-to-do-hiking .views-row .views-field-field-image, .view-visit-highlands-waterfalls .views-row .views-field-field-image {
+.view-things-to-do-hiking .views-row .views-field-field-image, .view-visit-clayton-waterfalls .views-row .views-field-field-image {
     margin-right: 0.6em;
     float: left;
 }
