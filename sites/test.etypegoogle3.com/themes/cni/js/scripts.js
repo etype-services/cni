@@ -46,7 +46,7 @@
 
     $(function() {
 
-        $('.marketplace .container h2').css("font-size", "20px");
+        $('.marketplace .grid_4 .container h2').css("font-size", "20px");
 
     });
 
