@@ -22,8 +22,10 @@ function cni_preprocess_page(&$variables) {
         }
     }
 
+    /* use marketplace template */
     if (isset($variables['node']->type)) {
-        if ($variables['node']->type == 'marketplace') {
+        if ($variables['node']->type === 'marketplace') {
+            var_dump($variables['node']);
             $variables['theme_hook_suggestions'][] = 'page__' . $variables['node']->type;
         }
     }
