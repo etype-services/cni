@@ -6,9 +6,10 @@
                 <?php print render($page['user_menu']); ?>
                 <?php print render($page['search_box']); ?>
                 <div id="social">
-                  <ul class="social-links">
-                    <li><a class="facebook" href="<?php echo $facebook ?>"></a></li>
-                  </ul>
+                    <ul class="social-links">
+                        <li><a class="facebook"
+                               href="<?php echo $facebook ?>"></a></li>
+                    </ul>
                 </div>
             </nav>
         <?php endif; ?>
@@ -19,8 +20,9 @@
 
                     <?php if ($logo): ?>
                         <div class="site-logo">
-                        <a href="<?php print check_url($front_page); ?>"><img src="<?php print $logo ?>"
-                                                                              alt="<?php print $site_name; ?>"/></a>
+                        <a href="<?php print check_url($front_page); ?>"><img
+                                src="<?php print $logo ?>"
+                                alt="<?php print $site_name; ?>"/></a>
                         </div><?php print render($page['header']) ?>
                     <?php endif; ?>
 
@@ -46,38 +48,27 @@
     <div class="page-inner <?php echo $grid_size ?>">
 
         <!-- Main Content -->
-        <div class="main-content-wrapper clearfix">
-            <div class="main-content-wrapper-inner">
-                <section id="main-content">
+        <?php print render($tabs); ?>
+        <?php print render($title_prefix); ?>
+        <?php if ($title): ?><h1 class="title" id="page-title">
+            <span><?php print $title; ?></span></h1><?php endif; ?>
+        <?php print render($title_suffix); ?>
+        <?php print render($page['help']); ?>
 
-                    <div class="main">
-                        <div class="main-inner grid_8">
+        <div id="fullscreenlink">For full screen or mobile viewing, <a
+                href="http://www.mercolocal.com/<?php print $merco; ?>">click
+                here</a></div>
 
-                            <?php if ($page['highlighted']): ?>
-                                <div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
-                            <?php print render($tabs); ?>
-                            <?php print render($title_prefix); ?>
-                            <?php if ($title): ?><h1 class="title" id="page-title">
-                                <span><?php print $title; ?></span></h1><?php endif; ?>
-                            <?php print render($title_suffix); ?>
-                            <?php print render($page['help']); ?>
-                            
-                            <div id="fullscreenlink">For full screen or mobile viewing, <a href="http://www.mercolocal.com/<?php print $merco; ?>">click here</a></div>
+        <iframe src="http://www.mercolocal.com/<?php print $merco; ?>"
+                width="100%" height="1500" scrolling="yes"
+                align="center"></iframe>
 
-                            <iframe src="http://www.mercolocal.com/<?php print $merco; ?>" width="100%" height="1500" scrolling="yes" align="center"></iframe>
+        <?php if ($action_links): ?>
+            <ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
 
-                            <?php if ($action_links): ?>
-                                <ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
-                        </div>
 
-                    </div>
+        <?php print render($page['content_bottom']); ?>
 
-                </section>
-            </div>
-        </div>
-        
-         <?php print render($page['content_bottom']); ?>
-         
         <?php if ($page['postscript_1'] || $page['postscript_2'] || $page['postscript_3'] || $page['postscript_4']): ?>
             <div class="postscript-wrapper clearfix">
                 <div class="postscript-wrapper-inner">
