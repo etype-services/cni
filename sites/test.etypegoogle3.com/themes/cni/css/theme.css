@@ -1356,6 +1356,10 @@ blockquote {
 }
 
 /* MERCO MARKETPLACE */
+.marketplace .container_12 {
+    width: auto;
+}
+
 .marketplace #page-title {
     margin-top: 20px;
 }
