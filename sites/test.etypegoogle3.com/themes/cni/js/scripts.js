@@ -44,6 +44,12 @@
 	
 	});
 
+    $(function() {
+
+        $('.marketplace .container h2').css("font-size", "20px");
+
+    });
+
 
 })(jQuery);
 
