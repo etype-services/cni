@@ -151,3 +151,5 @@ $sites['www.palatkadailynews.com'] = 'palatkadailynews.com';
 $sites['thepress-sentinel.etypegoogle3.com'] = 'thepress-sentinel.com';
 $sites['thepress-sentinel.com'] = 'thepress-sentinel.com';
 $sites['www.thepress-sentinel.com'] = 'thepress-sentinel.com';
+
+$sites['test.etypegoogle3.com'] = 'test.etypegoogle3.com';
