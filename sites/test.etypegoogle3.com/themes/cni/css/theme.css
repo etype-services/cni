@@ -1354,3 +1354,16 @@ blockquote {
     display: none;
     visibility: hidden;
 }
+
+/* MERCO MARKETPLACE */
+.marketplace #page-title {
+    margin-top: 20px;
+}
+
+.marketplace #fullscreenlink {
+    text-align: center;
+    margin-bottom: 1em;
+    font-family: Lato;
+    font-size: 0.8em;
+}
+
