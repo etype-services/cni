@@ -1420,6 +1420,11 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
     width: auto;
 }
 
+/* Center logo */
+.marketplace .container_12 .grid-12 {
+      width: 100%;
+  }
+
 .marketplace #page-title {
     margin-top: 20px;
 }
