@@ -1421,7 +1421,7 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
 }
 
 /* Center logo */
-.marketplace .container_12 .grid-12 {
+.marketplace .container_12 .header-wrapper-innner.grid-12 {
       width: 100%;
   }
 
