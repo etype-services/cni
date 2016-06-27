@@ -177,7 +177,8 @@ function premium_form_alter(&$form, $form_state, $form_id) {
                 '#type' => 'select',
                 '#title' => t('Premium content level'),
                 '#default_value' => $default,
-                '#options' => array(0 => t('None')) + premium_level_option_list(),
+                //'#options' => array(0 => t('None')) + premium_level_option_list(),
+                '#options' => premium_level_option_list(),
             );
         }
     }
