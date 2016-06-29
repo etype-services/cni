@@ -35,12 +35,12 @@
     width:300px; height:250px;
 }
 
-#block-dfp-cni-toccoafooter {
+#block-dfp-cni-toccoafooter, #block-dfp-cni-tribunegeorgianfooter1 {
     width:728px;
     margin: 5px auto 1.4em;
 }
 
-#block-dfp-cni-toccoafooter iframe {
+#block-dfp-cni-toccoafooter iframe, #block-dfp-cni-tribunegeorgianfooter1 iframe {
     width:728px;
     height:90px;
 }
@@ -85,7 +85,7 @@
 @media only screen and (max-width: 767px) {
 
     /* Hide larger DFP ads on non full-size browsers */
-    #block-dfp-cni-toccoaleaderboard, #block-dfp-cni-toccoafooter {
+    #block-dfp-cni-toccoaleaderboard, #block-dfp-cni-toccoafooter, #block-dfp-cni-tribunegeorgianfooter1 {
         display: none;
         visibility: hidden;
     }
@@ -100,7 +100,7 @@
 @media only screen and (min-width: 768px) {
 
     /* Hide larger DFP ads on non full-size browsers */
-    #block-dfp-cni-toccoaleaderboard, #block-dfp-cni-toccoafooter {
+    #block-dfp-cni-toccoaleaderboard, #block-dfp-cni-toccoabanner, #block-dfp-cni-toccoafooter, #block-dfp-cni-tribunegeorgianfooter1 {
         display: block;
         visibility: visible;
     }
