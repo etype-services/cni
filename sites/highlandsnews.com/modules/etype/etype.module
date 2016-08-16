@@ -35,7 +35,7 @@ function etype_cronapi($op, $job = NULL) {
     /* run job at 7:30am Eastern every Wednesday */
     $items['etype_classified_cron'] = array(
         'description' => 'Import Classified Ads',
-        'rule' => '30 7 * * 3',
+        'rule' => '30 7 * * 4',
         'callback' => 'etype_classified_ad_importer',
         'arguments' => array('all'),
     );
