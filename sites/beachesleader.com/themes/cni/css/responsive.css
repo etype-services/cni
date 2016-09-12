@@ -72,12 +72,6 @@
         margin-left: 2em;
     }
 
-    /* not .node, because of the slideshow */
-    .page-classifieds .content img {
-        max-width: 100%;
-        height: auto;
-    }
-
 }
 
 /* desktop browsers */
