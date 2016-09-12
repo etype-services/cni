@@ -275,6 +275,10 @@ article .field-image {
 	margin-bottom: 1em;
 }
 
+.content img {
+    max-width: 100%;
+}
+
 /* SIDEBARS 
 --------------------------------------------------------------------------*/
 
