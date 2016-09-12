@@ -1410,6 +1410,6 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
 }
 
 /* NIE Page */
-.nie .content img {
+.nie .content img:not(.file-icon) {
     width: 100%;
 }
