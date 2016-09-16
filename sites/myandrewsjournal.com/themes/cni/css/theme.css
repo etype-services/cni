@@ -1290,6 +1290,10 @@ blockquote p {
     margin-left: 100px;
 }
 
+#slideshow img {
+    max-width: none;
+}
+
 /* CLASSIFIED ADS
 --------------------------------------------------------------------------*/
 
