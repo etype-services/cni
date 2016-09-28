@@ -67,7 +67,7 @@
     /* dfp ads */
     #block-dfp-cni-jesupbanner {
         width: 468px;
-        margin: 0px auto 0px 83px;
+        margin: 0 auto 0 72px;
     }
 
 }
@@ -78,7 +78,7 @@
     /* dfp ads */
     #block-dfp-cni-jesupbanner {
         width: 468px;
-        margin: 0px auto 0px 12px;
+        margin: 0;
     }
 
 }
