@@ -17,13 +17,19 @@
     background: none;
 }
 
+#block-dfp-cni-highlandsleaderboard {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
 /* desktop browsers */
 @media only screen and (min-width: 959px) {
 
     /* dfp ads */
     #block-dfp-cni-highlandsbanner {
         width: 468px;
-        margin: 0 auto 0 70px;
+        margin: 0 auto 20px 70px;
     }
 
     /* main menu */
