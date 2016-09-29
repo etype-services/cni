@@ -1,53 +1,26 @@
-/* dfp ads */
+/* Google DFP Ads
+--------------------------------------------------------------------------*/
 
-#dfp-ad-banner > img {
-    max-width: 100% !important;
+.block-dfp {
+    margin-bottom: 10px;
 }
 
-#block-dfp-sidebar-1 .block-inner .content {
+.block-dfp .block-inner, #main-content .block-dfp .block-inner {
     padding: 0;
+    margin: 0;
+    border-style: none;
+    border-width: 0;
+    box-shadow: none;
+}
+
+.preface-wrapper-top .block-dfp .content {
+    background: none;
 }
 
 #block-dfp-cni-cherokeeleaderboard {
-    width:728px;
-    margin: 1.6em auto 0 auto;
-}
-
-#block-dfp-cni-cherokeeleaderboard iframe {
-    width:728px;
-    height:90px;
-}
-
-#block-dfp-cni-cherokeesidebar1 {
-    width:300px;
-}
-
-#block-dfp-cni-cherokeesidebar1 iframe {
-    width:300px;
-    height:250px;
-}
-
-#block-dfp-cni-cherokeesidebar2 {
-    width:300px;
-}
-
-#block-dfp-cni-cherokeesidebar2 iframe {
-    width:300px; height:250px;
-}
-
-#block-dfp-cni-cherokeefooter {
-    width:728px;
-    margin: 5px auto 1.4em;
-}
-
-#block-dfp-cni-cherokeefooter iframe {
-    width:728px;
-    height:90px;
-}
-
-#block-dfp-cni-cherokeemobile {
-	width:130px;
-	margin: 1.6em auto 1.6em auto;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 0;
 }
 
 /* desktop browsers */
@@ -56,12 +29,12 @@
     /* dfp ads */
     #block-dfp-cni-franklinpressbanner {
         width: 468px;
-        margin: 0px auto 0px 83px;
+        margin: 0 auto 20px 70px;
     }
 
     /* main menu */
     #main-menu ul.menu {
-        margin-left: 2em;
+        margin-left: 0;
     }
 
 }
@@ -72,12 +45,16 @@
     /* dfp ads */
     #block-dfp-cni-franklinpressbanner {
         width: 468px;
-        margin: 0px auto 0px 12px;
+        margin: 0;
     }
 
     /* main menu */
     #main-menu ul.menu {
-        margin-left: 2em;
+        margin-left: 0;
+    }
+
+    #main-menu ul.menu li a {
+        padding: 0 8px;
     }
 
 }
@@ -91,7 +68,7 @@
     }
 
     /* show mobile ad on smaller windows */
-    #block-dfp-cni-cherokeemobile {
+    #block-dfp-cni-highlandsmobile {
         display: block;
         visibility: visible;
     }
@@ -105,13 +82,7 @@
         visibility: visible;
     }
 
-    /* show mobile ad on smaller windows */
-    #block-dfp-cni-cherokeemobile {
-        display: none;
-        visibility: hidden;
-    }
 }
-
 
 /* logo */
 .site-logo {
