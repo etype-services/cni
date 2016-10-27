@@ -410,7 +410,7 @@ article .field-image {
 /* normalize lists on Basic Pages and Articles */
 .content .node-page ul, .content .node-article ul {
     margin: 0 0 1em 1em;
-    list-style: disc inside;
+    list-style: disc outside;
 }
 
 /* USER MENU
