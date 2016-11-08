@@ -31,7 +31,7 @@ function bones_form_system_theme_settings_alter(&$form, $form_state) {
     '#prefix' => t('<h3> Advanced Settings </h3>')
   );
 
-  // Grid Settings		
+  // Grid Settings
 
   $form['advanced_settings']['grid_settings'] = array(
     '#type' => 'fieldset',
@@ -129,7 +129,7 @@ function bones_form_system_theme_settings_alter(&$form, $form_state) {
 
   }
 
-  // Misc Settings (Facebook, Twitter, etc.)	
+  // Misc Settings (Facebook, Twitter, etc.)
 
   $form['advanced_settings']['misc_settings'] = array(
     '#type' => 'fieldset',
@@ -143,13 +143,6 @@ function bones_form_system_theme_settings_alter(&$form, $form_state) {
     '#title' => t('Twitter'),
     '#size' => 10,
     '#default_value' => theme_get_setting('twitter'),
-  );
-
-  $form['advanced_settings']['misc_settings']['twitter_widget_id'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Twitter Widget Id'),
-    '#size' => 10,
-    '#default_value' => theme_get_setting('twitter_widget_id'),
   );
 
   $form['advanced_settings']['misc_settings']['facebook'] = array(
@@ -171,6 +164,13 @@ function bones_form_system_theme_settings_alter(&$form, $form_state) {
     '#title' => t('Instagram'),
     '#size' => 10,
     '#default_value' => theme_get_setting('instagram'),
+  );
+
+  $form['advanced_settings']['misc_settings']['googleplus'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Google Plus'),
+    '#size' => 10,
+    '#default_value' => theme_get_setting('googleplus'),
   );
 
   $form['advanced_settings']['misc_settings']['e_edition'] = array(
