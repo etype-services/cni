@@ -1,20 +1,5 @@
 (function ($) {
 
-    $(document).ready(function(){															 
-
-	  if ($.browser.msie) { } else {
-		$('ul.menu').mobileMenu({
-		combine: true,
-		switchWidth: 760,
-		prependTo: ".header-wrapper-inner",
-		nested: false,
-		groupPageText: 'More',
-		topOptionText: 'Select a page'
-		});
-	  }
-	
-    }); 
-
  	Drupal.behaviors.bonesSuperfish = {
 	
 	  attach: function(context, settings) {
@@ -66,7 +51,6 @@
                 var w = $(window).width();
                 if (w > 767) {
                     $('#block-superfish-1 ul li.sf-depth-1:not(:first-child)').css("display", "list-item").show();
-                    $('#menu-2013-1').hide();
                 } else {
                     $('#block-superfish-1 ul li.sf-depth-1:first-child a').text('Show Menu');
                     $('#block-superfish-1 ul li.sf-depth-1:not(:first-child)').hide();

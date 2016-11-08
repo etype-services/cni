@@ -6,12 +6,13 @@
         margin: 0;
     }
 
-    #main-menu ul.menu li a {
-        padding: 0 10px;
+    #main-menu ul.menu li ul {
+        top: 32px;
     }
 
-    #block-superfish-1 .content {
-        width: 908px;
+    #main-menu ul.menu li a, #main-menu ul.menu li li a {
+        padding: 0 8px;
+        font-size: 1em;
     }
 
     #block-superfish-1 ul #menu-1797-1 {
@@ -25,7 +26,7 @@
 
     #main-menu ul.menu li ul {
         background: #cccccc none repeat scroll 0% 0%;
-        width: 250px;
+        width: 200px;
     }
 
     #main-menu ul.menu li ul li {
@@ -34,7 +35,7 @@
     }
 
     #main-menu ul.menu li li a, #main-menu ul.menu li li a.active {
-        padding: 0 10px;
+        padding: 0 8px;
         color: #000000;
     }
 
@@ -43,50 +44,15 @@
     #main-menu ul.menu li ul li a.active:hover {
         background-color: #eaeaea;
     }
-    
-    /* hide login link in main menu */
-    #menu-2185-1 {
-        display: none;
-        visibility: hidden;
-    }
-
-    /* legal forms for fernandina */
-    #legals-0-1 {
-        float:left;
-        margin: 2em 0.5em 2em 0;
-    }
-
-    #legals-0-2 {
-        float:left;
-        margin: 2em 0 2em 0.5em;
-    }
-
-    #legals-0-2 ::after {
-        clear: left;
-    }
 
     .page-node.not-logged-in .content .node-content-wrapper {
         margin-top: -13px;
     }
 
-    /* hiking guide */
-    .node-type-attraction .node .field-image {
-        float: left;
-        margin: 0 1em 0 0;
-    }
-
-    .node-type-attraction .node .field-name-field-image img {
-        margin: 0 0 0 0;
-    }
 }
 
 /* desktop browsers */
 @media only screen and (max-width: 958px) and (min-width: 768px) {
-
-    /* main menu */
-    #block-superfish-1 .content {
-        width: 810px;
-    }
 
     #block-superfish-1 ul #menu-1797-1 {
         display: none;
@@ -96,10 +62,13 @@
         margin: 0;
     }
 
-    #main-menu ul.menu li a {
-        padding: 0 9px;
-        font-size: 12px;
-        font-weight: bold;
+    #main-menu ul.menu li a, #main-menu ul.menu li li a, #main-menu ul.menu li li a.active  {
+        padding: 0 7px;
+        font-size: 1em;
+    }
+
+    #main-menu ul.menu li ul {
+        top: 32px;
     }
 
     /* drop-down menu */
@@ -109,7 +78,7 @@
 
     #main-menu ul.menu li ul {
         background: #cccccc none repeat scroll 0% 0%;
-        width: 250px;
+        width: 200px;
     }
 
     #main-menu ul.menu li ul li {
@@ -128,23 +97,7 @@
         background-color: #eaeaea;
     }
 
-    /* legal forms */
-    #legals-0-1 {
-        float:left;
-        margin: 2em 0 0.3em;
-    }
-
-    #legals-0-2 {
-        float:left;
-        margin: 0.3em 0 2em;
-    }
-
     /* other */
-    .page-node .field-name-field-image img {
-        width: 490px;
-        height: auto;
-    }
-
     .page-node.not-logged-in .field-name-field-image img {
         width: auto;
         height: auto;
@@ -157,10 +110,6 @@
     .page-node .field-name-field-video iframe {
         width: 490px;
         height: 300px;
-    }
-
-    .node .content img {
-        max-width: 450px;
     }
 
     /* SLIDESHOW
@@ -205,18 +154,6 @@
         height: 120px;
     }
 
-    /* hiking guide */
-    .node-type-attraction .node .field-image {
-        float: left;
-        margin: 0 1em 0 0;
-    }
-
-    .node-type-attraction .node .field-name-field-image img {
-        margin: 0 0 0 0;
-    }
-    .page-node.node-type-attraction .field-name-field-image img {
-        width: auto;
-    }
 }
 
 /* smaller browsers, tablets */
@@ -231,7 +168,7 @@
     }
 
     #block-superfish-1 .content {
-        width: auto;
+        width: 710px;
     }
 
     #block-superfish-1 ul li {
@@ -244,7 +181,7 @@
 
     #main-menu ul.menu li  {
         float: none;
-        list-style: disc;
+        list-style: none;
     }
 
     #main-menu ul.menu li a {
@@ -268,21 +205,6 @@
         color: #ffffff;
     }
 
-    /* legal forms */
-    #legals-0-1 {
-        float:left;
-        margin: 2em 0 0.3em;
-    }
-
-    #legals-0-2 {
-        float:left;
-        margin: 0.3em 0 2em;
-    }
-
-    .main-content-wrapper {
-        margin-top: 0px;
-    }
-
     .node-teaser .field-name-field-image img {
         float: none;
         margin: 0 0 20px 0;
@@ -299,18 +221,9 @@
         margin: 0 0 20px 0;
     }
 
-    .page-node .field-name-field-image img {
-        width: 300px;
-        height: auto;
-    }
-
     .page-node .field-name-field-video iframe {
         width: 300px;
         height: 200px;
-    }
-
-    .node .content img {
-        max-width: 380px;
     }
 
     /* SLIDESHOW
@@ -362,6 +275,16 @@
         background: none;
     }
 
+    .region-postscript-2 {
+        display: none;
+        visibility: hidden;
+    }
+
+    /* override widths for .grid_3 in footer */
+    .container_12 .postscript-wrapper .grid_3 {
+        width: 49% !important;
+    }
+
     .region-postscript-4 {
         margin-top: 1em;
     }
@@ -370,19 +293,6 @@
     #block-block-1 .block-inner {
         border: none;
         box-shadow: none;
-    }
-
-    /* hiking guide */
-    .node-type-attraction .node .field-image {
-        float: left;
-        margin: 0 1em 0 0;
-    }
-
-    .node-type-attraction .node .field-name-field-image img {
-        margin: 0 0 0 0;
-    }
-    .page-node.node-type-attraction .field-name-field-image img {
-        width: auto;
     }
 }
 
@@ -421,7 +331,7 @@
 
     #main-menu ul.menu li  {
         float: none;
-        list-style: disc;
+        list-style: none;
     }
 
     #main-menu ul.menu li a {
@@ -445,27 +355,10 @@
         color: #ffffff;
     }
 
-    /* legal forms */
-    #legals-0-1 {
-        float:left;
-        margin: 2em 0 0.3em;
-    }
-
-    #legals-0-2 {
-        float:left;
-        margin: 0.3em 0 2em;
-    }
-
-    .node .content img {
-        max-width: 100%;
-    }
-
     .node-teaser .field-name-field-image img {
         float: left;
         margin: 0 20px 0 0;
     }
-
-
 
     .video .node-teaser .node-content-wrapper {
         margin-left: 0px;
@@ -476,11 +369,6 @@
         width: 360px;
         height: 220px;
         margin: 0 0 20px 0;
-    }
-
-    .page-node .field-name-field-image img {
-        width: 418px;
-        height: auto;
     }
 
     .page-node .field-name-field-video iframe {
@@ -528,28 +416,24 @@
         background: none;
     }
 
+    .region-postscript-2 {
+        display: none;
+        visibility: hidden;
+    }
+
+    /* override widths for .grid_3 in footer */
+    .container_12 .postscript-wrapper .grid_3 {
+        width: 49% !important;
+    }
+
     .region-postscript-4 {
         margin-top: 1em;
     }
-
 
     /* weather block */
     #block-block-35 .block-inner {
         border: none;
         box-shadow: none;
-    }
-
-    /* hiking guide */
-    .node-type-attraction .node .field-image {
-        float: left;
-        margin: 0 1em 0 0;
-    }
-
-    .node-type-attraction .node .field-name-field-image img {
-        margin: 0 0 0 0;
-    }
-    .page-node.node-type-attraction .field-name-field-image img {
-        width: auto;
     }
 
 }
@@ -589,7 +473,7 @@
 
     #main-menu ul.menu li  {
         float: none;
-        list-style: disc;
+        list-style: none;
     }
 
     #main-menu ul.menu li a {
@@ -613,27 +497,10 @@
         color: #ffffff;
     }
 
-    /* legal forms */
-    #legals-0-1 {
-        float:left;
-        margin: 2em 0 0.3em;
-    }
-
-    #legals-0-2 {
-        float:left;
-        margin: 0.3em 0 2em;
-    }
-
-    .node .content img {
-        max-width: 100%;
-    }
-
     .node-teaser .field-name-field-image img {
         float: left;
         margin: 0 20px 0 0;
     }
-
-
 
     .video .node-teaser .node-content-wrapper {
         margin-left: 0px;
@@ -646,26 +513,9 @@
         margin: 0 0 20px 0;
     }
 
-    .page-node .field-name-field-image img {
-        width: 418px;
-        height: auto;
-    }
-
     .page-node .field-name-field-video iframe {
         width: 418px;
         height: 300px;
-    }
-
-    /* hiking guide */
-    .node-type-attraction .node .field-image {
-        margin: 0 0 1em 0;
-    }
-
-    .node-type-attraction .node .field-name-field-image img {
-        margin: 0 0 0 0;
-    }
-    .page-node.node-type-attraction .field-name-field-image img {
-        width: auto;
     }
 
     /* SLIDESHOW
@@ -708,6 +558,16 @@
         background: none;
     }
 
+    .region-postscript-2 {
+        display: none;
+        visibility: hidden;
+    }
+
+    /* override widths for .grid_3 in footer */
+    .container_12 .postscript-wrapper .grid_3 {
+        width: 49% !important;
+    }
+
     .region-postscript-4 {
         margin-top: 1em;
     }
@@ -716,6 +576,17 @@
     #block-block-1 .block-inner {
         border: none;
         box-shadow: none;
+    }
+
+}
+
+
+/* less granular switch for big and small */
+@media only screen and (max-width: 767px) {
+
+    #block-system-user-menu {
+        display: none;
+        visibility: hidden;
     }
 
 }

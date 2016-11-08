@@ -5,11 +5,6 @@
             <nav id="user-menu" class="clearfix">
                 <?php print render($page['user_menu']); ?>
                 <?php print render($page['search_box']); ?>
-                <div id="social">
-                    <ul class="social-links">
-                        <li><a class="facebook" href="<?php echo $facebook ?>"></a></li>
-                    </ul>
-                </div>
             </nav>
         <?php endif; ?>
 
@@ -19,8 +14,7 @@
 
                     <?php if ($logo): ?>
                         <div class="site-logo">
-                        <a href="<?php print check_url($front_page); ?>"><img src="<?php print $logo ?>"
-                                                                              alt="<?php print $site_name; ?>"/></a>
+                        <a href="<?php print check_url($front_page); ?>"><img src="<?php print $logo ?>" alt="<?php print $site_name; ?>"/></a>
                         </div><?php print render($page['header']) ?>
                     <?php endif; ?>
 
@@ -141,14 +135,9 @@
                 <div class="postscript-wrapper-inner">
                     <div class="postscript-wrapper-inner-inner">
                         <section id="postscript">
-                            <div
-                                class="grid_3"><?php print render($page['postscript_1']); ?></div>
-                            <div
-                                class="grid_3"><?php print render($page['postscript_2']); ?></div>
-                            <div
-                                class="grid_3"><?php print render($page['postscript_3']); ?></div>
-                            <div
-                                class="grid_3"><?php print render($page['postscript_4']); ?></div>
+                            <div class="grid_4"><?php print render($page['postscript_1']); ?></div>
+                            <div class="grid_4"><?php print render($page['postscript_2']); ?></div>
+                            <div class="grid_4"><?php print render($page['postscript_3']); ?></div>
                         </section>
                     </div>
                 </div>
