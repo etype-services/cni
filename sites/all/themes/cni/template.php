@@ -1,4 +1,18 @@
 <?php
+
+/*$base_path = base_path();
+echo $base_path;
+$uri = 'public://';
+$path= file_create_url($uri);
+echo "\n" . $path;
+exit;*/
+
+drupal_add_css('/sites/test.etypegoogle3.com/cni-site.css', array(
+  'group' => CSS_THEME,
+  'weight' => 100
+));
+
+
 /* First and Last Classes on Teasers */
 function cni_preprocess_page(&$variables) {
   if (isset ($variables['page']['content']['system_main']['nodes'])) {
@@ -69,18 +83,6 @@ function cni_form_alter(&$form, &$form_state, $form_id) {
  * @param $vars
  */
 function cni_preprocess_html(&$vars) {
-
-  /*$base_path = base_path();
-  echo $base_path;
-  $uri = 'public://';
-  $path= file_create_url($uri);
-  echo "\n" . $path;
-  exit;*/
-
-  drupal_add_css('/sites/test.etypegoogle3.com/cni-site.css', array(
-    'group' => CSS_THEME,
-    'weight' => 100
-  ));
 
   /* Add Page Body Class */
   $path = drupal_get_path_alias($_GET['q']);
