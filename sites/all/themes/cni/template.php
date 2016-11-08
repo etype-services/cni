@@ -72,7 +72,7 @@ function cni_form_alter(&$form, &$form_state, $form_id) {
 function cni_preprocess_html(&$vars) {
 
   drupal_add_css(
-    '/sites/test.etypegoogle.com/cni-site.css',
+    'http://test.etypegoogle3.com/sites/test.etypegoogle.com/cni-site.css',
     array(
       'type' => 'file',
       'media' => 'all',
