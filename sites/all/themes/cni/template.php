@@ -73,12 +73,13 @@ function cni_preprocess_html(&$vars) {
 
   global $base_path;
   drupal_add_css(
-    $base_path . 'sites/test.etypegoogle.com/cni-site.css',
+    $base_path . 'sites/test.etypegoogle3.com/cni-site.css',
     array(
       'type' => 'file',
       'media' => 'all',
       'preprocess' => false,
-      'every_page' => true
+      'every_page' => true,
+      'weight' => '100'
     )
   );
 
