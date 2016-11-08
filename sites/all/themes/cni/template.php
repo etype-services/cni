@@ -72,12 +72,12 @@ function cni_form_alter(&$form, &$form_state, $form_id) {
  */
 function cni_preprocess_html(&$vars) {
 
-  $base_path = base_path();
+  /*$base_path = base_path();
   echo $base_path;
   $uri = 'public://';
   $path= file_create_url($uri);
   echo "\n" . $path;
-  exit;
+  exit;*/
 
   /* Add Page Body Class */
   $path = drupal_get_path_alias($_GET['q']);
