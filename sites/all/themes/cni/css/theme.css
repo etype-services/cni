@@ -1229,13 +1229,13 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
 
 /* galleria on article pages */
 .page-node .node-article .galleria-info {
-    top: 308px
+    top: 308px;
 }
 
 /* DFP/GOOGLE ADS
 --------------------------------------------------------------------------*/
 .region-main-menu-second-level .block-dfp {
-    width:728px;
+    width: 728px;
     margin: 2em 0 auto;
 }
 
