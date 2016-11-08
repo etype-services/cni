@@ -1250,14 +1250,18 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
     box-shadow: none;
 }
 
+.preface-wrapper-top .block-dfp .content {
+    background: none;
+    margin: 0;
+}
+
 /* SIMPLE ADS
 --------------------------------------------------------------------------*/
 
 #main-content .block-simpleads .block-inner {
     padding: 0;
     margin: 0;
-    border-style: none;
-    border-width: 0;
+    border: none;
     box-shadow: none;
 }
 
