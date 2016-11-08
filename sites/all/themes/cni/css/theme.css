@@ -1250,6 +1250,11 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
     box-shadow: none;
 }
 
+.preface-wrapper-top .block-dfp {
+    width: 468px;
+    margin: 0 auto;
+}
+
 .preface-wrapper-top .block-dfp .content {
     background: none;
     margin: 0;
