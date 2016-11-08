@@ -89,3 +89,6 @@ function cni_preprocess_html(&$vars) {
   }
 
 }
+
+echo $base_path;
+exit;
