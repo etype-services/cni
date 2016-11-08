@@ -1239,6 +1239,11 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
     margin: 20px auto 0;
 }
 
+.region-content-bottom .block-dfp {
+    width: 728px;
+    margin: 0 auto;
+}
+
 
 #main-content .sidebar .block-dfp .block-inner {
     padding: 0;
