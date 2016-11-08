@@ -71,22 +71,22 @@ function cni_form_alter(&$form, &$form_state, $form_id) {
  */
 function cni_preprocess_html(&$vars) {
 
+  $base_path = base_path();
   $conf_path = conf_path();
-  echo $conf_path;
-  global $base_path;
-  drupal_add_css(
-    $base_path . 'sites/test.etypegoogle3.com/cni-site.css',
-    array(
-      'type' => 'file',
-      'media' => 'all',
-      'preprocess' => false,
-      'every_page' => true,
-      'weight' => 999,
-      'group' => CSS_THEME
-    )
-  );
-
-  exit;
+  $site_css = $base_path . $conf_path . '/cni-site.css';
+  if (file_exists($site_css)) {
+    drupal_add_css(
+      $site_css,
+      array(
+        'type' => 'file',
+        'media' => 'all',
+        'preprocess' => false,
+        'every_page' => true,
+        'weight' => 999,
+        'group' => CSS_THEME
+      )
+    );
+  }
 
   /* Add Page Body Class */
   $path = drupal_get_path_alias($_GET['q']);
