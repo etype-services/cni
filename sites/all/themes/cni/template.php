@@ -74,6 +74,9 @@ function cni_preprocess_html(&$vars) {
 
   $base_path = base_path();
   echo $base_path;
+  $uri = 'public://';
+  $path= file_create_url($uri);
+  echo "\n" . $path;
   exit;
 
   /* Add Page Body Class */
