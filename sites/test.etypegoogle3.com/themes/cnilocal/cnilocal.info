@@ -3,3 +3,5 @@ description = Local EType CNI theme for style overrides
 core = 7.x
 engine = phptemplate
 base theme = cni
+
+stylesheets[all][] = site.css
