@@ -1239,6 +1239,16 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
     margin: 2em 0 auto;
 }
 
+.sidebar .block-dfp .block-inner {
+    padding: 0;
+    border: none;
+    box-shadow: none;
+}
+
+.sidebar .block-dfp .content {
+    padding: 0;
+}
+
 /* SIMPLE ADS
 --------------------------------------------------------------------------*/
 
