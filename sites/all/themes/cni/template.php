@@ -74,7 +74,7 @@ function cni_preprocess_html(&$vars) {
   $base_path = base_path();
   $conf_path = conf_path();
   $site_css = $base_path . $conf_path . '/cni-site.css';
-  if (file_exists($site_css)) {
+  if (file_exists($_SERVER['DOCUMENT_ROOT']. $site_css)) {
     drupal_add_css(
       $site_css,
       array(
