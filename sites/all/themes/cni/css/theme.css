@@ -1241,7 +1241,7 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
 
 .region-content-bottom .block-dfp {
     width: 728px;
-    margin: 0 auto;
+    margin: 0 auto 10px 0;
 }
 
 #main-content .block-dfp .block-inner {
