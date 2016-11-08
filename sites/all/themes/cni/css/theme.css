@@ -1232,7 +1232,7 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
     top: 308px;
 }
 
-/* DFP/GOOGLE ADS
+/* DFP/GOOGLE ADS DEFAULTS
 --------------------------------------------------------------------------*/
 .region-main-menu-second-level .block-dfp {
     width: 728px;
@@ -1260,7 +1260,7 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
     margin: 0;
 }
 
-/* SIMPLE ADS
+/* SIMPLE ADS DEFAULTS
 --------------------------------------------------------------------------*/
 
 #main-content .block-simpleads .block-inner {
