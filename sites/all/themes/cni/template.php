@@ -79,7 +79,8 @@ function cni_preprocess_html(&$vars) {
       'media' => 'all',
       'preprocess' => false,
       'every_page' => true,
-      'weight' => 999
+      'weight' => 999,
+      'group' => CSS_THEME
     )
   );
 
