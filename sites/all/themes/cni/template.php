@@ -71,6 +71,8 @@ function cni_form_alter(&$form, &$form_state, $form_id) {
  */
 function cni_preprocess_html(&$vars) {
 
+  $conf_path = conf_path();
+  echo $conf_path;
   global $base_path;
   drupal_add_css(
     $base_path . 'sites/test.etypegoogle3.com/cni-site.css',
@@ -83,6 +85,8 @@ function cni_preprocess_html(&$vars) {
       'group' => CSS_THEME
     )
   );
+
+  exit;
 
   /* Add Page Body Class */
   $path = drupal_get_path_alias($_GET['q']);
