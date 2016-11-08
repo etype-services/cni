@@ -1236,16 +1236,18 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
 --------------------------------------------------------------------------*/
 .region-main-menu-second-level .block-dfp {
     width: 728px;
-    margin: 2em 0 auto;
+    margin: 20px auto 0;
 }
 
-.sidebar .block-dfp .block-inner {
+
+#main-content .sidebar .block-dfp .block-inner {
     padding: 0;
     border: none;
     box-shadow: none;
 }
 
-.sidebar .block-dfp .content {
+
+#main-content .sidebar .block-dfp .content {
     padding: 0;
 }
 
