@@ -79,7 +79,7 @@ function cni_preprocess_html(&$vars) {
       'media' => 'all',
       'preprocess' => false,
       'every_page' => true,
-      'weight' => '1000'
+      'weight' => 999
     )
   );
 
