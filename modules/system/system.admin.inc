@@ -573,11 +573,9 @@ function system_theme_settings($form, &$form_state, $key = '') {
     foreach ($theme_keys as $theme) {
       // Include the theme-settings.php file.
       $filename = DRUPAL_ROOT . '/' . str_replace("/$theme.info", '', $themes[$theme]->filename) . '/theme-settings.php';
-      echo $filename;
       if (file_exists($filename)) {
         require_once $filename;
       }
-      exit;
 
       // Call theme-specific settings.
       $function = $theme . '_form_system_theme_settings_alter';
