@@ -71,13 +71,15 @@ function cni_form_alter(&$form, &$form_state, $form_id) {
  */
 function cni_preprocess_html(&$vars) {
 
+  global $base_path;
   drupal_add_css(
-    'http://test.etypegoogle3.com/sites/test.etypegoogle.com/cni-site.css',
+    $base_path . 'sites/test.etypegoogle.com/cni-site.css',
     array(
       'type' => 'file',
       'media' => 'all',
-      'preprocess' => true,
-      'every_page' => true)
+      'preprocess' => false,
+      'every_page' => true
+    )
   );
 
   /* Add Page Body Class */
