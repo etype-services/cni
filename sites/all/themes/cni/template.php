@@ -72,6 +72,10 @@ function cni_form_alter(&$form, &$form_state, $form_id) {
  */
 function cni_preprocess_html(&$vars) {
 
+  $base_path = base_path();
+  echo $base_path;
+  exit;
+
   /* Add Page Body Class */
   $path = drupal_get_path_alias($_GET['q']);
   $aliases = explode('/', $path);
@@ -89,6 +93,3 @@ function cni_preprocess_html(&$vars) {
   }
 
 }
-
-echo $base_path;
-exit;
