@@ -95,13 +95,4 @@ function cni_preprocess_html(&$vars) {
     $vars['classes_array'][] = drupal_clean_css_identifier($alias);
   }
 
-  /*
-   * Hide Log In link from logged in users
-   * A call to hook_menu_alter in etype.module does not do the trick
-   */
-  global $user;
-  if ($user->uid > 0) {
-    drupal_add_js(drupal_get_path('theme', 'cni'). '/js/user-menu.js', 'file');
-  }
-
 }
