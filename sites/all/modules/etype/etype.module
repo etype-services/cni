@@ -242,6 +242,7 @@ if (file_exists($own_local_file)) {
  */
 function etype_cronapi($op, $job = NULL) {
 
+    $cron_schedule = ''; // set in include file, just to avoid IDE errors
     $etype_site_path = etype_site_path();
     include($etype_site_path . '/etype_mapping.php');
 
@@ -301,8 +302,8 @@ function etype_node_cleanup() {
  * @param $entity_id
  */
 function etype_classfied_mapping($vid) {
-    $categories = array();
 
+    $categories = array(); // set in include file, just to avoid IDE errors
     $etype_site_path = etype_site_path();
     include($etype_site_path . '/etype_mapping.php');
 
@@ -366,7 +367,7 @@ function etype_entity_create($item = array(), $values = array(), $entity_type = 
 function etype_classified_ad_importer() {
 
     global $user;
-    $url = '';
+    $url = ''; // set in include file, just to avoid IDE errors
     $etype_site_path = etype_site_path();
     include($etype_site_path . '/etype_mapping.php');;
 
