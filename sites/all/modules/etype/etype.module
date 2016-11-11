@@ -369,7 +369,7 @@ function etype_classified_ad_importer() {
     global $user;
     $url = ''; // set in include file, just to avoid IDE errors
     $etype_site_path = etype_site_path();
-    include($etype_site_path . '/etype_mapping.php');;
+    include($etype_site_path . '/etype_mapping.php');
 
     $values = array(
         'type' => 'classified',
