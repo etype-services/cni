@@ -39,11 +39,11 @@ function etype_block_info() {
     $blocks = array();
 
     $blocks['Social'] = array(
-        'info' => t('Social'),
+        'info' => t('eType Social'),
     );
 
     $blocks['Follow'] = array(
-        'info' => t('Follow'),
+        'info' => t('eType Follow'),
     );
 
     $blocks['Facebook'] = array(
