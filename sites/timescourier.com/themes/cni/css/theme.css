@@ -646,7 +646,7 @@ article .field-image {
     margin-bottom: 10px;
 }
 
-.galleria-container img {
+.node .field-name-field-image .galleria-container img {
     display: block;
     margin: 0;
 }
