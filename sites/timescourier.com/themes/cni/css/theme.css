@@ -651,6 +651,10 @@ article .field-image {
     margin: 0;
 }
 
+.galleria-info {
+    top: 340px;
+}
+
 .node .field-name-field-video iframe {
     display: block;
     margin-top: -20px;
