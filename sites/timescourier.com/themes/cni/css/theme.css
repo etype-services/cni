@@ -646,6 +646,12 @@ article .field-image {
     margin-bottom: 10px;
 }
 
+.node .galleria-layer img {
+    display: block;
+    margin: 0;
+}
+
+
 .node .field-name-field-video iframe {
     display: block;
     margin-top: -20px;
