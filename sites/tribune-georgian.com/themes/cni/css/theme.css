@@ -1443,3 +1443,26 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
     display: none;
     visibility: hidden;
 }
+
+/* ADVANCED POLL
+--------------------------------------------------------------------------*/
+#block-advpoll-advpoll-recent h2.title {
+    font-size: 1em;
+    line-height: 1.3em;
+    text-transform: none;
+}
+
+#block-advpoll-advpoll-recent .submitted {
+    display: none;
+    visibility: hidden;
+}
+
+#block-advpoll-advpoll-recent .content .content {
+    padding: 0;
+}
+
+#block-advpoll-advpoll-recent .poll-message {
+    font: 0.9em/1em 'Lato';
+    color: #000;
+    margin: 1em 0;
+}
