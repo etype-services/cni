@@ -1,5 +1,5 @@
-name = EType Services for CNI
-description = Custom module for CNI sites.
-package = EType Services Custom Modules
+name = eType Services
+description = Custom module for eType Services.
+package = eType Services Custom Modules
 core = 7.x
 project = "etype"
