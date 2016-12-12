@@ -532,7 +532,7 @@ function theme_premium_body($arguments) {
     if (!empty($node->content['body'])) {
         $text = $node->content['body']['#object']->body['und'][0]['value'];
         if ($level->wordcount > 0) {
-            $cut = '<p>';
+            $cut = '<div><p>';
             $tmp = strip_tags($text);
             $words = implode(" ", array_slice( explode(" ", $tmp), 0, $level->wordcount));
             if (preg_match("/[.!?,;:]$/", $words)) {
@@ -540,7 +540,7 @@ function theme_premium_body($arguments) {
             } else {
                 $cut .= $words . ' ...';
             }
-            $cut .= '</p>';
+            $cut .= '</p></div>';
         } else {
             $cut = '';
         }
