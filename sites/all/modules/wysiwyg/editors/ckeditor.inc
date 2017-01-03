@@ -149,6 +149,19 @@ function wysiwyg_ckeditor_settings_form(&$form, &$form_state) {
     'allowedContent' => TRUE,
   );
 
+  if (version_compare($installed_version, '3.1.0', '>=')) {
+    // Enabled by default.
+    $ckeditor_defaults['pasteFromWordRemoveFontStyles'] = TRUE;
+    $ckeditor_defaults['pasteFromWordRemoveStyles'] = TRUE;
+  }
+  if (version_compare($installed_version, '4.6.0', '>=')) {
+    // Disabled by default, deprecated.
+    $ckeditor_defaults['pasteFromWordRemoveFontStyles'] = FALSE;
+    // Dropped, no effect.
+    unset($ckeditor_defaults['pasteFromWordNumberedHeadingToList'],
+      $ckeditor_defaults['pasteFromWordRemoveStyles']);
+  }
+
   if (version_compare($installed_version, '3.2.1', '>=')) {
     $ckeditor_defaults['stylesSet'] = '';
   }
@@ -182,7 +195,7 @@ function wysiwyg_ckeditor_settings_form(&$form, &$form_state) {
   $form['paste'] = array(
     '#type' => 'fieldset',
     '#title' => t('Paste plugin'),
-    '#description' => t('Settings for the paste plugin.'),
+    '#description' => t('Settings for the <a href="@url">@plugin</a> plugin.', array('@plugin' => 'paste', '@url' => url('http://docs.ckeditor.com/#!/api/CKEDITOR.config-cfg-forcePasteAsPlainText'))),
     '#collapsible' => TRUE,
     '#collapsed' => TRUE,
     '#group' => 'advanced',
@@ -195,6 +208,45 @@ function wysiwyg_ckeditor_settings_form(&$form, &$form_state) {
     '#return_value' => 1,
     '#description' => t('If enabled, all pasting operations insert plain text into the editor, losing any formatting information possibly available in the source text. Note: Paste from Word is not affected by this setting.') . ' ' . t('Uses the <a href="@url">@setting</a> setting internally.', array('@setting' => 'forcePasteAsPlainText', '@url' => url('http://docs.ckeditor.com/#!/api/CKEDITOR.config-cfg-forcePasteAsPlainText'))),
   );
+
+  if (version_compare($installed_version, '3.1.0', '>=')) {
+    $form['paste']['pasteFromWord'] = array(
+      '#type' => 'fieldset',
+      '#title' => t('Paste from Word'),
+    );
+
+    $form['paste']['pasteFromWord']['pasteFromWordNumberedHeadingToList'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Numbered heading to list'),
+      '#default_value' => !empty($settings['pasteFromWordNumberedHeadingToList']),
+      '#return_value' => 1,
+      '#description' => t('If enabled, transforms MS Word outline numbered headings into lists.'),
+    );
+
+    $form['paste']['pasteFromWord']['pasteFromWordPromptCleanup'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Prompt on cleanup'),
+      '#default_value' => !empty($settings['pasteFromWordPromptCleanup']),
+      '#return_value' => 1,
+      '#description' => t('If enabled, prompts the user about the clean up of content being pasted from MS Word.'),
+    );
+
+    $form['paste']['pasteFromWord']['pasteFromWordRemoveFontStyles'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Remove font styles'),
+      '#default_value' => !empty($settings['pasteFromWordRemoveFontStyles']),
+      '#return_value' => 1,
+      '#description' => t('If enabled, removes all font related formatting styles, including font size, font family, font foreground/background color.'),
+    );
+
+    $form['paste']['pasteFromWord']['pasteFromWordRemoveStyles'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Remove styles'),
+      '#default_value' => !empty($settings['pasteFromWordRemoveStyles']),
+      '#return_value' => 1,
+      '#description' => t('If enabled, removes element styles that can not be managed with the editor, other than font specific styles.'),
+    );
+  }
 
   if (version_compare($installed_version, '4.1.0', '>=')) {
     $form['output']['acf'] = array(
@@ -255,6 +307,12 @@ function wysiwyg_ckeditor_settings_form(&$form, &$form_state) {
       '#element_validate' => array('wysiwyg_ckeditor_settings_form_validate_stylessets'),
     );
 
+  }
+
+  if (version_compare($installed_version, '4.6.0', '>=')) {
+    $form['paste']['pasteFromWord']['pasteFromWordRemoveFontStyles']['#description'] .= '<br />' . t('This setting will be deprecated in the future. Use ACF to replicate the effect of enabling it.');
+    unset($form['paste']['pasteFromWord']['pasteFromWordNumberedHeadingToList'],
+      $form['paste']['pasteFromWord']['pasteFromWordRemoveStyles']);
   }
 
   $form['css']['block_formats'] = array(
@@ -329,7 +387,7 @@ EOL;
  *   Drupal.settings.wysiwyg.configs.{editor}
  */
 function wysiwyg_ckeditor_settings($editor, $config, $theme) {
-  $default_skin = (version_compare($editor['installed version'], '4.0.0', '<') ? 'kama' : 'moono');
+  $default_skin = (version_compare($editor['installed version'], '4.0.0', '<') ? 'kama' : (version_compare($editor['installed version'], '4.6.0', '<') ? 'moono' : 'moono-lisa'));
   $settings = array(
     // Needed to make relative paths work in the editor.
     'baseHref' => $GLOBALS['base_url'] . '/',
@@ -385,7 +443,7 @@ function wysiwyg_ckeditor_settings($editor, $config, $theme) {
     // Versions below 3.0.1 could only handle one stylesheet.
     if (version_compare($editor['installed version'], '3.0.1.4391', '<')) {
       if ($config['css_setting'] == 'theme') {
-        $css = wysiwyg_get_css();
+        $css = wysiwyg_get_css(isset($config['css_theme']) ? $config['css_theme'] : '');
         $settings['contentsCss'] = reset($css);
       }
       elseif ($config['css_setting'] == 'self' && isset($config['css_path'])) {
@@ -398,7 +456,7 @@ function wysiwyg_ckeditor_settings($editor, $config, $theme) {
     }
     else {
       if ($config['css_setting'] == 'theme') {
-        $settings['contentsCss'] = wysiwyg_get_css();
+        $settings['contentsCss'] = wysiwyg_get_css(isset($config['css_theme']) ? $config['css_theme'] : '');
       }
       elseif ($config['css_setting'] == 'self' && isset($config['css_path'])) {
         $settings['contentsCss'] = explode(',', strtr($config['css_path'], array(
@@ -422,6 +480,10 @@ function wysiwyg_ckeditor_settings($editor, $config, $theme) {
   $check_if_set = array(
     'forcePasteAsPlainText',
     'language',
+    'pasteFromWordNumberedHeadingToList',
+    'pasteFromWordPromptCleanup',
+    'pasteFromWordRemoveFontStyles',
+    'pasteFromWordRemoveStyles',
     'simple_source_formatting',
     'toolbarLocation',
   );
@@ -624,6 +686,7 @@ function _wysiwyg_ckeditor_plugins($editor) {
         'SpellChecker' => t('Check spelling'), 'Scayt' => t('Spell check as you type'),
         'About' => t('About'),
         'Templates' => t('Templates'),
+        'CopyFormatting' => t('Copy Formatting'),
       ),
       'internal' => TRUE,
     ),
@@ -638,6 +701,9 @@ function _wysiwyg_ckeditor_plugins($editor) {
   }
   if (version_compare($editor['installed version'], '3.5.0.6260', '<')) {
     unset($plugins['default']['buttons']['Iframe']);
+  }
+  if (version_compare($editor['installed version'], '4.6.0', '<')) {
+    unset($plugins['default']['CopyFormatting']);
   }
   return $plugins;
 }
@@ -675,8 +741,12 @@ function _wysiwyg_ckeditor_group($button) {
     case 'Strike':
     case 'Subscript':
     case 'Superscript':
-    case 'RemoveFormat':
       $group = 'basicstyles';
+      break;
+
+    case 'RemoveFormat':
+    case 'CopyFormatting':
+      $group = 'cleanup';
       break;
 
     case 'NumberedList':
