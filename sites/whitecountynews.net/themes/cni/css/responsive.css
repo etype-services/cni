@@ -78,7 +78,8 @@
     }
     /* main menu */
     #block-superfish-1 .content {
-        width: 760px;
+        width: 745px;
+        padding: 0 4px;
     }
 
     #block-superfish-1 ul #menu-1797-1 {
