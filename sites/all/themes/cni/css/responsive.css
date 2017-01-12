@@ -48,8 +48,13 @@
         margin-top: -13px;
     }
 
+    /* footer */
     .postscript-wrapper {
         margin-right: 10px;
+    }
+
+    .container_12 #postscript .grid_4 {
+        width: 286px;
     }
 
 }
@@ -65,7 +70,7 @@
         margin: 0;
     }
 
-    #main-menu ul.menu li a, #main-menu ul.menu li li a, #main-menu ul.menu li li a.active  {
+    #main-menu ul.menu li a, #main-menu ul.menu li li a, #main-menu ul.menu li li a.active {
         padding: 0 7px;
         font-size: 0.8em;
     }
@@ -157,6 +162,15 @@
         height: 120px;
     }
 
+    /* footer */
+    .postscript-wrapper {
+        margin-right: 10px;
+    }
+
+    .container_12 #postscript .grid_4 {
+        width: 222px;
+    }
+
 }
 
 /* smaller browsers, tablets */
@@ -182,7 +196,7 @@
         display: list-item;
     }
 
-    #main-menu ul.menu li  {
+    #main-menu ul.menu li {
         float: none;
         list-style: none;
     }
@@ -231,7 +245,6 @@
 
     /* SLIDESHOW
     --------------------------------------------------------------------------*/
-
     .view-slideshow .views_slideshow_main {
         height: 200px;
     }
@@ -261,6 +274,7 @@
         margin-left: 20px;
         margin-top: 20px;
     }
+
     .views-slideshow-controls-bottom {
         margin-top: 34px;
     }
@@ -281,11 +295,6 @@
     .region-postscript-2 {
         display: none;
         visibility: hidden;
-    }
-
-    /* override widths for .grid_3 in footer */
-    .container_12 .postscript-wrapper .grid_3 {
-        width: 49% !important;
     }
 
     .region-postscript-4 {
@@ -338,7 +347,7 @@
         display: list-item;
     }
 
-    #main-menu ul.menu li  {
+    #main-menu ul.menu li {
         float: none;
         list-style: none;
     }
@@ -413,6 +422,10 @@
     }
 
     /* FOOTER */
+    #postscript .grid_4 {
+        margin-left: 1em;
+    }
+
     .postscript-wrapper {
         padding: 1em;
         margin: 0;
@@ -486,7 +499,7 @@
         display: list-item;
     }
 
-    #main-menu ul.menu li  {
+    #main-menu ul.menu li {
         float: none;
         list-style: none;
     }
@@ -561,6 +574,11 @@
     }
 
     /* FOOTER */
+    #postscript .grid_4 {
+        width: inherit;
+        margin-left: 1em;
+    }
+
     .postscript-wrapper {
         padding: 1em;
         margin: 0;
@@ -600,7 +618,6 @@
     }
 
 }
-
 
 /* less granular switch for big and small */
 @media only screen and (max-width: 767px) {
