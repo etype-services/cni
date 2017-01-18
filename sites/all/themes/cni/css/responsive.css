@@ -12,7 +12,6 @@
 
     #main-menu ul.menu li a, #main-menu ul.menu li li a {
         padding: 0 8px;
-        font-size: 1em;
     }
 
     #block-superfish-1 ul #menu-1797-1 {
@@ -49,6 +48,21 @@
         margin-top: -13px;
     }
 
+    /* footer */
+    .postscript-wrapper {
+        margin-right: 10px;
+    }
+
+    .container_12 #postscript .grid_4 {
+        width: 286px;
+    }
+
+    /* galleria */
+    .galleria-theme-classic .galleria-info {
+        left: 0;
+        width: 215px;
+    }
+
 }
 
 /* desktop browsers */
@@ -62,9 +76,9 @@
         margin: 0;
     }
 
-    #main-menu ul.menu li a, #main-menu ul.menu li li a, #main-menu ul.menu li li a.active  {
+    #main-menu ul.menu li a, #main-menu ul.menu li li a, #main-menu ul.menu li li a.active {
         padding: 0 7px;
-        font-size: 1em;
+        font-size: 0.8em;
     }
 
     #main-menu ul.menu li ul {
@@ -154,6 +168,21 @@
         height: 120px;
     }
 
+    /* footer */
+    .postscript-wrapper {
+        margin-right: 10px;
+    }
+
+    .container_12 #postscript .grid_4 {
+        width: 30%;
+    }
+
+    /* galleria */
+    .galleria-theme-classic .galleria-info {
+        left: 0;
+        width: 150px;
+    }
+
 }
 
 /* smaller browsers, tablets */
@@ -179,7 +208,7 @@
         display: list-item;
     }
 
-    #main-menu ul.menu li  {
+    #main-menu ul.menu li {
         float: none;
         list-style: none;
     }
@@ -228,7 +257,6 @@
 
     /* SLIDESHOW
     --------------------------------------------------------------------------*/
-
     .view-slideshow .views_slideshow_main {
         height: 200px;
     }
@@ -258,6 +286,7 @@
         margin-left: 20px;
         margin-top: 20px;
     }
+
     .views-slideshow-controls-bottom {
         margin-top: 34px;
     }
@@ -280,11 +309,6 @@
         visibility: hidden;
     }
 
-    /* override widths for .grid_3 in footer */
-    .container_12 .postscript-wrapper .grid_3 {
-        width: 49% !important;
-    }
-
     .region-postscript-4 {
         margin-top: 1em;
     }
@@ -296,7 +320,7 @@
     }
 
     /* hide large dfp ads */
-    .region-content-bottom .block-dfp {
+    .region-content-bottom .block-dfp, .region-main-menu-second-level .block-dfp {
         display: none;
         visibility: hidden;
     }
@@ -335,7 +359,7 @@
         display: list-item;
     }
 
-    #main-menu ul.menu li  {
+    #main-menu ul.menu li {
         float: none;
         list-style: none;
     }
@@ -410,6 +434,10 @@
     }
 
     /* FOOTER */
+    #postscript .grid_4 {
+        margin-left: 1em;
+    }
+
     .postscript-wrapper {
         padding: 1em;
         margin: 0;
@@ -443,9 +471,16 @@
     }
 
     /* hide large dfp ads */
-    .region-content-bottom .block-dfp {
+    .region-content-bottom .block-dfp, .region-main-menu-second-level .block-dfp {
         display: none;
         visibility: hidden;
+    }
+
+    /* galleria fixes */
+    .galleria-theme-classic .galleria-info {
+        width: 100%;
+        top: 10px;
+        left: 0;
     }
 
 }
@@ -483,7 +518,7 @@
         display: list-item;
     }
 
-    #main-menu ul.menu li  {
+    #main-menu ul.menu li {
         float: none;
         list-style: none;
     }
@@ -558,6 +593,11 @@
     }
 
     /* FOOTER */
+    #postscript .grid_4 {
+        width: inherit;
+        margin-left: 1em;
+    }
+
     .postscript-wrapper {
         padding: 1em;
         margin: 0;
@@ -591,13 +631,18 @@
     }
 
     /* hide large dfp ads */
-    .region-content-bottom .block-dfp {
+    .region-content-bottom .block-dfp, .region-main-menu-second-level .block-dfp, .region-slideshow .block-dfp {
         display: none;
         visibility: hidden;
     }
 
+    /* galleria fixes */
+    .galleria-theme-classic .galleria-info {
+        width: 100%;
+        top: 10px;
+        left: 0;
+    }
 }
-
 
 /* less granular switch for big and small */
 @media only screen and (max-width: 767px) {
@@ -605,6 +650,11 @@
     #block-system-user-menu {
         display: none;
         visibility: hidden;
+    }
+
+    /* space for Follow Block */
+    .region-postscript-3 .block {
+        margin-top: 1em;
     }
 
 }

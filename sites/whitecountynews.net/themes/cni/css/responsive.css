@@ -7,7 +7,7 @@
     }
 
     #main-menu ul.menu li a {
-        padding: 0 10px;
+        padding: 0 7px;
     }
 
     #block-superfish-1 .content {
@@ -73,12 +73,9 @@
 /* desktop browsers */
 @media only screen and (max-width: 958px) and (min-width: 768px) {
 
-    #block-superfish-1 .content {
-        width: 744px;
-    }
     /* main menu */
     #block-superfish-1 .content {
-        width: 760px;
+        width: 745px;
     }
 
     #block-superfish-1 ul #menu-1797-1 {
@@ -86,11 +83,11 @@
     }
 
     #main-menu ul.menu {
-        margin: 0 0 0 6em;
+        margin: 0;
     }
 
     #main-menu ul.menu li a {
-        padding: 0 9px;
+        padding: 0 4px;
         font-size: 12px;
         font-weight: bold;
     }
