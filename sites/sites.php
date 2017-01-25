@@ -99,6 +99,7 @@ $sites['www.theclaytontribune.com'] = 'theclaytontribune.com';
 $sites['cherokeescout.etypegoogle3.com'] = 'cherokeescout.com';
 $sites['cherokeescout.com'] = 'cherokeescout.com';
 $sites['www.cherokeescout.com'] = 'cherokeescout.com';
+$sites['dev.cherokeescout.com'] = 'cherokeescout.com';
 
 $sites['beachesleader.etypegoogle3.com'] = 'beachesleader.com';
 $sites['beachesleader.com'] = 'beachesleader.com';
