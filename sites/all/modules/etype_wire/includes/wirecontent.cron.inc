@@ -90,13 +90,13 @@ VALUES (
                   '" . $node['tnid'] . "',
                    '" . $node['translate'] . "',
                     '" . $node['uuid'] . "',
-                     \"$base_url\",
-                      \"$site_name\",
+                     ?,
+                      ?,
                        ?)";
             $stmt = $dbHandle->prepare($sql);
             try {
-                $stmt->execute(["$safe_body", "$cluster"]);
-            } catch(Exception $e) {
+                $stmt->execute(["$safe_body", "$base_url", "$site_name","$cluster"]);
+            } catch (Exception $e) {
                 echo "There was an error inserting the data";
             }
         }
