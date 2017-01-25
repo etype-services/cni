@@ -84,6 +84,9 @@ function etype_wire_menu() {
 /* admin form */
 function etype_wire_admin() {
 
+    /* get current setting */
+    $etype_wire_cluster_default = variable_get('etype_wire_cluster', 'Coastal');
+
     $etype_wire_cluster_options = array (
         'Coastal' => 'Coastal',
         'WNC NGA' => 'WNC NGA',
@@ -97,6 +100,7 @@ function etype_wire_admin() {
         '#weight' => '1',
         '#type' => 'select',
         '#options' => $etype_wire_cluster_options,
+        '#default_value' => $etype_wire_cluster_default,
     );
 
     return system_settings_form($form);
