@@ -21,6 +21,8 @@ function etype_wire_node_export() {
         $nodes[] = $n;
     }
 
+    var_dump($nodes);
+
     $dbHandle = _etype_wire_connect();
 
     if (count($nodes) > 0) {
