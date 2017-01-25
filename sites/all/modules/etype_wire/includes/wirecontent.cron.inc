@@ -67,6 +67,7 @@ function etype_wire_node_export() {
                 $safe_caption = '';
             }
 
+
             $sql = "INSERT INTO node (
 `nid`, `vid`, `type`, `language`, `title`, `body`, `file`, `kicker`, `caption`, `uid`, `status`, `created`, `changed`, `comment`, `promote`, `sticky`, `tnid`, `translate`, `uuid`, `site`, `site_name`, `cluster`) 
 VALUES (
@@ -75,7 +76,7 @@ VALUES (
      'article',
      '" . $node['language'] . "',
       '" . $node['title'] . "',
-       '" . $safe_body . "',
+       '?',
         '" . $file_path . "',
          '" . $safe_kicker . "',
           '" . $safe_caption . "',
@@ -94,7 +95,7 @@ VALUES (
                        '?')";
             $stmt = $dbHandle->prepare($sql);
             var_dump($stmt);
-            $stmt->execute([$cluster]);
+            $stmt->execute([$safe_body, $cluster]);
         }
 
     }
