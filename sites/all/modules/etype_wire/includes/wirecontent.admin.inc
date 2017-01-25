@@ -62,7 +62,7 @@ function theme_wire_admin_content($variables) {
 
     $nodes = $variables['wirenodes'];
 
-    /* sortable header - theough the fields do not work */
+    /* sortable header - though the fields do not work */
     $header = array(
         t('Title'),
         array('data' => t('Paper'), 'field' => 'site_name'),
@@ -88,4 +88,35 @@ function theme_wire_admin_content($variables) {
     }
 
     return theme('table', array('header' => $header, 'rows' => $rows));
+}
+
+
+/* admin settings form */
+function etype_wire_admin() {
+
+    /* get current setting */
+    $etype_wire_cluster_default = variable_get('etype_wire_cluster', 'Coastal');
+
+    $etype_wire_cluster_options = array (
+        'coastal' => 'Coastal',
+        'franklin' => 'Franklin Region',
+        'murphy' => 'Murphy Region',
+        'neg' => 'NEG Region',
+        'nwga' => 'NWGA WNC',
+        'wnc' => 'WNC NGA',
+    );
+
+    $form = array();
+
+    $form['etype_wire_cluster'] = array(
+        '#title' => t('Site Cluster'),
+        '#multiple' => TRUE,
+        '#description' => t("The cluster that this site belongs to."),
+        '#weight' => '1',
+        '#type' => 'checkboxes',
+        '#options' => $etype_wire_cluster_options,
+        '#default_value' => $etype_wire_cluster_default,
+    );
+
+    return system_settings_form($form);
 }
