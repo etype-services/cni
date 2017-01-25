@@ -21,11 +21,9 @@ function etype_wire_node_export() {
         $nodes[] = $n;
     }
 
-    var_dump($nodes);
-
-    $dbHandle = _etype_wire_connect();
-
     if (count($nodes) > 0) {
+
+        $dbHandle = _etype_wire_connect();
 
         global $base_url;
         $site_name = variable_get('site_name', 'Drupal');
@@ -95,6 +93,7 @@ VALUES (
                       \"$site_name\",
                        '?')";
             $stmt = $dbHandle->prepare($sql);
+            var_dump($stmt);
             $stmt->execute([$cluster]);
         }
 

@@ -118,9 +118,15 @@ function etype_wire_theme() {
  * @return \PDO
  */
 function _etype_wire_connect() {
-    $dbHandle = new PDO("mysql:host=localhost;dbname=wire", 'etype_wire', 'ss&yuyuo(8.D>23@):c|{~-%55B2eRE=8');
-    $dbHandle->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    // always disable emulated prepared statement when using the MySQL driver
-    $dbHandle->setAttribute(PDO::ATTR_EMULATE_PREPARES, FALSE);
+    try {
+        $dbHandle = new PDO("mysql:host=localhost;dbname=wire", 'etype_wire', 'ss&yuyuo(8.D>23@):c|{~-%55B2eRE=8');
+        $dbHandle->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        // always disable emulated prepared statement when using the MySQL driver
+        $dbHandle->setAttribute(PDO::ATTR_EMULATE_PREPARES, FALSE);
+
+    } catch(Exception $e) {
+        echo "There was an error connecting to the database";
+    }
+
     return $dbHandle;
 }
