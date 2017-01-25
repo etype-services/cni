@@ -88,12 +88,12 @@ function etype_wire_admin() {
     $etype_wire_cluster_default = variable_get('etype_wire_cluster', 'Coastal');
 
     $etype_wire_cluster_options = array (
-        'Coastal' => 'Coastal',
-        'Franklin Region' => 'Franklin Region',
-        'Murphy Region' => 'Murphy Region',
-        'NEG Region' => 'NEG Region',
-        'NWGA WNC' => 'NWGA WNC',
-        'WNC NGA' => 'WNC NGA',
+        'coastal' => 'Coastal',
+        'franklin' => 'Franklin Region',
+        'murphy' => 'Murphy Region',
+        'neg ' => 'NEG Region',
+        'nwga' => 'NWGA WNC',
+        'wnc' => 'WNC NGA',
     );
 
     $form = array();
