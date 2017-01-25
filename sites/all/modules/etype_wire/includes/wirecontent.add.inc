@@ -85,7 +85,7 @@ function etype_wire_node_add($nid) {
   global $base_url;
   $sql = "INSERT INTO node_site SET `original_nid` = $nid, `real_nid` = $new_nid, `site_base` = '$base_url' ";
   $stmt = $dbHandle->prepare($sql);
-  // !!!$stmt->execute();
+  $stmt->execute();
 
   drupal_set_message(t('Node added.'));
   drupal_goto('node/' . $new_nid . '/edit');

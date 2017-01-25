@@ -35,9 +35,7 @@ function etype_wire_node_export() {
     $site_name = variable_get('site_name', 'Drupal');
 
     $etype_wire_cluster = variable_get('etype_wire_cluster');
-    var_dump($etype_wire_cluster);
-    exit;
-
+    $cluster = serialize($etype_wire_cluster);
 
     /* Delete old nodes */
     $sql = "DELETE FROM node WHERE `site` = '$base_url'";
@@ -78,8 +76,8 @@ function etype_wire_node_export() {
       }
 
       $sql = "INSERT INTO node (
-`nid`, `vid`, `type`, `language`, `title`, `body`, `file`, `kicker`, `caption`, `uid`, `status`, `created`, `changed`, `comment`, `promote`, `sticky`, `tnid`, `translate`, `uuid`, `site`, `site_name`) 
-VALUES ('" . $node['nid'] . "', '" . $node['vid'] . "', 'article', '" . $node['language'] . "', '" . $node['title'] . "', '" . $safe_body . "', '" . $file_path . "', '" . $safe_kicker . "', '" . $safe_caption . "', '" . $node['uid'] . "', '0', '" . $node['created'] . "', '" . $node['changed'] . "', '" . $node['comment'] . "', '0', '0', '" . $node['tnid'] . "', '" . $node['translate'] . "', '" . $node['uuid'] . "', \"$base_url\", \"$site_name\")";
+`nid`, `vid`, `type`, `language`, `title`, `body`, `file`, `kicker`, `caption`, `uid`, `status`, `created`, `changed`, `comment`, `promote`, `sticky`, `tnid`, `translate`, `uuid`, `site`, `site_name`, `cluster`) 
+VALUES ('" . $node['nid'] . "', '" . $node['vid'] . "', 'article', '" . $node['language'] . "', '" . $node['title'] . "', '" . $safe_body . "', '" . $file_path . "', '" . $safe_kicker . "', '" . $safe_caption . "', '" . $node['uid'] . "', '0', '" . $node['created'] . "', '" . $node['changed'] . "', '" . $node['comment'] . "', '0', '0', '" . $node['tnid'] . "', '" . $node['translate'] . "', '" . $node['uuid'] . "', \"$base_url\", \"$site_name\", \"$cluster\")";
       if ($mysqli->query($sql) !== TRUE) {
         watchdog('etype_wire', "EType Wire insert failed: %error", array('%error' => $mysqli->error), WATCHDOG_ERROR);
       }
