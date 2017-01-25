@@ -21,7 +21,7 @@ function etype_wire_node_export() {
     $nodes[] = $n;
   }
 
-  $mysqli = new mysqli("104.196.22.53", "etype_wire", "ss&yuyuo(8.D>23@):c|{~-%55B2eRE=8", "wire");
+  $mysqli = new mysqli("localhost", "etype_wire", "ss&yuyuo(8.D>23@):c|{~-%55B2eRE=8", "wire");
 
   /* check connection */
   if (mysqli_connect_errno()) {
