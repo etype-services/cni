@@ -131,6 +131,11 @@ function _etype_wire_connect() {
     return $dbHandle;
 }
 
+/**
+ * @param $string
+ * @return mixed|string
+ * See https://stackoverflow.com/questions/1401317/remove-non-utf8-characters-from-string/8215387#8215387
+ */
 function _etype_clean_string($string) {
     $s = trim($string);
     $s = preg_replace('/[\x00-\x1F\x80-\xFF]/', '', $s);
