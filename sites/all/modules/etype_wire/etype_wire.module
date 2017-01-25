@@ -57,7 +57,7 @@ function etype_wire_menu() {
     );
 
     /* admin settings page */
-    $items['admin/settings/wirecontent'] = array(
+    $items['admin/config/wirecontent'] = array(
         'title' => 'Wire Content module settings',
         'description' => 'Choose site cluster',
         'page callback' => 'drupal_get_form',
