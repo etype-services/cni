@@ -41,8 +41,8 @@ function etype_wire_node_export() {
             $wrapper = entity_metadata_wrapper('node', $object);
 
             $body = $wrapper->body->value();
-            $safe_body = strip_tags($body['safe_value']);
-            // $safe_body = _etype_clean_string($tmp);
+            $tmp = strip_tags($body['safe_value']);
+            $safe_body = _etype_clean_string($tmp);
 
             if (isset ($wrapper->field_kicker)) {
                 $kicker = $wrapper->field_kicker->value();
