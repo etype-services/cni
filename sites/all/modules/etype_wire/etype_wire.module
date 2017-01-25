@@ -134,11 +134,7 @@ function _etype_wire_connect() {
 function _etype_clean_string($string) {
     $s = trim($string);
     $s = iconv("UTF-8", "UTF-8//IGNORE", $s); // drop all non utf-8 characters
-
-    // this is some bad utf-8 byte sequence that makes mysql complain - control and formatting i think
     $s = preg_replace('/[[:cntrl:]]/', ' ', $s);
-
     $s = preg_replace('/\s+/', ' ', $s); // reduce all multiple whitespace to a single space
-
     return $s;
 }
