@@ -70,7 +70,7 @@ function etype_wire_menu() {
 
     $items['admin/config/etype_wire/settings'] = array(
         'title' => 'Wire Content module settings',
-        'description' => 'Choose site cluster',
+        'description' => 'Wire content options.',
         'page callback' => 'drupal_get_form',
         'page arguments' => array('etype_wire_admin'),
         'access arguments' => array('access wire content'),
@@ -83,12 +83,20 @@ function etype_wire_menu() {
 
 /* admin form */
 function etype_wire_admin() {
+
+    $etype_wire_cluster_options = array (
+        'Coastal' => 'Coastal',
+        'WNC NGA' => 'WNC NGA',
+    );
+
     $form = array();
 
     $form['etype_wire_cluster'] = array(
-        '#type' => 'textfield',
         '#title' => t('Site Cluster'),
         '#description' => t("The cluster that this site belongs to."),
+        '#weight' => '1',
+        '#type' => 'select',
+        '#options' => $etype_wire_cluster_options,
     );
 
     return system_settings_form($form);
