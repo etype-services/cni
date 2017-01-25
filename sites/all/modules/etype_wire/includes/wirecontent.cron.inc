@@ -95,7 +95,11 @@ VALUES (
                        ?)";
             $stmt = $dbHandle->prepare($sql);
             var_dump($stmt);
-            $stmt->execute(['$safe_body', '$cluster']);
+            try {
+                $stmt->execute(['$safe_body', '$cluster']);
+            } catch(Exception $e) {
+                echo "There was an error connecting to the database";
+            }
         }
 
     }
