@@ -56,7 +56,31 @@ function etype_wire_menu() {
         'file' => 'includes/wirecontent.cron.inc'
     );
 
+    /* admin settings page */
+    $items['admin/settings/wirecontent'] = array(
+        'title' => 'Wire Content module settings',
+        'description' => 'Choose site cluster',
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('etype_wire_admin'),
+        'access arguments' => array('access wire content'),
+        'type' => MENU_NORMAL_ITEM,
+    );
+
+
     return $items;
+}
+
+/* admin form */
+function etype_wire_admin() {
+    $form = array();
+
+    $form['etype_wire_cluster'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Site Cluster'),
+        '#description' => t("The cluster that this site belongs to."),
+    );
+
+    return system_settings_form($form);
 }
 
 /**
@@ -95,7 +119,7 @@ function etype_wire_theme() {
  * @return \PDO
  */
 function _etype_wire_connect() {
-    $dbHandle = new PDO("mysql:host=104.196.22.53;dbname=wire", 'etype_wire', 'GeMay9k60gL1=2Q');
+    $dbHandle = new PDO("mysql:host=104.196.22.53;dbname=wire", 'etype_wire', 'ss&yuyuo(8.D>23@):c|{~-%55B2eRE=8');
     $dbHandle->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     // always disable emulated prepared statement when using the MySQL driver
     $dbHandle->setAttribute(PDO::ATTR_EMULATE_PREPARES, FALSE);
