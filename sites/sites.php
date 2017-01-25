@@ -99,7 +99,6 @@ $sites['www.theclaytontribune.com'] = 'theclaytontribune.com';
 $sites['cherokeescout.etypegoogle3.com'] = 'cherokeescout.com';
 $sites['cherokeescout.com'] = 'cherokeescout.com';
 $sites['www.cherokeescout.com'] = 'cherokeescout.com';
-$sites['dev.cherokeescout.com'] = 'cherokeescout.com';
 
 $sites['beachesleader.etypegoogle3.com'] = 'beachesleader.com';
 $sites['beachesleader.com'] = 'beachesleader.com';
@@ -153,4 +152,4 @@ $sites['thepress-sentinel.etypegoogle3.com'] = 'thepress-sentinel.com';
 $sites['thepress-sentinel.com'] = 'thepress-sentinel.com';
 $sites['www.thepress-sentinel.com'] = 'thepress-sentinel.com';
 
-$sites['test.etypegoogle3.com'] = 'test.etypegoogle3.com';
+$sites['test.etypegoogle3.com'] = 'cherokeescout.com';
