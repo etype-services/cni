@@ -76,7 +76,7 @@ VALUES (
      'article',
      '" . $node['language'] . "',
       '" . $node['title'] . "',
-       '?',
+       ?,
         '" . $file_path . "',
          '" . $safe_kicker . "',
           '" . $safe_caption . "',
@@ -92,10 +92,10 @@ VALUES (
                     '" . $node['uuid'] . "',
                      \"$base_url\",
                       \"$site_name\",
-                       '?')";
+                       ?)";
             $stmt = $dbHandle->prepare($sql);
             var_dump($stmt);
-            $stmt->execute([$safe_body, $cluster]);
+            $stmt->execute(['$safe_body', '$cluster']);
         }
 
     }
