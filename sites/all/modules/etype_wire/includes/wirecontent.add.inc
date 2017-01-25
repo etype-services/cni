@@ -52,11 +52,6 @@ function etype_wire_node_add($nid) {
   $entity->title->set($old_node->title);
   $entity->body->set(array('value' => check_plain($old_node->body)));
 
-  // kicker does not work
-  //if (isset($entity->field_kicker)) {
-  //  $entity->field_kicker->set($old_node->kicker);
-  //}
-
   $entity->language(LANGUAGE_NONE);
 
   if (!empty($old_node->file)) {

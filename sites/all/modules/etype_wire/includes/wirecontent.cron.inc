@@ -29,7 +29,7 @@ function etype_wire_node_export() {
         $site_name = variable_get('site_name', 'Drupal');
 
         $etype_wire_cluster = variable_get('etype_wire_cluster');
-        $cluster = serialize($etype_wire_cluster);
+        $cluster = implode($etype_wire_cluster, ',');
 
         /* Delete old nodes */
         $sql = "DELETE FROM node WHERE `site` = '$base_url'";
