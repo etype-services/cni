@@ -534,6 +534,32 @@ article .field-image {
     background: 0;
 }
 
+/* for sites with user menu below main menu in .region-main-menu */
+#main-menu #block-system-user-menu {
+    background-color: #ffffff;
+    width: 100%;
+    height: 27px;
+    border-bottom: 1px solid black;
+}
+
+#main-menu #block-system-user-menu .content {
+    margin: 0 auto;
+}
+
+#main-menu #block-system-user-menu ul.menu li {
+    height: 27px;
+}
+
+#main-menu #block-system-user-menu ul.menu li a {
+    font-size: 0.8em;
+}
+
+#main-menu #block-system-user-menu ul.menu li a {
+    color: #333333;
+    height: 27px;
+    line-height: 27px;
+}
+
 /* MAIN MENU
 --------------------------------------------------------------------------*/
 
@@ -1356,16 +1382,52 @@ article.node-webform .node-content-wrapper h1.title {
     padding: 0;
 }
 
-/* GALLERIA override gallleria classic theme */
-.galleria-container {
-    background: #ffffff;
+/* GALLERIA -- override galleria classic theme */
+.galleria-theme-classic {
+    background-color: #ffffff;
 }
 
-.galleria-thumb-nav-left,
-.galleria-thumb-nav-right,
-.galleria-info-link,
-.galleria-info-close,
-.galleria-image-nav-left,
-.galleria-image-nav-right {
-    background-image: url(../images/classic-map-cni.png);
+.galleria-theme-classic .galleria-stage {
+    top: 0;
+    left: 0;
+    right: 0;
 }
+
+.galleria-theme-classic .galleria-thumb-nav-left, .galleria-theme-classic .galleria-thumb-nav-right, .galleria-theme-classic .galleria-info-link, .galleria-theme-classic .galleria-info-close, .galleria-theme-classic .galleria-image-nav-left, .galleria-theme-classic .galleria-image-nav-right {
+    background-image: url(../../../../all/themes/cni/images/classic-map-cni.png);
+}
+
+.galleria-theme-classic .galleria-info {
+    top: 31px;
+    left: 0;
+}
+
+.galleria-theme-classic .galleria-info-text {
+    display: block;
+    opacity: 0.5;
+}
+
+.galleria-theme-classic .galleria-info-title {
+    margin-bottom: 0;
+    font-family: 'Lato', sans-serif;
+    font-weight: normal;
+}
+
+.galleria-theme-classic .galleria-info-link {
+    display: none;
+    visibility: hidden;
+}
+
+.galleria-theme-classic.notouch .galleria-thumb-nav-left:hover, .galleria-theme-classic.notouch .galleria-thumb-nav-right:hover {
+    background-color: #fff;
+}
+
+.galleria-theme-classic .galleria-thumbnails .galleria-image {
+    width: 50px;
+    height: 50px;
+}
+
+.galleria-theme-classic .galleria-thumb-nav-right, .galleria-theme-classic .galleria-thumb-nav-keft {
+    top: 4px;
+}
+
