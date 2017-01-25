@@ -94,11 +94,10 @@ VALUES (
                       \"$site_name\",
                        ?)";
             $stmt = $dbHandle->prepare($sql);
-            var_dump($stmt);
             try {
-                $stmt->execute(['$safe_body', '$cluster']);
+                $stmt->execute(["$safe_body", "$cluster"]);
             } catch(Exception $e) {
-                echo "There was an error connecting to the database";
+                echo "There was an error inserting the data";
             }
         }
 
