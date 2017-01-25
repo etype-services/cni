@@ -57,7 +57,18 @@ function etype_wire_menu() {
     );
 
     /* admin settings page */
-    $items['admin/config/wirecontent'] = array(
+    $items['admin/config/etype_wire'] = array(
+        'title' => 'eType',
+        'description' => 'eType Settings', // Like any other menu item
+        'position' => 'right',
+        'weight' => -15,
+        'page callback' => 'system_admin_menu_block_page',
+        'access arguments' => array('administer site configuration'), // Permission needed to view this area
+        'file' => 'system.admin.inc',
+        'file path' => drupal_get_path('module', 'system'),
+    );
+
+    $items['admin/config/etype_wire/settings'] = array(
         'title' => 'Wire Content module settings',
         'description' => 'Choose site cluster',
         'page callback' => 'drupal_get_form',
