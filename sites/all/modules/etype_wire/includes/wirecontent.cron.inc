@@ -40,11 +40,9 @@ function etype_wire_node_export() {
             $object = node_load($node['nid']);
             $wrapper = entity_metadata_wrapper('node', $object);
 
-            // var_dump($wrapper);
-            // exit;
-
             $body = $wrapper->body->value();
-            $safe_body = strip_tags($body['safe_value']);
+            $tmp = strip_tags($body['safe_value']);
+            $safe_body = preg_replace('/[\x00-\x1F\x80-\xFF]/', '', $tmp);
 
             if (isset ($wrapper->field_kicker)) {
                 $kicker = $wrapper->field_kicker->value();
