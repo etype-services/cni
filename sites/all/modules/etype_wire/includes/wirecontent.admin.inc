@@ -23,6 +23,7 @@ function etype_wire_admin_content() {
     $etype_wire_cluster = variable_get('etype_wire_cluster');
     $tmp = array();
     foreach ($etype_wire_cluster as $k => $v) {
+        echo "$k $v<br />";
         if ($v > 0) {
             $tmp[] = " cluster REGEXP '$v' ";
         }
