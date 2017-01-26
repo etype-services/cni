@@ -19,6 +19,16 @@ function etype_wire_admin_content() {
     $sub = '';
     $url = preg_replace($pattern, $sub, $base_url);
 
+    /* cluster */
+    $etype_wire_cluster = variable_get('etype_wire_cluster');
+    $tmp = array();
+    foreach ($etype_wire_cluster as $k => $v) {
+        if ($v > 0) {
+            $tmp[] = " cluster REGEXP '$v' ";
+        }
+    }
+    $string = implode('$tmp', ' OR ');
+
     /* sorting */
     if (isset($_GET['order'])) {
         switch ($_GET['order']) {
@@ -46,8 +56,11 @@ SELECT * FROM `node` n
 LEFT JOIN `node_site` ns ON n.nid = ns.original_nid 
 WHERE (n.site NOT LIKE \"%$url%\" 
 AND (ns.site_base is NULL OR ns.site_base NOT LIKE \"%$url%\"))
+AND ($string))
 ORDER BY $order $sort
 ";
+    echo $sql;
+    exit;
     $stmt = $dbHandle->prepare($sql);
     $stmt->execute();
     $stmt->setFetchMode(PDO::FETCH_OBJ);
