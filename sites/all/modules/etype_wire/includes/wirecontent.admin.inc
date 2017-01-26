@@ -27,7 +27,7 @@ function etype_wire_admin_content() {
             $tmp[] = " cluster REGEXP '$v' ";
         }
     }
-    $string = implode('$tmp', ' OR ');
+    $string = implode($tmp, ' OR ');
 
     /* sorting */
     if (isset($_GET['order'])) {
