@@ -19,6 +19,11 @@ function etype_wire_admin_content() {
     $sub = '';
     $url = preg_replace($pattern, $sub, $base_url);
 
+    /* for dev */
+    if ($url == 'http://test.etypegoogle3.com') {
+        $url = '';
+    }
+
     /* cluster */
     $etype_wire_cluster = variable_get('etype_wire_cluster');
     $tmp = array();
