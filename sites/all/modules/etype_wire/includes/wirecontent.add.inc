@@ -14,12 +14,10 @@ function etype_wire_node_add($nid) {
     return;
   }
 
-  global $base_url;
-
   /* connect to wire db and get desired node */
   $dbHandle = _etype_wire_connect();
 
-  function get_all($dbHandle, $base_url, $nid) {
+  function get_all($dbHandle, $nid) {
     $sql = "SELECT * FROM node WHERE nid = $nid";
     $stmt = $dbHandle->prepare($sql);
     $stmt->execute();
@@ -28,7 +26,7 @@ function etype_wire_node_add($nid) {
     return $result;
   }
 
-  $nodes = get_all($dbHandle, $base_url, $nid);
+  $nodes = get_all($dbHandle, $nid);
 
   if (count($nodes) == 0) {
     drupal_set_message(t('Unable to continue, no nodes available'), 'error');
@@ -37,6 +35,9 @@ function etype_wire_node_add($nid) {
   }
 
   $old_node = $nodes[0];
+
+  var_dump($old_node);
+  exit;
 
   global $user;
   $entity_type = 'node';
