@@ -27,7 +27,6 @@ function etype_wire_admin_content() {
             $tmp[] = " cluster REGEXP '$v' ";
         }
     }
-    var_dump($tmp);
     $string = implode($tmp, ' OR ');
 
     /* sorting */
@@ -66,8 +65,8 @@ ORDER BY $order $sort
     $stmt = $dbHandle->prepare($sql);
     $stmt->execute();
     $stmt->setFetchMode(PDO::FETCH_OBJ);
-    $wirenodes = $stmt->fetchAll();
-    return theme('wire_admin_content', array('wirenodes' => $wirenodes));
+    $wire_nodes = $stmt->fetchAll();
+    return theme('wire_admin_content', array('wire_nodes' => $wire_nodes));
 }
 
 /**
@@ -75,7 +74,7 @@ ORDER BY $order $sort
  */
 function theme_wire_admin_content($variables) {
 
-    $nodes = $variables['wirenodes'];
+    $nodes = $variables['wire_nodes'];
 
     /* sortable header - though the fields do not work */
     $header = array(
