@@ -152,4 +152,4 @@ $sites['thepress-sentinel.etypegoogle3.com'] = 'thepress-sentinel.com';
 $sites['thepress-sentinel.com'] = 'thepress-sentinel.com';
 $sites['www.thepress-sentinel.com'] = 'thepress-sentinel.com';
 
-$sites['test.etypegoogle3.com'] = 'cherokeescout.com';
+$sites['test.etypegoogle3.com'] = 'thetoccoarecord.com';
