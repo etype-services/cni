@@ -27,6 +27,7 @@ function etype_wire_admin_content() {
     }
 
     /* cluster */
+    $string = '';
     $etype_wire_cluster = variable_get('etype_wire_cluster');
     $tmp = array();
     foreach ($etype_wire_cluster as $k => $v) {
@@ -34,7 +35,10 @@ function etype_wire_admin_content() {
             $tmp[] = " cluster REGEXP '$v' ";
         }
     }
-    $string = implode($tmp, ' OR ');
+    if (count($tmp) > 0) {
+        $string = implode($tmp, ' OR ');
+        $string = 'AND (' . $string . ')';
+    }
 
     /* sorting */
     if (isset($_GET['order'])) {
@@ -64,7 +68,7 @@ LEFT JOIN `node_site` ns ON n.nid = ns.original_nid
 WHERE (
   n.site NOT LIKE \"$url\" 
   AND (ns.site_base is NULL OR ns.site_base NOT LIKE \"$url\")
-  AND ($string)
+  $string
 )
 ORDER BY $order $sort
 ";
