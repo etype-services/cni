@@ -112,6 +112,20 @@ function cni_preprocess_html(&$vars) {
         );
     }
 
+    $logo_width = theme_get_setting('logo_width');
+    if (!empty($logo_width)) {
+        drupal_add_css(
+            '.site-logo, .site-logo img {max-width: '. $logo_width .';}',
+            array(
+                'group' => CSS_THEME,
+                'type' => 'inline',
+                'media' => 'screen',
+                'preprocess' => FALSE,
+                'weight' => '9999',
+            )
+        );
+    }
+
     /* add favicons */
     $icon_path = $base_path . $conf_path .'/files/favicons/';
 

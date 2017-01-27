@@ -187,4 +187,11 @@ function bones_form_system_theme_settings_alter(&$form, $form_state) {
       '#default_value' => theme_get_setting('nav_color'),
   );
 
+  $form['advanced_settings']['misc_settings']['logo_width'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Logo Width'),
+      '#size' => 10,
+      '#default_value' => theme_get_setting('logo_width'),
+  );
+
 }
