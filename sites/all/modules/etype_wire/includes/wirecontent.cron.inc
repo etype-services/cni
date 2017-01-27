@@ -66,7 +66,6 @@ function etype_wire_node_export() {
                 $safe_caption = '';
             }
 
-
             $sql = "INSERT INTO node (
 `nid`, `vid`, `type`, `language`, `title`, `body`, `file`, `kicker`, `caption`, `uid`, `status`, `created`, `changed`, `comment`, `promote`, `sticky`, `tnid`, `translate`, `uuid`, `site`, `site_name`, `cluster`) 
 VALUES (

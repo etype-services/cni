@@ -36,9 +36,6 @@ function etype_wire_node_add($nid) {
 
   $old_node = $nodes[0];
 
-  var_dump($old_node);
-  exit;
-
   global $user;
   $entity_type = 'node';
 
