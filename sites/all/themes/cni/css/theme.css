@@ -90,6 +90,16 @@ h3.site-slogan {
     float: left;
 }
 
+/* logo */
+.site-logo {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.site-logo img {
+    width: 100%;
+}
+
 /* SLIDESHOW
 --------------------------------------------------------------------------*/
 .view-slideshow .views_slideshow_main {

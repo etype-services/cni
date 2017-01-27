@@ -1,12 +1,5 @@
 /* logo */
-.site-logo {
-    width: 100%;
-    margin: 0 auto;
-    max-width: 670px;
-}
-
-.site-logo img {
-    width: 100%;
+.site-logo, .site-logo img {
     max-width: 670px;
 }
 
