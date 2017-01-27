@@ -76,7 +76,7 @@ function etype_wire_node_add($nid) {
 
   // record saved node
   global $base_url;
-  $sql = "INSERT INTO node_site SET `original_nid` = $nid, `real_nid` = $new_nid, `site_base` = '$base_url' ";
+  $sql = "REPLACE INTO node_site SET `original_nid` = $nid, `real_nid` = $new_nid, `site_base` = '$base_url' ";
   $stmt = $dbHandle->prepare($sql);
   $stmt->execute();
 
