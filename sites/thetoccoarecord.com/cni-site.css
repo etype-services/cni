@@ -4,11 +4,7 @@
 }
 
 /* main-menu background-color */
-#block-superfish-1 {
-    background-color: #111111;
-}
-
-.sf-menu.sf-style-space li, .sf-menu.sf-style-space li li, .sf-menu.sf-style-space li li li, .sf-menu.sf-style-space.sf-navbar {
+#block-superfish-1, .sf-menu.sf-style-space li, .sf-menu.sf-style-space li li, .sf-menu.sf-style-space li li li, .sf-menu.sf-style-space.sf-navbar {
     background: #111111;
 }
 
