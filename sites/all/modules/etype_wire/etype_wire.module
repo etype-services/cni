@@ -69,7 +69,7 @@ function etype_wire_menu() {
     );
 
     $items['admin/config/etype_wire/settings'] = array(
-        'title' => 'Wire Content module settings',
+        'title' => 'Wire Content',
         'description' => 'Wire content options.',
         'page callback' => 'drupal_get_form',
         'page arguments' => array('etype_wire_admin'),
