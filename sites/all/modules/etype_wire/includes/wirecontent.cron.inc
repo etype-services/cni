@@ -51,9 +51,8 @@ function etype_wire_node_export() {
             }
             $safe_kicker = strip_tags($kicker['safe_value']);
 
-            var_dump($wrapper);
-
-            echo "\n\n\n\n";
+            // var_dump($wrapper);
+            // echo "\n\n\n\n";
 
             $image_uri = isset($wrapper->field_image[0]->value()['uri']) ? $wrapper->field_image[0]->value()['uri'] : '';
             if (!empty($image_uri)) {
@@ -62,8 +61,7 @@ function etype_wire_node_export() {
                 // get caption
                 $caption = isset($wrapper->field_image[0]->value()['image_field_caption']['value']) ? $wrapper->field_image[0]->value()['image_field_caption']['value'] : '';
                 $safe_caption = strip_tags($caption);
-            }
-            else {
+            } else {
                 $file_path = '';
                 $safe_caption = '';
             }
