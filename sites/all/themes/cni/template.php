@@ -21,7 +21,7 @@ function cni_preprocess_page(&$variables) {
         }
     }
 
-    $nav_color = variable_get('nav_color');
+    $nav_color = theme_get_setting('nav_color');
     echo $nav_color;
 }
 
