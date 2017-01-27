@@ -1,0 +1,144 @@
+<?php
+
+/**
+ * @file
+ * Wire functions for Etype Services to allow Editors to import and publish stories from other publications
+ *
+ */
+
+/**
+ * Implements hook_permission().
+ */
+function etype_wire_permission() {
+    return array(
+        'access wire content' => array(
+            'title' => t('Access Wire Content'),
+        )
+    );
+}
+
+/**
+ * Implements hook_menu().
+ */
+function etype_wire_menu() {
+
+    $items = array();
+
+    /* display wire content */
+    $items['admin/content/wirecontent'] = array(
+        'title' => 'Wire Content',
+        'description' => "Publish stories from other publications.",
+        'page callback' => 'etype_wire_admin_content',
+        'access callback' => 'user_access',
+        'access arguments' => array('access wire content'),
+        'type' => MENU_LOCAL_TASK,
+        'file' => 'includes/wirecontent.admin.inc'
+    );
+
+    /* to add wire content to site */
+    $items['admin/wirecontent/%/add'] = array(
+        'title' => 'Add Wire Content',
+        'description' => "Add content from other sites to this one.",
+        'page callback' => 'etype_wire_node_add',
+        'page arguments' => array(2),
+        'access arguments' => array('access wire content'),
+        'type' => MENU_CALLBACK,
+        'file' => 'includes/wirecontent.add.inc'
+    );
+
+    /* to be able to run cron job from url */
+    $items['admin/wirecontent/cron'] = array(
+        'title' => 'Wire Content',
+        'description' => "Run Wire cron job.",
+        'page callback' => 'etype_wire_node_export',
+        'access arguments' => array('access wire content'),
+        'type' => MENU_CALLBACK,
+        'file' => 'includes/wirecontent.cron.inc'
+    );
+
+    /* admin settings page */
+    $items['admin/config/etype_wire'] = array(
+        'title' => 'eType',
+        'description' => 'eType Settings', // Like any other menu item
+        'position' => 'right',
+        'weight' => -15,
+        'page callback' => 'system_admin_menu_block_page',
+        'access arguments' => array('administer site configuration'), // Permission needed to view this area
+        'file' => 'system.admin.inc',
+        'file path' => drupal_get_path('module', 'system'),
+    );
+
+    $items['admin/config/etype_wire/settings'] = array(
+        'title' => 'Wire Content',
+        'description' => 'Wire content options.',
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('etype_wire_admin'),
+        'access arguments' => array('access wire content'),
+        'file' => 'includes/wirecontent.admin.inc',
+        'type' => MENU_NORMAL_ITEM,
+    );
+
+
+    return $items;
+}
+
+/**
+ * @param $op
+ * @param null $job
+ * @return mixed
+ */
+function etype_wire_cronapi($op, $job = NULL) {
+
+    $items['etype_wire_cron'] = array(
+        'description' => 'Export Nodes to Wire Content',
+        'rule' => '0 0,12 * * *',
+        'callback' => 'etype_wire_node_export',
+        'arguments' => array('all'),
+        'file' => 'includes/wirecontent.cron.inc'
+    );
+
+    return $items;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function etype_wire_theme() {
+    $theme = array(
+        'wire_admin_content' => array(
+            'variables' => array('nodes' => NULL),
+            'file' => 'includes/wirecontent.admin.inc',
+        )
+    );
+    return $theme;
+}
+
+/**
+ * Connect to wire db
+ * @return \PDO
+ */
+function _etype_wire_connect() {
+    try {
+        $dbHandle = new PDO("mysql:host=localhost;dbname=wire", 'etype_wire', 'ss&yuyuo(8.D>23@):c|{~-%55B2eRE=8');
+        $dbHandle->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        // always disable emulated prepared statement when using the MySQL driver
+        $dbHandle->setAttribute(PDO::ATTR_EMULATE_PREPARES, FALSE);
+
+    } catch(Exception $e) {
+        echo "There was an error connecting to the database";
+    }
+
+    return $dbHandle;
+}
+
+/**
+ * @param $string
+ * @return mixed|string
+ * See https://stackoverflow.com/questions/1401317/remove-non-utf8-characters-from-string/8215387#8215387
+ */
+function _etype_clean_string($string) {
+    $s = trim($string);
+    $s = preg_replace('/[\x00-\x1F\x80-\xFF]/', '', $s);
+    $s = preg_replace('/\s+/', ' ', $s); // reduce all multiple whitespace to a single space
+    return $s;
+}
