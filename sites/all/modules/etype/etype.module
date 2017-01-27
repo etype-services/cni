@@ -1,7 +1,13 @@
 <?php
 
 /**
- * @return mixed
+ * @file
+ * Custom functions and hooks for Etype Services
+ *
+ */
+
+/**
+ * Implements hook_menu().
  */
 function etype_menu() {
 
