@@ -51,6 +51,10 @@ function etype_wire_node_export() {
             }
             $safe_kicker = strip_tags($kicker['safe_value']);
 
+            var_dump($wrapper);
+
+            echo "\n\n\n\n";
+
             $image_uri = isset($wrapper->field_image[0]->value()['uri']) ? $wrapper->field_image[0]->value()['uri'] : '';
             if (!empty($image_uri)) {
                 // create real url
