@@ -605,12 +605,9 @@ article .field-image {
     height: 33px;
 }
 
-#block-superfish-1 .block-inner {
-    width: 100%;
-}
-
-#block-superfish-1 .content {
-    margin: 0 auto;
+/* superfish override */
+.sf-menu.sf-style-space li {
+    font-size: 1em;
 }
 
 /* MAIN MENU SECOND LEVEL
