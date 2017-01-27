@@ -21,8 +21,6 @@ function cni_preprocess_page(&$variables) {
         }
     }
 
-    $nav_color = theme_get_setting('nav_color');
-    echo $nav_color;
 }
 
 function cni_preprocess_node(&$variables) {
@@ -96,6 +94,20 @@ function cni_preprocess_html(&$vars) {
                 'every_page' => TRUE,
                 'weight' => 999,
                 'group' => CSS_THEME
+            )
+        );
+    }
+
+    $nav_color = theme_get_setting('nav_color');
+    if (!empty($nav_color)) {
+        drupal_add_css(
+            '#block-superfish-1, .sf-menu.sf-style-space li, .sf-menu.sf-style-space li li, .sf-menu.sf-style-space li li li, .sf-menu.sf-style-space.sf-navbar {background: '. $nav_color .';}',
+            array(
+                'group' => CSS_THEME,
+                'type' => 'inline',
+                'media' => 'screen',
+                'preprocess' => FALSE,
+                'weight' => '9999',
             )
         );
     }
