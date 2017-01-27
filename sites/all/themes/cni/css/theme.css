@@ -598,7 +598,6 @@ article .field-image {
     text-transform: uppercase;
     height: 33px;
     line-height: 33px;
-    font-size: 1em;
 }
 
 #main-menu ul.menu li a:hover {
@@ -618,7 +617,7 @@ article .field-image {
 }
 
 /* superfish override */
-.sf-menu.sf-style-space li, .sf-menu.sf-style-space li a {
+.sf-menu.sf-style-space li, .sf-menu.sf-style-space li li, .sf-menu.sf-style-space li li li, .sf-menu.sf-style-space.sf-navbar, .sf-menu.sf-style-space li a {
     font-size: 1em;
 }
 
