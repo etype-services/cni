@@ -37,7 +37,7 @@ function etype_wire_admin_content() {
     }
     if (count($tmp) > 0) {
         $string = implode($tmp, ' OR ');
-        $string = 'AND (' . $string . ')';
+        $string = ' AND ( ' . $string . ' ) ';
     }
 
     /* sorting */
