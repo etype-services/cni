@@ -618,7 +618,7 @@ article .field-image {
 }
 
 /* superfish override */
-.sf-menu.sf-style-space li a {
+.sf-menu.sf-style-space li, .sf-menu.sf-style-space li a {
     font-size: 1em;
 }
 
