@@ -96,7 +96,7 @@ VALUES (
      'article',
      '" . $node['language'] . "',
       '" . $node['title'] . "',
-       '" . $safe_body . "',
+       ?,
         '" . $file_path . "',
          '" . $safe_kicker . "',
           '" . $safe_caption . "',
@@ -115,7 +115,7 @@ VALUES (
                        ?)";
             $stmt = $dbHandle->prepare($sql);
             try {
-                $stmt->execute(["$base_url", "$site_name","$cluster"]);
+                $stmt->execute(["$safe_body", "$base_url", "$site_name","$cluster"]);
             } catch (Exception $e) {
                 echo "There was an error inserting the data";
             }
