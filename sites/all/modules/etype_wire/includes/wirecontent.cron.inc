@@ -6,15 +6,24 @@
  */
 function etype_wire_node_export() {
 
+  /*select *
+from node n
+join field_data_field_section f
+on n.nid = f.entity_id
+join taxonomy_term_data t
+on f.field_section_tid = t.tid
+where t.name REGEXP "free";
+  */
     /* get last 10 published nodes from this site */
-    $results = db_select('node', 'n')
-        ->fields('n')
-        ->condition('status', 0, '!=')
-        ->condition('type', 'article')
-        ->condition('status', '1')
-        ->orderBy('created', 'DESC')
-        ->range(0, 10)
-        ->execute();
+  $query = db_select('node', 'n');
+  $query->join('field_data_field_section', 'f', 'n.nid = f.entity_id');
+  $query->join('taxonomy_term_data', 't', 'f.field_section_tid = t.tid');
+  $results = $query->fields('n')
+    ->condition('n.type', 'article')
+    ->condition('n.status', '1')
+    ->orderBy('n.created', 'DESC')
+    ->range(0, 10)
+    ->execute();
 
     $nodes = array();
     while ($n = $results->fetchAssoc()) {
