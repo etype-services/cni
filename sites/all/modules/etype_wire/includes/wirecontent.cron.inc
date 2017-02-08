@@ -30,6 +30,9 @@ where t.name REGEXP "free";
     ->range(0, 10)
     ->execute();
 
+  dpm((string) $results);
+  dpm($results->arguments());
+
     $nodes = array();
     while ($n = $results->fetchAssoc()) {
         $nodes[] = $n;
