@@ -22,6 +22,8 @@ where t.name REGEXP "free";
     ->condition('n.type', 'article')
     ->condition('n.status', '1')
     ->condition('t.name', 'news','REGEXP')
+    ->condition('t.name', 'sports','REGEXP')
+    ->condition('t.name', 'free','REGEXP')
     ->orderBy('n.created', 'DESC')
     ->range(0, 10)
     ->execute();
