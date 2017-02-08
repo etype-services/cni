@@ -28,10 +28,10 @@ where t.name REGEXP "free";
   $query->condition($db_or);
   $query->orderBy('n.created', 'DESC');
   $query->range(0, 10);
-    $results = $query->execute();
+  $results = $query->execute();
 
-  dpm((string) $results);
-  dpm($results->arguments());
+  dpm((string) $query);
+  dpm($query->arguments());
 
     $nodes = array();
     while ($n = $results->fetchAssoc()) {
