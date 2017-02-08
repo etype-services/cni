@@ -18,14 +18,14 @@ where t.name REGEXP "free";
   $query = db_select('node', 'n');
   $query->join('field_data_field_section', 'f', 'n.nid = f.entity_id');
   $query->join('taxonomy_term_data', 't', 'f.field_section_tid = t.tid');
+  $db_or = db_or();
+  $db_or->condition('t.name', 'news','REGEXP');
+  $db_or->condition('t.name', 'sports','REGEXP');
+  $db_or->condition('t.name', 'free','REGEXP');
   $results = $query->fields('n')
     ->condition('n.type', 'article')
     ->condition('n.status', '1')
-    ->condition(db_or()
-      ->condition('t.name', 'news','REGEXP')
-       ->condition('t.name', 'sports','REGEXP')
-      ->condition('t.name', 'free','REGEXP')
-    )
+    ->condition($db_or)
     ->orderBy('n.created', 'DESC')
     ->range(0, 10)
     ->execute();
