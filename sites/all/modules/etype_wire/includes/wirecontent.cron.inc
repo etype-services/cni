@@ -16,6 +16,7 @@ where t.name REGEXP "free";
   */
     /* get last 10 published nodes from this site */
   $query = db_select('node', 'n');
+  $query->distinct();
   $query->join('field_data_field_section', 'f', 'n.nid = f.entity_id');
   $query->join('taxonomy_term_data', 't', 'f.field_section_tid = t.tid');
   $db_or = db_or();
