@@ -30,7 +30,7 @@ where t.name REGEXP "free";
   $query->range(0, 10);
   $results = $query->execute();
 
-  dpm((string) $query);
+  print($query);
   dpm($query->arguments());
 
     $nodes = array();
