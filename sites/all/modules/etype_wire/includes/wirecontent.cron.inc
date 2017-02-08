@@ -21,6 +21,7 @@ where t.name REGEXP "free";
   $results = $query->fields('n')
     ->condition('n.type', 'article')
     ->condition('n.status', '1')
+    ->condition('t.name', 'news','REGEXP')
     ->orderBy('n.created', 'DESC')
     ->range(0, 10)
     ->execute();
