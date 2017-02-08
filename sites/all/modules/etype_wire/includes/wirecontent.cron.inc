@@ -22,13 +22,13 @@ where t.name REGEXP "free";
   $db_or->condition('t.name', 'news','REGEXP');
   $db_or->condition('t.name', 'sports','REGEXP');
   $db_or->condition('t.name', 'free','REGEXP');
-  $results = $query->fields('n')
-    ->condition('n.type', 'article')
-    ->condition('n.status', '1')
-    ->condition($db_or)
-    ->orderBy('n.created', 'DESC')
-    ->range(0, 10)
-    ->execute();
+  $query->fields('n');
+  $query->condition('n.type', 'article');
+  $query->condition('n.status', '1');
+  $query->condition($db_or);
+  $query->orderBy('n.created', 'DESC');
+  $query->range(0, 10);
+    $results = $query->execute();
 
   dpm((string) $results);
   dpm($results->arguments());
