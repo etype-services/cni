@@ -23,10 +23,10 @@ function etype_wire_node_export() {
   $query->range(0, 10);
   $results = $query->execute();
 
-    $nodes = array();
-    while ($n = $results->fetchAssoc()) {
-        $nodes[] = $n;
-    }
+  $nodes = array();
+  while ($n = $results->fetchAssoc()) {
+    $nodes[] = $n;
+  }
 
     if (count($nodes) > 0) {
 
