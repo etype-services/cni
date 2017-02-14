@@ -85,7 +85,7 @@ VALUES (
      'article',
      '" . $node['language'] . "',
       '" . $node['title'] . "',
-       ?,
+       '" . $safe_body . "',
         '" . $file_path . "',
          '" . $safe_kicker . "',
           '" . $safe_caption . "',
@@ -104,8 +104,7 @@ VALUES (
                        ?)";
             $stmt = $dbHandle->prepare($sql);
             try {
-                $insert = db_escape_field($safe_body);
-                $stmt->execute(["$insert", "$base_url", "$site_name","$cluster"]);
+                $stmt->execute(["$base_url", "$site_name","$cluster"]);
             } catch (Exception $e) {
                 var_dump($stmt);
                 var_dump($safe_body);
