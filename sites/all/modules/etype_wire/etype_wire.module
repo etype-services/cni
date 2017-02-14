@@ -123,7 +123,6 @@ function _etype_wire_connect() {
         $dbHandle->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         // always disable emulated prepared statement when using the MySQL driver
         $dbHandle->setAttribute(PDO::ATTR_EMULATE_PREPARES, FALSE);
-
     } catch(Exception $e) {
         echo "There was an error connecting to the database";
     }
