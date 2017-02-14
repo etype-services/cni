@@ -105,8 +105,8 @@ VALUES (
                        ?)";
 
             echo $sql ."\n\n";
-            $stmt = $dbHandle->prepare($sql);
-            var_dump($stmt);
+            //$stmt = $dbHandle->prepare($sql);
+            //var_dump($stmt);
 
             echo "----------------------\n\n";
             /*try {
