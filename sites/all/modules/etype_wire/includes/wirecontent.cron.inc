@@ -52,9 +52,7 @@ function etype_wire_node_export() {
             $wrapper = entity_metadata_wrapper('node', $object);
 
             $body = $wrapper->body->value();
-            $safe_body = mysql_real_escape_string(_etype_clean_string($body['safe_value']));
-
-            var_dump($safe_body);
+            $safe_body = _etype_clean_string($body['safe_value']);
 
             if (isset ($wrapper->field_kicker)) {
                 $kicker = $wrapper->field_kicker->value();
@@ -106,7 +104,8 @@ VALUES (
                        ?)";
             $stmt = $dbHandle->prepare($sql);
             try {
-                $stmt->execute(["$safe_body", "$base_url", "$site_name","$cluster"]);
+                $insert = db_escape_field($safe_body);
+                $stmt->execute(["$insert", "$base_url", "$site_name","$cluster"]);
             } catch (Exception $e) {
                 var_dump($stmt);
                 var_dump($safe_body);
