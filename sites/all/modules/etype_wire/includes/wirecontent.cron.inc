@@ -6,9 +6,6 @@
  */
 function etype_wire_node_export() {
 
-  error_reporting(E_ALL);
-  ini_set("display_errors", 1);
-
   /* get last 10 published nodes from this site */
   $query = db_select('node', 'n');
   $query->distinct();
@@ -106,6 +103,9 @@ VALUES (
                      ?,
                       ?,
                        ?)";
+
+            echo $sql;
+            exit;
             $stmt = $dbHandle->prepare($sql);
             try {
                 $stmt->execute(["$base_url", "$site_name","$cluster"]);
