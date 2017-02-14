@@ -85,7 +85,7 @@ VALUES (
      'article',
      '" . $node['language'] . "',
       '" . $node['title'] . "',
-       ?,
+       $dbHandle->quote($safe_body),
         '" . $file_path . "',
          '" . $safe_kicker . "',
           '" . $safe_caption . "',
@@ -104,7 +104,7 @@ VALUES (
                        ?)";
             $stmt = $dbHandle->prepare($sql);
             try {
-                $stmt->execute([$dbHandle->quote($safe_body), "$base_url", "$site_name","$cluster"]);
+                $stmt->execute(["$base_url", "$site_name","$cluster"]);
             } catch (Exception $e) {
                 var_dump($stmt);
                 var_dump($safe_body);
