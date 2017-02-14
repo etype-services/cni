@@ -106,7 +106,9 @@ VALUES (
             try {
                 $stmt->execute(["$safe_body", "$base_url", "$site_name","$cluster"]);
             } catch (Exception $e) {
+                var_dump($stmt);
                 echo "There was an error inserting the data";
+                exit;
             }
         }
 
