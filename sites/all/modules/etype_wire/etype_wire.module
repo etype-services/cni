@@ -140,6 +140,5 @@ function _etype_clean_string($string) {
     $s = trim($string);
     $s = preg_replace('/[\x00-\x1F\x80-\xFF]/', '', $s);
     $s = preg_replace('/\s+/', ' ', $s); // reduce all multiple whitespace to a single space
-    $s = preg_replace('/\\\'/', '\\\\', $s); // reduce all multiple whitespace to a single space
     return $s;
 }
