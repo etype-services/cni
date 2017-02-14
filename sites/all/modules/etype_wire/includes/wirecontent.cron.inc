@@ -52,7 +52,7 @@ function etype_wire_node_export() {
             $wrapper = entity_metadata_wrapper('node', $object);
 
             $body = $wrapper->body->value();
-            $safe_body = db_escape_field(_etype_clean_string($body['safe_value']));
+            $safe_body = _etype_clean_string($body['safe_value']);
 
             var_dump($safe_body);
 
