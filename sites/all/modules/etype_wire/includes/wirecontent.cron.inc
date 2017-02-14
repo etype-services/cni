@@ -55,7 +55,8 @@ function etype_wire_node_export() {
             $wrapper = entity_metadata_wrapper('node', $object);
 
             $body = $wrapper->body->value();
-            $safe_body = _etype_clean_string($body['safe_value']);
+            // $safe_body = _etype_clean_string($body['safe_value']);
+            $safe_body = $body['safe_value'];
 
             if (isset ($wrapper->field_kicker)) {
                 $kicker = $wrapper->field_kicker->value();
@@ -88,7 +89,7 @@ VALUES (
      'article',
      '" . $node['language'] . "',
       '" . $node['title'] . "',
-       addslashes($safe_body),
+       $dbHandle->quote($safe_body),
         '" . $file_path . "',
          '" . $safe_kicker . "',
           '" . $safe_caption . "',
