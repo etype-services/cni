@@ -1465,11 +1465,11 @@ article.node-webform .node-content-wrapper h1.title {
 }
 
 /* views-fluid-grid-list */
-.block ul .views-fluid-grid-list {
+.block ul.views-fluid-grid-list {
     margin-bottom: 1em;
 }
 
-.li.views-fluid-grid-item {
+li.views-fluid-grid-item {
     background-color: inherit;
 }
 
