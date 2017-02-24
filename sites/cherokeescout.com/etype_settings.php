@@ -3,6 +3,9 @@
 /* import _url */
 $url = 'http://www.etypeclassifieds.com/cherokeexml/CNI_CSC.xml';
 
+/* cron schedule */
+$cron_schedule = '30 7 * * 3';
+
 /* ad categories */
 $categories = array(
 
