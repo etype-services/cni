@@ -8,3 +8,9 @@
 #block-block-35 .block-inner .content {
     padding:0;
 }
+
+body {
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5em;
+}
