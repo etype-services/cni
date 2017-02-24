@@ -280,7 +280,7 @@ h3.site-slogan {
 /* MAIN CONTENT
 --------------------------------------------------------------------------*/
 
-.main-content-wrapper {
+.front .main-content-wrapper {
     margin-top: 20px;
 }
 
