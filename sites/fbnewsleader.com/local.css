@@ -14,6 +14,10 @@ body {
     line-height: 1.5em;
 }
 
+.main-content-wrapper {
+    font-size: 12px;
+}
+
 .block-views .views-field-title a {
     font-weight: bold;
 }
