@@ -257,7 +257,7 @@ function etype_cronapi($op, $job = NULL) {
 
 function _etype_e_edition() {
     /* redirect to e-Edition */
-    $e_edition = theme_get_setting('e_edition', 'cni');
+    $e_edition = theme_get_setting('e_edition');
     $path = 'http://etypeservices.com/' . $e_edition . '/';
     drupal_goto($path);
 }
