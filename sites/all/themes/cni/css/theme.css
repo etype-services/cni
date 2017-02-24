@@ -629,7 +629,7 @@ article .field-image {
 }
 
 /* Main Menu custom styling */
-#block-superfish-1 {
+#block-superfish-1, .sf-menu.sf-style-space li {
     height: 33px;
     background-color: #000000;
 }
