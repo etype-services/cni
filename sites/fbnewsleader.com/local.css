@@ -15,6 +15,6 @@ body {
     line-height: 1.5em;
 }
 
-.block-views .views-field-title {
-    font-width: bold;
+.block-views .views-field-title a {
+    font-weight: bold;
 }
