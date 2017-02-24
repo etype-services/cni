@@ -94,11 +94,15 @@ h3.site-slogan {
 .site-logo {
     width: 100%;
     margin: 0 auto;
+    display: flex;
+    justify-content: center;
 }
 
 .site-logo img {
     width: 100%;
+    max-width: 700px;
 }
+
 
 /* SLIDESHOW
 --------------------------------------------------------------------------*/
@@ -353,6 +357,7 @@ article .field-image {
 .postscript-wrapper h3 {
     display: block;
     margin-bottom: 0.4em;
+    line-height: 1.4em; /* for titles that go to second line */
 }
 
 .postscript-wrapper h3 span {
@@ -417,6 +422,18 @@ article .field-image {
     font-family: 'Lato', sans-serif;
     font-size: 0.8em;
 }
+
+#postscript p a {
+    font-size: 1em;
+}
+
+/* full width area in postscript */
+.region-postscript-banner {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1em;
+}
+
 
 /* FOOTER
 --------------------------------------------------------------------------*/
@@ -572,10 +589,6 @@ article .field-image {
 
 /* MAIN MENU
 --------------------------------------------------------------------------*/
-#block-superfish-1 .content {
-    max-width: 900px;
-    margin: 0 auto;
-}
 
 #main-menu {
     position: relative;
@@ -586,13 +599,13 @@ article .field-image {
 }
 
 #main-menu ul.menu {
+    display: flex;
+    justify-content: space-around;
     height: 100%;
     min-height: 33px;
     max-height: 85px;
     margin: 0;
     font-family: 'Lato', sans-serif;
-    display: flex;
-    justify-content: space-around;
 }
 
 #main-menu ul.menu li a {
@@ -618,11 +631,15 @@ article .field-image {
 /* Main Menu custom styling */
 #block-superfish-1 {
     height: 33px;
+    background-color: #007DBF;
 }
 
-/* superfish override */
-.sf-menu.sf-style-space li, .sf-menu.sf-style-space li li, .sf-menu.sf-style-space li li li, .sf-menu.sf-style-space.sf-navbar, .sf-menu.sf-style-space li a {
-    font-size: 1em;
+#block-superfish-1 .block-inner {
+    width: 100%;
+}
+
+#block-superfish-1 .content {
+    margin: 0 auto;
 }
 
 /* MAIN MENU SECOND LEVEL
@@ -991,6 +1008,10 @@ article .field-image {
     background: url(../images/instagram.png) no-repeat;
 }
 
+.googleplus {
+    background: url(../images/googleplus.png) no-repeat;
+}
+
 /* MISC
 --------------------------------------------------------------------------*/
 
@@ -1301,7 +1322,7 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
     margin: 0 auto 20px;
 }
 
-.preface-wrapper .block-dfp .content, .sidebar .block-dfp .content {
+.preface-wrapper .block-dfp .content, .sidebar .block-dfp .content  {
     padding: 0;
 }
 

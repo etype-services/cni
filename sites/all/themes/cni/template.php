@@ -20,7 +20,6 @@ function cni_preprocess_page(&$variables) {
             }
         }
     }
-
 }
 
 function cni_preprocess_node(&$variables) {
@@ -82,7 +81,7 @@ function cni_preprocess_html(&$vars) {
     /* add site-specific css */
     $base_path = base_path();
     $conf_path = conf_path();
-    $site_css = $base_path . $conf_path . '/cni-site.css';
+    $site_css = $base_path . $conf_path . '/local.css';
 
     if (file_exists($_SERVER['DOCUMENT_ROOT'] . $site_css)) {
         drupal_add_css(
@@ -98,33 +97,63 @@ function cni_preprocess_html(&$vars) {
         );
     }
 
-    $nav_color = theme_get_setting('nav_color');
-    if (!empty($nav_color)) {
-        drupal_add_css(
-            '#block-superfish-1, .sf-menu.sf-style-space li, .sf-menu.sf-style-space li li, .sf-menu.sf-style-space li li li, .sf-menu.sf-style-space.sf-navbar {background: '. $nav_color .';}',
-            array(
-                'group' => CSS_THEME,
-                'type' => 'inline',
-                'media' => 'screen',
-                'preprocess' => FALSE,
-                'weight' => '9999',
-            )
-        );
-    }
+  /* add site setting css */
+  $nav_color = theme_get_setting('nav_color');
+  if (!empty($nav_color)) {
+    drupal_add_css(
+      '#block-superfish-1, .sf-menu.sf-style-space li, .sf-menu.sf-style-space li li, .sf-menu.sf-style-space li li li, .sf-menu.sf-style-space.sf-navbar {background: '. $nav_color .' !important;}',
+      array(
+        'group' => CSS_THEME,
+        'type' => 'inline',
+        'media' => 'screen',
+        'preprocess' => FALSE,
+        'weight' => '9999',
+      )
+    );
+  }
 
-    $logo_width = theme_get_setting('logo_width');
-    if (!empty($logo_width)) {
-        drupal_add_css(
-            '.site-logo, .site-logo img {max-width: '. $logo_width .';}',
-            array(
-                'group' => CSS_THEME,
-                'type' => 'inline',
-                'media' => 'screen',
-                'preprocess' => FALSE,
-                'weight' => '9999',
-            )
-        );
-    }
+  /* not using media to get smaller desktop browsers as well */
+  $max_nav_width = theme_get_setting('max_nav_width');
+  if (!empty($max_nav_width)) {
+    drupal_add_css(
+      '#main-menu ul.menu {max-width: '. $max_nav_width .' !important;}',
+      array(
+        'group' => CSS_THEME,
+        'type' => 'inline',
+        'media' => 'screen',
+        'preprocess' => FALSE,
+        'weight' => '9999',
+      )
+    );
+  }
+
+  $body_background = theme_get_setting('body_background');
+  if (!empty($body_background)) {
+    drupal_add_css(
+      'body {background: '. $body_background .' !important;}',
+      array(
+        'group' => CSS_THEME,
+        'type' => 'inline',
+        'media' => 'screen',
+        'preprocess' => FALSE,
+        'weight' => '9999',
+      )
+    );
+  }
+
+  $logo_width = theme_get_setting('logo_width');
+  if (!empty($logo_width)) {
+    drupal_add_css(
+      '.site-logo img {max-width: '. $logo_width .' !important;}',
+      array(
+        'group' => CSS_THEME,
+        'type' => 'inline',
+        'media' => 'screen',
+        'preprocess' => FALSE,
+        'weight' => '9999',
+      )
+    );
+  }
 
     /* add favicons */
     $icon_path = $base_path . $conf_path .'/files/favicons/';

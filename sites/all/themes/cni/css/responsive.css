@@ -2,8 +2,18 @@
 @media only screen and (min-width: 959px) {
 
     /* main menu */
+    #block-superfish-1 .content {
+        width: 100%;
+    }
+
     #main-menu ul.menu {
-        margin: 0;
+        margin: 0 auto;
+        max-width: 960px;
+        white-space: nowrap;
+    }
+
+    #main-menu ul.menu li, .sf-menu.sf-style-space {
+        float: none;
     }
 
     #main-menu ul.menu li ul {
@@ -68,17 +78,27 @@
 /* desktop browsers */
 @media only screen and (max-width: 958px) and (min-width: 768px) {
 
+
+    /* main menu */
+    #block-superfish-1 .content {
+        width: 100%;
+    }
+
     #block-superfish-1 ul #menu-1797-1 {
         display: none;
     }
 
     #main-menu ul.menu {
-        margin: 0;
+        margin: 0 auto;
+        white-space: nowrap;
+    }
+
+    #main-menu ul.menu li, .sf-menu.sf-style-space {
+        float: none;
     }
 
     #main-menu ul.menu li a, #main-menu ul.menu li li a, #main-menu ul.menu li li a.active {
         padding: 0 7px;
-        font-size: 0.8em;
     }
 
     #main-menu ul.menu li ul {
@@ -302,15 +322,6 @@
         margin-left: 0;
         margin-bottom: 10px;
         background: none;
-    }
-
-    .region-postscript-2 {
-        display: none;
-        visibility: hidden;
-    }
-
-    .region-postscript-4 {
-        margin-top: 1em;
     }
 
     /* weather block */
@@ -550,7 +561,7 @@
     }
 
     .video .node-teaser .node-content-wrapper {
-        margin-left: 0px;
+        margin-left: 0;
     }
 
     .node-teaser .field-name-field-video iframe {
@@ -620,10 +631,6 @@
         width: 49% !important;
     }
 
-    .region-postscript-4 {
-        margin-top: 1em;
-    }
-
     /* weather block */
     #block-block-1 .block-inner {
         border: none;
@@ -652,8 +659,8 @@
         visibility: hidden;
     }
 
-    /* space for Follow Block */
-    .region-postscript-3 .block {
+    /* space for Menus and Follow Blocks */
+    .region-postscript-2, .region-postscript-3 {
         margin-top: 1em;
     }
 

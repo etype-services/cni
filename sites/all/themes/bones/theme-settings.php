@@ -173,6 +173,13 @@ function bones_form_system_theme_settings_alter(&$form, $form_state) {
     '#default_value' => theme_get_setting('googleplus'),
   );
 
+  $form['advanced_settings']['misc_settings']['rssfeed'] = array(
+    '#type' => 'textfield',
+    '#title' => t('RSS Feed'),
+    '#size' => 10,
+    '#default_value' => theme_get_setting('rssfeed'),
+  );
+
   $form['advanced_settings']['misc_settings']['e_edition'] = array(
     '#type' => 'textfield',
     '#title' => t('e-Edition'),
@@ -185,6 +192,13 @@ function bones_form_system_theme_settings_alter(&$form, $form_state) {
       '#title' => t('Navigation Background Color'),
       '#size' => 10,
       '#default_value' => theme_get_setting('nav_color'),
+  );
+
+  $form['advanced_settings']['misc_settings']['max_nav_width'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Max Main Navigation Width'),
+    '#size' => 10,
+    '#default_value' => theme_get_setting('max_nav_width'),
   );
 
   $form['advanced_settings']['misc_settings']['logo_width'] = array(
