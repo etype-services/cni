@@ -3,6 +3,9 @@
 /* import _url */
 $url = 'http://www.etypeclassifieds.com/elbertonxml/CNI_ELS.xml';
 
+/* cron schedule */
+$cron_schedule = '20 7 * * 4';
+
 /* ad categories */
 $categories = array(
     "1660" => "212",
