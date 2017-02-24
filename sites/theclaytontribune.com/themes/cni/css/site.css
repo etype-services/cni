@@ -8,12 +8,12 @@
     padding: 0;
 }
 
-#block-dfp-cni-claytonleaderboard, #block-dfp-cni-claytonobitleaderboard {
+#block-dfp-cni-claytonleaderboard, #block-dfp-cni-claytonobitleaderboard, #block-dfp-cni-claytonclassifieds {
     width:728px;
     margin: 1.6em auto 0 auto;
 }
 
-#block-dfp-cni-claytonleaderboard iframe, #block-dfp-cni-claytonobitleaderboard iframe {
+#block-dfp-cni-claytonleaderboard iframe, #block-dfp-cni-claytonobitleaderboard iframe, #block-dfp-cni-claytonclassifieds iframe {
     width:728px;
     height:90px;
 }
@@ -78,7 +78,7 @@
 @media only screen and (max-width: 767px) {
 
     /* Hide larger DFP ads on non full-size browsers */
-    #block-dfp-cni-claytonleaderboard, #block-dfp-cni-claytonobitleaderboard, #block-dfp-cni-claytonbanner, #block-dfp-cni-claytonfooter {
+    #block-dfp-cni-claytonleaderboard, #block-dfp-cni-claytonobitleaderboard, #block-dfp-cni-claytonbanner, #block-dfp-cni-claytonfooter, #block-dfp-cni-claytonclassifieds {
         display: none;
         visibility: hidden;
     }
@@ -93,7 +93,7 @@
 @media only screen and (min-width: 768px) {
 
     /* Show larger DFP ads on non full-size browsers */
-    #block-dfp-cni-claytonleaderboard, #block-dfp-cni-claytonobitleaderboard, #block-dfp-cni-claytonbanner, #block-dfp-cni-claytonfooter {
+    #block-dfp-cni-claytonleaderboard, #block-dfp-cni-claytonobitleaderboard, #block-dfp-cni-claytonbanner, #block-dfp-cni-claytonfooter, #block-dfp-cni-claytonclassifieds {
         display: block;
         visibility: visible;
     }
