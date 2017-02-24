@@ -1383,7 +1383,7 @@ blockquote {
     visibility: hidden;
 }
 
-/* COMMUNUITY LINKS */
+/* COMMUNITY LINKS */
 #block-views-community-links-block table {
     width: 100%;
 }
@@ -1391,4 +1391,8 @@ blockquote {
 #block-views-community-links-block td {
     width: 50%;
     border: none;
+}
+
+#block-etype-follow a {
+    margin-left: 22px;
 }
