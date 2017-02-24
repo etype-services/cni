@@ -18,10 +18,21 @@ body {
     line-height: 1.5em;
 }
 
-.front .main-content-wrapper {
-    margin-top: 0;
-}
-
 .block-views .views-field-title a {
     font-weight: bold;
+}
+
+
+@media only screen and (min-width: 768px) {
+
+    /* Hide smaller DFP ads on non full-size browsers */
+    #block-dfp-cni-fernandinamobile {
+        display: none;
+        visibility: hidden;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    /* Hide larger DFP ads on non full-size browsers */
+
 }
