@@ -18,6 +18,10 @@ body {
     line-height: 1.5em;
 }
 
+.front .main-content-wrapper {
+    margin-top: 0
+}
+
 .block-views .views-field-title a {
     font-weight: bold;
 }
