@@ -141,7 +141,6 @@ $msg="Invalid UserName or Password";
 
   <section class="container">
     <div class="login">
-      <h1>Login Page</h1>
       <form method="POST" action="">
         <p style="color:red"><?php echo $msg; ?></p>
         <p><input type="text" name="name"  placeholder="User Name" required="required"></p>
