@@ -8,12 +8,12 @@
     padding: 0;
 }
 
-#block-dfp-banner-top {
+#block-dfp-banner-top, #block-dfp-cni-hartwellclassifieds {
     width:728px;
     margin: 1.6em auto 0 auto;
 }
 
-#block-dfp-banner-top iframe {
+#block-dfp-banner-top iframe, #block-dfp-cni-hartwellclassifieds iframe {
     width:728px;
     height:90px;
 }
@@ -85,7 +85,7 @@
 @media only screen and (max-width: 767px) {
 
     /* Hide larger DFP ads on non full-size browsers */
-    #block-dfp-banner-top, #block-dfp-banner, #block-dfp-cni-hartwellfooter {
+    #block-dfp-banner-top, #block-dfp-banner, #block-dfp-cni-hartwellfooter, #block-dfp-cni-hartwellclassifieds {
         display: none;
         visibility: hidden;
     }
@@ -100,7 +100,7 @@
 @media only screen and (min-width: 768px) {
 
     /* Hide larger DFP ads on non full-size browsers */
-    #block-dfp-banner-top, #block-dfp-banner, #block-dfp-cni-hartwellfooter {
+    #block-dfp-banner-top, #block-dfp-banner, #block-dfp-cni-hartwellfooter, #block-dfp-cni-hartwellclassifieds {
         display: block;
         visibility: visible;
     }

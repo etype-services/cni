@@ -8,12 +8,12 @@
     padding: 0;
 }
 
-#block-dfp-cni-negleaderboard {
+#block-dfp-cni-negleaderboard, #block-dfp-cni-negclassifieds {
     width:728px;
     margin: 1.6em auto 0 auto;
 }
 
-#block-dfp-cni-negleaderboard iframe {
+#block-dfp-cni-negleaderboard iframe, #block-dfp-cni-negclassifieds iframe {
     width:728px;
     height:90px;
 }
@@ -88,7 +88,7 @@
 @media only screen and (max-width: 767px) {
 
     /* Hide larger DFP ads on non full-size browsers */
-    #block-dfp-cni-negleaderboard, #block-dfp-banner, #block-dfp-cni-negfooter {
+    #block-dfp-cni-negleaderboard, #block-dfp-banner, #block-dfp-cni-negfooter, #block-dfp-cni-negclassifieds {
         display: none;
         visibility: hidden;
     }
@@ -103,7 +103,7 @@
 @media only screen and (min-width: 768px) {
 
     /* Hide larger DFP ads on non full-size browsers */
-    #block-dfp-cni-negleaderboard, #block-dfp-banner, #block-dfp-cni-negfooter {
+    #block-dfp-cni-negleaderboard, #block-dfp-banner, #block-dfp-cni-negfooter, #block-dfp-cni-negclassifieds {
         display: block;
         visibility: visible;
     }

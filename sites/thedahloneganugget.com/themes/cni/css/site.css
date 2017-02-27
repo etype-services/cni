@@ -8,12 +8,12 @@
     padding: 0;
 }
 
-#block-dfp-cni-dahlonegaleaderboard {
+#block-dfp-cni-dahlonegaleaderboard, #block-dfp-cni-dahlonegaclassifieds {
     width:728px;
     margin: 1.6em auto 0 auto;
 }
 
-#block-dfp-cni-dahlonegaleaderboard iframe {
+#block-dfp-cni-dahlonegaleaderboard iframe, #block-dfp-cni-dahlonegaclassifieds iframe {
     width:728px;
     height:90px;
 }
@@ -80,7 +80,7 @@
 @media only screen and (max-width: 767px) {
 
     /* Hide larger DFP ads on non full-size browsers */
-    #block-dfp-cni-dahlonegaleaderboard, #block-dfp-cni-dahlonegabanner, #block-dfp-cni-dahlonegafooter {
+    #block-dfp-cni-dahlonegaleaderboard, #block-dfp-cni-dahlonegabanner, #block-dfp-cni-dahlonegafooter, #block-dfp-cni-dahlonegaclassifieds {
         display: none;
         visibility: hidden;
     }
@@ -95,7 +95,7 @@
 @media only screen and (min-width: 768px) {
 
     /* Hide larger DFP ads on non full-size browsers */
-    #block-dfp-cni-dahlonegaleaderboard, #block-dfp-cni-dahlonegabanner, #block-dfp-cni-dahlonegafooter {
+    #block-dfp-cni-dahlonegaleaderboard, #block-dfp-cni-dahlonegabanner, #block-dfp-cni-dahlonegafooter, #block-dfp-cni-dahlonegaclassifieds {
         display: block;
         visibility: visible;
     }
