@@ -204,9 +204,7 @@ function _etype_twitter_content() {
  * @return string
  */
 function etype_site_path() {
-    $base_path = base_path();
-    $conf_path = conf_path();
-    return $_SERVER['DOCUMENT_ROOT'] . $base_path . $conf_path;
+    return $_SERVER['DOCUMENT_ROOT'] . base_path() . conf_path();
 }
 
 /**
