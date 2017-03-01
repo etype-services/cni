@@ -9,12 +9,12 @@
     padding: 0;
 }
 
-#block-dfp-cni-timescourierleaderboard {
+#block-dfp-cni-timescourierleaderboard, #block-dfp-cni-timescourierclassifieds {
     width:728px;
     margin: 1.6em auto 0 auto;
 }
 
-#block-dfp-cni-timescourierleaderboard iframe {
+#block-dfp-cni-timescourierleaderboard iframe, #block-dfp-cni-timescourierclassifieds iframe {
     width:728px;
     height:90px;
 }
@@ -86,7 +86,7 @@
 @media only screen and (max-width: 767px) {
 
     /* Hide larger DFP ads on non full-size browsers */
-    #block-dfp-cni-timescourierleaderboard, #dfp-ad-cni_timescourierbanner, #block-dfp-cni-timescourierfooter {
+    #block-dfp-cni-timescourierleaderboard, #dfp-ad-cni_timescourierbanner, #block-dfp-cni-timescourierfooter, #block-dfp-cni-timescourierclassifieds {
         display: none;
         visibility: hidden;
     }
@@ -101,7 +101,7 @@
 @media only screen and (min-width: 768px) {
 
     /* Hide larger DFP ads on non full-size browsers */
-    #block-dfp-cni-timescourierleaderboard, #dfp-ad-cni_timescourierbanner, #block-dfp-cni-timescourierfooter {
+    #block-dfp-cni-timescourierleaderboard, #dfp-ad-cni_timescourierbanner, #block-dfp-cni-timescourierfooter, #block-dfp-cni-timescourierclassifieds {
         display: block;
         visibility: visible;
     }

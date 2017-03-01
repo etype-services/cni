@@ -17,7 +17,7 @@
     background: none;
 }
 
-#block-dfp-cni-cherokeeleaderboard {
+#block-dfp-cni-cherokeeleaderboard, #block-dfp-cni-franklinpressclassifieds {
     text-align: center;
     margin-top: 20px;
     margin-bottom: 0;
@@ -67,7 +67,7 @@
 @media only screen and (max-width: 767px) {
 
     /* Hide larger DFP ads on non full-size browsers */
-    #block-dfp-cni-cherokeeleaderboard, #block-dfp-cni-franklinpressbanner, #block-dfp-cni-cherokeefooter {
+    #block-dfp-cni-cherokeeleaderboard, #block-dfp-cni-franklinpressbanner, #block-dfp-cni-cherokeefooter, #block-dfp-cni-franklinpressclassifieds {
         display: none;
         visibility: hidden;
     }
@@ -82,7 +82,7 @@
 @media only screen and (min-width: 768px) {
 
     /* Hide larger DFP ads on non full-size browsers */
-    #block-dfp-cni-cherokeeleaderboard, #block-dfp-cni-franklinpressbanner, #block-dfp-cni-cherokeefooter {
+    #block-dfp-cni-cherokeeleaderboard, #block-dfp-cni-franklinpressbanner, #block-dfp-cni-cherokeefooter, #block-dfp-cni-franklinpressclassifieds {
         display: block;
         visibility: visible;
     }

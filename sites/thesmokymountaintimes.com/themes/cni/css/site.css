@@ -9,12 +9,12 @@
     padding: 0;
 }
 
-#block-dfp-cni-smokyleaderboard {
+#block-dfp-cni-smokyleaderboard, #block-dfp-cni-smokyclassifieds {
     width:728px;
     margin: 1.6em auto 0 auto;
 }
 
-#block-dfp-cni-smokyleaderboard iframe {
+#block-dfp-cni-smokyleaderboard iframe, #block-dfp-cni-smokyclassifieds iframe {
     width:728px;
     height:90px;
 }
@@ -80,7 +80,7 @@
 @media only screen and (max-width: 767px) {
 
     /* Hide larger DFP ads on non full-size browsers */
-    #block-dfp-cni-smokyleaderboard, #block-dfp-cni-smokybanner, #block-dfp-cni-smokyfooter {
+    #block-dfp-cni-smokyleaderboard, #block-dfp-cni-smokybanner, #block-dfp-cni-smokyfooter, #block-dfp-cni-smokyclassifieds {
         display: none;
         visibility: hidden;
     }
@@ -95,7 +95,7 @@
 @media only screen and (min-width: 768px) {
 
     /* Hide larger DFP ads on non full-size browsers */
-    #block-dfp-cni-smokyleaderboard, #block-dfp-cni-smokybanner, #block-dfp-cni-smokyfooter {
+    #block-dfp-cni-smokyleaderboard, #block-dfp-cni-smokybanner, #block-dfp-cni-smokyfooter, #block-dfp-cni-smokyclassifieds {
         display: block;
         visibility: visible;
     }

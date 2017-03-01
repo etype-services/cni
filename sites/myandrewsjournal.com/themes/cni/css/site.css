@@ -9,12 +9,12 @@
     padding: 0;
 }
 
-#block-dfp-cni-andrewsleaderboard {
+#block-dfp-cni-andrewsleaderboard, #block-dfp-cni-andrewsclassifieds {
     width:728px;
     margin: 1.6em auto 0 auto;
 }
 
-#block-dfp-cni-andrewsleaderboard iframe {
+#block-dfp-cni-andrewsleaderboard iframe, #block-dfp-cni-andrewsclassifieds iframe {
     width:728px;
     height:90px;
 }
@@ -80,7 +80,7 @@
 @media only screen and (max-width: 767px) {
 
     /* Hide larger DFP ads on non full-size browsers */
-    #block-dfp-cni-andrewsleaderboard, #dfp-ad-cni_andrewsbanner, #block-dfp-cni-andrewsfooter {
+    #block-dfp-cni-andrewsleaderboard, #dfp-ad-cni_andrewsbanner, #block-dfp-cni-andrewsfooter, #block-dfp-cni-andrewsclassifieds {
         display: none;
         visibility: hidden;
     }
@@ -95,7 +95,7 @@
 @media only screen and (min-width: 768px) {
 
     /* Hide larger DFP ads on non full-size browsers */
-    #block-dfp-cni-andrewsleaderboard, #dfp-ad-cni_andrewsbanner, #block-dfp-cni-andrewsfooter {
+    #block-dfp-cni-andrewsleaderboard, #dfp-ad-cni_andrewsbanner, #block-dfp-cni-andrewsfooter, #block-dfp-cni-andrewsclassifieds {
         display: block;
         visibility: visible;
     }

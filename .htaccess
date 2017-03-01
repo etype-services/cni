@@ -84,12 +84,12 @@ DirectoryIndex index.php index.html index.htm
 
   # Force all requests to https://www.example.com/
   # First rule redirects http(s)://example.com to https://www.example.com/
-  RewriteCond %{HTTP_HOST} ^([^.]+)\.([^.]+)$
-  RewriteRule ^ https://www.%{HTTP_HOST}%{REQUEST_URI} [END,QSA,R=permanent]
-  # Second rule redirects http://www.example.com to https://www.example.com/
-  RewriteCond %{HTTP_HOST} ^www.([^.]+)\.([^.]+)$
-  RewriteCond %{HTTPS} !=on
-  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [END,QSA,R=permanent]
+ # RewriteCond %{HTTP_HOST} ^([^.]+)\.([^.]+)$
+ # RewriteRule ^ https://www.%{HTTP_HOST}%{REQUEST_URI} [END,QSA,R=permanent]
+ # # Second rule redirects http://www.example.com to https://www.example.com/
+ # RewriteCond %{HTTP_HOST} ^www.([^.]+)\.([^.]+)$
+ # RewriteCond %{HTTPS} !=on
+ # RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [END,QSA,R=permanent]
 
   # Modify the RewriteBase if you are using Drupal in a subdirectory or in a
   # VirtualDocumentRoot and the rewrite rules are not working properly.

@@ -17,7 +17,7 @@
     background: none;
 }
 
-#block-dfp-cni-highlandsleaderboard {
+#block-dfp-cni-highlandsleaderboard, #block-dfp-cni-highlandsclassifieds {
     text-align: center;
     margin-top: 20px;
     margin-bottom: 0;
@@ -62,7 +62,7 @@
 @media only screen and (max-width: 767px) {
 
     /* Hide larger DFP ads on non full-size browsers */
-    #block-dfp-cni-highlandsleaderboard, #block-dfp-cni-highlandsbanner, #block-dfp-cni-highlandsfooter {
+    #block-dfp-cni-highlandsleaderboard, #block-dfp-cni-highlandsbanner, #block-dfp-cni-highlandsfooter, #block-dfp-cni-highlandsclassifieds {
         display: none;
         visibility: hidden;
     }
@@ -77,7 +77,7 @@
 @media only screen and (min-width: 768px) {
 
     /* Hide larger DFP ads on non full-size browsers */
-    #block-dfp-cni-highlandsleaderboard, #block-dfp-cni-highlandsbanner, #block-dfp-cni-highlandsfooter {
+    #block-dfp-cni-highlandsleaderboard, #block-dfp-cni-highlandsbanner, #block-dfp-cni-highlandsfooter, #block-dfp-cni-highlandsclassifieds {
         display: block;
         visibility: visible;
     }
