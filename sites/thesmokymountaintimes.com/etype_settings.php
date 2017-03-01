@@ -3,6 +3,9 @@
 /* import _url */
 $url = 'http://www.etypeclassifieds.com/brysoncityxml/CNI_SMT.xml';
 
+/* cron schedule */
+$cron_schedule = '37 7 * * 4';
+
 /* ad categories */
 $categories = array(
 
@@ -118,7 +121,6 @@ $categories = array(
   "4170" => "362",
   "4180" => "362",
   "4190" => "362",
-  "4200" => "362",
   "4200" => "362"
 
 );
