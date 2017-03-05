@@ -254,17 +254,17 @@ function etype_cronapi($op, $job = NULL) {
     }
 
 
-    $items['cache_clear_cron'] = array(
+    /*$items['cache_clear_cron'] = array(
         'title' => 'Clear Cache',
         'module' => 'etype',
         'callback' => 'etype_clear_cache',
         'scheduler' => array(
             'name' => 'crontab',
             'crontab' => array(
-                'rules' => array('*/30 * * * *'),
+                'rules' => array('*//*30 * * * *'),
             ),
         ),
-    );
+    );*/
 
     return $items;
 }
