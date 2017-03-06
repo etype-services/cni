@@ -1,0 +1,132 @@
+/* dfp ads */
+
+#dfp-ad-banner > img {
+    max-width: 100% !important;
+}
+
+#block-dfp-sidebar-1 .block-inner .content {
+    padding: 0;
+}
+
+#block-dfp-cni-cherokeeleaderboard, #block-dfp-cni-grahamclassifieds {
+    width:728px;
+    margin: 1.6em auto 0 auto;
+}
+
+#block-dfp-cni-cherokeeleaderboard iframe, #block-dfp-cni-grahamclassifieds iframe {
+    width:728px;
+    height:90px;
+}
+
+#block-dfp-cni-cherokeesidebar1 {
+    width:300px;
+}
+
+#block-dfp-cni-cherokeesidebar1 iframe {
+    width:300px;
+    height:250px;
+}
+
+#block-dfp-cni-cherokeesidebar2 {
+    width:300px;
+}
+
+#block-dfp-cni-cherokeesidebar2 iframe {
+    width:300px; height:250px;
+}
+
+#block-dfp-cni-cherokeefooter {
+    width:728px;
+    margin: 5px auto 1.4em;
+}
+
+#block-dfp-cni-cherokeefooter iframe {
+    width:728px;
+    height:90px;
+}
+
+#block-dfp-cni-cherokeemobile {
+	width:130px;
+	margin: 1.6em auto 1.6em auto;
+}
+
+/* desktop browsers */
+@media only screen and (min-width: 959px) {
+
+    /* dfp ads */
+    #block-dfp-banner {
+        width: 468px;
+        margin: 0px auto 0px 83px;
+    }
+
+    /* main menu */
+    #main-menu ul.menu {
+        margin-left: 7em;
+    }
+
+}
+
+/* desktop browsers */
+@media only screen and (min-width: 768px) and (max-width: 958px) {
+
+    /* dfp ads */
+    #block-dfp-banner {
+        width: 468px;
+        margin: 0px auto 0px 12px;
+    }
+
+    /* main menu */
+    #main-menu ul.menu {
+        margin-left: 2em;
+    }
+
+}
+
+@media only screen and (max-width: 767px) {
+
+    /* Hide larger DFP ads on non full-size browsers */
+    #block-dfp-cni-cherokeeleaderboard, #block-dfp-banner, #block-dfp-cni-cherokeefooter, #block-dfp-cni-grahamclassifieds {
+        display: none;
+        visibility: hidden;
+    }
+
+    /* show mobile ad on smaller windows */
+    #block-dfp-cni-cherokeemobile {
+        display: block;
+        visibility: visible;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+    /* Hide larger DFP ads on non full-size browsers */
+    #block-dfp-cni-cherokeeleaderboard, #block-dfp-banner, #block-dfp-cni-cherokeefooter, #block-dfp-cni-grahamclassifieds {
+        display: block;
+        visibility: visible;
+    }
+
+    /* show mobile ad on smaller windows */
+    #block-dfp-cni-cherokeemobile {
+        display: none;
+        visibility: hidden;
+    }
+}
+
+
+/* logo */
+.site-logo {
+    width: 80%;
+    margin: 0 auto;
+    max-width: 630px;
+}
+
+.site-logo img {
+    width: 100%;
+    max-width: 630px;
+}
+
+/* nie page */
+.page-node-191327 #node-191327 .field-image {
+    display: none;
+    visibility: hidden;
+}

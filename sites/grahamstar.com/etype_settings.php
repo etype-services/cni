@@ -3,6 +3,9 @@
 /* import _url */
 $url = 'http://www.etypeclassifieds.com/robbinsvillexml/CNI_GRS.xml';
 
+/* cron schedule */
+$cron_schedule = '30 7 * * 3';
+
 /* ad categories */
 $categories = array(
 
@@ -120,6 +123,5 @@ $categories = array(
   "4180" => "362",
   "4190" => "362",
   "4200" => "362",
-  "4200" => "362"
 
 );
