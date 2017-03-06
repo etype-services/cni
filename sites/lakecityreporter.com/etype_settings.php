@@ -3,6 +3,9 @@
 /* import _url */
 $url = 'http://www.etypeclassifieds.com/lakecityxml/CNI_LCR.xml';
 
+/* cron schedule */
+$cron_schedule = '0 7 * * *';
+
 /* ad categories */
 $categories = array(
 
