@@ -3,6 +3,9 @@
 /* import _url */
 $url = 'http://www.etypeclassifieds.com/franklinxml/CNI_FCC.xml';
 
+/* cron schedule */
+$cron_schedule = '45 7 * * 4';
+
 /* ad categories */
 $categories = array(
     "1660" => "212",
