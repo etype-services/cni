@@ -34,5 +34,4 @@
 <?php print $page; ?>
 <?php print $page_bottom; ?>
 </body>
-
 </html>
