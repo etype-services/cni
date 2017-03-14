@@ -324,6 +324,11 @@
         background: none;
     }
 
+    /* override widths for .grid_3 in footer */
+    .container_12 .postscript-wrapper .grid_4 {
+        width: 100%;
+    }
+
     /* weather block */
     #block-block-1 .block-inner {
         border: none;
@@ -465,11 +470,6 @@
     .region-postscript-2 {
         display: none;
         visibility: hidden;
-    }
-
-    /* override widths for .grid_3 in footer */
-    .container_12 .postscript-wrapper .grid_3 {
-        width: 49% !important;
     }
 
     .region-postscript-4 {
