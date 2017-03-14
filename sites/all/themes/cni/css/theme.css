@@ -328,6 +328,7 @@ article .field-image {
     display: flex;
     justify-content: space-between;
     flex-wrap: nowrap;
+    white-space: nowrap;
 }
 
 #postscript a {

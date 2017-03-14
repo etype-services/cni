@@ -619,4 +619,9 @@
         flex-wrap: wrap;
     }
 
+    /* add space after menu */
+    #postscript .grid_4 #block-etype-follow {
+        margin-top: 1em;
+    }
+
 }
