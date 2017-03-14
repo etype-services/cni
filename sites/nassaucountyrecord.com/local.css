@@ -8,3 +8,72 @@
 #block-block-35 .block-inner .content {
     padding:0;
 }
+
+/* wider screens */
+@media only screen and (min-width: 959px) {
+
+    /* dfp ads */
+    #dfp-ad-banner_top {
+        width: 728px;
+        margin: 20px auto 0 auto;
+    }
+    #dfp-ad-banner {
+        width: 468px;
+        margin: 0px auto 0px 83px;
+    }
+
+    #block-dfp-cni-nassaumobile {
+        display: none;
+        visibility: hidden;
+    }
+}
+
+/* desktop browsers */
+@media only screen and (max-width: 958px) and (min-width: 768px) {
+
+    #block-dfp-cni-nassaumobile {
+        display: none;
+        visibility: hidden;
+    }
+}
+
+/* smaller browsers, tablets */
+@media only screen and (max-width: 767px) and (min-width: 480px) {
+
+    #dfp-ad-banner_top {
+        width: 728px;
+        margin: 20px auto;
+    }
+
+    #dfp-ad-banner {
+        margin: 0px auto 0px 15px;
+    }
+
+    /* Hide some DFP ads on non full-size browsers */
+    #block-dfp-cni-nassauleaderboard, #dfp-ad-cni_nassaufooter {
+        display: none;
+        visibility: hidden;
+    }
+
+    /* show mobile ad on smaller windows */
+    #block-dfp-cni-nassaumobile {
+        display: block;
+        visibility: visible;
+    }
+}
+
+/* larger phones */
+@media only screen and (max-width: 479px) and (min-width: 421px) {
+
+    /* Hide some DFP ads on non full-size browsers */
+    #block-dfp-cni-nassauleaderboard, #dfp-ad-banner, #dfp-ad-cni_nassaufooter {
+        display: none;
+        visibility: hidden;
+    }
+
+    /* show mobile ad on smaller windows */
+    #block-dfp-cni-nassaumobile {
+        display: block;
+        visibility: visible;
+    }
+}
