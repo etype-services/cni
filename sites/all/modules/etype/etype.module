@@ -447,3 +447,18 @@ function etype_clear_cache() {
     drupal_flush_all_caches();
     watchdog('etype', "Cache cleared", $variables = array(), $severity = WATCHDOG_NOTICE);
 }
+
+/**
+ * @param $form
+ * @param $form_state
+ * @param $form_id
+ * For Nassau
+ * TODO; show only on Nassau
+ */
+function etype_form_contact_site_form_alter(&$form, &$form_state, $form_id){
+  $form['phone'] = array(
+    '#title' => t('Phone number'),
+    '#type' => 'textfield',
+    '#required' => TRUE
+  );
+}
