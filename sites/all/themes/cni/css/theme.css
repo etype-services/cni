@@ -325,6 +325,9 @@ article .field-image {
 #postscript {
     color: #dddddd;
     font-size: 0.9em;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
 }
 
 #postscript a {

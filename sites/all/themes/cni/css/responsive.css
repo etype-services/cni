@@ -200,10 +200,6 @@
         margin-right: 10px;
     }
 
-    .container_12 #postscript .grid_4 {
-        width: 30%;
-    }
-
 }
 
 /* smaller browsers, tablets */
@@ -323,11 +319,6 @@
         margin-left: 0;
         margin-bottom: 10px;
         background: none;
-    }
-
-    /* override widths for .grid_4 in footer */
-    .container_12 .postscript-wrapper .grid_4 {
-        width: 100%;
     }
 
     /* weather block */
@@ -468,15 +459,6 @@
         background: none;
     }
 
-    .region-postscript-2 {
-        display: none;
-        visibility: hidden;
-    }
-
-    .region-postscript-4 {
-        margin-top: 1em;
-    }
-
     /* weather block */
     #block-block-35 .block-inner {
         border: none;
@@ -599,11 +581,6 @@
     }
 
     /* FOOTER */
-    #postscript .grid_4 {
-        width: inherit;
-        margin-left: 1em;
-    }
-
     .postscript-wrapper {
         padding: 1em;
         margin: 0;
@@ -614,11 +591,6 @@
         margin-left: 0;
         margin-bottom: 10px;
         background: none;
-    }
-
-    /* override widths for .grid_3 in footer */
-    .container_12 .postscript-wrapper .grid_3 {
-        width: 49% !important;
     }
 
     /* weather block */
@@ -643,9 +615,8 @@
         visibility: hidden;
     }
 
-    /* space for Menus and Follow Blocks */
-    .region-postscript-2, .region-postscript-3 {
-        margin-top: 1em;
+    #postscript {
+        flex-wrap: wrap;
     }
 
 }
