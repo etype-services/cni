@@ -616,6 +616,7 @@ article .field-image {
     text-transform: uppercase;
     height: 33px;
     line-height: 33px;
+    font-size: 13px;
 }
 
 #main-menu ul.menu li a:hover {
