@@ -324,7 +324,7 @@
         background: none;
     }
 
-    /* override widths for .grid_3 in footer */
+    /* override widths for .grid_4 in footer */
     .container_12 .postscript-wrapper .grid_4 {
         width: 100%;
     }
