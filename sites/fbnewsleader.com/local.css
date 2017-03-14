@@ -9,6 +9,10 @@ body {
     margin: 1.6em auto 1.6em auto;
 }
 
+#block-etype-follow .content div > a {
+    margin-left: 2.7em;
+}
+
 /* WEATHER BLOCK IN WEATHER
 --------------------------------------------------------------------------*/
 #block-block-35 .block-inner {
