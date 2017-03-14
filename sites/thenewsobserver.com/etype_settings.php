@@ -3,6 +3,9 @@
 /* import _url */
 $url = 'http://www.etypeclassifieds.com/blueridgexml/CNI_NOB.xml';
 
+/* cron schedule */
+$cron_schedule = '33 7 * * 3';
+
 /* ad categories */
 $categories = array(
 
