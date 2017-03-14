@@ -1,7 +1,0 @@
-name = EType Services
-description = Custom module for EType Services.
-package = EType Services Custom Modules
-core = 7.x
-project = "etype"
-dependencies[] = entity
-files[] = etype_mapping.php

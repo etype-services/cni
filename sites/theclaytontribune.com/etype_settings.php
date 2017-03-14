@@ -3,6 +3,9 @@
 /* import _url */
 $url = 'http://www.etypeclassifieds.com/claytonxml/CNI_CLT.xml';
 
+/* cron schedule */
+$cron_schedule = '35 7 * * 4';
+
 /* ad categories */
 $categories = array(
     "1660" => "212",
