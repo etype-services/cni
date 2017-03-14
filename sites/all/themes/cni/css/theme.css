@@ -334,10 +334,9 @@ article .field-image {
 }
 
 .postscript-wrapper {
-    padding: 1em 1em 0;
+    padding: 1em;
     margin: 0;
     background: url(../images/postscript-bg.png);
-    border-top: 3px solid #252525;
 }
 
 /* override widths for .grid_3 in footer */
