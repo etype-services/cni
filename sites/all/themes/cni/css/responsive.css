@@ -76,6 +76,21 @@
         width: 286px;
     }
 
+    /* legal forms */
+    #legals-0-1 {
+        float:left;
+        margin: 2em 0.5em 2em 0;
+    }
+
+    #legals-0-2 {
+        float:left;
+        margin: 2em 0 2em 0.5em;
+    }
+
+    #legals-0-2 ::after {
+        clear: left;
+    }
+
 }
 
 /* desktop browsers */
@@ -201,6 +216,17 @@
 
     .container_12 #postscript .grid_4 {
         width: 30%;
+    }
+
+    /* legal forms */
+    #legals-0-1 {
+        float:left;
+        margin: 2em 0 0.3em;
+    }
+
+    #legals-0-2 {
+        float:left;
+        margin: 0.3em 0 2em;
     }
 
 }
@@ -334,6 +360,17 @@
     .region-content-bottom .block-dfp, .region-main-menu-second-level .block-dfp {
         display: none;
         visibility: hidden;
+    }
+
+    /* legal forms */
+    #legals-0-1 {
+        float:left;
+        margin: 2em 0 0.3em;
+    }
+
+    #legals-0-2 {
+        float:left;
+        margin: 0.3em 0 2em;
     }
 }
 
@@ -487,6 +524,17 @@
         visibility: hidden;
     }
 
+    /* legal forms */
+    #legals-0-1 {
+        float:left;
+        margin: 2em 0 0.3em;
+    }
+
+    #legals-0-2 {
+        float:left;
+        margin: 0.3em 0 2em;
+    }
+
 }
 
 /* smaller phones */
@@ -636,6 +684,16 @@
         visibility: hidden;
     }
 
+    /* legal forms */
+    #legals-0-1 {
+        float:left;
+        margin: 2em 0 0.3em;
+    }
+
+    #legals-0-2 {
+        float:left;
+        margin: 0.3em 0 2em;
+    }
 }
 
 /* less granular switch for big and small */
