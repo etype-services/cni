@@ -342,6 +342,11 @@ article .field-image {
     background: url(../images/postscript-bg.png);
 }
 
+/* override widths for .grid_3 in footer */
+.container_12 .postscript-wrapper .grid_4 {
+    width: inherit;
+}
+
 .postscript-wrapper .block-inner {
     padding: 0;
 }
