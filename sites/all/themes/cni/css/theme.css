@@ -1363,6 +1363,13 @@ article.node-webform .node-content-wrapper h1.title {
     padding: 0;
 }
 
+/* Florida Public Legals */
+.view-id-legals .view-header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
 /* flexslider overrides */
 .flexslider {
     font: 0.8em/1.4 lato;
