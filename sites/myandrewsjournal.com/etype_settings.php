@@ -3,6 +3,9 @@
 /* import _url */
 $url = 'http://www.etypeclassifieds.com/andrewsxml/CNI_ANJ.xml';
 
+/* cron schedule */
+$cron_schedule = '50 7 * * 4';
+
 /* ad categories */
 $categories = array(
 
