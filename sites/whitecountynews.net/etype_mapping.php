@@ -3,6 +3,9 @@
 /* import _url */
 $url = 'http://www.etypeclassifieds.com/whitexml/CNI_WCN.xml';
 
+/* cron schedule */
+$cron_schedule = '38 7 * * 4';
+
 /* ad categories */
 $categories = array(
     "1660" => "212",
@@ -115,7 +118,6 @@ $categories = array(
     "0600" => "324",
     "0605" => "325",
     "3030" => "328",
-    "4170" => "329",
     "0800" => "330",
     "0700" => "331",
     "0835" => "332",
