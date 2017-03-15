@@ -3,6 +3,9 @@
 /* import _url */
 $url = 'http://www.etypeclassifieds.com/cherokeexml/CNI_CSC.xml';
 
+/* cron schedule */
+$cron_schedule = '30 7 * * 4';
+
 /* ad categories */
 $categories = array(
 
@@ -118,6 +121,5 @@ $categories = array(
   "4180" => "362",
   "4190" => "362",
   "4200" => "362",
-  "4200" => "362"
 
 );
