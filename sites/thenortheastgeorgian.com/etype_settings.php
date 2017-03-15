@@ -3,6 +3,9 @@
 /* import _url */
 $url = 'http://www.etypeclassifieds.com/corneliaxml/CNI_NEG.xml';
 
+/* cron schedule */
+$cron_schedule = '0 4 * * 3,5';
+
 /* ad categories */
 $categories = array(
 
