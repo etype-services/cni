@@ -1323,6 +1323,7 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
     font-size: 1em;
     line-height: 1.3em;
     text-transform: none;
+    margin-top: 1em;
 }
 
 #block-advpoll-advpoll-recent .submitted {
