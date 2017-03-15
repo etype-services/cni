@@ -3,6 +3,9 @@
 /* import _url */
 $url = 'http://www.etypeclassifieds.com/dahlonegaxml/CNI_DNG.xml';
 
+/* cron schedule */
+$cron_schedule = '30 7 * * 3';
+
 /* ad categories */
 $categories = array(
   "4010" => "210",
