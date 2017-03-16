@@ -9,7 +9,7 @@
 /**
  * Implements hook_menu().
  */
-function etype_menu() {
+function etype_login_menu() {
 
   /* add e-Edition link to user menu */
   $items['login'] = array(
