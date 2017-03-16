@@ -211,10 +211,6 @@ h3.site-slogan {
     overflow: hidden;
 }
 
-.preface-wrapper .views-row a {
-
-}
-
 .preface-wrapper .views-row .views-field-field-image img {
     display: block;
     float: left;
@@ -490,7 +486,7 @@ article .field-image {
 #user-menu {
     margin: 0;
     border-bottom: 1px solid #dddddd;
-    background: #f5f5f5;
+    font-family: 'Lato', sans-serif;
 }
 
 #user-menu ul.menu li a {
