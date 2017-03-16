@@ -491,9 +491,9 @@ article .field-image {
 
 #user-menu ul.menu li a {
     display: block;
-    line-height: 25px;
+    line-height: 27px;
     font-size: 11px;
-    padding: 0 20px;
+    padding: 0 12px;
     text-transform: uppercase;
     border-right: 1px solid #dddddd;
     color: #111111;
