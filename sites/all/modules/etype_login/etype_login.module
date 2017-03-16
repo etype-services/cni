@@ -27,7 +27,7 @@ function etype_menu() {
  * @return string
  */
 function _etype_login() {
-  $page = array('title' => 'Log In');
+  $page = array('title' => 'Login');
   return $page;
 }
 
