@@ -491,7 +491,7 @@ article .field-image {
 
 #user-menu ul.menu li a {
     display: block;
-    line-height: 27px;
+    line-height: 28px;
     font-size: 11px;
     padding: 0 12px;
     text-transform: uppercase;
@@ -505,7 +505,6 @@ article .field-image {
 }
 
 /* User Menu Drop Down */
-
 #user-menu ul.menu li ul {
     position: absolute;
     padding: 0;
@@ -963,9 +962,6 @@ article .field-image {
 #social {
     float: left;
     padding-left: 10px;
-    margin-right: -10px;
-    padding-top: 4px;
-    margin-bottom: -4px;
 }
 
 #social ul {
@@ -984,6 +980,7 @@ article .field-image {
     padding-left: 10px;
     width: 16px;
     height: 16px;
+    margin-top: 6px;
 }
 
 .facebook {
