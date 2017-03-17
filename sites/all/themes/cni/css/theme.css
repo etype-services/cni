@@ -897,10 +897,6 @@ article .field-image {
 /* SEARCH FORM
 --------------------------------------------------------------------------*/
 
-.region-search-box {
-    float: right;
-}
-
 #search-block-form {
     margin-top: 0;
     background: 0;
@@ -960,8 +956,6 @@ article .field-image {
 --------------------------------------------------------------------------*/
 
 #social {
-    float: left;
-    padding-left: 10px;
 }
 
 #social ul {
