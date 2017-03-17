@@ -59,7 +59,6 @@
 
     #main-menu #block-system-user-menu ul.menu {
         margin: 0 auto;
-        max-width: 800px;
         white-space: nowrap;
     }
 
@@ -607,11 +606,6 @@
 
 /* less granular switch for big and small */
 @media only screen and (max-width: 767px) {
-
-    #block-system-user-menu {
-        display: none;
-        visibility: hidden;
-    }
 
     #postscript {
         flex-wrap: wrap;
