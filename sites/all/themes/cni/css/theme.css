@@ -526,7 +526,7 @@ article .field-image {
 }
 
 #user-menu ul.menu li a:hover {
-    background: #eeeeee;
+    background: #f3f1f1;
     text-decoration: none;
 }
 
@@ -564,7 +564,7 @@ article .field-image {
 }
 
 #user-menu ul.menu li li a:hover, #user-menu ul.menu li li a.active:hover {
-    background: #eeeeee;
+    background: #f3f1f1;
 }
 
 #main-menu ul.menu li ul ul {
@@ -642,7 +642,7 @@ article .field-image {
 
 #main-menu ul.menu li a:hover {
     color: #333333;
-    background: #eeeeee;
+    background: #f3f1f1;
     text-decoration: none;
 }
 
@@ -733,7 +733,7 @@ article .field-image {
 }
 
 #main-menu-second-level ul.menu li li a:hover, #main-menu-second-level ul.menu li li a.active:hover {
-    background: #eeeeee;
+    background: #f3f1f1;
     font-size: 0.9em;
 }
 
@@ -798,7 +798,7 @@ article .field-image {
     font-weight: bold;
     padding: 0 5px 0 5px;
     font-size: 0.9em;
-    background: #eeeeee;
+    background: #f3f1f1;
 }
 
 .node ul.links li.node-readmore a {
