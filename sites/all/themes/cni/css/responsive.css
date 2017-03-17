@@ -257,14 +257,14 @@
     }
 
     #main-menu ul.menu li ul {
-        width: 100%;
+        width: 200px;
     }
 
     #main-menu ul.menu li ul li a {
         position: relative;
         top: -4px;
         left: 18px;
-        background: url("../images/mobile_menu.png") no-repeat scroll 7px 8px #111111;
+        background: none;
     }
 
     .node-teaser .field-name-field-image img {
