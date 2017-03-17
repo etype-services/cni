@@ -491,7 +491,7 @@ article .field-image {
 
 #user-menu ul.menu li a {
     display: block;
-    line-height: 28px;
+    line-height: 36px;
     font-size: 11px;
     padding: 0 12px;
     text-transform: uppercase;
@@ -980,7 +980,7 @@ article .field-image {
     padding-left: 10px;
     width: 28px;
     height: 28px;
-    margin-top: 6px;
+    margin-top: 4px;
     background-size: 28px;
 }
 
