@@ -486,8 +486,12 @@ article .field-image {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    margin-bottom: 0.7em;
+    margin-bottom: 0.6em;
     margin-top: 0.1em;
+}
+
+#block-system-user-menu {
+    margin-bottom: 0.2em;
 }
 
 #user-menu {
