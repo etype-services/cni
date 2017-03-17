@@ -204,6 +204,10 @@
 /* smaller browsers, tablets */
 @media only screen and (max-width: 767px) and (min-width: 480px) {
 
+    .region-user-menu {
+        padding-bottom: 3px;
+    }
+
     #superfish-1 {
         display: block !important;
     }
