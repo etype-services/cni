@@ -59,11 +59,6 @@
                 }
             });
 
-            var w = $(window).width();
-            if (w > 767) {
-            } else {
-                $('#block-system-user-menu ul').children('li').appendTo('#block-superfish-1 ul');
-            }
         }
     };
 })(jQuery);
