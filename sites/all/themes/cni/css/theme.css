@@ -489,6 +489,7 @@ article .field-image {
     flex-wrap: wrap;
     margin-bottom: 0.6em;
     margin-top: 0.1em;
+    background-color: #f3f1f1;
 }
 
 #block-system-user-menu {
@@ -923,7 +924,6 @@ article .field-image {
 --------------------------------------------------------------------------*/
 
 #block-search-form {
-    background-color: #f3f1f1;
     padding: 0 8px;
 }
 
