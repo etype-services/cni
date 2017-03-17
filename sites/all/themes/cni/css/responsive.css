@@ -54,7 +54,7 @@
     #main-menu ul.menu li ul li a:hover,
     #main-menu ul.menu li li a:hover,
     #main-menu ul.menu li ul li a.active:hover {
-        background-color: #eaeaea;
+        background-color: #f3f1f1;
     }
 
     #main-menu #block-system-user-menu ul.menu {
@@ -253,27 +253,6 @@
     #main-menu ul.menu li a:hover {
         background: url("../images/mobile_menu.png") no-repeat scroll 7px 8px transparent;
         color: #ffffff;
-    }
-
-    #main-menu ul.menu li.first a.active, #main-menu ul.menu li.first a.active:hover {
-        color: #ffffff;
-        background: url(../images/mobile_menu.png) no-repeat scroll 7px 8px transparent;
-    }
-
-    #main-menu ul.menu li ul {
-        width: 200px;
-    }
-
-    #main-menu ul.menu li ul li a {
-        position: relative;
-        top: -5px;
-        left: 18px;
-        background: none;
-        font-size: 13px;
-    }
-
-    #main-menu ul.menu li li a:hover {
-        background: #111111;
     }
 
     .node-teaser .field-name-field-image img {
@@ -640,6 +619,27 @@
     /* add space after menu */
     #postscript .grid_4 #block-etype-follow {
         margin-top: 1em;
+    }
+
+    #main-menu ul.menu li.first a.active, #main-menu ul.menu li.first a.active:hover {
+        color: #ffffff;
+        background: url(../images/mobile_menu.png) no-repeat scroll 7px 8px transparent;
+    }
+
+    #main-menu ul.menu li ul {
+        width: 200px;
+    }
+
+    #main-menu ul.menu li ul li a {
+        position: relative;
+        top: -5px;
+        left: 18px;
+        background: none;
+        font-size: 13px;
+    }
+
+    #main-menu ul.menu li li a:hover {
+        background: #111111;
     }
 
 }
