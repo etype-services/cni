@@ -56,6 +56,8 @@
                     $('#block-superfish-1 ul li.sf-depth-1:first-child a').text('Show Menu');
                     $('#block-superfish-1 ul li.sf-depth-1:not(:first-child)').hide();
                     $('#block-superfish-1 ul li.sf-depth-1 ul').hide();
+
+                    $('#block-system-user-menu ul').remove().children('li').appendTo('#block-superfish-1 ul');
                 }
             });
         }
