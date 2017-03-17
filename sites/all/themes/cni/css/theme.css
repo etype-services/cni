@@ -500,6 +500,16 @@ article .field-image {
     font-family: 'Lato', sans-serif;
 }
 
+#user-menu ul.menu {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#user-menu ul.menu li {
+    float: none;
+}
+
 #user-menu ul.menu li a {
     display: block;
     line-height: 36px;
@@ -953,10 +963,12 @@ article .field-image {
 }
 
 #search-block-form .form-text {
-    padding: 0 10px;
+    padding: 0;
     color: #999999;
     font-style: italic;
     background-color: #ffffff;
+    position: relative;
+    top: 1px;
 }
 
 #search-block-form input:focus {
