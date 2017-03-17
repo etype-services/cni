@@ -262,9 +262,10 @@
 
     #main-menu ul.menu li ul li a {
         position: relative;
-        top: -4px;
+        top: -5px;
         left: 18px;
         background: none;
+        font-size: 13px;
     }
 
     #main-menu ul.menu li li a:hover {
