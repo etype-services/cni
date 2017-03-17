@@ -25,6 +25,7 @@ function etype_login_menu() {
 
 /**
  * @return string
+ * TODO: Should be FORM with submit function
  */
 function _etype_login() {
 
