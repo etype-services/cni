@@ -252,6 +252,7 @@
 
     #main-menu ul.menu li.first a.active, #main-menu ul.menu li.first a.active:hover {
         color: #ffffff;
+        background: url(../images/mobile_menu.png) no-repeat scroll 7px 8px transparent;
     }
 
     .node-teaser .field-name-field-image img {
