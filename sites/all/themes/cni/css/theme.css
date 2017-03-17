@@ -490,7 +490,6 @@ article .field-image {
 
 #user-menu {
     margin: 0;
-    border-bottom: 1px solid #dddddd;
     font-family: 'Lato', sans-serif;
 }
 
@@ -906,8 +905,7 @@ article .field-image {
     margin-top: 0;
     background: 0;
     line-height: 25px;
-    border-left: 1px solid #dddddd;
-    background: #ffffff;
+    border-right: 1px solid #dddddd;
 }
 
 #search-block-form h2, #search-block-form label {
@@ -942,7 +940,6 @@ article .field-image {
 
 #search-block-form .form-text {
     padding: 0 10px;
-    width: 150px;
     color: #999999;
     font-style: italic;
     background: #ffffff;
