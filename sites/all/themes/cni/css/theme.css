@@ -482,6 +482,11 @@ article .field-image {
 
 /* USER MENU
 --------------------------------------------------------------------------*/
+.region-user-menu {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
 
 #user-menu {
     margin: 0;
