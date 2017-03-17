@@ -385,6 +385,7 @@ article .field-image {
 
 #block-etype-follow .content div > a {
     margin-left: 1.7em;
+    background-size: 16px;
 }
 
 /* title in first column of postscript */
