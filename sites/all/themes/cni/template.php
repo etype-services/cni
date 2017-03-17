@@ -29,33 +29,6 @@ function cni_preprocess_node(&$variables) {
     $variables['classes_array'] = array_merge($variables['classes_array'], $node->classes_array);
   }
 
-  /* include login and sub templates
-  $alias = drupal_get_path_alias();
-  $theme_path = path_to_theme();
-  $path = $_SERVER['DOCUMENT_ROOT'] . '/' . $theme_path . '/templates/';
-  switch ($alias) {
-    case 'login':
-      $replace_file = $path . 'login.tpl.php';
-      break;
-
-    case 'custom-login-page':
-      $replace_file = $path . 'login.tpl.php';
-      break;
-
-    case 'forgot-password':
-      $replace_file = $path . 'forgot-password.tpl.php';
-      break;
-
-    case 'my-account':
-      $replace_file = $path . 'my-account.tpl.php';
-      break;
-  }
-
-  if (isset($replace_file)) {
-    $variables['replace_file'] = $replace_file;
-  }
-  */
-
   /* add extra classes */
   $node = $variables['node'];
   if (!empty($node->classes_array)) {
@@ -93,10 +66,6 @@ function cni_link($variables) {
 
 function cni_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'search_block_form') {
-
-    // Add extra attributes to the text box
-    $form['search_block_form']['#attributes']['onblur'] = "if (this.value == '') {this.value = 'Search';}";
-    $form['search_block_form']['#attributes']['onfocus'] = "if (this.value == 'Search') {this.value = '';}";
     // Prevent user from searching the default text
     $form['#attributes']['onsubmit'] = "if(this.search_block_form.value=='Search'){ alert('Please enter a search'); return false; }";
   }

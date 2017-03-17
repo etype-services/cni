@@ -244,7 +244,7 @@ h3.site-slogan {
 
 .preface-wrapper-top .block .content {
     height: auto;
-    background: transparent url("../images/preface-view.png") repeat scroll 0% 0%;
+    background: transparent url("../images/preface-view.png") repeat scroll 0 0;
     margin-top: 20px;
 }
 
@@ -486,6 +486,7 @@ article .field-image {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    margin-bottom: 0.7em;
 }
 
 #user-menu {
@@ -942,7 +943,7 @@ article .field-image {
     padding: 0 10px;
     color: #999999;
     font-style: italic;
-    background: #ffffff;
+    background-color: #f3f1f1;
 }
 
 #search-block-form input:focus {
