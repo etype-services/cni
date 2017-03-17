@@ -267,6 +267,10 @@
         background: none;
     }
 
+    #main-menu ul.menu li li a:hover {
+        background: #000000;
+    }
+
     .node-teaser .field-name-field-image img {
         float: none;
         margin: 0 0 20px 0;
