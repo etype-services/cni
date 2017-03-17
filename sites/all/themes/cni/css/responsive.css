@@ -260,6 +260,13 @@
         width: 100%;
     }
 
+    #main-menu ul.menu li ul li a {
+        position: relative;
+        top: -4px;
+        left: 18px;
+        background: url("../images/mobile_menu.png") no-repeat scroll 7px 8px #111111;
+    }
+
     .node-teaser .field-name-field-image img {
         float: none;
         margin: 0 0 20px 0;
