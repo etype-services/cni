@@ -487,6 +487,7 @@ article .field-image {
     justify-content: space-around;
     flex-wrap: wrap;
     margin-bottom: 0.7em;
+    margin-top: 0.1em;
 }
 
 #user-menu {
@@ -502,6 +503,10 @@ article .field-image {
     text-transform: uppercase;
     border-right: 1px solid #dddddd;
     color: #111111;
+}
+
+#user-menu ul.menu li.last a {
+    border-right: none;
 }
 
 #user-menu ul.menu li a:hover {
@@ -902,11 +907,15 @@ article .field-image {
 /* SEARCH FORM
 --------------------------------------------------------------------------*/
 
+#block-search-form {
+    background-color: #f3f1f1;
+    padding: 0 8px;
+}
+
 #search-block-form {
     margin-top: 0;
     background: 0;
     line-height: 25px;
-    border-right: 1px solid #dddddd;
 }
 
 #search-block-form h2, #search-block-form label {
@@ -936,14 +945,13 @@ article .field-image {
     text-transform: uppercase;
     background: 0;
     font-weight: normal;
-    background: #ffffff;
 }
 
 #search-block-form .form-text {
     padding: 0 10px;
     color: #999999;
     font-style: italic;
-    background-color: #f3f1f1;
+    background-color: #ffffff;
 }
 
 #search-block-form input:focus {
