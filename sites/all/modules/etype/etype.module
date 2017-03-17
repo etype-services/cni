@@ -107,8 +107,7 @@ function etype_block_view($delta = '') {
  */
 function _etype_social_content() {
     $output = '
-<div id="social">
-    <ul class="social-links">';
+  <ul class="social-links">';
   $facebook = theme_get_setting('facebook');
   $twitter = theme_get_setting('twitter');
   $pinterest = theme_get_setting('pinterest');
@@ -133,7 +132,7 @@ function _etype_social_content() {
   if (!empty($rssfeed)) {
     $output .= '<li><a class="rss" href="/rss.xml"></a></li>';
   }
-  $output .= '</ul></div>';
+  $output .= '</ul>';
   return $output;
 }
 
