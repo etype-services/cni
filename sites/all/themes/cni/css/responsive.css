@@ -250,6 +250,10 @@
         color: #ffffff;
     }
 
+    #main-menu ul.menu li.first a.active, #main-menu ul.menu li.first a.active:hover {
+        color: #ffffff;
+    }
+
     .node-teaser .field-name-field-image img {
         float: none;
         margin: 0 0 20px 0;
