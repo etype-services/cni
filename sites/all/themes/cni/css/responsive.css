@@ -486,7 +486,7 @@
         margin: 0.2em 0 1em 1em;
     }
 
-    /* main menu */
+    /* main menu
     #main-menu ul.menu {
         margin: 0;
     }
@@ -536,6 +536,7 @@
         background: url("../images/mobile_menu.png") no-repeat scroll 7px 8px transparent;
         color: #ffffff;
     }
+    */
 
     .node-teaser .field-name-field-image img {
         float: left;
