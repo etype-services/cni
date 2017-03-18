@@ -36,7 +36,7 @@
 (function ($) {
     Drupal.behaviors.superfish = {
         attach: function (context) {
-            var obj = $('#block-superfish-1 ul li.sf-depth-1:first-child a');
+            /*var obj = $('#block-superfish-1 ul li.sf-depth-1:first-child a');
             obj.click(function (e) {
                 var text = $(this).text();
                 e.preventDefault();
@@ -58,7 +58,7 @@
                     $('#block-superfish-1 ul li.sf-depth-1 ul').hide();
                 }
             });
-
+*/
         }
     };
 })(jQuery);
