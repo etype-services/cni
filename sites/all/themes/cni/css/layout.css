@@ -678,7 +678,7 @@ div.speaker_128 {
     margin-bottom: 20px;
     padding-left: 148px;
     color: #666666;
-    background: url(../images/icons_128/speaker_128.png) 0% 0% no-repeat;
+    background: url(../images/icons_128/speaker_128.png) 0 0 no-repeat;
 }
 
 div.tools_128 {
@@ -686,7 +686,7 @@ div.tools_128 {
     margin-bottom: 20px;
     padding-left: 148px;
     color: #666666;
-    background: url(../images/icons_128/tools_128.png) 0% 0% no-repeat;
+    background: url(../images/icons_128/tools_128.png) 0 0 no-repeat;
 }
 
 div.video_128 {
@@ -694,7 +694,7 @@ div.video_128 {
     margin-bottom: 20px;
     padding-left: 148px;
     color: #666666;
-    background: url(../images/icons_128/strategy_128.png) 0% 0% no-repeat;
+    background: url(../images/icons_128/strategy_128.png) 0 0 no-repeat;
 }
 
 /* hide theme default mobile drop-down nav */
