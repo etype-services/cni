@@ -4,11 +4,14 @@
 
             var w = $(window).width();
             if (w > 767) {
+                $('#mobile_menu').hide();
             } else {
-                // $('#block-system-user-menu ul.menu').prepend($('#superfish-1 li'));
-                $('#superfish-1 li').each(function(i){
-                    $(this).addClass('added').prependTo('#block-system-user-menu ul.menu');
-                });
+                if ($('#mobile_menu').length == 0) {
+                    var $myList = $('ul#mobile_menu');
+                    $('#superfish-1 li').appendTo('#mobile_menu');
+                    $('#block-system-user-menu ul.menu li').appendTo('#mobile_menu');
+                }
+                $('#mobile_menu').show();
             }
 
             var obj = $('#superfish li.sf-depth-1:first-child a');
