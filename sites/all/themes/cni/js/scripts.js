@@ -37,7 +37,7 @@
     Drupal.behaviors.superfish = {
         attach: function (context) {
 
-            $('#block-system-user-menu li').hide();
+            $('#block-system-user-menu li').appendTo('#superfish-1').hide();
             var w = $(window).width();
             if (w > 767) {
 
