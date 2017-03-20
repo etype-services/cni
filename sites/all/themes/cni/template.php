@@ -1,10 +1,5 @@
 <?php
 
-function cni_preprocess_html(&$vars) {
-  // Add body class for sidebar layout
-  $vars['classes_array'][] = theme_get_setting('sidebar_layout');
-}
-
 /* First and Last Classes on Teasers */
 function cni_preprocess_page(&$variables) {
 
@@ -115,6 +110,9 @@ function cni_form_alter(&$form, &$form_state, $form_id) {
  * @param $vars
  */
 function cni_preprocess_html(&$vars) {
+
+  // Add body class for sidebar layout
+  $vars['classes_array'][] = theme_get_setting('sidebar_layout');
 
   /* add body classes */
   $path = drupal_get_path_alias($_GET['q']);
