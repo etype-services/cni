@@ -42,7 +42,7 @@
 
             } else {
                 alert(w);
-                $('#block-system-user-menu > li').hide();
+                $('#block-system-user-menu').hide();
             }
 
             var obj = $('#block-superfish-1 ul li.sf-depth-1:first-child a');
