@@ -5,7 +5,10 @@
             var w = $(window).width();
             if (w > 767) {
             } else {
-                $('#block-system-user-menu ul.menu').prepend($('#superfish-1 li')).addClass('added');
+                // $('#block-system-user-menu ul.menu').prepend($('#superfish-1 li'));
+                $('#superfish-1 li').each(function(i){
+                    $(this).addClass('added').prependTo('#block-system-user-menu ul.menu');
+                });
             }
 
             var obj = $('#superfish li.sf-depth-1:first-child a');
