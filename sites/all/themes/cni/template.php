@@ -1,6 +1,6 @@
 <?php
 
-function bones_preprocess_html(&$vars) {
+function cni_preprocess_html(&$vars) {
   // Add body class for sidebar layout
   $vars['classes_array'][] = theme_get_setting('sidebar_layout');
 }
