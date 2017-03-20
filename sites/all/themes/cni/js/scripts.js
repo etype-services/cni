@@ -5,10 +5,10 @@
             var w = $(window).width();
             if (w > 767) {
             } else {
-                $('#block-system-user-menu ul.menu').prepend($('#superfish-1 li'));
+                $('#block-system-user-menu ul.menu').prepend($('#superfish-1 li')).addClass('added');
             }
 
-            var obj = $('#block-superfish-1 ul li.sf-depth-1:first-child a');
+            var obj = $('#superfish li.sf-depth-1:first-child a');
             obj.click(function (e) {
                 var text = $(this).text();
                 e.preventDefault();
@@ -23,11 +23,13 @@
             $(window).resize(function () {
                 var w = $(window).width();
                 if (w > 767) {
-                    $('#block-superfish-1 ul li.sf-depth-1:not(:first-child)').css("display", "list-item").show();
+                    $('#block-system-user-menu ul.menu li.added').remove();
+                    $('#superfish-1').show();
+                    $('#superfish-1 li.sf-depth-1:not(:first-child)').css("display", "list-item").show();
                 } else {
-                    $('#block-superfish-1 ul li.sf-depth-1:first-child a').text('Show Menu');
-                    $('#block-superfish-1 ul li.sf-depth-1:not(:first-child)').hide();
-                    $('#block-superfish-1 ul li.sf-depth-1 ul').hide();
+                    $('#superfish-1 li.sf-depth-1:first-child a').text('Show Menu');
+                    $('#superfish-1 li.sf-depth-1:not(:first-child)').hide();
+                    $('#superfish-1 li.sf-depth-1 ul').hide();
                 }
             });
         }
