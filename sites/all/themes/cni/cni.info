@@ -3,7 +3,6 @@ description = EType CNI theme.
 core = 7.x
 engine = phptemplate
 screenshot = screenshot.png
-base theme = bones
 
 stylesheets[all][] = css/jcarousel.css
 stylesheets[all][] = css/galleria.css
