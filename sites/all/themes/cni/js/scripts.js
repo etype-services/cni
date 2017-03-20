@@ -36,6 +36,14 @@
 (function ($) {
     Drupal.behaviors.superfish = {
         attach: function (context) {
+
+            var w = $(window).width();
+            if (w > 767) {
+
+            } else {
+                $('#block-system-user-menu > ul > li').clone('li').appendTo('#block-superfish-1 ul');
+            }
+
             var obj = $('#block-superfish-1 ul li.sf-depth-1:first-child a');
             obj.click(function (e) {
                 var text = $(this).text();
