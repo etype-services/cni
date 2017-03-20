@@ -41,7 +41,8 @@
             if (w > 767) {
 
             } else {
-                $('#block-system-user-menu > li').clone().appendTo('#block-superfish-1 ul');
+                alert(w);
+                $('#block-system-user-menu > li').clone().appendTo('#superfish-1');
             }
 
             var obj = $('#block-superfish-1 ul li.sf-depth-1:first-child a');
