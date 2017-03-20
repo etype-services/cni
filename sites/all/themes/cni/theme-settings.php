@@ -1,6 +1,6 @@
 <?php
 
-drupal_add_css(drupal_get_path('theme', 'bones') . '/css/theme-settings.css', array(
+drupal_add_css(drupal_get_path('theme', 'cni') . '/css/theme-settings.css', array(
   'group' => CSS_THEME,
   'weight' => 100
 ));
@@ -16,7 +16,7 @@ function get_columns() {
   return $columns;
 }
 
-function bones_form_system_theme_settings_alter(&$form, $form_state) {
+function cni_form_system_theme_settings_alter(&$form, $form_state) {
 
   $grid_size = theme_get_setting('grid_size');
   $col_number = get_columns();
