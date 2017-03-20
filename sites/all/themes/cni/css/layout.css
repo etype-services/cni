@@ -31,27 +31,20 @@
 ================================================== */
 
 body {
-    line-height: 1.5em;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #333333;
-    background: #f9f9f9;
+    font-size: 1em;
+    font-family: "Adobe Garamond Pro", Arial, Helvetica, sans-serif;
+    line-height: 1.3em;
+    color: #444444;
+    background: #ffffff;
 }
 
 a {
-    color: #111111;
-    font-weight: bold;
+    font-weight: normal;
+    color: #333;
     text-decoration: none;
 }
 
-.header-wrapper-inner, .preface-wrapper-inner, .main-content-wrapper-inner, .footer-wrapper-inner {
-}
-
-#site-logo img {
-    vertical-align: middle;
-}
-
 /* Menu Regions */
-
 #main-menu h3, #user-menu h3, #nav-menu h3 {
     display: none;
 }
@@ -95,13 +88,13 @@ tr.odd {
 /* Tabs */
 
 ul.primary {
-    border-bottom: 0px solid #ddd;
+    border-bottom: 0 solid #ddd;
     border-collapse: collapse;
     height: auto;
     line-height: 1.0em;
     list-style: none;
     margin: 5px 0;
-    padding: 0 0 0 0em; /* LTR */
+    padding: 0 0 0 0; /* LTR */
     white-space: nowrap;
 }
 
@@ -373,12 +366,10 @@ blockquote {
     margin: 20px 0;
     padding-left: 58px;
     color: #666666;
-    background: url(../images/icons_48/openquote.png) top left no-repeat;
 }
 
 blockquote p {
     padding-right: 50px;
-    background: url(../images/icons_48/closequote.png) bottom right no-repeat;
 }
 
 pre {
@@ -387,7 +378,6 @@ pre {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.0em;
     border: 1px solid #dddddd;
-    background: url(../images/pre.png);
 }
 
 /* Icons 64 */
@@ -396,175 +386,175 @@ div.alarm_64 {
     margin-bottom: 20px;
     padding-left: 84px;
     color: #666666;
-    background: url(../images/icons_64/alarm_64.png) 0% 0% no-repeat;
+    background: url(../images/icons_64/alarm_64.png) 0 0 no-repeat;
 }
 
 div.alert_64 {
     margin-bottom: 20px;
     padding-left: 84px;
     color: #666666;
-    background: url(../images/icons_64/alert_64.png) 0% 0% no-repeat;
+    background: url(../images/icons_64/alert_64.png) 0 0 no-repeat;
 }
 
 div.art_64 {
     margin-bottom: 20px;
     padding-left: 84px;
     color: #666666;
-    background: url(../images/icons_64/art_64.png) 0% 0% no-repeat;
+    background: url(../images/icons_64/art_64.png) 0 0 no-repeat;
 }
 
 div.camera_64 {
     margin-bottom: 20px;
     padding-left: 84px;
     color: #666666;
-    background: url(../images/icons_64/camera_64.png) 0% 0% no-repeat;
+    background: url(../images/icons_64/camera_64.png) 0 0 no-repeat;
 }
 
 div.cell_64 {
     margin-bottom: 20px;
     padding-left: 84px;
     color: #666666;
-    background: url(../images/icons_64/cell_64.png) 0% 0% no-repeat;
+    background: url(../images/icons_64/cell_64.png) 0 0 no-repeat;
 }
 
 div.chart_64 {
     margin-bottom: 20px;
     padding-left: 84px;
     color: #666666;
-    background: url(../images/icons_64/chart_64.png) 0% 0% no-repeat;
+    background: url(../images/icons_64/chart_64.png) 0 0 no-repeat;
 }
 
 div.clock_64 {
     margin-bottom: 20px;
     padding-left: 84px;
     color: #666666;
-    background: url(../images/icons_64/clock_64.png) 0% 0% no-repeat;
+    background: url(../images/icons_64/clock_64.png) 0 0 no-repeat;
 }
 
 div.download_64 {
     margin-bottom: 20px;
     padding-left: 84px;
     color: #666666;
-    background: url(../images/icons_64/download_64.png) 0% 0% no-repeat;
+    background: url(../images/icons_64/download_64.png) 0 0 no-repeat;
 }
 
 div.formal_64 {
     margin-bottom: 20px;
     padding-left: 84px;
     color: #666666;
-    background: url(../images/icons_64/formal_64.png) 0% 0% no-repeat;
+    background: url(../images/icons_64/formal_64.png) 0 0 no-repeat;
 }
 
 div.gears_64 {
     margin-bottom: 20px;
     padding-left: 84px;
     color: #666666;
-    background: url(../images/icons_64/gears_64.png) 0% 0% no-repeat;
+    background: url(../images/icons_64/gears_64.png) 0 0 no-repeat;
 }
 
 div.headphones_64 {
     margin-bottom: 20px;
     padding-left: 84px;
     color: #666666;
-    background: url(../images/icons_64/headphones_64.png) 0% 0% no-repeat;
+    background: url(../images/icons_64/headphones_64.png) 0 0 no-repeat;
 }
 
 div.heart_64 {
     margin-bottom: 20px;
     padding-left: 84px;
     color: #666666;
-    background: url(../images/icons_64/heart_64.png) 0% 0% no-repeat;
+    background: url(../images/icons_64/heart_64.png) 0 0 no-repeat;
 }
 
 div.help_64 {
     margin-bottom: 20px;
     padding-left: 84px;
     color: #666666;
-    background: url(../images/icons_64/help_64.png) 0% 0% no-repeat;
+    background: url(../images/icons_64/help_64.png) 0 0 no-repeat;
 }
 
 div.home_64 {
     margin-bottom: 20px;
     padding-left: 84px;
     color: #666666;
-    background: url(../images/icons_64/home_64.png) 0% 0% no-repeat;
+    background: url(../images/icons_64/home_64.png) 0 0 no-repeat;
 }
 
 div.keys_64 {
     margin-bottom: 20px;
     padding-left: 84px;
     color: #666666;
-    background: url(../images/icons_64/keys_64.png) 0% 0% no-repeat;
+    background: url(../images/icons_64/keys_64.png) 0 0 no-repeat;
 }
 
 div.mac_64 {
     margin-bottom: 20px;
     padding-left: 84px;
     color: #666666;
-    background: url(../images/icons_64/mac_64.png) 0% 0% no-repeat;
+    background: url(../images/icons_64/mac_64.png) 0 0 no-repeat;
 }
 
 div.magic_64 {
     margin-bottom: 20px;
     padding-left: 84px;
     color: #666666;
-    background: url(../images/icons_64/magic_64.png) 0% 0% no-repeat;
+    background: url(../images/icons_64/magic_64.png) 0 0 no-repeat;
 }
 
 div.package_64 {
     margin-bottom: 20px;
     padding-left: 84px;
     color: #666666;
-    background: url(../images/icons_64/package_64.png) 0% 0% no-repeat;
+    background: url(../images/icons_64/package_64.png) 0 0 no-repeat;
 }
 
 div.phone_64 {
     margin-bottom: 20px;
     padding-left: 84px;
     color: #666666;
-    background: url(../images/icons_64/phone_64.png) 0% 0% no-repeat;
+    background: url(../images/icons_64/phone_64.png) 0 0 no-repeat;
 }
 
 div.pie_64 {
     margin-bottom: 20px;
     padding-left: 84px;
     color: #666666;
-    background: url(../images/icons_64/pie_64.png) 0% 0% no-repeat;
+    background: url(../images/icons_64/pie_64.png) 0 0 no-repeat;
 }
 
 div.speaker_64 {
     margin-bottom: 20px;
     padding-left: 84px;
     color: #666666;
-    background: url(../images/icons_64/speaker_64.png) 0% 0% no-repeat;
+    background: url(../images/icons_64/speaker_64.png) 0 0 no-repeat;
 }
 
 div.strategy_64 {
     margin-bottom: 20px;
     padding-left: 84px;
     color: #666666;
-    background: url(../images/icons_64/strategy_64.png) 0% 0% no-repeat;
+    background: url(../images/icons_64/strategy_64.png) 0 0 no-repeat;
 }
 
 div.support_64 {
     margin-bottom: 20px;
     padding-left: 84px;
     color: #666666;
-    background: url(../images/icons_64/support_64.png) 0% 0% no-repeat;
+    background: url(../images/icons_64/support_64.png) 0 0 no-repeat;
 }
 
 div.tools_64 {
     margin-bottom: 20px;
     padding-left: 84px;
     color: #666666;
-    background: url(../images/icons_64/speaker_64.png) 0% 0% no-repeat;
+    background: url(../images/icons_64/speaker_64.png) 0 0 no-repeat;
 }
 
 div.video_64 {
     margin-bottom: 20px;
     padding-left: 84px;
     color: #666666;
-    background: url(../images/icons_64/strategy_64.png) 0% 0% no-repeat;
+    background: url(../images/icons_64/strategy_64.png) 0 0 no-repeat;
 }
 
 /* Icons 128 */
@@ -574,7 +564,7 @@ div.alarm_128 {
     margin-bottom: 20px;
     padding-left: 148px;
     color: #666666;
-    background: url(../images/icons_128/alarm_128.png) 0% 0% no-repeat;
+    background: url(../images/icons_128/alarm_128.png) 0 0 no-repeat;
 }
 
 div.alert_128 {
@@ -582,7 +572,7 @@ div.alert_128 {
     margin-bottom: 20px;
     padding-left: 148px;
     color: #666666;
-    background: url(../images/icons_128/alert_128.png) 0% 0% no-repeat;
+    background: url(../images/icons_128/alert_128.png) 0 0 no-repeat;
 }
 
 div.art_128 {
@@ -590,7 +580,7 @@ div.art_128 {
     margin-bottom: 20px;
     padding-left: 148px;
     color: #666666;
-    background: url(../images/icons_128/art_128.png) 0% 0% no-repeat;
+    background: url(../images/icons_128/art_128.png) 0 0 no-repeat;
 }
 
 div.camera_128 {
@@ -598,7 +588,7 @@ div.camera_128 {
     margin-bottom: 20px;
     padding-left: 148px;
     color: #666666;
-    background: url(../images/icons_128/camera_128.png) 0% 0% no-repeat;
+    background: url(../images/icons_128/camera_128.png) 0 0 no-repeat;
 }
 
 div.chart_128 {
@@ -606,7 +596,7 @@ div.chart_128 {
     margin-bottom: 20px;
     padding-left: 148px;
     color: #666666;
-    background: url(../images/icons_128/chart_128.png) 0% 0% no-repeat;
+    background: url(../images/icons_128/chart_128.png) 0 0 no-repeat;
 }
 
 div.clock_128 {
@@ -614,7 +604,7 @@ div.clock_128 {
     margin-bottom: 20px;
     padding-left: 148px;
     color: #666666;
-    background: url(../images/icons_128/clock_128.png) 0% 0% no-repeat;
+    background: url(../images/icons_128/clock_128.png) 0 0 no-repeat;
 }
 
 div.download_128 {
@@ -622,7 +612,7 @@ div.download_128 {
     margin-bottom: 20px;
     padding-left: 148px;
     color: #666666;
-    background: url(../images/icons_128/download_128.png) 0% 0% no-repeat;
+    background: url(../images/icons_128/download_128.png) 0 0 no-repeat;
 }
 
 div.formal_128 {
@@ -630,7 +620,7 @@ div.formal_128 {
     margin-bottom: 20px;
     padding-left: 148px;
     color: #666666;
-    background: url(../images/icons_128/formal_128.png) 0% 0% no-repeat;
+    background: url(../images/icons_128/formal_128.png) 0 0 no-repeat;
 }
 
 div.headphones_128 {
@@ -638,7 +628,7 @@ div.headphones_128 {
     margin-bottom: 20px;
     padding-left: 148px;
     color: #666666;
-    background: url(../images/icons_128/headphones_128.png) 0% 0% no-repeat;
+    background: url(../images/icons_128/headphones_128.png) 0 0 no-repeat;
 }
 
 div.help_128 {
@@ -646,7 +636,7 @@ div.help_128 {
     margin-bottom: 20px;
     padding-left: 148px;
     color: #666666;
-    background: url(../images/icons_128/help_128.png) 0% 0% no-repeat;
+    background: url(../images/icons_128/help_128.png) 0 0 no-repeat;
 }
 
 div.home_128 {
@@ -654,7 +644,7 @@ div.home_128 {
     margin-bottom: 20px;
     padding-left: 148px;
     color: #666666;
-    background: url(../images/icons_128/home_128.png) 0% 0% no-repeat;
+    background: url(../images/icons_128/home_128.png) 0 0 no-repeat;
 }
 
 div.keys_128 {
@@ -662,7 +652,7 @@ div.keys_128 {
     margin-bottom: 20px;
     padding-left: 148px;
     color: #666666;
-    background: url(../images/icons_128/keys_128.png) 0% 0% no-repeat;
+    background: url(../images/icons_128/keys_128.png) 0 0 no-repeat;
 }
 
 div.magic_128 {
@@ -670,7 +660,7 @@ div.magic_128 {
     margin-bottom: 20px;
     padding-left: 148px;
     color: #666666;
-    background: url(../images/icons_128/magic_128.png) 0% 0% no-repeat;
+    background: url(../images/icons_128/magic_128.png) 0 0 no-repeat;
 }
 
 div.speaker_128 {
