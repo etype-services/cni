@@ -2,13 +2,10 @@
     Drupal.behaviors.superfish = {
         attach: function (context) {
 
-            $('#superfish-1').append($('#block-system-user-menu ul.menu li'));
             var w = $(window).width();
             if (w > 767) {
-
             } else {
-                alert(w);
-                $('#block-system-user-menu').hide();
+                $('#block-system-user-menu ul.menu').prepend($('#superfish-1 li'));
             }
 
             var obj = $('#block-superfish-1 ul li.sf-depth-1:first-child a');
