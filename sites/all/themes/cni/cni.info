@@ -3,17 +3,20 @@ description = EType CNI theme.
 core = 7.x
 engine = phptemplate
 screenshot = screenshot.png
-base theme = bones
 
+stylesheets[all][] = css/normalize.css
+stylesheets[all][] = css/formalize.css
+stylesheets[all][] = css/grid_12.css
+stylesheets[all][] = css/layout.css
 stylesheets[all][] = css/jcarousel.css
 stylesheets[all][] = css/galleria.css
 stylesheets[all][] = css/theme.css
 stylesheets[all][] = css/responsive.css
 stylesheets[all][] = css/ads.css
 
-scripts[] = js/scripts.js
 scripts[] = js/jquery.color.js
 scripts[] = js/jquery-glowing.js
+scripts[] = js/scripts.js
 
 features[] = logo
 features[] = name
