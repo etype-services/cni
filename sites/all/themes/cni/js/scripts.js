@@ -2,16 +2,16 @@
     Drupal.behaviors.superfish = {
         attach: function (context) {
 
+
+
             var w = $(window).width();
             if (w > 767) {
-                $('#mobile_menu').hide();
+                $('#mobile-menu-wrapper').remove();
             } else {
-                if ($('#mobile_menu').length == 0) {
-                    var $myList = $('ul#mobile_menu');
-                    $('#superfish-1 li').appendTo('#mobile_menu');
-                    $('#block-system-user-menu ul.menu li').appendTo('#mobile_menu');
-                }
-                $('#mobile_menu').show();
+                $('.region-user-menu').prepend('<div id="mobile-menu-wrapper"><div id="mobile-menu-control"></div><ul id="mobile-menu" class="menu"></ul></div>');
+                $('#superfish-1 li').clone().appendTo($('#mobile-menu'));
+                $('#block-system-user-menu ul.menu li').clone().appendTo($('#mobile-menu'));
+                $('#mobile-menu-control').click(function(){$('#mobile-menu').toggle()});
             }
 
             var obj = $('#superfish li.sf-depth-1:first-child a');
@@ -29,13 +29,9 @@
             $(window).resize(function () {
                 var w = $(window).width();
                 if (w > 767) {
-                    $('#block-system-user-menu ul.menu li.added').remove();
-                    $('#superfish-1').show();
-                    $('#superfish-1 li.sf-depth-1:not(:first-child)').css("display", "list-item").show();
+
                 } else {
-                    $('#superfish-1 li.sf-depth-1:first-child a').text('Show Menu');
-                    $('#superfish-1 li.sf-depth-1:not(:first-child)').hide();
-                    $('#superfish-1 li.sf-depth-1 ul').hide();
+
                 }
             });
         }
