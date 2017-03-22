@@ -22,10 +22,8 @@
                         $('#mobile-menu li ul').remove();
                         $('#mobile-menu-control').click(function(){$('#mobile-menu').toggle()});
                         $(search).click(function(){
+                            searchForm.toggle();
                             if(searchForm.is(':visible')) {
-                                searchForm.hide();
-                            } else {
-                                searchForm.show();
                                 $('#edit-search-block-form--2').focus();
                             }
                         });
