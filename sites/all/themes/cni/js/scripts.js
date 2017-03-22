@@ -13,6 +13,7 @@
                     if ( wrapper.length === 0 ) {
                         $('.region-user-menu').prepend('<div id="mobile-menu-wrapper"><div id="mobile-menu-control"></div><ul id="mobile-menu" class="menu"></ul></div>');
                         var search = $('#search-control');
+                        var searchForm = $('#search-block-form');
                         if ( search.length === 0 ) {
                             $('#block-search-form .content').append('<div id="search-control"></div>');
                         }
@@ -20,11 +21,13 @@
                         $('#block-system-user-menu ul.menu li').clone().appendTo($('#mobile-menu'));
                         $('#mobile-menu li ul').remove();
                         $('#mobile-menu-control').click(function(){$('#mobile-menu').toggle()});
-                        $('#search-block-form').hide();
+                        searchForm.hide();
                         $(search).click(function(){
-                            $('#search-block-form').toggle();
-                            if($('#search-block-form').is(':visible')) {
+                            if(searchForm.is(':visible')) {
                                 $('#edit-search-block-form--2').focus();
+                                searchForm.hide();
+                            } else {
+                                searchForm.show();
                             }
                         });
                     }
