@@ -16,6 +16,20 @@
         display: none;
         visibility: hidden;
     }
+	/* place dfp nassaupromo block next to site logo on wider screens */
+
+	.site-logo {
+    	display: flex;
+    	justify-content: flex-start;
+    	margin: 0 auto;
+    	width: 100%;
+	}
+
+	#block-dfp-cni-nassaupromo {
+    	float: right;
+    	margin-top: -78px;
+	}
+
 }
 
 /* desktop browsers */
@@ -25,6 +39,17 @@
         display: none;
         visibility: hidden;
     }
+	/* place dfp nassaupromo block next to site logo on large screens */
+
+	.site-logo {
+    	float: left;
+    	margin: 0 auto;
+    	width: 58%;
+	}
+
+	#block-dfp-cni-nassaupromo {
+    	float: right;
+	}
 }
 
 /* smaller browsers, tablets */
@@ -58,3 +83,4 @@
         visibility: visible;
     }
 }
+
