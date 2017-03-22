@@ -464,6 +464,11 @@
         margin-left: 0;
     }
 
+    /* restrict width */
+    #edit-search-block-form--2 {
+        width: 100px;
+    }
+
 }
 
 /* less granular switch for big and small */
