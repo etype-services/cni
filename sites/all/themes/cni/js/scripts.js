@@ -21,7 +21,7 @@
                         $('#mobile-menu li ul').remove();
                         $('#mobile-menu-control').click(function(){$('#mobile-menu').toggle()});
                         $('#search-block-form').hide();
-                        $('#search-control').click(function(){
+                        $(search).click(function(){
                             $('#search-block-form').toggle();
                             if($('#search-block-form').is(':visible')) {
                                 $('#edit-search-block-form--2').focus();
