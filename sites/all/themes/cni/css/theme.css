@@ -471,7 +471,7 @@ article .field-image {
 --------------------------------------------------------------------------*/
 .region-user-menu {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-wrap: wrap;
     margin-bottom: 0.6em;
     background-color: #f3f1f1;

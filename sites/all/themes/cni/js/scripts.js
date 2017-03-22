@@ -2,18 +2,25 @@
     Drupal.behaviors.superfish = {
         attach: function (context) {
 
-
+            function mobile_menu(w) {
+                var wrapper = $('#mobile-menu-wrapper');
+                if (w > 767) {
+                    if ( wrapper.length > 0 ) {
+                        wrapper.remove();
+                    }
+                } else {
+                    if ( wrapper.length === 0 ) {
+                        $('.region-user-menu').prepend('<div id="mobile-menu-wrapper"><div id="mobile-menu-control"></div><ul id="mobile-menu" class="menu"></ul></div>');
+                        $('#superfish-1 li').clone().appendTo($('#mobile-menu'));
+                        $('#block-system-user-menu ul.menu li').clone().appendTo($('#mobile-menu'));
+                        $('#mobile-menu li ul').remove();
+                        $('#mobile-menu-control').click(function(){$('#mobile-menu').toggle()});
+                    }
+                }
+            };
 
             var w = $(window).width();
-            if (w > 767) {
-                $('#mobile-menu-wrapper').remove();
-            } else {
-                $('.region-user-menu').prepend('<div id="mobile-menu-wrapper"><div id="mobile-menu-control"></div><ul id="mobile-menu" class="menu"></ul></div>');
-                $('#superfish-1 li').clone().appendTo($('#mobile-menu'));
-                $('#block-system-user-menu ul.menu li').clone().appendTo($('#mobile-menu'));
-                $('#mobile-menu-control').click(function(){$('#mobile-menu').toggle()});
-            }
-
+            mobile_menu(w);
             var obj = $('#superfish li.sf-depth-1:first-child a');
             obj.click(function (e) {
                 var text = $(this).text();
@@ -28,11 +35,7 @@
 
             $(window).resize(function () {
                 var w = $(window).width();
-                if (w > 767) {
-
-                } else {
-
-                }
+                mobile_menu(w);
             });
         }
     };

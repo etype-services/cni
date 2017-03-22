@@ -10,13 +10,13 @@
             <div class="header-wrapper-inner <?php echo $grid_full_width ?>">
                 <header>
 
-                    <?php if ($logo): ?>
-                        <div class="site-logo">
-                        <a href="<?php print check_url($front_page); ?>"><img
-                                    src="<?php print $logo ?>"
-                                    alt="<?php print $site_name; ?>"/></a>
-                        </div><?php print render($page['header']) ?>
-                    <?php endif; ?>
+                  <?php if ($logo): ?>
+                      <div class="site-logo">
+                      <a href="<?php print check_url($front_page); ?>"><img
+                                  src="<?php print $logo ?>"
+                                  alt="<?php print $site_name; ?>"/></a>
+                      </div><?php print render($page['header']) ?>
+                  <?php endif; ?>
 
                 </header>
 
@@ -24,7 +24,7 @@
         </div>
 
     </div>
-</div>
+</div><!-- page-top -->
 
 <?php if ($page['main_menu']): ?>
     <div class="main-menu-wrapper clearfix">

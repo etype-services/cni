@@ -1,31 +1,30 @@
-<div id="page">
+<div id="page-top">
+  <?php if ($page['user_menu']): ?>
+      <nav id="user-menu" class="clearfix">
+        <?php print render($page['user_menu']); ?>
+        <?php print render($page['search_box']); ?>
+      </nav>
+  <?php endif; ?>
     <div class="page-inner <?php echo $grid_size ?>">
-
-        <?php if ($page['user_menu']): ?>
-            <nav id="user-menu" class="clearfix">
-                <?php print render($page['user_menu']); ?>
-                <?php print render($page['search_box']); ?>
-            </nav>
-        <?php endif; ?>
-
         <div class="header-wrapper clearfix">
             <div class="header-wrapper-inner <?php echo $grid_full_width ?>">
                 <header>
 
-                    <?php if ($logo): ?>
-                        <div class="site-logo">
-                        <a href="<?php print check_url($front_page); ?>"><img
-                                    src="<?php print $logo ?>"
-                                    alt="<?php print $site_name; ?>"/></a>
-                        </div><?php print render($page['header']) ?>
-                    <?php endif; ?>
+                  <?php if ($logo): ?>
+                      <div class="site-logo">
+                      <a href="<?php print check_url($front_page); ?>"><img
+                                  src="<?php print $logo ?>"
+                                  alt="<?php print $site_name; ?>"/></a>
+                      </div><?php print render($page['header']) ?>
+                  <?php endif; ?>
 
                 </header>
 
             </div>
         </div>
+
     </div>
-</div>
+</div><!-- page-top -->
 
 <?php if ($page['main_menu']): ?>
     <div class="main-menu-wrapper clearfix">
