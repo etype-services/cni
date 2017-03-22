@@ -7,6 +7,7 @@
                 if (w > 767) {
                     if ( wrapper.length > 0 ) {
                         wrapper.remove();
+                        $('#search-block-form').show();
                     }
                 } else {
                     if ( wrapper.length === 0 ) {
