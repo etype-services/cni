@@ -24,10 +24,10 @@
                         // searchForm.hide();
                         $(search).click(function(){
                             if(searchForm.is(':visible')) {
-                                $('#edit-search-block-form--2').focus();
                                 searchForm.hide();
                             } else {
                                 searchForm.show();
+                                $('#edit-search-block-form--2').focus();
                             }
                         });
                     }
