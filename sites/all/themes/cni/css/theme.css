@@ -1396,3 +1396,14 @@ ul.flex-direction-nav {
 ul.slides {
     margin: 0;
 }
+
+/* views-fluid-grid Classifieds */
+div.views-fluid-grid {
+    margin-bottom: 1em;
+}
+
+li.views-fluid-grid-item {
+    color: inherit;
+    background: none;
+    border: none;
+}
