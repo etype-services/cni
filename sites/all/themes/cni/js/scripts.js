@@ -4,16 +4,19 @@
 
             function mobile_menu(w) {
                 var wrapper = $('#mobile-menu-wrapper');
+                var searchForm = $('#search-block-form');
+
                 if (w > 767) {
                     if ( wrapper.length > 0 ) {
                         wrapper.remove();
+                        searchForm.show();
                     }
                 } else {
                     if ( wrapper.length === 0 ) {
                         $('.region-user-menu').prepend('<div id="mobile-menu-wrapper"><div id="mobile-menu-control"></div><ul id="mobile-menu" class="menu"></ul></div>');
 
-                        var searchForm = $('#search-block-form');
                         var search = $('#search-control');
+                        searchForm.hide();
                         if ( search.length === 0 ) {
                             $('#block-search-form .content').append('<div id="search-control"></div>');
                             var search = $('#search-control');
