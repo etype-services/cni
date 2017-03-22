@@ -547,6 +547,7 @@
     }
 
     #search-control {
+        display: block;
         height: 36px;
         min-width: 36px;
         background: #f3f1f1 url(../images/search-icon.png) 3px no-repeat;

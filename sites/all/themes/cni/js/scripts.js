@@ -10,7 +10,11 @@
                     }
                 } else {
                     if ( wrapper.length === 0 ) {
-                        $('.region-user-menu').prepend('<div id="mobile-menu-wrapper"><div id="mobile-menu-control"></div><div id="search-control"></div><ul id="mobile-menu" class="menu"></ul></div>');
+                        $('.region-user-menu').prepend('<div id="mobile-menu-wrapper"><div id="mobile-menu-control"></div><ul id="mobile-menu" class="menu"></ul></div>');
+                        var search = $('#search-control');
+                        if ( search.length === 0 ) {
+                            $('#block-search-form').append('<div id="search-control"></div>');
+                        }
                         $('#superfish-1 li').clone().appendTo($('#mobile-menu'));
                         $('#block-system-user-menu ul.menu li').clone().appendTo($('#mobile-menu'));
                         $('#mobile-menu li ul').remove();
