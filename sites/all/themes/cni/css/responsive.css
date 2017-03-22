@@ -544,7 +544,7 @@
         justify-content: flex-end;
     }
 
-    #search-block-form .form-submit {
+    #search-block-form, #search-block-form .form-submit {
         display: none;
     }
 
