@@ -7,7 +7,6 @@
                 if (w > 767) {
                     if ( wrapper.length > 0 ) {
                         wrapper.remove();
-                        $('#search-block-form').show();
                     }
                 } else {
                     if ( wrapper.length === 0 ) {
@@ -22,7 +21,6 @@
                         $('#mobile-menu li ul').remove();
                         $('#mobile-menu-control').click(function(){$('#mobile-menu').toggle()});
                         $(search).click(function(){
-                            alert('clicked');
                             if(searchForm.is(':visible')) {
                                 searchForm.hide();
                             } else {
