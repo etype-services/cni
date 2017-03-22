@@ -29,7 +29,7 @@ h2 {
 }
 
 #page {
-
+    margin-top: 1em;
 }
 
 .page-inner {
@@ -369,9 +369,12 @@ article .field-image {
     border-bottom: 0 dotted #555555;
 }
 
+#block-etype-follow .content div {
+    background-size: 16px;
+}
+
 #block-etype-follow .content div > a {
     margin-left: 1.7em;
-    background-size: 16px;
 }
 
 /* title in first column of postscript */
@@ -475,10 +478,6 @@ article .field-image {
     flex-wrap: wrap;
     margin-bottom: 0.6em;
     background-color: #f3f1f1;
-}
-
-#block-system-user-menu {
-    margin-bottom: 0.2em;
 }
 
 #user-menu {
