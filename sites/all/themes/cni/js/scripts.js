@@ -16,8 +16,8 @@
                         $('#mobile-menu li ul').remove();
                         $('#mobile-menu-control').click(function(){$('#mobile-menu').toggle()});
                         $('#search-control').click(function(){
-                            $('#block-search-form').toggle();
-                            if($('#block-search-form').is(':visible')) {
+                            $('#search-block-form').toggle();
+                            if($('#search-block-form').is(':visible')) {
                                 $('#edit-search-block-form--2').focus();
                             }
                         });

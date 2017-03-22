@@ -538,7 +538,7 @@
     }
 
     /* search */
-    #block-search-form, #search-block-form .form-submit {
+    #search-block-form, #search-block-form .form-submit {
         display: none;
     }
 
