@@ -22,6 +22,7 @@
                         $('#mobile-menu li ul').remove();
                         $('#mobile-menu-control').click(function(){$('#mobile-menu').toggle()});
                         $(search).click(function(){
+                            alert('clicked');
                             if(searchForm.is(':visible')) {
                                 searchForm.hide();
                             } else {
