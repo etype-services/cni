@@ -494,10 +494,6 @@
         position: relative;
     }
 
-    #block-etype-social {
-        flex-grow: 2;
-    }
-
     ul.social-links {
         float: right;
     }
@@ -538,6 +534,11 @@
     }
 
     /* search */
+
+    #block-search-form {
+        flex-grow: 2;
+    }
+
     #block-search-form .content {
         display: flex;
         justify-content: flex-end;
