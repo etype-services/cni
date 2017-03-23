@@ -537,11 +537,7 @@
         background-color: #cccccc;
     }
 
-    /* search */
-
-    #block-search-form {
-        flex-grow: 2;
-    }
+    /* SEARCH */
 
     #block-search-form .content {
         display: flex;
