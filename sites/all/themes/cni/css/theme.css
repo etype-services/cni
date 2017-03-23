@@ -177,7 +177,7 @@ h3.site-slogan {
 }
 
 /* override module defaults */
-.views-slideshow-pager-fields > div{
+.views-slideshow-pager-fields > div {
     padding-left: 0;
 }
 
@@ -1359,4 +1359,15 @@ ul.flex-direction-nav {
 .content .node-article ul.slides,
 ul.slides {
     margin: 0;
+}
+
+/* views-fluid-grid Classifieds */
+div.views-fluid-grid {
+    margin-bottom: 1em;
+}
+
+li.views-fluid-grid-item {
+    color: inherit;
+    background: none;
+    border: none;
 }

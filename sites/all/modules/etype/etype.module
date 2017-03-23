@@ -11,6 +11,8 @@
  */
 function etype_menu() {
 
+  $items = array();
+
     /* add e-Edition link to user menu */
     $items['e-edition'] = array(
         'title' => 'e-Edition',
@@ -35,43 +37,47 @@ function etype_menu() {
         'access arguments' => array('access administration pages')
     );
 
-    return $items;
+  return $items;
 }
 
 /**
  * Implements hook_block_info().
  */
 function etype_block_info() {
-    $blocks = array();
+  $blocks = array();
 
-    $blocks['Social'] = array(
-        'info' => t('eType Social'),
-    );
+  $blocks['Social'] = array(
+    'info' => t('Social'),
+  );
 
-    $blocks['Follow'] = array(
-        'info' => t('eType Follow'),
-    );
+  $blocks['Follow'] = array(
+    'info' => t('Follow'),
+  );
 
-    $blocks['Facebook'] = array(
-        'info' => t('Facebook'),
-    );
+  $blocks['Facebook'] = array(
+    'info' => t('Facebook'),
+  );
 
-    $blocks['Twitter'] = array(
-        'info' => t('Twitter'),
-    );
+  $blocks['Twitter'] = array(
+    'info' => t('Twitter'),
+  );
 
-    $blocks['e-Edition'] = array(
-        'info' => t('e-Edition'),
-    );
-    return $blocks;
+  $blocks['Own Local'] = array(
+    'info' => t('Own Local'),
+  );
+
+  $blocks['e-Edition'] = array(
+    'info' => t('e-Edition'),
+  );
+  return $blocks;
 }
 
 /**
  * Implements hook_block_view().
  */
 function etype_block_view($delta = '') {
-    $block = array();
-    switch ($delta) {
+  $block = array();
+  switch ($delta) {
 
         case 'Social':
             $block['subject'] = '';
