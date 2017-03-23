@@ -19,10 +19,6 @@
         js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
-<div id="skip-link">
-    <a href="#main-content"
-       class="element-invisible element-focusable"><?php print t('Skip to main content'); ?></a>
-</div>
 <?php print $page_top; ?>
 <?php print $page; ?>
 <?php print $page_bottom; ?>
