@@ -221,7 +221,7 @@ function _etype_e_edition_content() {
     $arr = preg_split("/ID[0-9]+/", $e_edition);
     $fixed = $arr[0];
     $output = '
-<p class="rtecenter" style="text-align: center;"><a href="https://etypeservices.com/' . $e_edition . '/"><img src="https://etypeservices.com/LandingPageImages/' . $fixed . '/currentpg1.jpg" width="193"></a></p><h4 class="rtecenter" style="text-align: center;"><a href="https://etypeservices.com/' . $e_edition . '/">Click here to read ' . $site_name . '</a></h4>
+<p class="rtecenter"><a href="/e-edition"><img src="https://etypeservices.com/LandingPageImages/' . $fixed . '/currentpg1.jpg" width="193"></a></p><h4 class="rtecenter"><a href="/e-edition">Click here to read ' . $site_name . '</a></h4>
 ';
     return $output;
 }
@@ -276,13 +276,24 @@ function etype_cronapi($op, $job = NULL) {
 
 function _etype_e_edition() {
     /* redirect to e-Edition */
+    $uid = user_is_logged_in();
     $e_edition = theme_get_setting('e_edition');
-    $path = 'http://etypeservices.com/' . $e_edition . '/';
+    if ($uid > 0) {
+      global $user;
+      $pub = theme_get_setting('pub');
+      $ptype = theme_get_setting('ptype');
+      if (! empty ($pub)) {
+        $path = 'http://etypeservices.com/ReadTheEdition.aspx?Username=' . $user->name . "&Pub=" . $pub ."&PType=" . $ptype;
+      } else {
+        $path = 'http://etypeservices.com/' . $e_edition . '/';
+      }
+    } else {
+      $path = 'http://etypeservices.com/' . $e_edition . '/';
+    }
     drupal_goto($path);
 }
 
 function etype_node_cleanup() {
-
     $res = db_query('SELECT n.nid FROM node n LEFT JOIN node_revision nr ON nr.nid = n.nid WHERE nr.vid IS NULL');
     if (count($res) > 0) {
         $nids = array();
