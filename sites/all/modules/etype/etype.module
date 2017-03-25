@@ -282,8 +282,13 @@ function _etype_e_edition() {
     $e_edition = theme_get_setting('e_edition');
     if ($uid > 0) {
       global $user;
-      // $path = 'http://etypeservices.com/ReadTheEdition.aspx?Username=' . $user->name;
-      $path = 'http://etypeservices.com/' . $e_edition . '/';
+      $pub = theme_get_setting('pub');
+      $ptype = theme_get_setting('ptype');
+      if (! empty ($pub)) {
+        $path = 'http://etypeservices.com/ReadTheEdition.aspx?Username=' . $user->name . "&Pub=" . $pub ."&PType=" . $ptype;
+      } else {
+        $path = 'http://etypeservices.com/' . $e_edition . '/';
+      }
     } else {
       $path = 'http://etypeservices.com/' . $e_edition . '/';
     }
