@@ -277,9 +277,12 @@ function etype_cronapi($op, $job = NULL) {
 
 function _etype_e_edition() {
     /* redirect to e-Edition */
+    // http://etypeservices.com/ReadTheEdition.aspx?Username=php echo $username &Pub=3192&PType=ElbRT319231MBRTI
     $uid = user_is_logged_in();
     $e_edition = theme_get_setting('e_edition');
     if ($uid > 0) {
+      global $user;
+      // $path = 'http://etypeservices.com/ReadTheEdition.aspx?Username=' . $user->name;
       $path = 'http://etypeservices.com/' . $e_edition . '/';
     } else {
       $path = 'http://etypeservices.com/' . $e_edition . '/';
@@ -288,7 +291,6 @@ function _etype_e_edition() {
 }
 
 function etype_node_cleanup() {
-
     $res = db_query('SELECT n.nid FROM node n LEFT JOIN node_revision nr ON nr.nid = n.nid WHERE nr.vid IS NULL');
     if (count($res) > 0) {
         $nids = array();
