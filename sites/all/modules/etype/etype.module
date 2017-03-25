@@ -277,8 +277,13 @@ function etype_cronapi($op, $job = NULL) {
 
 function _etype_e_edition() {
     /* redirect to e-Edition */
+    $uid = user_is_logged_in();
     $e_edition = theme_get_setting('e_edition');
-    $path = 'http://etypeservices.com/' . $e_edition . '/';
+    if ($uid > 0) {
+      $path = 'http://etypeservices.com/' . $e_edition . '/';
+    } else {
+      $path = 'http://etypeservices.com/' . $e_edition . '/';
+    }
     drupal_goto($path);
 }
 
