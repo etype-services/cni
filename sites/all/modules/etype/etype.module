@@ -222,7 +222,7 @@ function _etype_e_edition_content() {
     $arr = preg_split("/ID[0-9]+/", $e_edition);
     $fixed = $arr[0];
     $output = '
-<p class="rtecenter"><a href="/e-edition"><img src="https://etypeservices.com/LandingPageImages/' . $fixed . '/currentpg1.jpg" width="193"></a></p><h4 class="rtecenter"><a href="/e-edition">Click here to read ' . $site_name . '</a></h4>
+<p class="rtecenter"><a href="/e-edition"><img src="https://etypeservices.com/LandingPageImages/' . $fixed . '/currentpg1.jpg"></a></p><h4 class="rtecenter"><a href="/e-edition">Click here to read ' . $site_name . '</a></h4>
 ';
     return $output;
 }
@@ -258,19 +258,6 @@ function etype_cronapi($op, $job = NULL) {
       }
 
     }
-
-
-    /*$items['cache_clear_cron'] = array(
-        'title' => 'Clear Cache',
-        'module' => 'etype',
-        'callback' => 'etype_clear_cache',
-        'scheduler' => array(
-            'name' => 'crontab',
-            'crontab' => array(
-                'rules' => array('*//*30 * * * *'),
-            ),
-        ),
-    );*/
 
     return $items;
 }
