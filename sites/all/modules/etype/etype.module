@@ -302,14 +302,14 @@ function etype_cronapi($op, $job = NULL) {
       $pub = theme_get_setting('pub');
       $ptype = theme_get_setting('ptype');
       if (!empty ($pub)) {
-        $path = 'http://etypeservices.com/ReadTheEdition.aspx?Username=' . $user->name . "&Pub=" . $pub . "&PType=" . $ptype;
+        $path = 'https://etypeservices.com/ReadTheEdition.aspx?Username=' . $user->name . "&Pub=" . $pub . "&PType=" . $ptype;
       }
       else {
-        $path = 'http://etypeservices.com/' . $e_edition . '/';
+        $path = 'https://etypeservices.com/' . $e_edition . '/';
       }
     }
     else {
-      $path = 'http://etypeservices.com/' . $e_edition . '/';
+      $path = 'https://etypeservices.com/' . $e_edition . '/';
     }
     drupal_goto($path);
   }
