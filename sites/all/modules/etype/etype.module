@@ -311,6 +311,7 @@ function etype_cronapi($op, $job = NULL) {
     else {
       $path = 'http://etypeservices.com/' . $e_edition . '/';
     }
+    echo $path;
     drupal_goto($path);
   }
 
