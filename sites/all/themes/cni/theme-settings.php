@@ -1,6 +1,6 @@
 <?php
 
-drupal_add_css(drupal_get_path('theme', 'bones') . '/css/theme-settings.css', array(
+drupal_add_css(drupal_get_path('theme', 'cni') . '/css/theme-settings.css', array(
   'group' => CSS_THEME,
   'weight' => 100
 ));
@@ -16,7 +16,7 @@ function get_columns() {
   return $columns;
 }
 
-function bones_form_system_theme_settings_alter(&$form, $form_state) {
+function cni_form_system_theme_settings_alter(&$form, $form_state) {
 
   $grid_size = theme_get_setting('grid_size');
   $col_number = get_columns();
@@ -31,14 +31,105 @@ function bones_form_system_theme_settings_alter(&$form, $form_state) {
     '#prefix' => t('<h3> Advanced Settings </h3>')
   );
 
-  // Grid Settings
+  // Misc Settings (Facebook, Twitter, etc.)
+  $form['advanced_settings']['misc_settings'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Misc Settings'),
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
+    '#weight' => -10,
+  );
 
+  $form['advanced_settings']['misc_settings']['twitter'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Twitter'),
+    '#size' => 10,
+    '#default_value' => theme_get_setting('twitter'),
+  );
+
+  $form['advanced_settings']['misc_settings']['facebook'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Facebook'),
+    '#size' => 10,
+    '#default_value' => theme_get_setting('facebook'),
+  );
+
+  $form['advanced_settings']['misc_settings']['pinterest'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Pinterest'),
+    '#size' => 10,
+    '#default_value' => theme_get_setting('pinterest'),
+  );
+
+  $form['advanced_settings']['misc_settings']['instagram'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Instagram'),
+    '#size' => 10,
+    '#default_value' => theme_get_setting('instagram'),
+  );
+
+  $form['advanced_settings']['misc_settings']['googleplus'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Google Plus'),
+    '#size' => 10,
+    '#default_value' => theme_get_setting('googleplus'),
+  );
+
+  $form['advanced_settings']['misc_settings']['rssfeed'] = array(
+    '#type' => 'textfield',
+    '#title' => t('RSS Feed'),
+    '#size' => 10,
+    '#default_value' => theme_get_setting('rssfeed'),
+  );
+
+  $form['advanced_settings']['misc_settings']['e_edition'] = array(
+    '#type' => 'textfield',
+    '#title' => t('e-Edition'),
+    '#size' => 10,
+    '#default_value' => theme_get_setting('e_edition'),
+  );
+
+  $form['advanced_settings']['misc_settings']['pub'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Pub'),
+    '#size' => 10,
+    '#default_value' => theme_get_setting('pub'),
+  );
+
+  $form['advanced_settings']['misc_settings']['ptype'] = array(
+    '#type' => 'textfield',
+    '#title' => t('PType'),
+    '#size' => 10,
+    '#default_value' => theme_get_setting('ptype'),
+  );
+
+  $form['advanced_settings']['misc_settings']['nav_color'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Navigation Background Color'),
+    '#size' => 10,
+    '#default_value' => theme_get_setting('nav_color'),
+  );
+
+  $form['advanced_settings']['misc_settings']['max_nav_width'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Max Main Navigation Width'),
+    '#size' => 10,
+    '#default_value' => theme_get_setting('max_nav_width'),
+  );
+
+  $form['advanced_settings']['misc_settings']['logo_width'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Logo Width'),
+    '#size' => 10,
+    '#default_value' => theme_get_setting('logo_width'),
+  );
+
+  // Grid Settings
   $form['advanced_settings']['grid_settings'] = array(
     '#type' => 'fieldset',
     '#title' => t('Grid Settings'),
     '#collapsible' => TRUE,
-    '#collapsed' => FALSE,
-    '#weight' => -10,
+    '#collapsed' => TRUE
   );
 
   $form['advanced_settings']['grid_settings']['grid_size'] = array(
@@ -128,98 +219,5 @@ function bones_form_system_theme_settings_alter(&$form, $form_state) {
     );
 
   }
-
-  // Misc Settings (Facebook, Twitter, etc.)
-
-  $form['advanced_settings']['misc_settings'] = array(
-    '#type' => 'fieldset',
-    '#title' => t('Misc Settings'),
-    '#collapsible' => TRUE,
-    '#collapsed' => FALSE,
-  );
-
-  $form['advanced_settings']['misc_settings']['twitter'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Twitter'),
-    '#size' => 10,
-    '#default_value' => theme_get_setting('twitter'),
-  );
-
-  $form['advanced_settings']['misc_settings']['facebook'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Facebook'),
-    '#size' => 10,
-    '#default_value' => theme_get_setting('facebook'),
-  );
-
-  $form['advanced_settings']['misc_settings']['pinterest'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Pinterest'),
-    '#size' => 10,
-    '#default_value' => theme_get_setting('pinterest'),
-  );
-
-  $form['advanced_settings']['misc_settings']['instagram'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Instagram'),
-    '#size' => 10,
-    '#default_value' => theme_get_setting('instagram'),
-  );
-
-  $form['advanced_settings']['misc_settings']['googleplus'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Google Plus'),
-    '#size' => 10,
-    '#default_value' => theme_get_setting('googleplus'),
-  );
-
-  $form['advanced_settings']['misc_settings']['rssfeed'] = array(
-    '#type' => 'textfield',
-    '#title' => t('RSS Feed'),
-    '#size' => 10,
-    '#default_value' => theme_get_setting('rssfeed'),
-  );
-
-  $form['advanced_settings']['misc_settings']['e_edition'] = array(
-    '#type' => 'textfield',
-    '#title' => t('e-Edition'),
-    '#size' => 10,
-    '#default_value' => theme_get_setting('e_edition'),
-  );
-
-  $form['advanced_settings']['misc_settings']['pub'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Pub'),
-    '#size' => 10,
-    '#default_value' => theme_get_setting('pub'),
-  );
-
-  $form['advanced_settings']['misc_settings']['ptype'] = array(
-    '#type' => 'textfield',
-    '#title' => t('PType'),
-    '#size' => 10,
-    '#default_value' => theme_get_setting('ptype'),
-  );
-
-  $form['advanced_settings']['misc_settings']['nav_color'] = array(
-      '#type' => 'textfield',
-      '#title' => t('Navigation Background Color'),
-      '#size' => 10,
-      '#default_value' => theme_get_setting('nav_color'),
-  );
-
-  $form['advanced_settings']['misc_settings']['max_nav_width'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Max Main Navigation Width'),
-    '#size' => 10,
-    '#default_value' => theme_get_setting('max_nav_width'),
-  );
-
-  $form['advanced_settings']['misc_settings']['logo_width'] = array(
-      '#type' => 'textfield',
-      '#title' => t('Logo Width'),
-      '#size' => 10,
-      '#default_value' => theme_get_setting('logo_width'),
-  );
 
 }
