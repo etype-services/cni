@@ -297,6 +297,8 @@ function etype_cronapi($op, $job = NULL) {
   function _etype_e_edition() {
     $uid = user_is_logged_in();
     $e_edition = theme_get_setting('e_edition');
+    echo $e_edition;
+    exit;
     if ($uid > 0) {
       global $user;
       $pub = theme_get_setting('pub');
