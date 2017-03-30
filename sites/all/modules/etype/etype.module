@@ -270,6 +270,7 @@ function etype_cronapi($op, $job = NULL) {
         'rule' => $cron_schedule,
         'callback' => 'etype_classified_ad_importer',
       );
+      return $items;
     }
   }
 }
