@@ -1389,6 +1389,6 @@ li.views-fluid-grid-item {
 }
 
 /* override date.css from date module */
-.page.calendar {
+.node-type-article.calendar {
     width: inherit;
 }
