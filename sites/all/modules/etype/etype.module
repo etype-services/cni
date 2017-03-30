@@ -261,6 +261,8 @@ function etype_cronapi($op, $job = NULL) {
   $cron_schedule = ''; // set in include file, just to avoid IDE errors
   $etype_site_path = etype_site_path();
   $settings_file = $etype_site_path . '/etype_settings.php';
+  echo $settings_file;
+  exit;
   if (file_exists($settings_file)) {
     include($etype_site_path . '/etype_settings.php');
     if (!empty($cron_schedule)) {
