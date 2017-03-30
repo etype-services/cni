@@ -264,8 +264,6 @@ function etype_cronapi($op, $job = NULL) {
   if (file_exists($settings_file)) {
     include($etype_site_path . '/etype_settings.php');
     if (!empty($cron_schedule)) {
-      echo $settings_file;
-      exit;
       /* Classified importer */
       $items['etype_cron'] = array(
         'title' => 'Import Classified Ads',
