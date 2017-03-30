@@ -157,3 +157,4 @@ $sites['unwindnorthgeorgia.com'] = 'unwindnorthgeorgia.etypegoogle3.com';
 $sites['www.unwindnorthgeorgia.com'] = 'unwindnorthgeorgia.etypegoogle3.com';
 
 $sites['test.etypegoogle3.com'] = 'thetoccoarecord.com';
+$sites['coupons.etypegoogle3.com'] = 'palatkadailynews.com';

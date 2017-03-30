@@ -265,17 +265,12 @@ function etype_cronapi($op, $job = NULL) {
     include($etype_site_path . '/etype_settings.php');
     if (!empty($cron_schedule)) {
       /* Classified importer */
-      $items['etype_cron'] = array(
-        'title' => 'Import Classified Ads',
-        'module' => 'etype',
+      $items['etype_classified_cron'] = array(
+        'description' => 'Import Classified Ads',
+        'rule' => $cron_schedule,
         'callback' => 'etype_classified_ad_importer',
-        'scheduler' => array(
-          'name' => 'crontab',
-          'crontab' => array(
-            'rules' => array($cron_schedule),
-          ),
-        ),
       );
+      return $items;
     }
   }
 }
