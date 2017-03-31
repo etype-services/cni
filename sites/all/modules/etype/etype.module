@@ -148,7 +148,7 @@ function _etype_social_content() {
 }
 
 /**
- * Follow Block
+ * Follow Block in Footer
  * @return null
  */
 function _etype_follow_content() {
