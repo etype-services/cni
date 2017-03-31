@@ -13,7 +13,6 @@ function etype_menu() {
 
   $items = array();
 
-  /* add e-Edition link to user menu */
   $items['e-edition'] = array(
     'title' => 'e-Edition',
     'description' => 'Link to e-Edition.',
@@ -231,21 +230,11 @@ function _etype_ownlocal_content() {
 }
 
 function _etype_e_edition_content() {
-  $e_edition = theme_get_setting('e_edition');
-  $site = variable_get('site_name', 'Drupal');
-  $editions = explode(',', $e_edition);
+  $editions = etype_e_editions();
   $output = '';
   foreach($editions as $edition) {
-    $arr = explode('|', $edition);
-    $ar2 = preg_split("/ID[0-9]+/", $arr[0]);
-    $fixed = $ar2[0];
-    if (!isset($arr[1])) {
-      $site_name = $site;
-    } else {
-      $site_name = $arr[1];
-    }
     $output .= '
-<p class="rtecenter"><a href="/e-edition"><img src="https://etypeservices.com/LandingPageImages/' . $fixed . '/currentpg1.jpg"></a></p><h4 class="rtecenter"><a href="/e-edition">Click here to read ' . $site_name . '</a></h4>
+<p class="rtecenter"><a href="https://etypeservices.com/' . $edition['e-edition'] . '"><img src="https://etypeservices.com/LandingPageImages/' . $edition['image'] . '/currentpg1.jpg"></a></p><h4 class="rtecenter"><a href="/e-edition">Click here to read ' . $edition['site_name'] . '</a></h4>
 ';
   }
   return $output;
@@ -291,6 +280,7 @@ function etype_cronapi($op, $job = NULL) {
 function _etype_e_edition() {
   $uid = user_is_logged_in();
   $e_edition = theme_get_setting('e_edition');
+
   if ($uid > 0) {
     global $user;
     $pub = theme_get_setting('pub');
@@ -515,3 +505,25 @@ function etype_premium_access(&$node, $teaser) {
   }
 }
 
+/**
+ * Parse e-Edition setting into an array for use in other functions
+ */
+function etype_e_editions() {
+  $e_edition = theme_get_setting('e_edition');
+  $site = variable_get('site_name', 'Drupal');
+  $items = explode(',', $e_edition);
+  $editions = array();
+  foreach($items as $item) {
+    $arr = explode('|', $item);
+    if (!isset($arr[1])) {
+      $site = $site;
+    } else {
+      $site = $arr[1];
+    }
+    $ar2 = preg_split("/ID[0-9]+/", $arr[0]);
+    $editions[]['e-edition'] = $arr[0];
+    $editions[]['image'] = $ar2[0];
+    $editions[]['site_name'] = $site;
+  }
+  return $editions;
+}
