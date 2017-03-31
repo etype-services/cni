@@ -93,6 +93,7 @@ function cni_form_system_theme_settings_alter(&$form, $form_state) {
   $form['advanced_settings']['misc_settings']['pub'] = array(
     '#type' => 'textfield',
     '#title' => t('Pub'),
+    '#description' => t('Separate multiple entries with a comma, in the same order as the e-Editions'),
     '#size' => 10,
     '#default_value' => theme_get_setting('pub'),
   );
@@ -100,6 +101,7 @@ function cni_form_system_theme_settings_alter(&$form, $form_state) {
   $form['advanced_settings']['misc_settings']['ptype'] = array(
     '#type' => 'textfield',
     '#title' => t('PType'),
+    '#description' => t('Separate multiple entries with a comma, in the same order as the e-Editions'),
     '#size' => 10,
     '#default_value' => theme_get_setting('ptype'),
   );
