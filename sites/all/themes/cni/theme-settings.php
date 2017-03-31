@@ -85,6 +85,7 @@ function cni_form_system_theme_settings_alter(&$form, $form_state) {
   $form['advanced_settings']['misc_settings']['e_edition'] = array(
     '#type' => 'textfield',
     '#title' => t('e-Edition'),
+    '#description' => t('For one paper enter the e-Edition as Mitchell%20News-JournalID617, for more than one format like this Mitchell%20News-JournalID617|Mitchell News Journal,The%20Yorktown%20News-ViewID84|The Yorktown News View'),
     '#size' => 10,
     '#default_value' => theme_get_setting('e_edition'),
   );

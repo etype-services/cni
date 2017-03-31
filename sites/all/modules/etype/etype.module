@@ -232,12 +232,18 @@ function _etype_ownlocal_content() {
 
 function _etype_e_edition_content() {
   $e_edition = theme_get_setting('e_edition');
-  $site_name = variable_get('site_name', 'Drupal');
+  $site = variable_get('site_name', 'Drupal');
   $editions = explode(',', $e_edition);
   $output = '';
   foreach($editions as $edition) {
-    $arr = preg_split("/ID[0-9]+/", $edition);
-    $fixed = $arr[0];
+    $arr = explode('|', $edition);
+    $ar2 = preg_split("/ID[0-9]+/", $arr[0]);
+    $fixed = $ar2[0];
+    if (!isset($arr[1])) {
+      $site_name = $site;
+    } else {
+      $site_name = $arr[1];
+    }
     $output .= '
 <p class="rtecenter"><a href="/e-edition"><img src="https://etypeservices.com/LandingPageImages/' . $fixed . '/currentpg1.jpg"></a></p><h4 class="rtecenter"><a href="/e-edition">Click here to read ' . $site_name . '</a></h4>
 ';
