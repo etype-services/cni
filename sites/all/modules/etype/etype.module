@@ -231,8 +231,6 @@ function _etype_ownlocal_content() {
 
 function _etype_e_edition_content() {
   $editions = etype_e_editions();
-  print_r($editions);
-  exit;
   $output = '';
   foreach($editions as $edition) {
     $output .= '
