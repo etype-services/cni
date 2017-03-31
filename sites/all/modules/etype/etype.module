@@ -13,6 +13,7 @@ function etype_menu() {
 
   $items = array();
 
+  /* Add first e-Edition link to User Menu */
   $items['e-edition'] = array(
     'title' => 'e-Edition',
     'description' => 'Link to e-Edition.',
@@ -230,24 +231,26 @@ function _etype_ownlocal_content() {
 }
 
 function _etype_e_edition_content() {
-  $editions = etype_e_editions();
+  $e_editions = etype_e_editions();
   $output = '';
-  foreach($editions as $edition) {
+  foreach($e_editions as $e_edition) {
     $output .= '
-<p class="rtecenter"><a href="https://etypeservices.com/' . $edition['e-edition'] . '"><img src="https://etypeservices.com/LandingPageImages/' . $edition['image'] . '/currentpg1.jpg"></a></p><h4 class="rtecenter"><a href="/e-edition">Click here to read ' . $edition['site_name'] . '</a></h4>
+<p class="rtecenter"><a href="https://etypeservices.com/' . $e_edition['e-edition'] . '"><img src="https://etypeservices.com/LandingPageImages/' . $e_edition['image'] . '/currentpg1.jpg"></a></p><h4 class="rtecenter"><a href="/e-edition">Click here to read ' . $e_edition['site_name'] . '</a></h4>
 ';
   }
   return $output;
 }
 
-/*$own_local_file = drupal_get_path('module', 'etype') . '/ownlocal/ownlocal.js';
+/* Add Own Local css and js if necessary */
+/* TODO Remove? */
+$own_local_file = etype_site_path() . '/ownlocal.html';
 if (file_exists($own_local_file)) {
     drupal_add_js(drupal_get_path('module', 'etype') . '/ownlocal/ownlocal.js', 'file');
     drupal_add_css(drupal_get_path('module', 'etype') . '/ownlocal/ownlocal.css', array(
         'group' => CSS_THEME,
         'type' => 'file'
     ));
-}*/
+}
 
 /**
  * Cron Jobs
@@ -279,18 +282,18 @@ function etype_cronapi($op, $job = NULL) {
  */
 function _etype_e_edition() {
   $uid = user_is_logged_in();
-  $e_editions = etype_e_editions();
+  $editions = etype_e_editions();
   if ($uid > 0) {
     global $user;
     if (!empty ($editions[0]['pub'])) {
       $path = 'https://etypeservices.com/ReadTheEdition.aspx?Username=' . $user->name . "&Pub=" . $editions[0]['pub'] . "&PType=" . $editions[0]['ptype'];
     }
     else {
-      $path = 'https://etypeservices.com/' . $e_editions[0]['e-edition'] . '/';
+      $path = 'https://etypeservices.com/' . $editions[0]['e-edition'] . '/';
     }
   }
   else {
-    $path = 'https://etypeservices.com/' . $e_editions[0]['e-edition'] . '/';
+    $path = 'https://etypeservices.com/' . $editions[0]['e-edition'] . '/';
   }
   drupal_goto($path);
 }
@@ -513,22 +516,20 @@ function etype_e_editions() {
   $items = explode(',', $e_edition);
   $pubs = explode(',', $pub);
   $ptypes = explode(',', $ptype);
-  $editions = array();
+  $e_editions = array();
   $ptr = 0;
   foreach($items as $item) {
     $arr = explode('|', $item);
-    if (!isset($arr[1])) {
-      $site = $site;
-    } else {
-      $site = $arr[1];
+    if (isset($arr[1])) {
+      $site = trim($arr[1]);
     }
-    $ar2 = preg_split("/ID[0-9]+/", $arr[0]);
-    $editions[$ptr]['e-edition'] = trim($arr[0]);
-    $editions[$ptr]['image'] = trim($ar2[0]);
-    $editions[$ptr]['site_name'] = trim($site);
-    $editions[$ptr]['pub'] = trim($pubs[$ptr]);
-    $editions[$ptr]['[ptype'] = trim($ptypes[$ptr]);
+    $ar2 = preg_split("/ID[0-9]+/", $arr[0]); // make LandingImage name
+    $e_editions[$ptr]['image'] = trim($ar2[0]);
+    $e_editions[$ptr]['e-edition'] = trim($arr[0]);
+    $e_editions[$ptr]['site_name'] = trim($site);
+    $e_editions[$ptr]['pub'] = trim($pubs[$ptr]);
+    $e_editions[$ptr]['[ptype'] = trim($ptypes[$ptr]);
     $ptr++;
   }
-  return $editions;
+  return $e_editions;
 }
