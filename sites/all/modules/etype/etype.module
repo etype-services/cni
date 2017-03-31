@@ -515,6 +515,7 @@ function etype_e_editions() {
   $site = variable_get('site_name', 'Drupal');
   $items = explode(',', $e_edition);
   $editions = array();
+  $ptr = 0;
   foreach($items as $item) {
     $arr = explode('|', $item);
     if (!isset($arr[1])) {
@@ -523,9 +524,10 @@ function etype_e_editions() {
       $site = $arr[1];
     }
     $ar2 = preg_split("/ID[0-9]+/", $arr[0]);
-    $editions[]['e-edition'] = $arr[0];
-    $editions[]['image'] = $ar2[0];
-    $editions[]['site_name'] = $site;
+    $editions[$ptr]['e-edition'] = $arr[0];
+    $editions[$ptr]['image'] = $ar2[0];
+    $editions[$ptr]['site_name'] = $site;
+    $ptr++;
   }
   return $editions;
 }
