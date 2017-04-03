@@ -514,7 +514,7 @@ function etype_e_editions() {
 
     $ar2 = preg_split("/ID[0-9]+/", $arr[0]); // make LandingImage directory name
     $imagedir = trim($ar2[0]);
-    $e_editions[$ptr]['image'] = "https://etypeservices.com/LandingPageImages/' . $imagedir . '/currentpg1.jpg";
+    $e_editions[$ptr]['image'] = 'https://etypeservices.com/LandingPageImages/' . $imagedir . '/currentpg1.jpg';
 
     $pub = trim($pubs[$ptr]);
     $ptype = trim($ptypes[$ptr]);
