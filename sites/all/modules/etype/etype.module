@@ -235,7 +235,7 @@ function _etype_e_edition_content() {
   $output = '';
   foreach($e_editions as $e_edition) {
     $output .= '
-<p class="rtecenter"><a href="https://etypeservices.com/' . $e_edition['e-edition'] . '"><img src="https://etypeservices.com/LandingPageImages/' . $e_edition['image'] . '/currentpg1.jpg"></a></p><h4 class="rtecenter"><a href="/e-edition">Click here to read ' . $e_edition['site_name'] . '</a></h4>
+<p class="rtecenter"><a href="' . $e_edition['path'] . '"><img src="' . $e_edition['image'] . '"></a></p><h4 class="rtecenter"><a href="' . $e_edition['path'] . '">Click here to read ' . $e_edition['site_name'] . '</a></h4>
 ';
   }
   return $output;
@@ -281,21 +281,8 @@ function etype_cronapi($op, $job = NULL) {
  * redirect to e-Edition (defaults to first of possible multiple)
  */
 function _etype_e_edition() {
-  $uid = user_is_logged_in();
-  $editions = etype_e_editions();
-  if ($uid > 0) {
-    global $user;
-    if (!empty ($editions[0]['pub'])) {
-      $path = 'https://etypeservices.com/ReadTheEdition.aspx?Username=' . $user->name . "&Pub=" . $editions[0]['pub'] . "&PType=" . $editions[0]['ptype'];
-    }
-    else {
-      $path = 'https://etypeservices.com/' . $editions[0]['e-edition'] . '/';
-    }
-  }
-  else {
-    $path = 'https://etypeservices.com/' . $editions[0]['e-edition'] . '/';
-  }
-  drupal_goto($path);
+  $e_editions = etype_e_editions();
+  drupal_goto($e_editions[0]['path']);
 }
 
 /**
@@ -509,6 +496,7 @@ function etype_premium_access(&$node, $teaser) {
  * Parse e-Edition settings into an array for use in other functions
  */
 function etype_e_editions() {
+  $uid = user_is_logged_in();
   $e_edition = theme_get_setting('e_edition');
   $pub = theme_get_setting('pub');
   $ptype = theme_get_setting('ptype');
@@ -523,12 +511,28 @@ function etype_e_editions() {
     if (isset($arr[1])) {
       $site = trim($arr[1]);
     }
+
     $ar2 = preg_split("/ID[0-9]+/", $arr[0]); // make LandingImage name
-    $e_editions[$ptr]['image'] = trim($ar2[0]);
-    $e_editions[$ptr]['e-edition'] = trim($arr[0]);
+    $e_editions[$ptr]['image'] = "https://etypeservices.com/LandingPageImages/' . trim($ar2[0]) . '/currentpg1.jpg";
+
+    $pub = trim($pubs[$ptr]);
+    $ptype = trim($ptypes[$ptr]);
+    $e_edition = trim($arr[0]);
+
+    if ($uid > 0) {
+      if (!empty ($pub)) {
+        global $user;
+        $path = 'https://etypeservices.com/ReadTheEdition.aspx?Username=' . $user->name . "&Pub=" . $pub . "&PType=" . $ptype;
+      }
+      else {
+        $path = 'https://etypeservices.com/' . $e_edition . '/';
+      }
+    } else {
+      $path = 'https://etypeservices.com/' . $e_edition . '/';
+    }
+
     $e_editions[$ptr]['site_name'] = trim($site);
-    $e_editions[$ptr]['pub'] = trim($pubs[$ptr]);
-    $e_editions[$ptr]['[ptype'] = trim($ptypes[$ptr]);
+    $e_editions[$ptr]['path'] = $path;
     $ptr++;
   }
   return $e_editions;
