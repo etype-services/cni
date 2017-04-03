@@ -78,6 +78,7 @@ function cni_form_system_theme_settings_alter(&$form, $form_state) {
   $form['advanced_settings']['misc_settings']['rssfeed'] = array(
     '#type' => 'textfield',
     '#title' => t('RSS Feed'),
+    '#description' => t('Enter Yes to activate'),
     '#size' => 10,
     '#default_value' => theme_get_setting('rssfeed'),
   );
@@ -109,7 +110,7 @@ function cni_form_system_theme_settings_alter(&$form, $form_state) {
   $form['advanced_settings']['misc_settings']['nav_color'] = array(
     '#type' => 'textfield',
     '#title' => t('Navigation Background Color'),
-    '#description' => t('Include initial #'),
+    '#description' => t('Optional, include initial #'),
     '#size' => 10,
     '#default_value' => theme_get_setting('nav_color'),
   );
@@ -117,6 +118,7 @@ function cni_form_system_theme_settings_alter(&$form, $form_state) {
   $form['advanced_settings']['misc_settings']['max_nav_width'] = array(
     '#type' => 'textfield',
     '#title' => t('Max Main Navigation Width'),
+    '#description' => t('Optionally constrain main navigation width'),
     '#size' => 10,
     '#default_value' => theme_get_setting('max_nav_width'),
   );
@@ -124,6 +126,7 @@ function cni_form_system_theme_settings_alter(&$form, $form_state) {
   $form['advanced_settings']['misc_settings']['logo_width'] = array(
     '#type' => 'textfield',
     '#title' => t('Logo Width'),
+    '#description' => t('Optional maximum allowed width for logo'),
     '#size' => 10,
     '#default_value' => theme_get_setting('logo_width'),
   );
