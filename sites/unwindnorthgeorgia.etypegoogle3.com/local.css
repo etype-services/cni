@@ -1,0 +1,26 @@
+
+/* wider screens */
+@media only screen and (min-width: 959px) {
+
+}
+
+/* desktop browsers */
+@media only screen and (max-width: 958px) and (min-width: 768px) {
+
+}
+
+/* smaller browsers, tablets */
+@media only screen and (max-width: 767px) and (min-width: 480px) {
+
+}
+
+/* larger phones */
+@media only screen and (max-width: 479px) and (min-width: 421px) {
+
+}
+
+/* make e-edition image bigger */
+#block-etype-e-edition img {
+	max-width: 100%;
+	width: 700px;
+	}

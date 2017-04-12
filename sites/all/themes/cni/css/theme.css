@@ -1,19 +1,5 @@
 /* HTML
 --------------------------------------------------------------------------*/
-
-body {
-    font-size: 1em;
-    font-family: "Adobe Garamond Pro", Arial, Helvetica, sans-serif;
-    line-height: 1.3em;
-    color: #444444;
-    background: #ffffff;
-}
-
-a {
-    font-weight: normal;
-    color: #333;
-}
-
 a:hover {
     text-decoration: underline;
 }
@@ -43,7 +29,7 @@ h2 {
 }
 
 #page {
-
+    margin-top: 1em;
 }
 
 .page-inner {
@@ -101,7 +87,6 @@ h3.site-slogan {
     width: 100%;
     max-width: 700px;
 }
-
 
 /* SLIDESHOW
 --------------------------------------------------------------------------*/
@@ -191,7 +176,7 @@ h3.site-slogan {
 }
 
 /* override module defaults */
-.views-slideshow-pager-fields > div{
+.views-slideshow-pager-fields > div {
     padding-left: 0;
 }
 
@@ -207,12 +192,7 @@ h3.site-slogan {
 
 .preface-wrapper .views-row {
     padding: 10px 10px 0 10px;
-    background: url(../images/preface-view.png);
     overflow: hidden;
-}
-
-.preface-wrapper .views-row a {
-
 }
 
 .preface-wrapper .views-row .views-field-field-image img {
@@ -243,17 +223,11 @@ h3.site-slogan {
 }
 
 .preface-wrapper .block .content {
-    /*height: 300px;*/
-}
-
-.preface-wrapper-top .block .content {
-    height: auto;
-    background: transparent url("../images/preface-view.png") repeat scroll 0% 0%;
-    margin-top: 20px;
+    background: #f3f1f1;
 }
 
 .preface-wrapper .content {
-    padding: 20px 0 0 0;
+    padding: 5px 0 10px 0;
     color: #999999;
 }
 
@@ -280,7 +254,7 @@ h3.site-slogan {
 --------------------------------------------------------------------------*/
 
 .front .main-content-wrapper {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 #main-content .block-inner, #preface .block-inner, h1#page-title {
@@ -289,7 +263,14 @@ h3.site-slogan {
     border: 1px solid #ddd;
     border-bottom: 3px solid #111111;
     background: #ffffff;
-    box-shadow: 0 1px 5px #bbbbbb;
+}
+
+#main-content #block-system-main .block-inner {
+    padding: 0 20px 20px;
+}
+
+#main-content #block-system-main .block-inner {
+    padding: 0 20px 20px;
 }
 
 article .field-image {
@@ -387,6 +368,10 @@ article .field-image {
     border-bottom: 0 dotted #555555;
 }
 
+#block-etype-follow .content div {
+    background-size: 16px;
+}
+
 #block-etype-follow .content div > a {
     margin-left: 1.7em;
 }
@@ -434,7 +419,6 @@ article .field-image {
     justify-content: space-around;
     margin-top: 1em;
 }
-
 
 /* FOOTER
 --------------------------------------------------------------------------*/
@@ -486,30 +470,49 @@ article .field-image {
 
 /* USER MENU
 --------------------------------------------------------------------------*/
+.region-user-menu {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 0.6em;
+    background-color: #f3f1f1;
+}
 
 #user-menu {
     margin: 0;
-    border-bottom: 1px solid #dddddd;
-    background: #f5f5f5;
+    font-family: 'Lato', sans-serif;
+}
+
+#user-menu ul.menu {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#user-menu ul.menu li {
+    float: none;
 }
 
 #user-menu ul.menu li a {
     display: block;
-    line-height: 25px;
+    line-height: 36px;
     font-size: 11px;
-    padding: 0 20px;
+    padding: 0 12px;
     text-transform: uppercase;
     border-right: 1px solid #dddddd;
     color: #111111;
 }
 
+#user-menu ul.menu li.last a {
+    border-right: none;
+}
+
 #user-menu ul.menu li a:hover {
-    background: #eeeeee;
+    background: #f3f1f1;
     text-decoration: none;
 }
 
 /* User Menu Drop Down */
-
 #user-menu ul.menu li ul {
     position: absolute;
     padding: 0;
@@ -543,7 +546,7 @@ article .field-image {
 }
 
 #user-menu ul.menu li li a:hover, #user-menu ul.menu li li a.active:hover {
-    background: #eeeeee;
+    background: #f3f1f1;
 }
 
 #main-menu ul.menu li ul ul {
@@ -621,13 +624,17 @@ article .field-image {
 
 #main-menu ul.menu li a:hover {
     color: #333333;
-    background: #eeeeee;
+    background: #f3f1f1;
     text-decoration: none;
 }
 
 #main-menu ul.menu li a.active {
     color: #222222;
-    background-color: #cccccc;
+    background-color: #f3f1f1;
+}
+
+#main-menu ul.menu li ul li a {
+    font-size: 13px;
 }
 
 /* Main Menu custom styling */
@@ -712,7 +719,7 @@ article .field-image {
 }
 
 #main-menu-second-level ul.menu li li a:hover, #main-menu-second-level ul.menu li li a.active:hover {
-    background: #eeeeee;
+    background: #f3f1f1;
     font-size: 0.9em;
 }
 
@@ -777,7 +784,7 @@ article .field-image {
     font-weight: bold;
     padding: 0 5px 0 5px;
     font-size: 0.9em;
-    background: #eeeeee;
+    background: #f3f1f1;
 }
 
 .node ul.links li.node-readmore a {
@@ -821,7 +828,7 @@ article .field-image {
     display: block;
     padding: 10px;
     float: left;
-    margin: 0 20px 0 0;
+    margin: 0 7px 7px 0;
     background: url(../images/image-background.png);
     width: auto;
 }
@@ -902,16 +909,16 @@ article .field-image {
 /* SEARCH FORM
 --------------------------------------------------------------------------*/
 
-.region-search-box {
-    float: right;
+#block-search-form {
+    padding: 0 8px;
+    flex-grow: 2;
 }
 
 #search-block-form {
     margin-top: 0;
     background: 0;
     line-height: 25px;
-    border-left: 1px solid #dddddd;
-    background: #ffffff;
+    float: right;
 }
 
 #search-block-form h2, #search-block-form label {
@@ -934,22 +941,22 @@ article .field-image {
 #search-block-form .form-submit {
     display: inline-block;
     width: auto;
-    height: 25px;
-    font-size: 0.8em;
+    height: 36px;
+    font-size: 11px;
     padding: 0 5px;
     border-radius: 0;
     text-transform: uppercase;
     background: 0;
     font-weight: normal;
-    background: #ffffff;
 }
 
 #search-block-form .form-text {
-    padding: 0 10px;
-    width: 200px;
+    padding: 0;
     color: #999999;
     font-style: italic;
-    background: #ffffff;
+    background-color: #ffffff;
+    position: relative;
+    top: 1px;
 }
 
 #search-block-form input:focus {
@@ -961,20 +968,17 @@ article .field-image {
     font-style: italic;
 }
 
+#search-control {
+    display: none;
+}
+
 /* SOCIAL
 --------------------------------------------------------------------------*/
 
-#social {
-    float: left;
-    padding-left: 10px;
-    margin-right: -10px;
-    padding-top: 4px;
-    margin-bottom: -4px;
-}
-
-#social ul {
+ul.social-links {
     padding: 0;
     margin: 0;
+    height: 36px;
 }
 
 .social-links li {
@@ -984,10 +988,12 @@ article .field-image {
 }
 
 .social-links li a {
-    display: inline-block;
-    padding-left: 10px;
-    width: 16px;
-    height: 16px;
+    display: block;
+    width: 40px;
+    height: 36px;
+    background-size: 35px;
+    position: relative;
+    top: 2px;
 }
 
 .facebook {
@@ -1190,9 +1196,7 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
     padding-left: 50px;
 }
 
-/* removes quote icons from bones layout.css */
 blockquote {
-    background-image: none;
     margin: 0;
     padding: 0;
 }
@@ -1253,6 +1257,16 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
     font-family: 'Lato', sans-serif;
 }
 
+/* PAGE
+--------------------------------------------------------------------------*/
+.not-front.page-node #block-system-main .content .node {
+    margin-top: 1em;
+}
+
+.not-front.page-node #block-system-main .content .node-teaser {
+   margin-top: 0;
+}
+
 /* ARTICLE
 --------------------------------------------------------------------------*/
 .page-node .node-article .field-name-field-dateline {
@@ -1278,43 +1292,12 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
     margin-bottom: 10px;
     color: #999999;
     border-bottom: 1px solid #dddddd;
+    font: 0.6em "Lato", sans-serif;
+    margin-left: 168px;
 }
 
-/* DFP / GOOGLE ADS
---------------------------------------------------------------------------*/
-.block-dfp {
-    margin-bottom: 20px;
-}
-
-.block-dfp .block-inner, #main-content .block-dfp .block-inner {
-    padding: 0;
-    margin: 0;
-    border-style: none;
-    border-width: 0;
-    box-shadow: none;
-}
-
-.region-main-menu-second-level .block-dfp {
-    width: 728px;
-    margin: 20px auto 0;
-}
-
-.not-front .region-main-menu-second-level .block-dfp {
-    margin: 20px auto 20px;
-}
-
-.region-content-bottom .block-dfp {
-    width: 728px;
-    margin: 0 auto 20px;
-}
-
-.region-slideshow .block-dfp, .region-preface-1 .block-dfp {
-    width: 468px;
-    margin: 0 auto 20px;
-}
-
-.preface-wrapper .block-dfp .content, .sidebar .block-dfp .content {
-    padding: 0;
+.node-article .submitted {
+    margin-left: 0;
 }
 
 /* ADVANCED POLL
@@ -1379,6 +1362,7 @@ article.node-webform .node-content-wrapper h1.title {
 /* flexslider overrides */
 .flexslider {
     font: 0.8em/1.4 lato;
+    margin: 0 0 6em 0;
 }
 
 .flex-control-nav {
@@ -1395,4 +1379,22 @@ ul.flex-direction-nav {
 .content .node-article ul.slides,
 ul.slides {
     margin: 0;
+}
+
+/* views-fluid-grid Classifieds */
+div.views-fluid-grid {
+    margin-bottom: 1em;
+}
+
+li.views-fluid-grid-item {
+    color: inherit;
+    background: none;
+    border: none;
+}
+
+/* override date.css from date module
+ * theme makes class from title which invokes calendar css
+ */
+.node-type-article.calendar {
+    width: inherit;
 }
