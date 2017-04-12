@@ -74,7 +74,6 @@ function etype_login_form_submit($form, &$form_state) {
 
 /**
  * @return string
- * TODO: Should be FORM with submit function
  */
 function _etype_login_fake() {
 
