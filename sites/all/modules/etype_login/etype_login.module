@@ -11,9 +11,9 @@
  */
 function etype_login_menu() {
 
-  $items['login'] = array(
-    'title' => 'Login',
-    'description' => 'Custom Login Page.',
+  $items['custom-login-page'] = array(
+    'title' => 'Custom Login Page',
+    'description' => 'eType Services Custom Login Page.',
     'access arguments' => array('access content'),
     'page callback' => '_etype_login',
     'menu_name' => 'user-menu',
