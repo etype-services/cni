@@ -15,7 +15,7 @@ function etype_login_menu() {
     'title' => 'Custom Login Page',
     'description' => 'eType Services Custom Login Page.',
     'access arguments' => array('access content'),
-    'page callback' => '_etype_login',
+    'page callback' => '_etype_login_form',
     'menu_name' => 'user-menu',
     'type' => MENU_NORMAL_ITEM,
   );
@@ -23,11 +23,42 @@ function etype_login_menu() {
   return $items;
 }
 
+function etype_login_form($form, &$form_state) {
+
+  $form["name"] = array(
+    '#title' => t("User Name"),
+    '#type' => 'textfield',
+    '#required' => TRUE
+  );
+
+  $form["password"] = array(
+    '#title' => t("Password"),
+    '#type' => 'textfield',
+    '#required' => TRUE
+  );
+
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Log In')
+  );
+
+  $form['help'] = array(
+    '#type' => 'item',
+    '#title' => '',
+    '#markup' => '
+<div class="login-help">
+    <p><a href="/forgot-password">Forgot your password?</a></p>
+</div>
+    '
+  );
+
+}
+
 /**
  * @return string
  * TODO: Should be FORM with submit function
  */
-function _etype_login() {
+function _etype_login_fake() {
 
   $page = array('title' => 'Login');
 
