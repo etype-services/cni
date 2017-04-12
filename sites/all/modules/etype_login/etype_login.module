@@ -15,7 +15,10 @@ function etype_login_menu() {
     'title' => 'Custom Login Page',
     'description' => 'eType Services Custom Login Page.',
     'access arguments' => array('access content'),
-    'page callback' => '_etype_login_form',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array(
+      'etype_login_form'
+    ),
     'menu_name' => 'user-menu',
     'type' => MENU_NORMAL_ITEM,
   );
