@@ -12,7 +12,14 @@
 
 /* desktop browsers */
 @media only screen and (max-width: 958px) and (min-width: 768px) {
+    .slideshow-wrapper {
+        width: 452px;
+        margin: auto;
+    }
 
+    #main-content .main-inner.grid_8 {
+        width: 100%;
+    }
 }
 
 /* smaller browsers, tablets */
