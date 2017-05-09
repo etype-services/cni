@@ -1,7 +1,10 @@
 
 /* wider screens */
 @media only screen and (min-width: 959px) {
-
+ .slideshow-wrapper{
+     width: 620px;
+     margin: auto;
+ }
 }
 
 /* desktop browsers */
@@ -23,4 +26,4 @@
 #block-etype-e-edition img {
 	max-width: 100%;
 	width: 700px;
-	}
+}
