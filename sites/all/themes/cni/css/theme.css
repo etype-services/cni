@@ -195,7 +195,8 @@ h3.site-slogan {
     overflow: hidden;
 }
 
-.preface-wrapper .views-row .views-field-field-image img {
+.preface-wrapper .views-row .views-field-field-image img,
+.preface-wrapper .views-row .views-field-field-mugshot img {
     display: block;
     float: left;
     margin-right: 10px;
@@ -756,11 +757,10 @@ article .field-image {
 
 .node .field-name-field-image img {
     display: block;
-    margin-top: 0;
-    margin-left: 0;
-    margin-bottom: 0;
-    width: 100%;
-    height: auto
+    height: auto;
+    width: initial;
+    max-width: 100%;
+    margin: auto;
 }
 
 .node .field-name-field-video iframe {
@@ -824,7 +824,8 @@ article .field-image {
     display: block;
 }
 
-.node-teaser .field-image .field-name-field-image .field-items .field-item:first-child img {
+.node-teaser .field-image .field-name-field-image .field-items .field-item:first-child img,
+.node-teaser .field-name-field-mugshot .field-items .field-item:first-child img {
     display: block;
     padding: 10px;
     float: left;
