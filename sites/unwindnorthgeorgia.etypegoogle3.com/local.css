@@ -1,12 +1,29 @@
-
 /* wider screens */
 @media only screen and (min-width: 959px) {
+    /* center slideshow */
+    .slideshow-wrapper {
+        width: 620px;
+        margin: auto;
+    }
 
+    /* center slideshow */
+    #main-content .main-inner.grid_8 {
+        width: 100%;
+    }
 }
 
 /* desktop browsers */
 @media only screen and (max-width: 958px) and (min-width: 768px) {
+    /* center slideshow */
+    .slideshow-wrapper {
+        width: 495px;
+        margin: auto;
+    }
 
+    /* center slideshow */
+    #main-content .main-inner.grid_8 {
+        width: 100%;
+    }
 }
 
 /* smaller browsers, tablets */
@@ -21,6 +38,6 @@
 
 /* make e-edition image bigger */
 #block-etype-e-edition img {
-	max-width: 100%;
-	width: 700px;
-	}
+    max-width: 100%;
+    width: 700px;
+}

@@ -1,0 +1,7 @@
+/* changing hyperlink style to underlined */
+
+.node .content a {
+    color: #333;
+    text-decoration: underline;
+}
+
