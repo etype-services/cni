@@ -755,7 +755,9 @@ article .field-image {
 /* NODES
 --------------------------------------------------------------------------*/
 
-.node .field-name-field-image img {
+/* image display on article page with flexslider override */
+.node .field-name-field-image img,
+.flexslider .slides img {
     display: block;
     height: auto;
     width: initial;
@@ -1157,11 +1159,6 @@ ul.quicktabs-tabs.quicktabs-style-nostyle li.active a {
 .quicktabs_main.quicktabs-style-nostyle .content {
     color: #999999;
     padding: 0 0 0 0;
-}
-
-.field-name-field-mugshot {
-    float: left;
-    margin-right: 10px;
 }
 
 .field-name-field-mug {
