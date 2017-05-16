@@ -15,6 +15,7 @@ function etype_wire_node_export() {
   $db_or->condition('t.name', 'news','REGEXP');
   $db_or->condition('t.name', 'sports','REGEXP');
   $db_or->condition('t.name', 'free','REGEXP');
+  $db_or->condition('t.name', 'unwind','REGEXP');
   $query->fields('n');
   $query->condition('n.type', 'article');
   $query->condition('n.status', '1');
