@@ -806,6 +806,7 @@ article .field-image {
     text-transform: uppercase;
 }
 
+/* mugshots in articles (for obituaries) - mightneed to be adjusted to accomodate flexslider sites */
 .node-article .field-name-field-mugshot.field-type-image {
     float: left;
     margin-right: 0.6em;
