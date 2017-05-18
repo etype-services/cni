@@ -2,3 +2,8 @@
     color: blue;
     text-decoration: underline;
 }
+
+.node .content .field-type-email a {
+    color: #333333;
+    text-decoration: none;
+}
