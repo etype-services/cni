@@ -1,11 +1,10 @@
 /* changing hyperlink style to underlined */
-
-.node .content a {
+.node-article .content a {
     color: blue;
     text-decoration: underline;
 }
 
-.node .content .field-type-email a {
+.node-article .content .field-type-email a {
     color: #333333;
     text-decoration: none;
 }
