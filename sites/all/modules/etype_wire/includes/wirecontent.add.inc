@@ -51,7 +51,7 @@ function etype_wire_node_add($nid) {
   $entity->title->set($old_node->title);
 
   /* body formatting */
-  $regex = "</p>\s*<p>";
+  $regex = "</[p|div]>\s*<[p|div]>";
   $replace = "\rn\rn\rn";
   $tmp = $old_node->body;
 
