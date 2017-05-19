@@ -52,8 +52,8 @@ function etype_wire_node_add($nid) {
   $replace = "\rn\rn\rn";
   preg_replace($regex, $replace, $old_node->body);
   $new_body = $old_node->body;
-  echo $new_body;
-  exit;
+  //echo $new_body;
+  //exit;
   $entity->body->set(array('value' => $new_body));
 
   $entity->language(LANGUAGE_NONE);
