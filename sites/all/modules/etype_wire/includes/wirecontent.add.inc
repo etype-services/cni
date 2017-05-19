@@ -56,8 +56,8 @@ function etype_wire_node_add($nid) {
   $tmp = $old_node->body;
   preg_replace($regex, $replace, $tmp);
   $new_body = Encoding::toUTF8($tmp);
-  //echo $new_body;
-  //exit;
+  echo $new_body;
+  exit;
   $entity->body->set(array('value' => $new_body));
 
   $entity->language(LANGUAGE_NONE);
