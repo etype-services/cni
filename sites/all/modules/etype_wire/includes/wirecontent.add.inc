@@ -48,10 +48,11 @@ function etype_wire_node_add($nid) {
   $entity = entity_metadata_wrapper($entity_type, $new_node);
   $entity->title->set($old_node->title);
 
+  /* body formatting */
   $regex = "</p>\s*<p>";
   $replace = "\rn\rn\rn";
-  preg_replace($regex, $replace, $old_node->body);
   $new_body = $old_node->body;
+  preg_replace($regex, $replace, $new_body);
   //echo $new_body;
   //exit;
   $entity->body->set(array('value' => $new_body));
