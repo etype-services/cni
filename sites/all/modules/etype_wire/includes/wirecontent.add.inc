@@ -47,7 +47,7 @@ function etype_wire_node_add($nid) {
 
   $entity = entity_metadata_wrapper($entity_type, $new_node);
 
-  echo $old_node->body;
+  echo strip_tags($old_node->body);
   exit;
   $entity->title->set($old_node->title);
   $entity->body->set(array('value' => check_plain($old_node->body)));
