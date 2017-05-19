@@ -51,9 +51,10 @@ function etype_wire_node_add($nid) {
   $entity->title->set($old_node->title);
 
   /* body formatting */
-  $regex = "/<div>\s*</div>/ig";
-  $replace = "\rn\rn\rn";
-  preg_replace($regex, $replace, $old_node->body);
+  $regex = "/<div>/ig";
+  $replace = "xxx";
+  $new_body = $old_node->body;
+  preg_replace($regex, $replace, $new_body);
   $new_body = Encoding::toUTF8($old_node->body);
   echo $new_body;
   exit;
