@@ -54,6 +54,7 @@ function etype_wire_node_add($nid) {
   $regex = "</p>\s*<p>";
   $replace = "\rn\rn\rn";
   $tmp = $old_node->body;
+
   $new_body = Encoding::fixUTF8($tmp);
   preg_replace($regex, $replace, $new_body);
   //echo $new_body;
