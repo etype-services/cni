@@ -4,6 +4,8 @@
  * @file
  * Functions to add Wire content.
  */
+require_once('Encoding.php');
+use \ForceUTF8\Encoding;  // It's namespaced now.
 
 function etype_wire_node_add($nid) {
 
@@ -51,7 +53,8 @@ function etype_wire_node_add($nid) {
   /* body formatting */
   $regex = "</p>\s*<p>";
   $replace = "\rn\rn\rn";
-  $new_body = $old_node->body;
+  $tmp = $old_node->body;
+  $new_body = Encoding::fixUTF8($tmp);
   preg_replace($regex, $replace, $new_body);
   //echo $new_body;
   //exit;
