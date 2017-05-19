@@ -54,6 +54,7 @@ function etype_wire_node_add($nid) {
   $regex = "/<div>/ig";
   $replace = "xxx";
   $new_body = $old_node->body;
+  echo $new_body;
   preg_replace($regex, $replace, $new_body);
   $new_body = Encoding::toUTF8($old_node->body);
   echo $new_body;
