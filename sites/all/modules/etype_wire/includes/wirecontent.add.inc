@@ -48,7 +48,7 @@ function etype_wire_node_add($nid) {
   $entity = entity_metadata_wrapper($entity_type, $new_node);
 
   $regex = "<p>\s*</p>";
-  $replace = "\n\n";
+  $replace = "\n\n\n";
 
   preg_replace($regex, $replace, $old_node->body);
   echo strip_tags($old_node->body);
