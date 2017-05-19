@@ -50,7 +50,7 @@ function etype_wire_node_add($nid) {
   $regex = "<p>\s*</p>";
   $replace = "\n\n";
 
-  preg_replace_callback($regex, $replace, $old_node->body);
+  preg_replace($regex, $replace, $old_node->body);
   echo strip_tags($old_node->body);
   exit;
   $entity->title->set($old_node->title);
