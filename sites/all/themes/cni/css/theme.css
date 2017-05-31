@@ -806,7 +806,7 @@ article .field-image {
     text-transform: uppercase;
 }
 
-/* mugshots in articles (for obituaries) - mightneed to be adjusted to accomodate flexslider sites */
+/* mugshots in articles (for obituaries) - might need to be adjusted to accomodate flexslider sites */
 .node-article .field-name-field-mugshot.field-type-image {
     float: left;
     margin-right: 0.6em;
@@ -1366,8 +1366,7 @@ article.node-webform .node-content-wrapper h1.title {
 /* flexslider overrides */
 .flexslider {
     font: 0.8em/1.4 lato;
-    /*margin: 0 0 6em 0;*/
-    margin: 0;
+    margin: 0 0 6em 0;
     border: none;
 }
 
