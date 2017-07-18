@@ -64,21 +64,16 @@ function cni_preprocess_node(&$variables) {
     $variables['classes_array'] = array_merge($variables['classes_array'], $node->classes_array);
   }
 
-  /* add extra classes */
-  if (!empty($node->classes_array)) {
-    $variables['classes_array'] = array_merge($variables['classes_array'], $node->classes_array);
-  }
-
   /* add addthis script to pages, ie, not teasers */
   if (node_is_page($node) !== FALSE) {
     drupal_add_js('//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-56e774978692f861', 'external');
   }
 
-  print_r($node->premium_level['level_name']);
+  $level = $node->premium_level['level_name'];
   $check = user_is_logged_in();
-  echo $check;
-  exit;
-
+  if ($level == 'free' && $check !== 1) {
+    $variables['free_message']  = "Subscribe and see the e-Edition of the [newspaper name] for the complete story. Subscribe here [link to the newspaper's e-Edition]!";
+  }
 }
 
 /* Breadcrumbs */
