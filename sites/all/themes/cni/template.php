@@ -72,7 +72,9 @@ function cni_preprocess_node(&$variables) {
   $level = $node->premium_level['level_name'];
   $check = user_is_logged_in();
   if ($level == 'free' && $check !== 1) {
-    $variables['free_message']  = "Subscribe and see the e-Edition of the [newspaper name] for the complete story. Subscribe here [link to the newspaper's e-Edition]!";
+    $site_name = variable_get('site_name');
+    $e_edition = theme_get_setting('e_edition');;
+    $variables['free_message']  = "Subscribe and see the e-Edition of $site_name for the complete story. <a href=\"https://etypeservices.com/$e_edition\">Subscribe here!</a>";
   }
 }
 
@@ -144,11 +146,6 @@ function cni_preprocess_html(&$variables) {
         'group' => CSS_THEME
       )
     );
-  }
-
-  $extra_dfp_code = theme_get_setting('extra_dfp_code');
-  if ($extra_dfp_code == '1') {
-    $variables['dfp_file'] = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'templates/dfp.inc';
   }
 
   /* add site setting css */
