@@ -77,7 +77,7 @@ function cni_preprocess_node(&$variables) {
       $site_name = 'the ' . $site_name;
     }
     $e_edition = theme_get_setting('e_edition');;
-    $variables['free_message']  = "Subscribe and see the e-Edition of $site_name for the complete story. <a href=\"https://etypeservices.com/$e_edition\">Subscribe here!</a>";
+    $variables['free_message']  = "<a href=\"https://etypeservices.com/$e_edition\">Subscribe and see the e-Edition of $site_name for the complete story.</a>";
   }
 }
 
