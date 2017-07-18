@@ -156,9 +156,9 @@ $sites['unwindnorthgeorgia.etypegoogle3.com'] = 'unwindnorthgeorgia.etypegoogle3
 $sites['unwindnorthgeorgia.com'] = 'unwindnorthgeorgia.etypegoogle3.com';
 $sites['www.unwindnorthgeorgia.com'] = 'unwindnorthgeorgia.etypegoogle3.com';
 
-$sites['test.etypegoogle3.com'] = 'thenortheastgeorgian.com';
-$sites['coupons.etypegoogle3.com'] = 'palatkadailynews.com';
-
 $sites['cninewspapers.etypegoogle3.com'] = 'cninewspapers.etypegoogle3.com';
 $sites['cninewspapers.com'] = 'cninewspapers.etypegoogle3.com';
 $sites['www.cninewspapers.com'] = 'cninewspapers.etypegoogle3.com';
+
+$sites['test.etypegoogle3.com'] = 'cherokeescout.com';
+$sites['coupons.etypegoogle3.com'] = 'palatkadailynews.com';
