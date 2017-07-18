@@ -65,7 +65,6 @@ function cni_preprocess_node(&$variables) {
   }
 
   /* add extra classes */
-  $node = $variables['node'];
   if (!empty($node->classes_array)) {
     $variables['classes_array'] = array_merge($variables['classes_array'], $node->classes_array);
   }
@@ -74,6 +73,9 @@ function cni_preprocess_node(&$variables) {
   if (node_is_page($node) !== FALSE) {
     drupal_add_js('//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-56e774978692f861', 'external');
   }
+
+  print_r($node->premium_level['level_name']);
+  exit;
 
 }
 
