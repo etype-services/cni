@@ -77,10 +77,10 @@
           </nav>
       <?php endif; ?>
 
-      <?php if (isset ($free_message)); ?>
-        <div class="free-message">
-          <?php print $free_message; ?>
-        </div>
+      <?php if (isset ($free_message)): ?>
+          <div class="free-message">
+            <?php print $free_message; ?>
+          </div>
       <?php endif; ?>
 
     </div>
