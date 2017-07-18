@@ -61,6 +61,12 @@
         <?php print render($content['links']); ?>
       <?php endif; ?>
 
+      <?php if (isset ($free_message)): ?>
+          <div class="free-message">
+            <?php print $free_message; ?>
+          </div>
+      <?php endif; ?>
+
       <?php if (isset($content['field_section'])): ?>
           <nav class="taxonomy">
               <div class="taxonomy-inner clearfix">
@@ -75,12 +81,6 @@
                 <?php print render($content['field_tags']); ?>
               </div>
           </nav>
-      <?php endif; ?>
-
-      <?php if (isset ($free_message)): ?>
-          <div class="free-message">
-            <?php print $free_message; ?>
-          </div>
       <?php endif; ?>
 
     </div>
