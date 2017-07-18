@@ -75,6 +75,8 @@ function cni_preprocess_node(&$variables) {
   }
 
   print_r($node->premium_level['level_name']);
+  $check = user_is_logged_in();
+  echo $check;
   exit;
 
 }
