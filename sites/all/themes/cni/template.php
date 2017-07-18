@@ -73,6 +73,9 @@ function cni_preprocess_node(&$variables) {
   $check = user_is_logged_in();
   if ($level == 'free' && $check != '1') {
     $site_name = variable_get('site_name');
+    if (substr($site_name, 0) !== 'The') {
+      $site_name = 'the ' . $site_name;
+    }
     $e_edition = theme_get_setting('e_edition');;
     $variables['free_message']  = "Subscribe and see the e-Edition of $site_name for the complete story. <a href=\"https://etypeservices.com/$e_edition\">Subscribe here!</a>";
   }
