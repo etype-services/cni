@@ -818,7 +818,6 @@ article .field-image {
 }
 
 /* Teasers */
-
 .node-teaser {
     margin-bottom: 20px;
 }
@@ -857,6 +856,15 @@ article .field-image {
 
 .node-teaser .links, .node-teaser .content, .node-teaser p, .node-teaser .field, .node-teaser .field-items, .node-teaser .field-item {
     display: inline;
+}
+
+/* Tags */
+.field-name-field-tags .field-label {
+    display: inline;
+}
+
+.field-name-field-tags .field-item {
+    margin-right: 0.3em;
 }
 
 /* COMMENTS
