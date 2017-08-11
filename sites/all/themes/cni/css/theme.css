@@ -818,7 +818,6 @@ article .field-image {
 }
 
 /* Teasers */
-
 .node-teaser {
     margin-bottom: 20px;
 }
@@ -856,6 +855,16 @@ article .field-image {
 }
 
 .node-teaser .links, .node-teaser .content, .node-teaser p, .node-teaser .field, .node-teaser .field-items, .node-teaser .field-item {
+    display: inline;
+}
+
+/* Tags */
+.field-name-field-tags .field-label {
+    display: inline;
+}
+
+.field-name-field-tags .field-item {
+    margin-right: 0.3em;
     display: inline;
 }
 
@@ -1400,6 +1409,18 @@ li.views-fluid-grid-item {
     color: inherit;
     background: none;
     border: none;
+}
+
+/* view-Similar-Entries */
+.view-Similar-Entries .item-list ul li {
+    padding: 0;
+    margin-bottom: 0;
+    list-style-type: none;
+    color: #000;
+}
+
+.view-Similar-Entries .item-list ul {
+    margin-left: 0;
 }
 
 /* override date.css from date module
