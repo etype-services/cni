@@ -119,7 +119,7 @@ function etype_wire_theme() {
  */
 function _etype_wire_connect() {
     try {
-        $dbHandle = new PDO("mysql:host=104.197.163.157;dbname=wire", 'wireZmuP', 'ZmuPPmsR8lxkLLsXPFMgC1RzdJiJ21mX');
+        $dbHandle = new PDO("mysql:host=104.198.67.115;dbname=wire", 'wireZmuP', 'ZmuPPmsR8lxkLLsXPFMgC1RzdJiJ21mX');
         $dbHandle->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         // always disable emulated prepared statement when using the MySQL driver
         $dbHandle->setAttribute(PDO::ATTR_EMULATE_PREPARES, FALSE);
