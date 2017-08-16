@@ -116,11 +116,10 @@
 .divEmbed {
     max-width: none !important;
     min-width: inherit !important;
-    position: relative;
     margin: 0 !important;
-    height: 250px;
     width: 100%  !important;
     overflow: hidden !important;
+    box-shadow: none !important;
 }
 
 #block-block-36 .block-inner {
