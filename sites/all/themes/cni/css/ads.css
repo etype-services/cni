@@ -121,16 +121,3 @@
     overflow: hidden !important;
     box-shadow: none !important;
 }
-
-#block-block-36 .block-inner {
-    padding: 0;
-}
-
-#block-block-36 .block-inner .content {
-    padding: 0;
-    border: none;
-}
-
-#block-block-36 .iFrameEmbed {
-    width: 100% !important;
-}
