@@ -122,3 +122,11 @@
     width: 100%  !important;
     overflow: hidden !important;
 }
+
+#block-block-36 .block-inner, #block-block-36 .block-inner .content {
+    padding: 0;
+}
+
+#block-block-36 .iFrameEmbed {
+    width: 100% !important;
+}
