@@ -1,9 +1,19 @@
 .node-article .content a {
-    color: blue;
-    text-decoration: underline;
+  color: blue;
+  text-decoration: underline;
 }
-
 .node-article .content .field-type-email a {
-    color: #333333;
-    text-decoration: none;
+  color: #333;
+  text-decoration: none;
+}
+/* mercolocal */
+#block-block-36 .block-inner {
+  padding: 0;
+  border: none;
+}
+#block-block-36 .block-inner .content {
+  padding: 0;
+}
+#block-block-36 .iFrameEmbed {
+  width: 100% !important;
 }
