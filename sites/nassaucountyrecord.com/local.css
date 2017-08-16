@@ -84,3 +84,14 @@
     }
 }
 
+/* mercolocal */
+#block-block-38 .block-inner {
+  padding: 0;
+  border: none;
+}
+#block-block-38 .block-inner .content {
+  padding: 0;
+}
+#block-block-38 .iFrameEmbed {
+  width: 100% !important;
+}
