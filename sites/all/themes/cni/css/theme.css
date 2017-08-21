@@ -1420,7 +1420,8 @@ li.views-fluid-grid-item {
   height: 60px;
   padding-left: 65px;
   padding-top: 11px;
-  line-height: 20px
+  line-height: 20px;
+  margin-bottom: 0;
 }
 
 .page-classifieds .term-after {
