@@ -1416,6 +1416,14 @@ li.views-fluid-grid-item {
     border: none;
 }
 
+.page-classifieds .view-id-classifieds .views-fluid-grid:first-child h3 {
+  display: block;
+  background: url(../images/classified_icons/Announcements-01.png) no-repeat 0 0;
+  background-size: 60px 60px;
+  height: 60px;
+  ne-height: 3.5em;
+}
+
 /* override date.css from date module
  * theme makes class from title which invokes calendar css
  */
