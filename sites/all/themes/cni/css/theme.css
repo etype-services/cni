@@ -1285,6 +1285,11 @@ textarea, select, input[type="date"], input[type="datetime"], input[type="dateti
    margin-top: 0;
 }
 
+.page-taxonomy-term #block-system-main .content,
+.page-classifieds #block-system-main .content {
+    margin-top: 1em;
+}
+
 /* ARTICLE
 --------------------------------------------------------------------------*/
 .page-node .node-article .field-name-field-dateline {
