@@ -1423,6 +1423,10 @@ li.views-fluid-grid-item {
   line-height: 20px
 }
 
+.page-classifieds div.views-fluid-grid h3 {
+  text-align: inherit;
+}
+
 .page-classifieds .view-id-classifieds .views-fluid-grid:first-child h3 {
   background: url(../images/classified_icons/Announcements-01.png) no-repeat 0 0;
   background-size: 60px 60px;
