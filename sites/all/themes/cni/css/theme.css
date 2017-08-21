@@ -1417,7 +1417,6 @@ li.views-fluid-grid-item {
 }
 
 .page-classifieds .view-id-classifieds .views-fluid-grid h3 {
-  background-size: 60px 60px;
   height: 60px;
   padding-left: 40px;
   padding-top: 11px;
@@ -1426,10 +1425,12 @@ li.views-fluid-grid-item {
 
 .page-classifieds .view-id-classifieds .views-fluid-grid:first-child h3 {
   background: url(../images/classified_icons/Announcements-01.png) no-repeat 0 0;
+  background-size: 60px 60px;
 }
 
 .page-classifieds .view-id-classifieds .views-fluid-grid:nth-child(2) h3 {
   background: url(../images/classified_icons/Employment-02.png) no-repeat 0 0;
+  background-size: 60px 60px;
 }
 
 /* override date.css from date module
