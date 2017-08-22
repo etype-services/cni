@@ -1478,6 +1478,12 @@ li.views-fluid-grid-item {
   background-size: 60px 60px;
 }
 
+.page-classifieds-annoucements h1#page-title {
+    background: url(/sites/all/themes/cni/images/classified_icons/Announcements-01.png) no-repeat 6px 6px;
+    background-size: 60px 60px;
+    padding-left: 71px;
+}
+
 /* override date.css from date module
  * theme makes class from title which invokes calendar css
  */
