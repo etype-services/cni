@@ -1478,11 +1478,49 @@ li.views-fluid-grid-item {
   background-size: 60px 60px;
 }
 
+.page-classifieds h1#page-title {
+    padding-left: 71px;
+}
+
 .page-classifieds-announcements h1#page-title {
     background: url(/sites/all/themes/cni/images/classified_icons/Announcements-01.png) no-repeat 6px 6px;
     background-size: 60px 60px;
-    padding-left: 71px;
 }
+
+.page-classifieds-employment h1#page-title {
+    background: url(/sites/all/themes/cni/images/classified_icons/Employment-02.png) no-repeat 6px 6px;
+    background-size: 60px 60px;
+}
+
+.page-classifieds-pets h1#page-title {
+    background: url(/sites/all/themes/cni/images/classified_icons/Pets-03.png) no-repeat 6px 6px;
+    background-size: 60px 60px;
+}
+
+.page-classifieds-real-estate-rent h1#page-title {
+    background: url(/sites/all/themes/cni/images/classified_icons/Real-Estate-04.png) no-repeat 6px 6px;
+    background-size: 60px 60px;
+}
+
+.page-classifieds-real-estate-sale h1#page-title {
+    background: url(/sites/all/themes/cni/images/classified_icons/Real-Estate-04.png) no-repeat 6px 6px;
+    background-size: 60px 60px;
+}
+
+.page-classifieds-services h1#page-title {
+    background: url(/sites/all/themes/cni/images/classified_icons/Services-05.png) no-repeat 6px 6px;
+    background-size: 60px 60px;
+}
+
+.page-classifieds-shop h1#page-title {
+    background: url(/sites/all/themes/cni/images/classified_icons/Shop-06.png) no-repeat 6px 6px;
+    background-size: 60px 60px;
+}
+.page-classifieds-transportation h1#page-title {
+    background: url(/sites/all/themes/cni/images/classified_icons/Transportation-07.png) no-repeat 6px 6px;
+    background-size: 60px 60px;
+}
+
 
 /* override date.css from date module
  * theme makes class from title which invokes calendar css
