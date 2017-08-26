@@ -171,13 +171,11 @@ li.views-fluid-grid-item {
 #block-etype-own-local .block-inner .content {
   padding: 0;
 }
-/* css for Crowdy news sidebar ads */
-
+/* Crowdy news sidebar ads */
 #CrowdynewsAd {
   margin: -20px;
 }
 /* css for etype google DFP sidebar ads */
-
 #div-gpt-ad-1487352373268-1 {
   margin: -20px;
 }
