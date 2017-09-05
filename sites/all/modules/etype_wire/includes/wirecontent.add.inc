@@ -5,6 +5,7 @@
  * Functions to add Wire content.
  */
 require_once('Encoding.php');
+
 use \ForceUTF8\Encoding;  // It's namespaced now.
 
 function etype_wire_node_add($nid) {
@@ -41,11 +42,11 @@ function etype_wire_node_add($nid) {
   global $user;
   $entity_type = 'node';
 
-  $new_node = entity_create($entity_type, array(
+  $new_node = entity_create($entity_type, [
     'type' => 'article',
     'uid' => $user->uid,
-    'status' => 0
-  ));
+    'status' => 0,
+  ]);
 
   $entity = entity_metadata_wrapper($entity_type, $new_node);
   $entity->title->set($old_node->title);
@@ -58,7 +59,7 @@ function etype_wire_node_add($nid) {
   $new_body = Encoding::toUTF8($new_body);
   //echo $new_body;
   //exit;
-  $entity->body->set(array('value' => $new_body));
+  $entity->body->set(['value' => $new_body]);
 
   $entity->language(LANGUAGE_NONE);
 
@@ -71,14 +72,15 @@ function etype_wire_node_add($nid) {
     $file = system_retrieve_file($old_file_path, $path, TRUE, FILE_EXISTS_RENAME);
     $file->display = '1';
     $file->description = "";
-    $file->image_field_caption = array(
+    $file->image_field_caption = [
       'value' => $old_node->caption,
-      'format' => 'plain_text'
-    );
+      'format' => 'plain_text',
+    ];
     $file = file_save($file);
-    $entity->field_image->set(array((array) $file));
-  } else {
-    $entity->field_image->set(array());
+    $entity->field_image->set([(array) $file]);
+  }
+  else {
+    $entity->field_image->set([]);
   }
 
   $entity->save(TRUE);

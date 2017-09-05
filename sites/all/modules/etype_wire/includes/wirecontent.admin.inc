@@ -7,78 +7,75 @@
 
 
 /**
- * Menu callback for admin/content/wirecontent. Displays all Wire Content on the site.
+ * Menu callback for admin/content/wirecontent. Displays all Wire Content on
+ * the site.
+ *
  * @param string $order
+ *
  * @return string
  */
 function etype_wire_admin_content() {
 
-    global $base_url;
+  global $base_url;
 
-    $pattern = '/http:\\/\\/(www)*\./i';
-    $sub = '';
-    $url = preg_replace($pattern, $sub, $base_url);
+  $pattern = '/http:\\/\\/(www)*\./i';
+  $sub = '';
+  $url = preg_replace($pattern, $sub, $base_url);
 
-    /* for dev */
-    if ($url == 'http://test.etypegoogle3.com') {
-        $url = '';
-    } else {
-        $url = '%' . $url . '%';
-    }
-
-    /* cluster */
-    $string = '';
-    $etype_wire_cluster = variable_get('etype_wire_cluster');
-    $tmp = array();
+  /* cluster */
+  $string = '';
+  $etype_wire_cluster = variable_get('etype_wire_cluster');
+  if (!empty ($etype_wire_cluster)) {
+    $tmp = [];
     foreach ($etype_wire_cluster as $k => $v) {
-        if (strlen($v) > 1) {
-            $tmp[] = " cluster REGEXP '$v' ";
-        }
+      if (strlen($v) > 1) {
+        $tmp[] = " cluster REGEXP '$v' ";
+      }
     }
     if (count($tmp) > 0) {
-        $string = implode($tmp, ' OR ');
-        $string = ' AND ( ' . $string . ' ) ';
+      $string = implode($tmp, ' OR ');
+      $string = ' AND ( ' . $string . ' ) ';
     }
+  }
 
-    /* sorting */
-    if (isset($_GET['order'])) {
-        switch ($_GET['order']) {
-            case 'Paper';
-                $order = 'site_name';
-                break;
-
-            case 'Published';
-                $order = 'created';
-                break;
-
-            default:
-                $order = 'site_name';
-        }
-        $sort = $_GET['sort'];
-    } else {
+  /* sorting */
+  if (isset($_GET['order'])) {
+    switch ($_GET['order']) {
+      case 'Paper';
         $order = 'site_name';
-        $sort = 'DESC';
-    }
+        break;
 
-    /* connect to wire db */
-    $dbHandle = _etype_wire_connect();
-    $sql = "
-SELECT * FROM `node` n 
-LEFT JOIN `node_site` ns ON n.nid = ns.original_nid 
+      case 'Published';
+        $order = 'created';
+        break;
+
+      default:
+        $order = 'site_name';
+    }
+    $sort = $_GET['sort'];
+  }
+  else {
+    $order = 'site_name';
+    $sort = 'DESC';
+  }
+
+  /* connect to wire db */
+  $dbHandle = _etype_wire_connect();
+  $sql = "
+SELECT * FROM `node` n
+LEFT JOIN `node_site` ns ON n.nid = ns.original_nid
 WHERE (
-  n.site NOT LIKE \"$url\" 
+  n.site NOT LIKE \"$url\"
   AND (ns.site_base is NULL OR ns.site_base NOT LIKE \"$url\")
   $string
 )
 ORDER BY $order $sort
 ";
-
-
-    $stmt = $dbHandle->prepare($sql);
-    $stmt->execute();
-    $stmt->setFetchMode(PDO::FETCH_OBJ);
-    $wire_nodes = $stmt->fetchAll();
-    return theme('wire_admin_content', array('wire_nodes' => $wire_nodes));
+  $stmt = $dbHandle->prepare($sql);
+  $stmt->execute();
+  $stmt->setFetchMode(PDO::FETCH_OBJ);
+  $wire_nodes = $stmt->fetchAll();
+  return theme('wire_admin_content', ['wire_nodes' => $wire_nodes]);
 }
 
 /**
@@ -86,63 +83,63 @@ ORDER BY $order $sort
  */
 function theme_wire_admin_content($variables) {
 
-    $nodes = $variables['wire_nodes'];
+  $nodes = $variables['wire_nodes'];
 
-    /* sortable header - though the fields do not work */
-    $header = array(
-        t('Title'),
-        array('data' => t('Paper'), 'field' => 'site_name'),
-        array('data' => t('Published'), 'field' => 'created'),
-        t('Operations')
-    );
+  /* sortable header - though the fields do not work */
+  $header = [
+    t('Title'),
+    ['data' => t('Paper'), 'field' => 'site_name'],
+    ['data' => t('Published'), 'field' => 'created'],
+    t('Operations'),
+  ];
 
-    $rows = array();
-    foreach ($nodes as $node) {
-        $rows[] = array(
-            l($node->title, $node->site . '/node/' . $node->nid, array("target" => "_blank")),
-            $node->site_name,
-            format_date($node->created),
-            l(t('Add'), 'admin/wirecontent/' . $node->nid . '/add')
-        );
-    }
+  $rows = [];
+  foreach ($nodes as $node) {
+    $rows[] = [
+      l($node->title, $node->site . '/node/' . $node->nid, ["target" => "_blank"]),
+      $node->site_name,
+      format_date($node->created),
+      l(t('Add'), 'admin/wirecontent/' . $node->nid . '/add'),
+    ];
+  }
 
-    if (empty($rows)) {
-        $message = t('No wire content available.');
-        $rows[] = array(
-            array('data' => $message, 'colspan' => 4),
-        );
-    }
+  if (empty($rows)) {
+    $message = t('No wire content available.');
+    $rows[] = [
+      ['data' => $message, 'colspan' => 4],
+    ];
+  }
 
-    return theme('table', array('header' => $header, 'rows' => $rows));
+  return theme('table', ['header' => $header, 'rows' => $rows]);
 }
 
 
 /* admin settings form */
 function etype_wire_admin() {
 
-    /* get current setting */
-    $etype_wire_cluster_default = variable_get('etype_wire_cluster', 'Coastal');
+  /* get current setting */
+  $etype_wire_cluster_default = variable_get('etype_wire_cluster', 'Coastal');
 
-    $etype_wire_cluster_options = array (
-        'coastal' => 'Coastal',
-        'franklin' => 'Franklin Region',
-        'murphy' => 'Murphy Region',
-        'neg' => 'NEG Region',
-        'nwga' => 'NWGA WNC',
-        'wnc' => 'WNC NGA',
-    );
+  $etype_wire_cluster_options = [
+    'coastal' => 'Coastal',
+    'franklin' => 'Franklin Region',
+    'murphy' => 'Murphy Region',
+    'neg' => 'NEG Region',
+    'nwga' => 'NWGA WNC',
+    'wnc' => 'WNC NGA',
+  ];
 
-    $form = array();
+  $form = [];
 
-    $form['etype_wire_cluster'] = array(
-        '#title' => t('Site Cluster'),
-        '#multiple' => TRUE,
-        '#description' => t("The cluster that this site belongs to."),
-        '#weight' => '1',
-        '#type' => 'checkboxes',
-        '#options' => $etype_wire_cluster_options,
-        '#default_value' => $etype_wire_cluster_default,
-    );
+  $form['etype_wire_cluster'] = [
+    '#title' => t('Site Cluster'),
+    '#multiple' => TRUE,
+    '#description' => t("The cluster that this site belongs to."),
+    '#weight' => '1',
+    '#type' => 'checkboxes',
+    '#options' => $etype_wire_cluster_options,
+    '#default_value' => $etype_wire_cluster_default,
+  ];
 
-    return system_settings_form($form);
+  return system_settings_form($form);
 }
