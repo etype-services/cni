@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  * Export last 10 published nodes from site to concatenation db
  */
