@@ -22,11 +22,6 @@ li.views-fluid-grid-item {
   height: 60px;
   margin-right: 1em;
 }
-.page-classifieds .term-after {
-  font-style: italic;
-  font-size: 0.8em;
-  padding-left: 0.3em;
-}
 .page-classifieds-announcements h1#page-title {
   background: url(/sites/all/themes/cni/images/classified_icons/announcements.png) no-repeat 6px 6px;
   background-size: 60px 60px;
