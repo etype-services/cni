@@ -26,71 +26,42 @@ li.views-fluid-grid-item {
 .page-classifieds div.views-fluid-grid h3 {
   text-align: inherit;
 }
-.page-classifieds .view-id-classifieds .views-fluid-grid:first-child h3 {
-  background: url(../images/classified_icons/Announcements-01.png) no-repeat 0 0;
-  background-size: 60px 60px;
-}
-.page-classifieds .view-id-classifieds .views-fluid-grid:nth-child(2) h3 {
-  background: url(../images/classified_icons/Employment-02.png) no-repeat 0 0;
-  background-size: 60px 60px;
-}
-.page-classifieds .view-id-classifieds .views-fluid-grid:nth-child(3) h3 {
-  background: url(../images/classified_icons/Pets-03.png) no-repeat 0 0;
-  background-size: 60px 60px;
-}
-.page-classifieds .view-id-classifieds .views-fluid-grid:nth-child(4) h3 {
-  background: url(../images/classified_icons/Real-Estate-04.png) no-repeat 0 0;
-  background-size: 60px 60px;
-}
-.page-classifieds .view-id-classifieds .views-fluid-grid:nth-child(5) h3 {
-  background: url(../images/classified_icons/Real-Estate-04.png) no-repeat 0 0;
-  background-size: 60px 60px;
-}
-.page-classifieds .view-id-classifieds .views-fluid-grid:nth-child(6) h3 {
-  background: url(../images/classified_icons/Services-05.png) no-repeat 0 0;
-  background-size: 60px 60px;
-}
-.page-classifieds .view-id-classifieds .views-fluid-grid:nth-child(7) h3 {
-  background: url(../images/classified_icons/Shop-06.png) no-repeat 0 0;
-  background-size: 60px 60px;
-}
-.page-classifieds .view-id-classifieds .views-fluid-grid:nth-child(8) h3 {
-  background: url(../images/classified_icons/Transportation-07.png) no-repeat 0 0;
-  background-size: 60px 60px;
+.page-classifieds .view-id-classifieds .views-fluid-grid img {
+  height: 60px;
 }
 .page-classifieds h1#page-title {
   padding-left: 71px;
 }
 .page-classifieds-announcements h1#page-title {
-  background: url(/sites/all/themes/cni/images/classified_icons/Announcements-01.png) no-repeat 6px 6px;
+  background: url(/sites/all/themes/cni/images/classified_icons/announcements.png) no-repeat 6px 6px;
   background-size: 60px 60px;
 }
 .page-classifieds-employment h1#page-title {
-  background: url(/sites/all/themes/cni/images/classified_icons/Employment-02.png) no-repeat 6px 6px;
+  background: url(/sites/all/themes/cni/images/classified_icons/employment.png) no-repeat 6px 6px;
   background-size: 60px 60px;
 }
 .page-classifieds-pets h1#page-title {
-  background: url(/sites/all/themes/cni/images/classified_icons/Pets-03.png) no-repeat 6px 6px;
+  background: url(/sites/all/themes/cni/images/classified_icons/pets.png) no-repeat 6px 6px;
   background-size: 60px 60px;
 }
 .page-classifieds-real-estate-rent h1#page-title {
-  background: url(/sites/all/themes/cni/images/classified_icons/Real-Estate-04.png) no-repeat 6px 6px;
+  background: url(/sites/all/themes/cni/images/classified_icons/real_estate_rent.png) no-repeat 6px 6px;
   background-size: 60px 60px;
 }
 .page-classifieds-real-estate-sale h1#page-title {
-  background: url(/sites/all/themes/cni/images/classified_icons/Real-Estate-04.png) no-repeat 6px 6px;
+  background: url(/sites/all/themes/cni/images/classified_icons/real_estate_sale.png) no-repeat 6px 6px;
   background-size: 60px 60px;
 }
 .page-classifieds-services h1#page-title {
-  background: url(/sites/all/themes/cni/images/classified_icons/Services-05.png) no-repeat 6px 6px;
+  background: url(/sites/all/themes/cni/images/classified_icons/services.png) no-repeat 6px 6px;
   background-size: 60px 60px;
 }
 .page-classifieds-shop h1#page-title {
-  background: url(/sites/all/themes/cni/images/classified_icons/Shop-06.png) no-repeat 6px 6px;
+  background: url(/sites/all/themes/cni/images/classified_icons/shop.png) no-repeat 6px 6px;
   background-size: 60px 60px;
 }
 .page-classifieds-transport h1#page-title {
-  background: url(/sites/all/themes/cni/images/classified_icons/Transportation-07.png) no-repeat 6px 6px;
+  background: url(/sites/all/themes/cni/images/classified_icons/transport.png) no-repeat 6px 6px;
   background-size: 60px 60px;
 }
 /* DFP / GOOGLE ADS
