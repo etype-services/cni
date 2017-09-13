@@ -25,12 +25,12 @@ li.views-fluid-grid-item {
 }
 .page-classifieds div.views-fluid-grid h3 {
   text-align: inherit;
+  display: flex;
+  line-height: 60px;
 }
-.page-classifieds .view-id-classifieds .views-fluid-grid img {
+.page-classifieds .view-id-classifieds img.classified-icon {
   height: 60px;
-}
-.page-classifieds h1#page-title {
-  padding-left: 71px;
+  margin-right: 1em;
 }
 .page-classifieds-announcements h1#page-title {
   background: url(/sites/all/themes/cni/images/classified_icons/announcements.png) no-repeat 6px 6px;
