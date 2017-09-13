@@ -12,10 +12,11 @@ li.views-fluid-grid-item {
   line-height: 1em;
 }
 .page-classifieds div.views-fluid-grid h3 {
-  text-align: inherit;
-  display: flex;
   line-height: 60px;
   margin-bottom: 0.3em;
+}
+.page-classifieds div.views-fluid-grid h3 span {
+  display: flex;
 }
 .page-classifieds .view-id-classifieds img.classified-icon {
   height: 60px;
