@@ -11,26 +11,20 @@ li.views-fluid-grid-item {
 .page-classifieds ul.views-fluid-grid-items-width-200 li.views-fluid-grid-item {
   line-height: 1em;
 }
-.page-classifieds .view-id-classifieds .views-fluid-grid h3 {
+.page-classifieds div.views-fluid-grid h3 {
+  text-align: inherit;
+  display: flex;
+  line-height: 60px;
+  margin-bottom: 0.3em;
+}
+.page-classifieds .view-id-classifieds img.classified-icon {
   height: 60px;
-  padding-left: 65px;
-  padding-top: 11px;
-  line-height: 20px;
-  margin-bottom: 0;
+  margin-right: 1em;
 }
 .page-classifieds .term-after {
   font-style: italic;
   font-size: 0.8em;
   padding-left: 0.3em;
-}
-.page-classifieds div.views-fluid-grid h3 {
-  text-align: inherit;
-  display: flex;
-  line-height: 60px;
-}
-.page-classifieds .view-id-classifieds img.classified-icon {
-  height: 60px;
-  margin-right: 1em;
 }
 .page-classifieds-announcements h1#page-title {
   background: url(/sites/all/themes/cni/images/classified_icons/announcements.png) no-repeat 6px 6px;
