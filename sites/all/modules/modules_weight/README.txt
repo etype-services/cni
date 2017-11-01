@@ -3,6 +3,7 @@ CONTENTS OF THIS FILE
 
  * Introduction
  * Requirements
+ * Recommended modules
  * Installation
  * Configuration
  * Maintainers
@@ -28,6 +29,14 @@ REQUIREMENTS
 ------------
 
 No special requirements.
+
+
+RECOMMENDED MODULES
+-------------------
+
+ * Responsive Tables (https://www.drupal.org/project/responsive_tables):
+   When enabled the Description and Package columns in the Modules Weight page
+   (admin/config/system/modules-weight) will be hidden in mobile devices.
 
 
 INSTALLATION

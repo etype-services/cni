@@ -1,3 +1,40 @@
+Modules Weight 7.1.7, 2017-10-27
+--------------------------------
+Changes since 7.1.6:
+
+- #2919180 by adriancid: Update functions docblocks.
+- #2919176 by adriancid: Don't show the weight element title.
+- #2919174 by adriancid: Remove all the code related to table drag.
+- #2919087 by adriancid: Add the recommended modules section to the README.txt.
+- #2918836 by adriancid: Use the filter_url plugin to convert url in links in
+  the module help page.
+- #2918577 by adriancid: Update the checkbox description in the Modules Weight
+  Settings page.
+- #2918575 by adriancid: Hide the module package in mobile devices. 
+- #2918506 by adriancid: Hide the module description in mobile devices. 
+
+Modules Weight 7.1.6, 2017-10-23
+--------------------------------
+Changes since 7.1.5:
+
+- #2918308: by adriancid: Change the --force option in mw-reorder drush command
+  by a confirmation question.
+- #2915195 by adriancid: Improve the drush section in the help page.
+- #2917550 by adriancid: Add styles to the drush command help section.
+- #2916900 by adriancid: Show the urls presents in the drush command definition
+  as links.
+- #2916892 by adriancid: Show the aliases of each drush command in the module
+  help page.
+- #2916889 by adriancid: Show the options of each drush command in the module
+  help page.
+- #2916884 by adriancid: Show the arguments of each drush command in the module
+  help page.
+- #2916878 by adriancid: Show the examples of each drush command in the module
+  help page.
+- #2916873 by adriancid: Create a detail section for each drush command.
+- #2915198 by adriancid: Made visible the drush command definition from the
+  module help page.
+
 Modules Weight 7.1.5, 2017-10-05
 --------------------------------
 Changes since 7.1.4:
