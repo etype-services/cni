@@ -38,6 +38,10 @@ RECOMMENDED MODULES
    When enabled the Description and Package columns in the Modules Weight page
    (admin/config/system/modules-weight) will be hidden in mobile devices.
 
+ * Drush Help (https://www.drupal.org/project/drush_help):
+   Improves the module help page showing information about the module drush
+   commands.
+
 
 INSTALLATION
 ------------

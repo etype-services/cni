@@ -5,6 +5,8 @@
  * Drush commands related to the Modules weight module.
  */
 
+require_once dirname(__FILE__) . '/modules_weight.helpers.inc';
+
 define('MODULES_WEIGHT_GREEN_OUPUT', "\033[1;32;40m\033[1m[%s]\033[0m");
 define('MODULES_WEIGHT_RED_OUPUT', "\033[31;40m\033[1m[%s]\033[0m");
 
@@ -13,46 +15,46 @@ define('MODULES_WEIGHT_RED_OUPUT', "\033[31;40m\033[1m[%s]\033[0m");
  */
 function modules_weight_drush_command() {
   $items['mw-show-system-modules'] = array(
-    'description' => _drush_modules_weight_dt('Configures if we can reorder the core modules.'),
+    'description' => dt('Configures if we can reorder the core modules.'),
     'arguments' => array(
-      'status' => _drush_modules_weight_dt('The status option (on, off).'),
+      'status' => dt('The status option (on, off).'),
     ),
     'aliases' => array('mw-ssm'),
     'examples' => array(
-      'mw-show-system-modules' => _drush_modules_weight_dt('Shows if we can reorder the core modules or not.'),
-      'mw-show-system-modules on' => _drush_modules_weight_dt('Allows reorder the core modules.'),
-      'mw-show-system-modules off' => _drush_modules_weight_dt("Don't allows reorder the core modules."),
+      'mw-show-system-modules' => dt('Shows if we can reorder the core modules or not.'),
+      'mw-show-system-modules on' => dt('Allows reorder the core modules.'),
+      'mw-show-system-modules off' => dt("Don't allows reorder the core modules."),
     ),
   );
   $items['mw-reorder'] = array(
-    'description' => _drush_modules_weight_dt('Configures the modules weight.'),
+    'description' => dt('Configures the modules weight.'),
     'arguments' => array(
-      'module' => _drush_modules_weight_dt('The module machine name.'),
-      'weight' => _drush_modules_weight_dt('The module weight.'),
+      'module' => dt('The module machine name.'),
+      'weight' => dt('The module weight.'),
     ),
     'options' => array(
       'minus' => array(
-        'description' => _drush_modules_weight_dt('If the option is present the weight will be consider as a negative value. Read for more information https://drupal.stackexchange.com/q/246298/28275 .'),
+        'description' => dt('If the option is present the weight will be consider as a negative value. Read for more information https://drupal.stackexchange.com/q/246298/28275 .'),
       ),
     ),
     'aliases' => array('mw-r'),
     'examples' => array(
-      'mw-reorder node_revision_delete' => _drush_modules_weight_dt('Show the node_revision_delete module weight.'),
-      'mw-reorder onlyone -5 --minus' => _drush_modules_weight_dt('Set the onlyone module weight to -5.'),
-      'mw-reorder no_autocomplete 15' => _drush_modules_weight_dt("Set the no_autocomplete module weight to 15."),
+      'mw-reorder node_revision_delete' => dt('Show the node_revision_delete module weight.'),
+      'mw-reorder onlyone -5 --minus' => dt('Set the onlyone module weight to -5.'),
+      'mw-reorder no_autocomplete 15' => dt("Set the no_autocomplete module weight to 15."),
     ),
   );
   $field_labels = array(
-    'name' => _drush_modules_weight_dt('Name'),
-    'machine_name' => _drush_modules_weight_dt('Machine Name'),
-    'weight' => _drush_modules_weight_dt('Weight'),
-    'package' => _drush_modules_weight_dt('Package'),
+    'name' => dt('Name'),
+    'machine_name' => dt('Machine Name'),
+    'weight' => dt('Weight'),
+    'package' => dt('Package'),
   );
   $items['mw-list'] = array(
-    'description' => _drush_modules_weight_dt('Shows the modules weight list.'),
+    'description' => dt('Shows the modules weight list.'),
     'options' => array(
       'force' => array(
-        'description' => _drush_modules_weight_dt('If the option is present the core modules will be shown even if the option to allow it is disabled.'),
+        'description' => dt('If the option is present the core modules will be shown even if the option to allow it is disabled.'),
       ),
     ),
     'outputformat' => array(
@@ -63,8 +65,8 @@ function modules_weight_drush_command() {
     ),
     'aliases' => array('mw-l'),
     'examples' => array(
-      'mw-list' => _drush_modules_weight_dt('Shows the modules weight list.'),
-      'mw-list --force' => _drush_modules_weight_dt('Shows the modules weight list with the core modules even if the option to allow it is disabled.'),
+      'mw-list' => dt('Shows the modules weight list.'),
+      'mw-list --force' => dt('Shows the modules weight list with the core modules even if the option to allow it is disabled.'),
     ),
   );
 
@@ -121,7 +123,7 @@ function drush_modules_weight_mw_show_system_modules_validate() {
 function drush_modules_weight_mw_show_system_modules() {
   $args = func_get_args();
   // Getting the values from the config.
-  $show_system_modules = variable_get('show_system_modules');
+  $show_system_modules = variable_get('modules_weight_show_system_modules');
   $status = $show_system_modules ? sprintf(MODULES_WEIGHT_GREEN_OUPUT, dt('Activated')) : sprintf(MODULES_WEIGHT_RED_OUPUT, dt('Disabled'));
 
   if (isset($args[0])) {
@@ -145,7 +147,7 @@ function drush_modules_weight_mw_show_system_modules() {
     }
 
     // Saving the values in the config.
-    variable_set('show_system_modules', $value);
+    variable_set('modules_weight_show_system_modules', $value);
 
     $message = dt('You have @status the core modules reorder option.', array('@status' => $status));
     drush_log($message, 'success');
@@ -178,7 +180,7 @@ function drush_modules_weight_mw_reorder_validate() {
   // Getting the module info.
   $module = system_get_info('module', $args[0]);
   // Getting the config to know of we should show or not the core modules.
-  $show_system_modules = variable_get('show_system_modules');
+  $show_system_modules = variable_get('modules_weight_show_system_modules');
   // Checking if we can reorder the Core modules.
   if (!$force && $module['package'] == 'Core' && !$show_system_modules) {
     if (!drush_confirm(dt("You're trying to reorder a Core module but Modules Weight is not configured to allow it. Do you want to continue?"))) {
@@ -235,37 +237,16 @@ function drush_modules_weight_mw_list() {
     // The rows info.
     $row = array();
     // Module name.
-    $row['name'] = $module->info['name'];
+    $row['name'] = $module['name'];
     // Module machine name.
     $row['machine_name'] = $filename;
     // Module weight.
-    $row['weight'] = $module->weight;
+    $row['weight'] = $module['weight'];
     // Module package.
-    $row['package'] = $module->info['package'];
+    $row['package'] = $module['package'];
 
     $result[] = $row;
   }
 
   return $result;
-}
-
-/**
- * Alias for dt() function.
- *
- * Is used when the modules_weight_drush_command() function is called from the
- * hook_help(), because in this scope the dt() drush function is not defined.
- *
- * @param string $string
- *   The string to translate.
- *
- * @return string
- *   The translated string.
- */
-function _drush_modules_weight_dt($string) {
-  if (function_exists('dt')) {
-    return dt($string);
-  }
-  else {
-    return t($string);
-  }
 }

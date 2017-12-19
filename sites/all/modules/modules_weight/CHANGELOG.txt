@@ -1,3 +1,28 @@
+Modules Weight 7.1.9, 2017-12-04
+--------------------------------
+Changes since 7.1.8:
+
+- #2927608 by adriancid: The variables defined by the module should have the
+  module name as prefix.
+- #2927600 by adriancid: Incorrect names for hook_install and hook_uninstall
+  implementations.
+
+Modules Weight 7.1.8, 2017-11-28
+--------------------------------
+Changes since 7.1.7:
+
+- #2923157 by adriancid: Show the names of the modules to which the weight was
+  modified.
+- #2925116 by adriancid: Remove the functionalities that allows to see the drush
+  commands in the module help page.
+- #2923156 by adriancid: Problem getting the module weight when a module and a 
+  theme have the same name.
+- #2923106 by adriancid, Crell: Don't use the system_rebuild_module_data()
+  function to retrieve the installed modules.
+- #2921656 by adriancid: Typecast only one time in 
+  InternalFunctions::prepareDelta method. 
+- #2921651 by adriancid: Put the internal utility functions in another file.
+
 Modules Weight 7.1.7, 2017-10-27
 --------------------------------
 Changes since 7.1.6:
