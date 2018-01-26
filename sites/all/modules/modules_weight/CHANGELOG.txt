@@ -1,3 +1,9 @@
+Modules Weight 7.1.10, 2018-01-10
+---------------------------------
+Changes since 7.1.9:
+
+- #2933083 by NancyDru, adriancid: Sort the modules list by weight and name.
+
 Modules Weight 7.1.9, 2017-12-04
 --------------------------------
 Changes since 7.1.8:
