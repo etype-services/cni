@@ -4,7 +4,7 @@
 $url = 'http://www.etypeclassifieds.com/tribgeorgianxml/CNI_CCT.xml';
 
 /* cron schedule */
-$cron_schedule = '30 7 * * 3';
+$cron_schedule = '0 7 * * 4';
 
 /* ad categories */
 $categories = array(
