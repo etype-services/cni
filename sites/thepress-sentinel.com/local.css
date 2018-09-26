@@ -7,3 +7,15 @@
     color: #333333;
     text-decoration: none;
 }
+
+@media (min-width: 768px) {
+    #block-dfp-cni-jesupmobile1,
+    #block-dfp-cni-jesupmobile2 {
+        display: none;
+        visibility: hidden;
+    }
+}
+
+#block-dfp-cni-jesupmobile1 {
+	text-align: center;
+	}
