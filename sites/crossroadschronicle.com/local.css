@@ -7,3 +7,7 @@
     color: #333333;
     text-decoration: none;
 }
+
+.page-node .node-article .addthis_sharing_toolbox {
+    float: none;
+}
