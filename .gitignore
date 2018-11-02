@@ -9,4 +9,7 @@ sites/*/tmp
 # Ignore default files
 error_log
 .idea/
+.DS_Store
 
+#Ignore composer vendor directory
+/vendor/

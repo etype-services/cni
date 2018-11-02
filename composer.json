@@ -1,0 +1,7 @@
+{
+    "name": "vagrant/vagrant_data",
+    "type": "project",
+    "require": {
+        "drush/drush": "8.* 8"
+    }
+}
