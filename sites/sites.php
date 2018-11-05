@@ -135,7 +135,7 @@ $sites['www.highlandsnews.com'] = 'highlandsnews.com';
 $sites['crossroadschronicle.etypegoogle3.com'] = 'crossroadschronicle.com';
 $sites['crossroadschronicle.com'] = 'crossroadschronicle.com';
 $sites['www.crossroadschronicle.com'] = 'crossroadschronicle.com';
-$sites['192.168.33.10'] = 'crossroadschronicle.com';
+$sites['cni.local'] = 'crossroadschronicle.com';
 
 $sites['mitchellnews.etypegoogle3.com'] = 'mitchellnews.com';
 $sites['mitchellnews.com'] = 'mitchellnews.com';
