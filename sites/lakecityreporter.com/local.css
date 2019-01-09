@@ -18,6 +18,10 @@
     visibility: visible;
 }
 
+#block-views-special-section-block .views-field-title {
+    text-align: center;
+}
+
 #block-views-special-section-block-1 {
     display: none;
     visibility: hidden;
