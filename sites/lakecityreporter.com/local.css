@@ -23,7 +23,7 @@
     visibility: hidden;
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 958px) {
     #block-views-special-section-block {
         display: none;
         visibility: hidden;
