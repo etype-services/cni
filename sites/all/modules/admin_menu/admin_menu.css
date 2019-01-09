@@ -1,4 +1,3 @@
-
 /**
  * @file
  * Administration menu.
@@ -16,6 +15,7 @@
   position: absolute;
   text-align: left;
   top: 0;
+  height: 30px;
   width: 100%;
 }
 #admin-menu-wrapper {
@@ -49,7 +49,7 @@ body.admin-menu {
 /* All lists */
 #admin-menu,
 #admin-menu .dropdown {
-  line-height: 2.4em;
+  line-height: 1.4em;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -62,11 +62,10 @@ body.admin-menu {
 #admin-menu li > span {
   background: transparent none;
   border: none;
-  color: #EEE;
+  color: #eee;
   font-weight: normal;
   text-align: left; /* LTR */
   text-decoration: none;
-  font-size: 1.3em;
 }
 #admin-menu .dropdown a,
 #admin-menu .dropdown li > span {
@@ -75,7 +74,7 @@ body.admin-menu {
   padding: 4px 8px;
 }
 #admin-menu .dropdown .admin-menu-tab a {
-  border-right: 1px solid #52565E; /* LTR */
+  border-right: 1px solid #52565e; /* LTR */
 }
 #admin-menu .dropdown li li a {
   border-right: none; /* LTR */
@@ -148,7 +147,7 @@ body.admin-menu {
 
 /* Second-and-more-level hovering */
 #admin-menu .dropdown li li.expandable {
-  background: #45454A url(images/arrow.png) no-repeat 145px 6px;
+  background: #45454a url(images/arrow.png) no-repeat 145px 6px;
 }
 #admin-menu .dropdown li li:hover {
   background-color: #111;
@@ -156,19 +155,19 @@ body.admin-menu {
 #admin-menu .dropdown li li:hover a,
 #admin-menu .dropdown li li:hover li:hover a,
 #admin-menu .dropdown li li:hover li:hover li:hover a {
-  color: #FFF;
+  color: #fff;
 }
 #admin-menu .dropdown li li.expandable:hover a,
 #admin-menu .dropdown li li.expandable:hover li.expandable:hover a {
   border-color: #444;
-  color: #EEE;
+  color: #eee;
 }
 #admin-menu .dropdown li li.expandable:hover li a,
 #admin-menu .dropdown li li.expandable:hover li.expandable:hover li a {
   border-color: #323232;
 }
 #admin-menu .dropdown li li:hover li a {
-  color: #EEE;
+  color: #eee;
 }
 
 /* Search form */
@@ -183,7 +182,7 @@ body.admin-menu {
   -moz-border-radius: 5px;
   border-radius: 5px;
   font-size: 10px;
-  margin: 6px 0;
+  margin: 1px 0;
   outline: none;
   padding: 2px 22px 2px 4px;
   width: 158px;

@@ -4,9 +4,9 @@
 [submodule "sites/all/modules/etype"]
 	path = sites/all/modules/etype
 	url = git@github.com:etype-services/etype.git
-[submodule "sites/all/modules/etype_wire"]
-	path = sites/all/modules/etype_wire
-	url = git@github.com:etype-services/etype_wire.git
 [submodule "sites/all/modules/premium"]
 	path = sites/all/modules/premium
 	url = git@github.com:etype-services/premium_content.git
+[submodule "sites/all/modules/etype_wire"]
+	path = sites/all/modules/etype_wire
+	url = git@github.com:etype-services/etype_wire.git
