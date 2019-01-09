@@ -12,3 +12,25 @@
 #block-block-38 .block-inner {
     padding: 0;
 }
+
+#block-views-special-section-block {
+    display: block;
+    visibility: visible;
+}
+
+#block-views-special-section-block-1 {
+    display: none;
+    visibility: hidden;
+}
+
+@media only screen and (max-width: 767px) {
+    #block-views-special-section-block {
+        display: none;
+        visibility: hidden;
+    }
+
+    #block-views-special-section-block-1 {
+        display: block;
+        visibility: visible;
+    }
+}
