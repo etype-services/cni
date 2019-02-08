@@ -7,3 +7,9 @@
     color: #333333;
     text-decoration: none;
 }
+
+#block-block-38  .content {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 5px;
+}
