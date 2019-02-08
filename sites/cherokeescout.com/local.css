@@ -13,6 +13,7 @@
     display: grid;
     grid-template-columns: auto auto;
     grid-gap: 5px;
+    overflow: hidden;
 }
 
 #block-block-42 .content {
