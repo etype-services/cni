@@ -16,11 +16,12 @@
 }
 
 #block-block-42 .content {
-    display: flex;
-    flex-wrap: nowrap;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-gap: 5px;
 }
 
 #main-content #block-block-38 .block-inner,
-#main-content #block-block-38 .block-inner {
+#main-content #block-block-42 .block-inner {
     padding: 0;
 }
