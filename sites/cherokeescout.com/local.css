@@ -28,7 +28,8 @@
 }
 
 @media only screen and (max-width: 767px) {
-    #block-block-38 .content {
+    #block-block-38 .content,
+    #block-block-42 .content {
         display: block;
     }
 }
