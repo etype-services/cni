@@ -9,11 +9,15 @@
 }
 
 /* AP Blocks */
-#block-block-38 .content,
-#block-block-42 .content {
+#block-block-38 .content {
     display: grid;
     grid-template-columns: auto auto;
     grid-gap: 5px;
+}
+
+#block-block-42 .content {
+    display: flex;
+    flex-wrap: nowrap;
 }
 
 #main-content #block-block-38 .block-inner,
