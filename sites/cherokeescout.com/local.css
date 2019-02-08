@@ -25,3 +25,9 @@
 #main-content #block-block-42 .block-inner {
     padding: 10px 0;
 }
+
+@media only screen and (max-width: 767px) {
+    #block-block-38 .content {
+        display: block;
+    }
+}
