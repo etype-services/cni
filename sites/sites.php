@@ -64,10 +64,6 @@ $sites['thenortheastgeorgian.etypegoogle3.com'] = 'thenortheastgeorgian.com';
 $sites['thenortheastgeorgian.com'] = 'thenortheastgeorgian.com';
 $sites['www.thenortheastgeorgian.com'] = 'thenortheastgeorgian.com';
 
-$sites['myandrewsjournal.etypegoogle3.com'] = 'myandrewsjournal.com';
-$sites['myandrewsjournal.com'] = 'myandrewsjournal.com';
-$sites['www.myandrewsjournal.com'] = 'myandrewsjournal.com';
-
 $sites['lakecityreporter.etypegoogle3.com'] = 'lakecityreporter.com';
 $sites['lakecityreporter.com'] = 'lakecityreporter.com';
 $sites['www.lakecityreporter.com'] = 'lakecityreporter.com';

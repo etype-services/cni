@@ -1,9 +1,0 @@
-.node-article .content a {
-    color: blue;
-    text-decoration: underline;
-}
-
-.node-article .content .field-type-email a {
-    color: #333333;
-    text-decoration: none;
-}
