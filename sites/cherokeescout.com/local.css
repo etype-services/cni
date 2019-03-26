@@ -63,3 +63,7 @@
 	max-width: 100%; } 
 	
 	}
+
+/* temporary fix for NCAA basketball widgets in right sidebar */
+#block-block-45 .block-inner { padding:0; margin-left:-15px; margin-right:-15px; }
+#block-block-46 .block-inner { padding:0; margin-left:-15px; margin-right:-15px; }
