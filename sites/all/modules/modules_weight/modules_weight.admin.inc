@@ -19,8 +19,10 @@ function modules_weight_admin_config_page_form(array $form, array &$form_state) 
   // Loading the helper functions file.
   module_load_include('inc', 'modules_weight', 'modules_weight.helpers');
 
+  // Getting the config to know if we should show or not the core modules.
+  $show_system_modules = variable_get('modules_weight_show_system_modules');
   // Getting the module list.
-  $modules = _modules_weight_modules_list();
+  $modules = _modules_weight_modules_list($show_system_modules);
   // Iterate over each of the modules.
   foreach ($modules as $module_name => $module) {
     // The rows info.
@@ -37,11 +39,6 @@ function modules_weight_admin_config_page_form(array $form, array &$form_state) 
       '#type' => 'weight',
       '#default_value' => $module['weight'],
       '#delta' => _modules_weight_prepare_delta($module['weight']),
-    );
-    // Module old weight value, used to see if we need to update the weight.
-    $form['modules'][$module_name]['old_weight_value'] = array(
-      '#type' => 'hidden',
-      '#value' => $module['weight'],
     );
     // Module package.
     $form['modules'][$module_name]['package'] = array(
@@ -63,33 +60,42 @@ function modules_weight_admin_config_page_form(array $form, array &$form_state) 
  *   The form state.
  */
 function modules_weight_admin_config_page_form_submit(array $form, array &$form_state) {
-  // Variable to see if we have uptaded some module weight.
-  $printed = FALSE;
+  // The modules information.
+  $modules_info = $form_state['values']['modules'];
+  // Doing the array unidimensional.
+  $new_weight_value = array_combine(array_keys($modules_info), array_column($modules_info, 'weight'));
+  // Getting the config to know if we should show or not the core modules.
+  $show_core_modules = variable_get('modules_weight_show_system_modules');
+  // The old values information.
+  $old_modules_info = _modules_weight_modules_list($show_core_modules);
+  // Doing the array unidimensional.
+  $old_weight_value = array_combine(array_keys($old_modules_info), array_column($old_modules_info, 'weight'));
 
-  // Loading the helper functions file.
-  module_load_include('inc', 'modules_weight', 'modules_weight.helpers');
+  if ($new_weight_value == $old_weight_value) {
+    // Printing message if there are not module that has changed.
+    drupal_set_message(t("You don't have changed the weight for any module."), 'warning');
+  }
+  else {
+    // Loading the helper functions file.
+    module_load_include('inc', 'modules_weight', 'modules_weight.helpers');
 
-  foreach ($form_state['values']['modules'] as $name => $weight) {
-    if ($weight['weight'] != $weight['old_weight_value']) {
+    // Getting the changed modules.
+    $changed = array_diff_assoc($new_weight_value, $old_weight_value);
+
+    // Printing the update message.
+    drupal_set_message(t('The modules weight was updated.'));
+
+    foreach ($changed as $module_name => $weight) {
       // Setting the new weight.
-      _modules_weight_module_set_weight($name, $weight['weight']);
-      // Printing the update message.
-      if (!$printed) {
-        drupal_set_message(t('The modules weight was updated.'));
-        $printed = TRUE;
-      }
+      _modules_weight_module_set_weight($module_name, $weight);
 
       $variables = [
-        '@module_name' => system_get_info('module', $name)['name'],
-        '@weight' => $weight['weight'],
+        '@module_name' => system_get_info('module', $module_name)['name'],
+        '@weight' => $weight,
       ];
       // Printing information about the modules weight.
       drupal_set_message(t('@module_name have now as weight: @weight', $variables));
     }
-  }
-  // Printing message if there are not module that has changed.
-  if (!$printed) {
-    drupal_set_message(t("You don't have changed the weight for any module."), 'warning');
   }
 }
 

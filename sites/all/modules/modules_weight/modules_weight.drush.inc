@@ -5,8 +5,8 @@
  * Drush commands related to the Modules weight module.
  */
 
-define('MODULES_WEIGHT_GREEN_OUTPUT', "\033[1;32;40m\033[1m[%s]\033[0m");
-define('MODULES_WEIGHT_RED_OUTPUT', "\033[31;40m\033[1m[%s]\033[0m");
+define('MODULES_WEIGHT_GREEN_OUTPUT', "\033[1;32;40m\033[1m%s\033[0m");
+define('MODULES_WEIGHT_RED_OUTPUT', "\033[31;40m\033[1m%s\033[0m");
 
 /**
  * Implements hook_drush_command().
@@ -122,25 +122,20 @@ function drush_modules_weight_mw_show_system_modules() {
   $args = func_get_args();
   // Getting the values from the config.
   $show_system_modules = variable_get('modules_weight_show_system_modules');
-  $status = $show_system_modules ? sprintf(MODULES_WEIGHT_GREEN_OUTPUT, dt('Activated')) : sprintf(MODULES_WEIGHT_RED_OUTPUT, dt('Disabled'));
+
+  // Giving colors to the messages.
+  $activated = sprintf(MODULES_WEIGHT_GREEN_OUTPUT, dt('Activated'));
+  $disabled = sprintf(MODULES_WEIGHT_RED_OUTPUT, dt('Disabled'));
 
   if (isset($args[0])) {
-    list($value, $status) = $args[0] == 'on' ? array(1, dt('activated')) : array(0, dt('disabled'));
+    list($value, $status) = $args[0] == 'on' ? array(1, strtolower($activated)) : array(0, strtolower($disabled));
 
-    // Checking if the status is already configured.
-    $already_configured = FALSE;
-
-    if ($show_system_modules && $value) {
-      $already_configured = TRUE;
-    }
-
-    if (!$show_system_modules && !$value) {
-      $already_configured = TRUE;
-    }
-
-    if ($already_configured) {
+    // Is already configured?
+    if ($show_system_modules == $value) {
+      // If is configured stop the command execution with a warning message.
       $message = dt('The core modules reorder option is already @status.', array('@status' => $status));
       drush_log($message, 'warning');
+      // Returning here to stop the function execution.
       return;
     }
 
@@ -151,6 +146,8 @@ function drush_modules_weight_mw_show_system_modules() {
     drush_log($message, 'success');
   }
   else {
+    $status = $show_system_modules ? $activated : $disabled;
+
     $message = dt('The core modules reorder option is: @status', array('@status' => $status));
     drush_print($message);
   }
@@ -234,9 +231,14 @@ function drush_modules_weight_mw_list() {
   module_load_include('inc', 'modules_weight', 'modules_weight.helpers');
 
   // Getting the --force option.
-  $force = drush_get_option('force');
+  $force = (bool) drush_get_option('force');
+
+  // If we don't force we need to check the configuration variable to know if we
+  // should show or not the core modules.
+  $show_core_modules = $force ?: variable_get('modules_weight_show_system_modules');
+
   // Getting the module list.
-  $modules = _modules_weight_modules_list($force);
+  $modules = _modules_weight_modules_list($show_core_modules);
   // Iterate over each of the modules.
   foreach ($modules as $filename => $module) {
     // The rows info.

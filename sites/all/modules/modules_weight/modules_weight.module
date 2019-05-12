@@ -24,6 +24,12 @@ function modules_weight_help($path, $arg) {
       $output .= '</dl>';
 
       return $output;
+
+    case 'admin/config/system/modules-weight':
+      $output = '';
+      $output .= '<p>' . t("To reorder the modules execution order just change the module's weight (the lowest values are executed first) and click the Save Changes button at the bottom of the page. You can select the weight for all the installed and compatible modules according to the module settings from the <a href='@config-page'>Settings</a> page.", array('@config-page' => url('admin/config/system/modules-weight/configuration'))) . '</p>';
+
+      return $output;
   }
 }
 

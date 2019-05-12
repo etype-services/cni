@@ -87,3 +87,8 @@ MAINTAINERS
 Current maintainers:
  * Adrian Cid Almaguer (adriancid) - https://www.drupal.org/u/adriancid
  * Ma'moun Othman (artofeclipse) - https://www.drupal.org/u/artofeclipse
+
+
+This project has been sponsored by:
+
+ * Vardot

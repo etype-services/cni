@@ -5,9 +5,8 @@ package = Development
 
 configure = admin/config/system/modules-weight/configuration
 
-; Information added by Drupal.org packaging script on 2018-03-28
-version = "7.x-1.11"
+; Information added by Drupal.org packaging script on 2019-05-10
+version = "7.x-1.12"
 core = "7.x"
 project = "modules_weight"
-datestamp = "1522254789"
-
+datestamp = "1557520394"
