@@ -1,0 +1,63 @@
+<?php
+
+/**
+ * Implements hook_permission().
+ */
+function etype_xml_importer_permission() {
+  return array(
+    'administer xml import' => array(
+      'title' => t('Administer XML Import'),
+    )
+  );
+}
+
+/**
+ * add import and admin urls
+ * @return array
+ */
+function etype_xml_importer_menu() {
+
+  $items = array();
+
+  $items['import_olive_xml'] = array(
+    'title' => 'Import Olive XML',
+    'description' => 'Olive XML Importer',
+    'page callback' => 'etype_xml_importer_olive_import',
+    'access arguments' => array('administer xml import'),
+    'type' => MENU_NORMAL_ITEM,
+    'file' => 'includes/xml_importer.import.inc'
+  );
+
+  $items['admin/config/etype/etype_xml_importer/settings'] = array(
+    'title' => 'XML Importer Settings',
+    'description' => 'XML content import options.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('etype_xml_importer_admin'),
+    'access arguments' => array('administer xml import'),
+    'file' => 'includes/xml_importer.admin.inc',
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+
+  return $items;
+}
+
+/**
+ * Cron Jobs
+ * @param $op
+ * @param null $job
+ * @return mixed
+ */
+function etype_xml_importer_cronapi($op, $job = NULL) {
+  $xml_cron_schedule = variable_get('etype_xml_cron_schedule');
+  if (!empty($xml_cron_schedule)) {
+    /* Classified importer */
+    $items['etype_xml_importer_cron'] = array(
+      'description' => 'Import content via XML from Olive',
+      'rule' => $xml_cron_schedule,
+      'callback' => 'etype_xml_importer_olive_import',
+      'file' => 'includes/xml_importer.import.inc'
+    );
+    return $items;
+  }
+}
