@@ -51,6 +51,8 @@ function hook_pwa_manifest_alter(&$manifest) {
       'type' => 'image/svg+xml',
     ],
   ];
+
+  $manifest['gcm_sender_id'] => ['103953800507'],
 }
 
 /**
