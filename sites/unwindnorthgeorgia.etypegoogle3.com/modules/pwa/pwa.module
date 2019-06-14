@@ -323,3 +323,4 @@ function pwa_flush_caches() {
 function pwa_modernizr_info() {
   return ['serviceworker'];
 }
+

@@ -32,22 +32,22 @@ function hook_pwa_manifest_alter(&$manifest) {
   // listed here to meet criteria for "Add to Homescreen"
   $manifest['icons'] = [
     [
-      'src' => url(drupal_get_path('theme', 'MY_THEME') . '/assets/logo-512.png'),
+      'src' => url(drupal_get_path('module', 'pwa') . '/assets/logo-512.png'),
       'sizes' => '512x512',
       'type' => 'image/png',
     ],
     [
-      'src' => url(drupal_get_path('theme', 'MY_THEME') . '/assets/logo-192.png'),
+      'src' => url(drupal_get_path('module', 'pwa') . '/assets/logo-192.png'),
       'sizes' => '192x192',
       'type' => 'image/png',
     ],
     [
-      'src' => url(drupal_get_path('theme', 'MY_THEME') . '/assets/logo-144.png'),
+      'src' => url(drupal_get_path('module', 'pwa') . '/assets/logo-144.png'),
       'sizes' => '144x144',
       'type' => 'image/png',
     ],
     [
-      'src' => url(drupal_get_path('theme', 'MY_THEME') . '/assets/logo.svg'),
+      'src' => url(drupal_get_path('module', 'pwa') . '/assets/logo.svg'),
       'type' => 'image/svg+xml',
     ],
   ];
