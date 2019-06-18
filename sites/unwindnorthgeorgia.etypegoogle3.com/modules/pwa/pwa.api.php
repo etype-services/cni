@@ -52,7 +52,6 @@ function hook_pwa_manifest_alter(&$manifest) {
     ],
   ];
 
-  $manifest['gcm_sender_id'] => ['103953800507'],
 }
 
 /**

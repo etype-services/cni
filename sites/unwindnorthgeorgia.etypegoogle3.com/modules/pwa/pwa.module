@@ -139,22 +139,22 @@ function _pwa_manifest_data() {
     // @see pwa.api.php
     'icons' => [
       [
-        'src' => url($path . '/assets/druplicon-512.png'),
+        'src' => url($path . '/assets/logo-512.png'),
         'sizes' => '512x512',
         'type' => 'image/png',
       ],
       [
-        'src' => url($path . '/assets/druplicon-192.png'),
+        'src' => url($path . '/assets/logo-192.png'),
         'sizes' => '192x192',
         'type' => 'image/png',
       ],
       [
-        'src' => url($path . '/assets/druplicon-144.png'),
+        'src' => url($path . '/assets/logo-144.png'),
         'sizes' => '144x144',
         'type' => 'image/png',
       ],
       [
-        'src' => url($path . '/assets/druplicon-vector.svg'),
+        'src' => url($path . '/assets/logo.svg'),
         'type' => 'image/svg+xml',
       ],
     ],
