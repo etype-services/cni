@@ -85,8 +85,6 @@ $sites['elberton.com'] = 'elberton.com';
 $sites['www.elberton.com'] = 'elberton.com';
 
 $sites['thedahloneganugget.etypegoogle3.com'] = 'thedahloneganugget.com';
-$sites['thedahloneganugget.com'] = 'thedahloneganugget.com';
-$sites['www.thedahloneganugget.com'] = 'thedahloneganugget.com';
 
 $sites['theclaytontribune.etypegoogle3.com'] = 'theclaytontribune.com';
 $sites['theclaytontribune.com'] = 'theclaytontribune.com';
