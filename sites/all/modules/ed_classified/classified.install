@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Install file for the Classified Ads module.
@@ -127,7 +128,7 @@ function classified_requirements($phase) {
     $requirements['ed_classified'] = array(
       'title' => $t('Classified is incompatible with ed_classified'),
       'value' => $t('Module conflict'),
-      'description' => t('The "Classified" module is a fork/rewrite of ed_classified and is incompatible with it.'),
+      'description' => $t('The "Classified" module is a fork/rewrite of ed_classified and is incompatible with it.'),
       'severity' => REQUIREMENT_ERROR,
     );
   }
@@ -136,7 +137,7 @@ function classified_requirements($phase) {
     $requirements['statistics'] = array(
       'title' => $t('Classified is enhanced by Statistics'),
       'value' => NULL,
-      'description' => t('The "Classified" module can only provide its "popular" block if statistics.module is enabled'),
+      'description' => $t('The "Classified" module can only provide its "popular" block if statistics.module is enabled'),
       'severity' => REQUIREMENT_INFO,
     );
   }
@@ -187,8 +188,8 @@ function classified_requirements($phase) {
 /**
  * Implements hook_schema().
  *
- * Non-translation of schema data became standard with Drupal 6.9
- * @link http://drupal.org/node/332123 @endlink
+ * Non-translation of schema data became standard with Drupal 6.9.
+ * See: @link http://drupal.org/node/332123 @endlink.
  */
 function classified_schema() {
   $schema['classified_node'] = array(
@@ -230,14 +231,13 @@ function classified_schema() {
   return $schema;
 }
 
-
 /**
  * Implements hook_uninstall().
  *
- * - remove vocabulary and its terms
- * - remove fields
- * - remove nodes
- * - remove module variables
+ * - remove vocabulary and its terms,
+ * - remove fields,
+ * - remove nodes,
+ * - remove module variables.
  *
  * Permissions/role mapping removal is handled by core in D7:
  * @link http://drupal.org/node/306027 @endlink

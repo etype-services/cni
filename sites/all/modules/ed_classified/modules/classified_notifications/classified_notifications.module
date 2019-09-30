@@ -1,13 +1,14 @@
 <?php
+
 /**
  * @file
- * Optional notification features for classified module
+ * Optional notification features for classified module.
  *
- * - Allows notifications for
- *   - Expired ads
- *   - Purged ads
- *   - Intermediary lifetime intervals reached
- * - Same-kind notifications are grouped by user
+ * - Allows notifications for:
+ *   - Expired ads,
+ *   - Purged ads,
+ *   - Intermediary lifetime intervals reached.
+ * - Same-kind notifications are grouped by user.
  * - Notifications sending is not synchronous with gathering, but batched using
  *   Queue API.
  *
@@ -25,9 +26,6 @@
 
 /**
  * Implements hook_classified_expire_alter().
- *
- * @param array $ads_bunch
- *   A uid-indexed array of ad nodes.
  */
 function classified_notifications_classified_expire_alter($ads_bunch) {
   foreach ($ads_bunch as $uid => $ads) {
@@ -66,13 +64,6 @@ function classified_notifications_classified_expire_alter($ads_bunch) {
 
 /**
  * Implements hook_classified_notify_alter().
- *
- * @see _classified_get_notify_kinds()
- *
- * @param array $ads_bunch
- *   A uid-indexed array of ad nodes.
- * @param string $kind
- *   A notification kind, from the list in _classified_get_notify_kinds().
  */
 function classified_notifications_classified_notify_alter($ads_bunch, $kind) {
   foreach ($ads_bunch as $uid => $ads) {
@@ -112,9 +103,6 @@ function classified_notifications_classified_notify_alter($ads_bunch, $kind) {
 
 /**
  * Implements hook_classified_purge_alter().
- *
- * @param array $ads_bunch
- *   A uid-indexed array of ad nodes.
  */
 function classified_notifications_classified_purge_alter($ads_bunch) {
   foreach ($ads_bunch as $uid => $ads) {
@@ -157,7 +145,13 @@ function classified_notifications_classified_purge_alter($ads_bunch) {
  * @TODO support multiple languages, based on user language, not site language.
  */
 function classified_notifications_mail($key, &$message, $params) {
-  if (in_array($key, array('half-life', 'pre-expire', 'expire', 'pre-purge', 'purge'))) {
+  if (in_array($key, array(
+    'half-life',
+    'pre-expire',
+    'expire',
+    'pre-purge',
+    'purge',
+  ))) {
     $data = array(
       'subject' => token_replace(_classified_get('notifications-' . $key . '-subject'), array('user' => $params['account'])),
       'body' => array(token_replace(_classified_get('notifications-' . $key . '-body'), array('user' => $params['account']))),
@@ -183,8 +177,11 @@ function classified_notifications_cron_queue_info() {
  * Callback for cron to send queues mail jobs.
  *
  * @param array $job
+ *   The job about which info has to be sent.
+ *
+ * @throws \Exception
  */
-function classified_notifications_deliver($job) {
+function classified_notifications_deliver(array $job) {
   drupal_mail_system('classified_notifications', $job['key'])->mail($job['message']);
 }
 
@@ -201,7 +198,7 @@ function classified_notifications_menu() {
     'page callback' => 'drupal_get_form',
     'page arguments' => array('classified_notifications_admin_settings'),
     'file' => 'classified_notifications.admin.inc',
-    // Permission from classified.module
+    // Permission from classified.module.
     'access arguments' => array('administer classified ads'),
   );
 
@@ -215,13 +212,15 @@ function classified_notifications_menu() {
  */
 function classified_notifications_menu_alter(&$items) {
 
-  $items['admin/config/content/classified/base'] = array_merge($items['admin/config/content/classified'], array(
-    'type' => MENU_DEFAULT_LOCAL_TASK,
-    'title' => 'Basic settings',
-    'weight' => -1,
-  ));
+  $items['admin/config/content/classified/base'] = array_merge(
+    $items['admin/config/content/classified'], array(
+      'type' => MENU_DEFAULT_LOCAL_TASK,
+      'title' => 'Basic settings',
+      'weight' => -1,
+    ));
   return;
 
   // Dead code below, just to force potx to add the string to the translation.
+  // phpcs:disable Squiz.PHP.NonExecutableCode
   t('Basic settings');
 }

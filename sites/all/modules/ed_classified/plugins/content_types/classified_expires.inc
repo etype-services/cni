@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * CTools content_type plugin, displaying a Classified Ad expiration info.
@@ -9,8 +10,12 @@
  */
 
 /**
- * Plugins are described by creating a $plugin array which will be used
- * by the system that includes this file.
+ * Plugins are described by creating a $plugin array.
+ *
+ * It will be used by the system that includes this file. This is a legacy
+ * CTools requirement, preventing PSR1 compliance.
+ *
+ * phpcs:disable PSR1.Files.SideEffects
  */
 $plugin = array(
   'single' => TRUE,
@@ -59,8 +64,8 @@ function classified_classified_expires_content_type_render($subtype, $conf, $pan
 
   // Build the content type block.
   $block = new stdClass();
-  $block->module  = 'classified';
-  $block->delta   = $node->nid;
+  $block->module = 'classified';
+  $block->delta = $node->nid;
   $variables = array(
     'node' => $node,
   );
@@ -146,7 +151,7 @@ function classified_classified_expires_content_type_admin_info($subtype, $conf) 
   $values = _classified_classified_expires_option_values();
   $format = isset($values[$conf['format']])
     ? $values[$conf['format']]
-    : $vales['formatted'];
+    : $values['formatted'];
 
   $ret = new stdClass();
   $ret->title = t('@format - @link', array(

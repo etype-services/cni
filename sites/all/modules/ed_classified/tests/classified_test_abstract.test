@@ -1,0 +1,133 @@
+<?php
+
+/**
+ * Acknowledge breaking PSR1 compliance for test.
+ *
+ * This is a legacy Simpletest requirement, preventing PSR1 compliance.
+ *
+ * phpcs:disable PSR1.Classes.ClassDeclaration
+ */
+
+/**
+ * Base class to Test known fixed bugs to catch regressions.
+ */
+abstract class ClassifiedTestAbstractTest extends DrupalWebTestCase {
+
+  /**
+   * A user with administrative permissions.
+   *
+   * @var \User
+   */
+  public $adminUser;
+
+  /**
+   * A user with ad creation permissions.
+   *
+   * @var \User
+   */
+  public $creatorUser;
+
+  /**
+   * A plain authenticated user.
+   *
+   * @var \User
+   */
+  public $basicUser;
+
+  /**
+   * Test group.
+   *
+   * @var string
+   */
+  public $group;
+
+  /**
+   * Build a node from settings, providing classified-specific defaults.
+   *
+   * @param array $settings
+   *   Array of non-default ad properties and fields, overriding defaults
+   *   provided in this function.
+   *
+   * @return object
+   *   The new node, reloaded from DB.
+   */
+  protected function createNode(array $settings) {
+    $category_field_name = _classified_get('field-category');
+    $settings += array(
+      'title' => $this->randomString(10),
+      'body' => array(
+        LANGUAGE_NONE => array(
+          0 => array(
+            'value' => $this->randomString(40),
+          ),
+        ),
+      ),
+      'type' => 'classified',
+      $category_field_name => array(),
+      'status' => 1,
+    );
+
+    $node = $this->drupalCreateNode($settings);
+    // Taxonomy is not in the same format as right after creation.
+    $node = node_load($node->nid, NULL, TRUE);
+    return $node;
+  }
+
+  /**
+   * Create a set of typical users with profiles related to Classified Ads.
+   *
+   * @param array $profiles
+   *   - admin: a Classified Ads administrator,
+   *   - basic: a typical Classified Ads user,
+   *   - creator: a user allowed to post Classified Ads.
+   */
+  protected function createUsers(array $profiles = array()) {
+    if (in_array('admin', $profiles)) {
+      $this->adminUser = $this->drupalCreateUser(array(
+        // block.module, to access admin/build/block.
+        'administer blocks',
+
+        // classified.module.
+        'administer classified ads',
+
+        // node.module.
+        'access content',
+
+        // system.module, to access admin/reports/status.
+        'administer site configuration',
+
+        // taxonomy.module.
+        'administer taxonomy',
+
+        // user.module.
+        'access user profiles',
+      ));
+      $this->pass(t('Admin user %name (%uid) created.', array(
+        '%name' => $this->adminUser->name,
+        '%uid' => $this->adminUser->uid,
+      )), $this->group);
+    }
+
+    if (in_array('basic', $profiles)) {
+      $this->basicUser = $this->drupalCreateUser(array('access content'));
+      $this->pass(t('Basic user %name (%uid) created.', array(
+        '%name' => $this->basicUser->name,
+        '%uid' => $this->basicUser->uid,
+      )), $this->group);
+    }
+
+    if (in_array('creator', $profiles)) {
+      $this->creatorUser = $this->drupalCreateUser(array(
+        'access content',
+        'access user profiles',
+        'create classified content',
+        'view own unpublished content',
+      ));
+      $this->pass(t('Creator user %name (%uid) created.', array(
+        '%name' => $this->creatorUser->name,
+        '%uid' => $this->creatorUser->uid,
+      )), $this->group);
+    }
+  }
+
+}

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Template for theme('classified_expires', $node).
@@ -22,8 +23,6 @@
  *   - 'classified-expires-later'
  *
  * @copyright (c) 2010 Ouest Systemes Informatiques (OSInet)
- *
- * @author Frederic G. MARAND <fgm@osinet.fr>
  *
  * @license General Public License version 2 or later
  *

@@ -4,14 +4,14 @@
  *
  * @copyright (c) 2010 Ouest Systemes Informatiques (OSInet)
  *
- * @author Frederic G. MARAND <fgm@osinet.fr>
- *
  * @license General Public License version 2 or later
  *
  * Original code, not derived from the ed_classified module.
+ *
+ * Recommended custom styling:
+ * - add your own rules for .classified-max-length to get specific styling of
+ *   the "remaining" <div>.
  */
-
-@CHARSET "UTF-8";
 
 .classified-expires {
   background-color: #c0c0d0;
@@ -26,11 +26,11 @@
 }
 
 .classified-expires-soon {
-  color: #FF8000;
+  color: #ff8000;
 }
 
 .classified-expires-later {
- color: white;
+  color: white;
 }
 
 /**
@@ -41,14 +41,6 @@
   display: inline-block;
   margin: 0 0.1em;
   padding: 0 0.25em;
-}
-
-/**
- * Allow specific styling of the "remaining" <div>.
- *
- * This is for the <div>
- */
-.classified-max-length {
 }
 
 /**

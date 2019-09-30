@@ -1,7 +1,8 @@
 <?php
+
 /**
  * @file
- * Token hooks for Classified Ads module
+ * Token hooks for Classified Ads module.
  *
  * @copyright (c) 2010-2011 Ouest Systemes Informatiques (OSInet)
  *
@@ -40,11 +41,11 @@ function classified_token_info() {
     'user' => array(
       'classified-ads' => array(
         'name' => t('Classified Ads list'),
-        'description' =>  t('A themed list of Classified Ads by the user (max 10)'),
+        'description' => t('A themed list of Classified Ads by the user (max 10)'),
       ),
       'classified-ads-plain' => array(
         'name' => t('Classified Ads list'),
-        'description' =>  t('A plain text list of Classified Ads by the user (max 10). Best for email.'),
+        'description' => t('A plain text list of Classified Ads by the user (max 10). Best for email.'),
       ),
       'classified-ads-url' => array(
         'name' => t('Classified Ads URL'),
@@ -69,12 +70,11 @@ function classified_token_info() {
  * - sanitized
  */
 function classified_tokens($type, $tokens, array $data = array(), array $options = array()) {
+  global $user;
   $ret = array();
   if ($type != 'user' || empty($data['user'])) {
     return $ret;
   }
-  $clear = !empty($options['clear']);
-  $sanitize = !empty($options['sanitize']);
   $account = $data['user'];
 
   $url_options = array(
@@ -82,9 +82,7 @@ function classified_tokens($type, $tokens, array $data = array(), array $options
   );
   if (isset($options['language'])) {
     $url_options['language'] = $options['language'];
-    $language_code = $options['language']->language;
   }
-
 
   foreach ($tokens as $name => $original) {
     switch ($name) {
@@ -93,14 +91,13 @@ function classified_tokens($type, $tokens, array $data = array(), array $options
         break;
 
       case 'classified-ads':
-        global $user;
         $min_status = ($account->uid == $user->uid || user_access('administer nodes'))
           ? 0 : 1;
         $q = db_select('node', 'n')
           ->comment(__FUNCTION__)
           ->range(0, 10);
         $cn = $q->innerJoin('classified_node', 'cn', 'n.vid = cn.vid');
-        $nid_alias = $q->addField('n', 'nid', 'id');
+        $q->addField('n', 'nid', 'id');
         $q->condition('n.type', 'classified')
           ->condition('n.uid', $account->uid)
           ->condition('n.status', $min_status, '>=')
@@ -117,7 +114,6 @@ function classified_tokens($type, $tokens, array $data = array(), array $options
         break;
 
       case 'classified-ads-plain':
-        global $user;
         $min_status = ($account->uid == $user->uid || user_access('administer nodes'))
           ? 0 : 1;
         $q = db_select('node', 'n')

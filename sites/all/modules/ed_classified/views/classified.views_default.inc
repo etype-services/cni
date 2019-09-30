@@ -1,11 +1,10 @@
 <?php
+
 /**
  * @file
- * Default Views for the classified module
+ * Default Views for the classified module.
  *
  * @copyright (c) 2010 Ouest Systemes Informatiques (OSInet)
- *
- * @author Frederic G. MARAND <fgm@osinet.fr>
  *
  * @license General Public License version 2 or later
  *
@@ -36,8 +35,12 @@ function classified_views_default_views() {
 
   $path = drupal_get_path('module', 'classified') . '/views';
   foreach (file_scan_directory($path, '/.*\.php$/') as $file) {
+    // $view is redefined by the require_once. This is a safety net.
+    $view = array();
     require_once DRUPAL_ROOT . '/' . $file->filename;
+    // phpcs:disable
     $views[$view->name] = $view;
+    // phpcs:enabled
   }
   return $views;
 }

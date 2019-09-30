@@ -1,12 +1,25 @@
 <?php
+
 /**
- * @file
+ * Acknowledge breaking PSR1 compliance for test.
+ *
+ * This is a legacy Simpletest requirement, preventing PSR1 compliance.
+ *
+ * phpcs:disable PSR1.Files.SideEffects,PSR1.Classes.ClassDeclaration
+ */
+
+require_once __DIR__ . '/classified_test_abstract.test';
+
+/**
  * Test cases for the Classified Ads notifications submodule.
  */
-require_once __DIR__ . '/classified_basic.test';
+class ClassifiedTestNotificationsTest extends ClassifiedTestAbstractTest {
 
-class ClassifiedNotificationsTest extends ClassifiedAbstractTest {
-
+  /**
+   * The queue used for notifications.
+   *
+   * @var \DrupalQueueInterface|null
+   */
   public $queue = NULL;
 
   /**
@@ -14,18 +27,27 @@ class ClassifiedNotificationsTest extends ClassifiedAbstractTest {
    */
   public static function getInfo() {
     return array(
-        'name' => t('Notifications'),
-        'description' => t('Notifications tests for Classified.'),
-        'group' => t('Classified'),
+      'name' => t('Notifications'),
+      'description' => t('Notifications tests for Classified.'),
+      'group' => t('Classified'),
     );
   }
 
+  /**
+   * Delete and recreate queue.
+   */
   public function queueFlush() {
     $this->queue->deleteQueue();
     $this->queue->createQueue('classified_notifications', TRUE);
     // FIXME: use Queue API.
   }
 
+  /**
+   * Estimate current number of items in queue.
+   *
+   * @return mixed
+   *   The number of items
+   */
   public function queueGetSize() {
     $ret = $this->queue->numberOfItems();
     return $ret;
@@ -61,8 +83,8 @@ class ClassifiedNotificationsTest extends ClassifiedAbstractTest {
     $lifetime = reset($lifetime);
     $grace = _classified_get('grace');
     $this->pass(t('Lifetime %lifetime, grace %grace', array(
-        '%lifetime' => $lifetime,
-        '%grace' => $grace,
+      '%lifetime' => $lifetime,
+      '%grace' => $grace,
     )), $this->group);
 
     $t0 = time() + 1;
@@ -114,7 +136,7 @@ class ClassifiedNotificationsTest extends ClassifiedAbstractTest {
     $this->queueFlush();
 
     // 4.3. Cron at t0 + 14 days: expiration notification should be sent, ad
-    //   should be unpublished.
+    // should be unpublished.
     classified_cron($t0 + ($lifetime) * 86400);
     $this->assertTrue($this->queueGetSize(), t('Expiration mail queued.'), $this->group);
     $this->queueFlush();
@@ -126,7 +148,7 @@ class ClassifiedNotificationsTest extends ClassifiedAbstractTest {
     $this->assertFalse($this->queueGetSize(), t('Expiration mail not requeued.'), $this->group);
     $this->queueFlush();
 
-    // 5. Purge mails
+    // 5. Purge mails.
     $this->group = 'purge';
 
     // 5.1 Cron at t0 + 20 days: 1 days to purge notification should be sent.
@@ -134,13 +156,13 @@ class ClassifiedNotificationsTest extends ClassifiedAbstractTest {
     $this->assertTrue($this->queueGetSize(), t('Pre-purge mail queued.'), $this->group);
     $this->queueFlush();
 
-    // 5.2 Cron at t0 + 20.5 days: nothing should happen
+    // 5.2 Cron at t0 + 20.5 days: nothing should happen.
     classified_cron($t0 + ($lifetime + $grace - 1 + 0.6) * 86400);
     $this->assertFalse($this->queueGetSize(), t('Pre-purge mail not requeued.'), $this->group);
     $this->queueFlush();
 
     // 5.3 Cron at t0 + 21 days: purge notification should be sent, ad should be
-    //    deleted.
+    // deleted.
     classified_cron($t0 + ($lifetime + $grace) * 86400);
     $this->assertTrue($this->queueGetSize(), t('Purge mail queued.'), $this->group);
     $this->queueFlush();
@@ -160,7 +182,6 @@ class ClassifiedNotificationsTest extends ClassifiedAbstractTest {
    */
   public function test1491880() {
     $this->createUsers(array('creator'));
-    $key = $this->randomName(8);
     $message = array();
     $params = array(
       'account' => $this->creatorUser,
@@ -171,4 +192,5 @@ class ClassifiedNotificationsTest extends ClassifiedAbstractTest {
       classified_notifications_mail($kind, $message, $params);
     }
   }
+
 }
