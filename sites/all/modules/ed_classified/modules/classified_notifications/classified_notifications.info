@@ -7,11 +7,9 @@ dependencies[] = classified
 dependencies[] = token
 
 core = 7.x
-php = 5.2
 
-; Information added by Drupal.org packaging script on 2015-04-17
-version = "7.x-3.1+1-dev"
+; Information added by Drupal.org packaging script on 2019-09-29
+version = "7.x-3.1+2-dev"
 core = "7.x"
 project = "ed_classified"
-datestamp = "1429283885"
-
+datestamp = "1569760087"

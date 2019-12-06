@@ -1,11 +1,10 @@
 <?php
+
 /**
  * @file
  * Admin page(s) for the classified module.
  *
  * @copyright (c) 2010 Ouest Systemes Informatiques (OSInet)
- *
- * @author Frederic G. MARAND <fgm@osinet.fr>
  *
  * @license General Public License version 2 or later
  *
@@ -28,12 +27,19 @@
  */
 
 /**
- * Implements hook_settings().
+ * Page controller for settings form.
  *
- * @return array
+ * @param array $form
+ *   The form array.
+ * @param array $form_state
+ *   The form state.
+ *
+ * @return mixed
  *   A form array. Keys will be automagically saved as variables.
+ *
+ * @throws \Exception
  */
-function classified_admin_settings($form, &$form_state) {
+function classified_admin_settings(array $form, array &$form_state) {
   $vid = _classified_get('vid');
   $vocabulary = taxonomy_vocabulary_load($vid, TRUE);
   if (!$vocabulary) {
@@ -179,15 +185,17 @@ function classified_admin_settings_validate($form, &$form_state) {
 /**
  * Render the ad lifetimes as a table.
  *
- * @see classified_admin_settings()
- *
  * @param array $variables
  *   A theme arguments array. Single key: form.
  *
  * @return array
  *   A render array.
+ *
+ * @throws \Exception
+ *
+ * @see classified_admin_settings()
  */
-function theme_classified_admin_lifetimes($variables) {
+function theme_classified_admin_lifetimes(array $variables) {
   $form = $variables['form'];
   $header = array(
     t('Category'),
@@ -228,7 +236,13 @@ function theme_classified_admin_lifetimes($variables) {
     }
   }
 
-  $ret = theme('table', array('header' => $header, 'rows' => $rows, 'attributes' => array('id' => 'classified-admin-settings-lifetimes')));
+  $ret = theme('table', array(
+    'header' => $header,
+    'rows' => $rows,
+    'attributes' => array(
+      'id' => 'classified-admin-settings-lifetimes',
+    ),
+  ));
   $ret .= drupal_render_children($form);
   return $ret;
 }

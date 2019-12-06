@@ -1,12 +1,10 @@
 <?php
+
 /**
  * @file
- * A plugin automatically declaring the set of paths of the Classified Ads
- * module as context path conditions
+ * A plugin declaring the Classified Ads paths as context conditions.
  *
  * @copyright (c) 2010 Ouest Systemes Informatiques (OSInet)
- *
- * @author Frederic G. MARAND <fgm@osinet.fr>
  *
  * @license General Public License version 2 or later
  *
@@ -15,9 +13,26 @@
 
 /**
  * Merge Classified Ads paths within a Context path condition.
+ *
+ * As a context plugin, method names cannot respect naming conventions.
+ *
+ * phpcs:disable Drupal.NamingConventions.ValidFunctionName,
+ * phpcs:disable Drupal.NamingConventions.ValidClassName
+ * phpcs:disable PSR1.Methods.CamelCapsMethodName
+ * phpcs:disable PSR1.Classes.ClassDeclaration
+ * phpcs:disable Squiz.Classes.ValidClassName
  */
 class classified_context_condition_path extends context_condition_path {
 
+  /**
+   * Helper listing the paths to register.
+   *
+   * @param bool $assoc
+   *   Use associative array format ?
+   *
+   * @return array|false
+   *   The paths.
+   */
   protected function get_classified_paths($assoc = FALSE) {
     $ret = array(
       'admin/config/content/classified',
@@ -40,7 +55,7 @@ class classified_context_condition_path extends context_condition_path {
    * @return array
    *   A form array for the condition.
    */
-  function condition_form($context) {
+  public function condition_form($context) {
     $form = array();
     $form['1'] = parent::condition_form($context);
     $all_paths = explode("\n", $form['1']['#default_value']);
@@ -65,7 +80,7 @@ class classified_context_condition_path extends context_condition_path {
    * @return array
    *   An array of paths on which the condition will hold.
    */
-  function condition_form_submit($values) {
+  public function condition_form_submit($values) {
     $auto_path = array_pop($values);
     $values = reset($values);
     $paths = parent::condition_form_submit($values);
@@ -76,4 +91,5 @@ class classified_context_condition_path extends context_condition_path {
     // Coder limitation: unlike usual FAPI, Context submit handlers return data.
     return $paths;
   }
+
 }

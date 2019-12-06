@@ -1,11 +1,10 @@
 <?php
+
 /**
  * @file
- * Drush plugin for classified.module
+ * Drush 8 plugin for classified.module.
  *
  * @copyright (c) 2010-2011 Ouest Systemes Informatiques (OSInet)
- *
- * @author Frederic G. MARAND <fgm@osinet.fr>
  *
  * @license General Public License version 2 or later
  *
@@ -16,15 +15,15 @@
  * Utility function to build a dt() parameters array about nodes.
  *
  * @param array $nodes
- *   Keyed by uid, and containing the nids and titles of purged nodes
+ *   Keyed by uid, and containing the nids and titles of purged nodes.
  *
  * @return array
  *   A dt() parameters array
  */
-function _classified_drush_get_action_stats($nodes) {
+function _classified_drush_get_action_stats(array $nodes) {
   $user_count = count($nodes);
   $node_count = 0;
-  foreach ($nodes as $uid => $user_nodes) {
+  foreach ($nodes as $user_nodes) {
     $node_count += count($user_nodes);
   }
 
@@ -37,9 +36,6 @@ function _classified_drush_get_action_stats($nodes) {
 
 /**
  * Implements hook_drush_command().
- *
- * @return array
- *   Drush command description array.
  */
 function classified_drush_command() {
   $items = array();
@@ -71,12 +67,6 @@ function classified_drush_command() {
 
 /**
  * Implements hook_drush_help().
- *
- * @param string $section
- *   The name of a section.
- *
- * @return string
- *   The translated help string.
  */
 function classified_drush_help($section) {
   switch ($section) {
@@ -101,12 +91,8 @@ function classified_drush_help($section) {
   return $ret;
 }
 
-
 /**
- * Command callback for classified-expire
- *
- * @return void
- *   No output: nothing to return.
+ * Command callback for classified-expire. No output: nothing to return.
  */
 function drush_classified_expire() {
   module_load_include('inc', 'classified', 'classified.scheduled');
@@ -121,10 +107,7 @@ function drush_classified_expire() {
 }
 
 /**
- * Command callback for classified-notify
- *
- * @return void
- *   No output: nothing to return.
+ * Command callback for classified-notify. No output: nothing to return.
  */
 function drush_classified_notify($kind = NULL) {
   if (!in_array($kind, _classified_get_notify_kinds())) {
@@ -140,10 +123,9 @@ function drush_classified_notify($kind = NULL) {
 }
 
 /**
- * Command callback for classified-purge
+ * Command callback for classified-purge. No output: nothing to return.
  *
- * @return void
- *   No output: nothing to return.
+ * @throws \Exception
  */
 function drush_classified_purge() {
   module_load_include('inc', 'classified', 'classified.scheduled');

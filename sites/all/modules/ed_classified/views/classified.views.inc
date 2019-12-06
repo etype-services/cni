@@ -1,11 +1,10 @@
 <?php
+
 /**
  * @file
- * Views integration for the classified module
+ * Views integration for the classified module.
  *
  * @copyright (c) 2010 Ouest Systemes Informatiques (OSInet)
- *
- * @author Frederic G. MARAND <fgm@osinet.fr>
  *
  * @license General Public License version 2 or later
  *
@@ -89,4 +88,3 @@ function classified_views_handlers() {
 
   return $ret;
 }
-

@@ -1,114 +1,20 @@
 <?php
 
 /**
- * @file
- * Basic test for known bugs in previous versions.
+ * Acknowledge breaking PSR1 compliance for test.
+ *
+ * This is a legacy Simpletest requirement, preventing PSR1 compliance.
+ *
+ * phpcs:disable PSR1.Files.SideEffects,PSR1.Classes.ClassDeclaration
  */
+
+require_once __DIR__ . '/classified_test_abstract.test';
 
 /**
- * Test known fixed bugs to catch regressions.
+ * Basic test for known bugs in previous versions.
  */
-abstract class ClassifiedAbstractTest extends DrupalWebTestCase {
-  public $adminUser;
-  public $creatorUser;
-  public $basicUser;
+class ClassifiedTestTestBasicTest extends ClassifiedTestAbstractTest {
 
-  /**
-   * Test group.
-   *
-   * @var string
-   */
-  public $group;
-
-  /**
-   * Build a node from settings, providing classified-specific defaults.
-   *
-   * @param array $settings
-   *   Array of non-default ad properties and fields, overriding defaults
-   *   provided in this function.
-   *
-   * @return object
-   *   The new node, reloaded from DB.
-   */
-  protected function createNode($settings) {
-    $category_field_name = _classified_get('field-category');
-    $settings += array(
-      'title' => $this->randomString(10),
-      'body' => array(
-        LANGUAGE_NONE => array(
-          0 => array(
-            'value' => $this->randomString(40),
-          ))),
-      'type' => 'classified',
-      $category_field_name => array(),
-      'status' => 1,
-    );
-
-    $node = $this->drupalCreateNode($settings);
-    // Taxonomy is not in the same format as right after creation.
-    $node = node_load($node->nid, NULL, TRUE);
-    return $node;
-  }
-
-  /**
-   * Create a set of typical users with profiles related to Classified Ads.
-   *
-   * @param array $profiles
-   *   - admin: a Classified Ads administrator
-   *   - basic: a typical Classified Ads user
-   *   - creator: a user allowed to post Classified Ads
-   */
-  protected function createUsers($profiles = array()) {
-    if (in_array('admin', $profiles)) {
-      $this->adminUser = $this->drupalCreateUser(array(
-        // block.module, to access admin/build/block
-        'administer blocks',
-
-        // classified.module
-        'administer classified ads',
-
-        // node.module
-        'access content',
-
-        // system.module, to access admin/reports/status
-        'administer site configuration',
-
-        // taxonomy.module
-        'administer taxonomy',
-
-        // user.module
-        'access user profiles',
-        ));
-      $this->pass(t('Admin user %name (%uid) created.', array(
-        '%name' => $this->adminUser->name,
-        '%uid' => $this->adminUser->uid,
-      )), $this->group);
-    }
-
-    if (in_array('basic', $profiles)) {
-      $this->basicUser = $this->drupalCreateUser(array('access content'));
-      $this->pass(t('Basic user %name (%uid) created.', array(
-        '%name' => $this->basicUser->name,
-        '%uid' => $this->basicUser->uid,
-      )), $this->group);
-    }
-
-    if (in_array('creator', $profiles)) {
-      $this->creatorUser = $this->drupalCreateUser(array(
-        'access content',
-        'access user profiles',
-        'create classified content',
-        'view own unpublished content',
-      ));
-      $this->pass(t('Creator user %name (%uid) created.', array(
-        '%name' => $this->creatorUser->name,
-        '%uid' => $this->creatorUser->uid,
-      )), $this->group);
-    }
-  }
-}
-
-class ClassifiedBasicTest extends ClassifiedAbstractTest {
   /**
    * {@inheritdoc}
    */
@@ -125,21 +31,22 @@ class ClassifiedBasicTest extends ClassifiedAbstractTest {
    */
   public function setUp() {
     $this->group = __FUNCTION__;
-    parent::setUp('field', 'taxonomy', 'statistics', 'classified', 'classified_test');
+    parent::setUp('field', 'taxonomy', 'statistics', 'classified',
+      'classified_test');
   }
 
   /**
-   * Bug 123396: Unchecking 'Publish' checkbox doesn't prevent nodes from being
-   * published. Also catches bug 143680: Expiration date by term is not
-   * correctly applied.
+   * Bug 123396: Unchecking Publish doesn't prevent nodes from being published.
+   *
+   * Also catches bug 143680: Expiration date by term is not correctly applied.
    *
    * Goes much further by testing the expiration dates resulting from all
    * creation and updating scenarios. Already done:
-   * - creation, default
-   * - creation, default with explicit lifetime
-   * - creation, forced
+   * - creation, default,
+   * - creation, default with explicit lifetime,
+   * - creation, forced.
    */
-  function test0123396And0143680() {
+  public function test0123396And0143680() {
     $this->group = __FUNCTION__;
     // Include seconds in date comparison displays.
     $format = 'Y-m-d H:i:s';
@@ -156,23 +63,26 @@ class ClassifiedBasicTest extends ClassifiedAbstractTest {
     );
     $status = taxonomy_term_save($term);
     $tid = $term->tid;
-    $this->assertEqual($status, SAVED_NEW, t('Term @tid created in default vocabulary.', array('@tid' => $tid)), 'setup');
+    $this->assertEqual($status, SAVED_NEW,
+      t('Term @tid created in default vocabulary.', array('@tid' => $tid)), 'setup');
 
     // 2b. Create a node bearing that term.
     $this->group = t('new, default');
     $node = $this->createNode(array(
       $category_field_name => array(LANGUAGE_NONE => array(0 => array('tid' => $tid))),
     ));
-    $this->assertTrue(isset($node->expires) && is_numeric($node->expires), t('node has an expires timestamp'), $this->group);
+    $this->assertTrue(isset($node->expires) && is_numeric($node->expires),
+      t('node has an expires timestamp'), $this->group);
 
     // 2c. Make sure it uses the default taxonomy-derived lifetime.
     $lifetimes = _classified_get('lifetimes');
     $lifetime = isset($lifetimes[$tid]) ? $lifetimes[$tid] : reset($lifetimes);
 
     $expected_expires = $node->created + $lifetime * 60 * 60 * 24;
-    $this->assertEqual($node->expires, $expected_expires, t('Node expire date %actual matches expected date: %expected', array(
-      '%actual' => format_date($node->expires, 'custom', $format),
-      '%expected' => format_date($expected_expires, 'custom', $format),
+    $this->assertEqual($node->expires, $expected_expires,
+      t('Node expire date %actual matches expected date: %expected', array(
+        '%actual' => format_date($node->expires, 'custom', $format),
+        '%expected' => format_date($expected_expires, 'custom', $format),
       )), $this->group);
 
     // 3a. Assign a specific lifetime to term.
@@ -181,67 +91,77 @@ class ClassifiedBasicTest extends ClassifiedAbstractTest {
     variable_set('classified-lifetimes', $lifetimes);
     $lifetimes = _classified_get('lifetimes');
     $lifetime = isset($lifetimes[$tid]) ? $lifetimes[$tid] : reset($lifetimes);
-    $this->assertEqual($random, $lifetime, t('Lifetime correctly set to @random = @lifetime', array(
-      '@random' => $random,
-      '@lifetime' => $lifetime,
-    )), $this->group);
+    $this->assertEqual($random, $lifetime,
+      t('Lifetime correctly set to @random = @lifetime', array(
+        '@random' => $random,
+        '@lifetime' => $lifetime,
+      )), $this->group);
 
     // 3b. Create a node bearing that term, now with a specific lifetime.
     $node = $this->createNode(array(
       $category_field_name => array(LANGUAGE_NONE => array(0 => array('tid' => $tid))),
       'expire_mode' => 'reset',
     ));
-    $this->assertTrue(isset($node->expires) && is_numeric($node->expires), t('node has an expires timestamp'), $this->group);
+    $this->assertTrue(isset($node->expires) && is_numeric($node->expires),
+      t('node has an expires timestamp'), $this->group);
 
     // 3c. Make sure it uses the explicit taxonomy-derived lifetime.
     $expected_expires = $node->created + $lifetime * 60 * 60 * 24;
-    $this->assertEqual($node->expires, $expected_expires, t('Node expire date %actual matches expected date: %expected', array(
-      '%actual' => format_date($node->expires, 'custom', $format),
-      '%expected' => format_date($expected_expires, 'custom', $format),
+    $this->assertEqual($node->expires, $expected_expires,
+      t('Node expire date %actual matches expected date: %expected', array(
+        '%actual' => format_date($node->expires, 'custom', $format),
+        '%expected' => format_date($expected_expires, 'custom', $format),
       )), $this->group);
 
     // 4a. Create a node bearing that term, but use force mode.
     $this->group = t('new, force');
     $expected_expires = REQUEST_TIME + mt_rand(0, 90 * 24 * 60 * 60);
     $this->pass(t('Limit set to @date', array(
-      '@date' => format_date($expected_expires, 'custom', $format))), $this->group);
+      '@date' => format_date($expected_expires, 'custom', $format),
+    )), $this->group);
 
     $node = $this->createNode(array(
       $category_field_name => array(LANGUAGE_NONE => array(0 => array('tid' => $tid))),
       'expire_mode' => 'force',
       'expire_date_ts' => $expected_expires,
     ));
-    $this->assertTrue(isset($node->expires) && is_numeric($node->expires), t('node has an expires timestamp'), $this->group);
+    $this->assertTrue(isset($node->expires) && is_numeric($node->expires),
+      t('node has an expires timestamp'), $this->group);
 
     // 4b. Make sure it uses the explicit taxonomy-derived lifetime.
-    $limit = $node->created + $lifetime * 60 * 60 * 24;
-    $this->assertEqual($node->expires, $expected_expires, t('Node expire date %actual matches expected date: %expected', array(
-      '%actual' => format_date($node->expires, 'custom', $format),
-      '%expected' => format_date($expected_expires, 'custom', $format),
+    $this->assertEqual($node->expires, $expected_expires,
+      t('Node expire date %actual matches expected date: %expected', array(
+        '%actual' => format_date($node->expires, 'custom', $format),
+        '%expected' => format_date($expected_expires, 'custom', $format),
       )), $this->group);
   }
 
   /**
    * Bug 547214: view Ads tab for users without permission.
    */
-  function test0547214() {
+  public function test0547214() {
     $this->group = __FUNCTION__;
     $accounts = array('admin', 'basic', 'creator');
     $this->createUsers($accounts);
     foreach ($accounts as $account_name) {
       $this->drupalLogin($this->{$account_name . 'User'});
-      $this->assertLink(t('Ads'), 0, t('User %name (@uid) sees "Ads" tab on his own account page', array(
-        '%name' => $account_name,
-        '@uid' => $this->{$account_name . 'User'}->uid,
+      $this->assertLink(t('Ads'), 0,
+        t('User %name (@uid) sees "Ads" tab on his own account page', array(
+          '%name' => $account_name,
+          '@uid' => $this->{$account_name . 'User'}->uid,
         )), 'Ads Tab');
       $this->drupalGet('user/' . $this->adminUser->uid);
       if ($account_name == 'creator') {
-        $this->assertLink(t('Ads'), 0, t('User %name sees "Ads" tab on other account pages', array(
-          '%name' => $account_name)), 'Ads Tab');
+        $this->assertLink(t('Ads'), 0,
+          t('User %name sees "Ads" tab on other account pages', array(
+            '%name' => $account_name,
+          )), 'Ads Tab');
       }
       elseif ($account_name == 'basic') {
-        $this->assertNoLink(t('Ads'), t('User %name does not see "Ads" tab on other account pages', array(
-          '%name' => $account_name)), 'Ads Tab');
+        $this->assertNoLink(t('Ads'),
+          t('User %name does not see "Ads" tab on other account pages', array(
+            '%name' => $account_name,
+          )), 'Ads Tab');
       }
       // No else: admin seeing admin has already been tested.
       $this->drupalLogout();
@@ -251,39 +171,48 @@ class ClassifiedBasicTest extends ClassifiedAbstractTest {
   /**
    * Bug 1244300: Anonymous user unable to post regardless of permission grants.
    */
-  function test1244300() {
+  public function test1244300() {
     $this->group = __FUNCTION__;
-    $this->assertFalse(in_array('create classified ad content', array_keys(module_invoke_all('permission'))),
+    $this->assertFalse(in_array('create classified ad content',
+      array_keys(module_invoke_all('permission'))),
       t('D6-style node creation permission is not valid'), $this->group);
 
     $permissions = array('create classified content');
-    $this->assertTrue($this->checkPermissions($permissions, TRUE), t('D7-style node creation permission is valid'), $this->group);
+    $this->assertTrue($this->checkPermissions($permissions, TRUE),
+      t('D7-style node creation permission is valid'), $this->group);
 
     user_role_revoke_permissions(DRUPAL_ANONYMOUS_RID, $permissions);
     $this->drupalGet('node/add/classified');
-    $this->assertResponse(403, t('Anonymous user without %permissions may not access the ad creation form', array(
-      '%permissions' => implode(', ', $permissions))), $this->group);
+    $this->assertResponse(403,
+      t('Anonymous user without %permissions may not access the ad creation form',
+        array(
+          '%permissions' => implode(', ', $permissions),
+        )), $this->group);
 
     user_role_grant_permissions(DRUPAL_ANONYMOUS_RID, $permissions);
+    // Use:
     // debug(user_role_permissions(array(DRUPAL_ANONYMOUS_RID => NULL)));
+    // when needing to check the grant results.
     $this->drupalGet('node/add/classified');
-    $this->assertResponse(200, t('Anonymous user with %permissions may access the ad creation form', array(
-      '%permissions' => implode(', ', $permissions))), $this->group);
+    $this->assertResponse(200,
+      t('Anonymous user with %permissions may access the ad creation form', array(
+        '%permissions' => implode(', ', $permissions),
+      )), $this->group);
   }
 
   /**
    * Convert a host-relative path like /drupal/taxonomy to a drupal path.
    *
-   * @see test1265524()
-   *
    * @param string $href
-   *   Some path like "/drupal/taxonomy" or "/taxonomy"
+   *   Some path like "/drupal/taxonomy" or "/taxonomy".
    *
    * @return string
    *   The internal still aliased path like "taxonomy", or "/" if path does not
    *   belong in the current site.
+   *
+   * @see test1265524()
    */
-  function relativizeHref($href) {
+  protected function relativizeHref($href) {
     $base = base_path();
     if (strpos($href, $base) === 0) {
       $ret = drupal_substr($href, drupal_strlen($base));
@@ -300,12 +229,13 @@ class ClassifiedBasicTest extends ClassifiedAbstractTest {
    *
    * Regex in hook_url_outbound_alter() was too lax.
    */
-  function test1265524() {
+  public function test1265524() {
     $this->group = __FUNCTION__;
     $this->createUsers(array('admin'));
     $this->drupalLogin($this->adminUser);
     $this->drupalGet('admin/structure/taxonomy/classified_categories');
-    $links = $this->xpath('//a[normalize-space(text())=:label]', array(':label' => t('edit')));
+    $links = $this->xpath('//a[normalize-space(text())=:label]',
+      array(':label' => t('edit')));
     // 2 categories created on install.
     $this->assert(count($links) == 2, t('Found 2 "edit" links'), $this->group);
     $pattern = 'taxonomy/term/*/edit';
@@ -314,19 +244,20 @@ class ClassifiedBasicTest extends ClassifiedAbstractTest {
       $href = $this->relativizeHref($href);
       $parsed = drupal_parse_url($href);
       $path = $parsed['path'];
-      $this->assertTrue(drupal_match_path($path, $pattern), t('Path %path matches %pattern', array(
-        '%path' => $path,
-        '%pattern' => $pattern,
-      )), $this->group);
+      $this->assertTrue(drupal_match_path($path, $pattern),
+        t('Path %path matches %pattern', array(
+          '%path' => $path,
+          '%pattern' => $pattern,
+        )), $this->group);
     }
   }
 
   /**
-   * Bug 1287674
+   * Bug 1287674.
    *
    * Node title and categories are doubly escaped in recent/popular blocks.
    */
-  function test1287674() {
+  public function test1287674() {
     $this->group = __FUNCTION__;
 
     $this->createUsers(array('admin'));
@@ -362,7 +293,8 @@ class ClassifiedBasicTest extends ClassifiedAbstractTest {
     );
     $status = taxonomy_term_save($term);
     $tid = $term->tid;
-    $this->assertEqual($status, SAVED_NEW, t('Term @tid created in default vocabulary.', array('@tid' => $tid)), 'setup');
+    $this->assertEqual($status, SAVED_NEW,
+      t('Term @tid created in default vocabulary.', array('@tid' => $tid)), 'setup');
 
     // Create a node bearing that term.
     $quoted_title = $this->randomName(4) . " ' " . $this->randomName(4);
@@ -384,9 +316,23 @@ class ClassifiedBasicTest extends ClassifiedAbstractTest {
         $this->group);
     }
 
-    // $pattern = '/'. t('Recent ads') .'.*'. htmlentities($quoted_title, ENT_QUOTES) .' \('. htmlentities($term_name, ENT_QUOTES) .'\).*' . t('Popular ads') .'/ms';
-    // debug($pattern);
-    // $this->assertPattern($pattern, t('Ad correctly listed in the "Recent ads" block.'), $this->group);
+    // Extra test disabled at this stage.
+    if (FALSE) {
+      $pattern = implode(array(
+        '/',
+        t('Recent ads'),
+        '.*',
+        htmlentities($quoted_title, ENT_QUOTES),
+        ' \(',
+        htmlentities($term_name, ENT_QUOTES),
+        '\).*',
+        t('Popular ads'),
+        '/ms',
+      ));
+      debug($pattern);
+      $this->assertPattern($pattern,
+        t('Ad correctly listed in the "Recent ads" block.'), $this->group);
+    }
   }
 
   /**
@@ -394,25 +340,27 @@ class ClassifiedBasicTest extends ClassifiedAbstractTest {
    *
    * Root cause: improper caching.
    */
-  function test1382234() {
+  public function test1382234() {
     $this->group = __FUNCTION__;
 
     $accounts = array('creator');
     $this->createUsers($accounts);
 
     $this->drupalLogin($this->creatorUser);
-    // Force caching of overview page
+    // Force caching of overview page.
     cache_clear_all('classified:overview', 'cache');
     $this->drupalGet('classified');
     $this->assertLink(t('Add one'), 0, t('Creator sees ad creation link.'));
 
-    // Anonymous should not get creation link from page cached for authenticated users.
+    // Anon. should not get creation link from page cached for auth. users.
     $this->drupalLogout();
     $this->drupalGet('classified');
-    $this->assertNoLink(t('Add one'), t('Anonymous users do not see ad creation link.'));
+    $this->assertNoLink(t('Add one'),
+      t('Anonymous users do not see ad creation link.'));
     cache_clear_all('classified:overview', 'cache');
     $this->drupalGet('classified');
-    $this->assertNoLink(t('Add one'), t('Anonymous users do not see ad creation link.'));
+    $this->assertNoLink(t('Add one'),
+      t('Anonymous users do not see ad creation link.'));
 
     // Creator user should see the Add one link on the cached page.
     $this->drupalLogin($this->creatorUser);
@@ -423,18 +371,19 @@ class ClassifiedBasicTest extends ClassifiedAbstractTest {
   /**
    * Bug 1412840: invalid taxonomy term paths were not handled correctly.
    */
-  function test1412840() {
+  public function test1412840() {
     $this->group = __FUNCTION__;
 
     // This get threw an error per #1412840.
     $this->drupalGet('classified-test/invalid-term-path');
-    $this->assertNoText('Trying to get property of non-object', t('Invalid taxonomy URL did not cause a syntax notice'), $this->group);
+    $this->assertNoText('Trying to get property of non-object',
+      t('Invalid taxonomy URL did not cause a syntax notice'), $this->group);
   }
 
   /**
    * Bug 1432606: Ads can be viewed when not published.
    */
-  function test1432606() {
+  public function test1432606() {
     $this->group = __FUNCTION__;
     $accounts = array('admin', 'basic', 'creator');
     $this->createUsers($accounts);
@@ -451,14 +400,15 @@ class ClassifiedBasicTest extends ClassifiedAbstractTest {
     );
     $status = taxonomy_term_save($term);
     $tid = $term->tid;
-    $this->assertEqual($status, SAVED_NEW, t('Term @tid created in default vocabulary.', array('@tid' => $tid)), 'setup');
+    $this->assertEqual($status, SAVED_NEW,
+      t('Term @tid created in default vocabulary.', array('@tid' => $tid)), 'setup');
 
     // 2b. Create a published node bearing that term, belonging to "creator".
     $node = $this->createNode(array(
       $category_field_name => array(LANGUAGE_NONE => array(0 => array('tid' => $tid))),
       'uid' => $this->creatorUser->uid,
       'status' => 1,
-      ));
+    ));
     $path = 'node/' . $node->nid;
 
     // 3. All four profiles should see published node.
@@ -482,10 +432,11 @@ class ClassifiedBasicTest extends ClassifiedAbstractTest {
     $node->status = 0;
     node_save($node);
 
-    // 4b. The ad is unpublished: only admin and creator should be able to see it.
+    // 4b. Ad is unpublished: only admin and creator should be able to see it.
     $this->drupalLogout();
     $this->drupalGet($path);
-    $this->assertResponse(403, t('Anonymous user does not see unpublished ad.'));
+    $this->assertResponse(403,
+      t('Anonymous user does not see unpublished ad.'));
 
     $this->drupalLogin($this->adminUser);
     $this->drupalGet($path);
@@ -493,7 +444,8 @@ class ClassifiedBasicTest extends ClassifiedAbstractTest {
 
     $this->drupalLogin($this->basicUser);
     $this->drupalGet($path);
-    $this->assertResponse(403, t('Non-author user does not see unpublished ad.'));
+    $this->assertResponse(403,
+      t('Non-author user does not see unpublished ad.'));
 
     $this->drupalLogin($this->creatorUser);
     $this->drupalGet($path);
@@ -520,10 +472,10 @@ class ClassifiedBasicTest extends ClassifiedAbstractTest {
     );
     $status = taxonomy_term_save($term);
     $tid = $term->tid;
-    $this->assertEqual($status, SAVED_NEW, t('Term @tid created in default vocabulary.', array('@tid' => $tid)), 'setup');
+    $this->assertEqual($status, SAVED_NEW,
+      t('Term @tid created in default vocabulary.', array('@tid' => $tid)), 'setup');
 
     // 2b. Create a published node bearing that term, belonging to "creator".
-
     // Avoid escaping problems and "/" to use a regexp.
     $title = check_plain($this->randomName(20));
     $node = $this->createNode(array(
@@ -531,40 +483,50 @@ class ClassifiedBasicTest extends ClassifiedAbstractTest {
       'uid' => $this->creatorUser->uid,
       'title' => $title,
       'status' => 1,
-      ));
-    $path = 'node/' . $node->nid;
+    ));
 
     // Make sure tokens are visible.
     $tokens = token_info();
     $tokens = $tokens['tokens']['user'];
-    $token_names = array('classified-ads', 'classified-ads-plain', 'classified-ads-url');
+    $token_names = array(
+      'classified-ads',
+      'classified-ads-plain',
+      'classified-ads-url',
+    );
     foreach ($token_names as $token) {
-      $this->assertFalse(empty($tokens[$token]), t('%token token found in user tokens.', array(
-        '%token' => $token,
-      )), $this->group);
+      $this->assertFalse(empty($tokens[$token]),
+        t('%token token found in user tokens.', array(
+          '%token' => $token,
+        )), $this->group);
     }
 
     // Check token replacement.
     $token = 'classified-ads';
-    $translation = token_replace("[user:$token]", array('user' => $this->creatorUser));
-    $this->assertTrue(preg_match('/'. $node->title .'/', $translation), t('Node title from %token.', array(
-      '%token' => $token,
-    )), $this->group);
+    $translation = token_replace("[user:$token]",
+      array('user' => $this->creatorUser));
+    $this->assertTrue(preg_match('/' . $node->title . '/', $translation),
+      t('Node title from %token.', array(
+        '%token' => $token,
+      )), $this->group);
 
     $token = 'classified-ads-plain';
-    $translation = token_replace("[user:$token]", array('user' => $this->creatorUser));
-    $this->assertTrue(preg_match('/'. $node->title .'/', $translation), t('Node title from %token.', array(
-      '%token' => $token,
-    )), $this->group);
+    $translation = token_replace("[user:$token]",
+      array('user' => $this->creatorUser));
+    $this->assertTrue(preg_match('/' . $node->title . '/', $translation),
+      t('Node title from %token.', array(
+        '%token' => $token,
+      )), $this->group);
 
     $token = 'classified-ads-url';
-    $translation = token_replace("[user:$token]", array('user' => $this->creatorUser));
-    $url = url('user/'. $node->uid . '/classified', array('absolute' => TRUE));
-    // URLs may contain a ?q=, which would be interpreted in a regex
+    $translation = token_replace("[user:$token]",
+      array('user' => $this->creatorUser));
+    $url = url('user/' . $node->uid . '/classified', array('absolute' => TRUE));
+    // URLs may contain a ?q=, which would be interpreted in a regex.
     $url = str_replace('?', '\?', $url);
-    $this->assertTrue(preg_match("@$url@", $translation), t('User ads URL found from %token.', array(
-      '%token' => $token,
-    )), $this->group);
+    $this->assertTrue(preg_match("@$url@", $translation),
+      t('User ads URL found from %token.', array(
+        '%token' => $token,
+      )), $this->group);
   }
 
   /**
@@ -590,7 +552,8 @@ class ClassifiedBasicTest extends ClassifiedAbstractTest {
     );
     $status = taxonomy_term_save($term);
     $tid = $term->tid;
-    $this->assertEqual($status, SAVED_NEW, t('Term @tid created in default vocabulary.', array('@tid' => $tid)), 'setup');
+    $this->assertEqual($status, SAVED_NEW,
+      t('Term @tid created in default vocabulary.', array('@tid' => $tid)), 'setup');
 
     // 3b. Limit the maximum body length.
     $max_length = 20;
@@ -598,7 +561,8 @@ class ClassifiedBasicTest extends ClassifiedAbstractTest {
 
     // 4a. Try to create an ad bearing that term, with a body below max length.
     $count = db_query('SELECT COUNT(nid) FROM {node}')->fetchField();
-    $this->assertEqual(0, $count, t('No node found before creation of first ad'), $this->group);
+    $this->assertEqual(0, $count,
+      t('No node found before creation of first ad'), $this->group);
 
     $langcode = LANGUAGE_NONE;
     $body_key = "body[$langcode][0][value]";
@@ -610,14 +574,16 @@ class ClassifiedBasicTest extends ClassifiedAbstractTest {
       'expire_mode' => 'reset',
     );
 
-    $ret = $this->drupalPost('node/add/classified', $edit, t('Save'));
+    $this->drupalPost('node/add/classified', $edit, t('Save'));
     $raw = t('@type %title has been created.', array(
       '@type' => $type,
       '%title' => $edit['title'],
     ));
-    $this->assertRaw($raw, t('Ad with proper body receives creation confirmation'), $this->group);
+    $this->assertRaw($raw,
+      t('Ad with proper body receives creation confirmation'), $this->group);
     $count = db_query('SELECT COUNT(nid) FROM {node}')->fetchField();
-    $this->assertEqual(1, $count, t('Ad with proper body actually created.'), $this->group);
+    $this->assertEqual(1, $count, t('Ad with proper body actually created.'),
+      $this->group);
 
     // 4b. Try to create an ad bearing that term, with a body above max length.
     $edit = array(
@@ -626,14 +592,17 @@ class ClassifiedBasicTest extends ClassifiedAbstractTest {
       $body_key => 'A body longer than 20 characters',
     );
 
-    $ret = $this->drupalPost('node/add/classified', $edit, t('Save'));
-    $raw = t('Text is longer than maximum authorized length: @body_length characters vs @max_length authorized.', array(
-      '@body_length' => drupal_strlen($edit[$body_key]),
-      '@max_length' => $max_length,
-    ));
-    $this->assertRaw($raw, t('Ad with extra-long body receives post error.'), $this->group);
+    $this->drupalPost('node/add/classified', $edit, t('Save'));
+    $raw = t('Text is longer than maximum authorized length: @body_length characters vs @max_length authorized.',
+      array(
+        '@body_length' => drupal_strlen($edit[$body_key]),
+        '@max_length' => $max_length,
+      ));
+    $this->assertRaw($raw, t('Ad with extra-long body receives post error.'),
+      $this->group);
     $count = db_query('SELECT COUNT(nid) FROM {node}')->fetchField();
-    $this->assertEqual(1, $count, t('Ad with extra-long body actually not created.'), $this->group);
+    $this->assertEqual(1, $count,
+      t('Ad with extra-long body actually not created.'), $this->group);
   }
 
   /**
@@ -654,7 +623,8 @@ class ClassifiedBasicTest extends ClassifiedAbstractTest {
     );
     $status = taxonomy_term_save($term);
     $tid = $term->tid;
-    $this->assertEqual($status, SAVED_NEW, t('Term @tid created in default vocabulary.', array('@tid' => $tid)), 'setup');
+    $this->assertEqual($status, SAVED_NEW,
+      t('Term @tid created in default vocabulary.', array('@tid' => $tid)), 'setup');
 
     // 2b. Create a node bearing that term.
     $node = $this->createNode(array(
@@ -676,10 +646,12 @@ class ClassifiedBasicTest extends ClassifiedAbstractTest {
     $ads = _classified_scheduled_build_purge($future);
 
     // 4. Ensure purge did not happen.
-    $this->assertTrue(empty($ads), "No ad has been reported as deleted upon purge.", $this->group);
+    $this->assertTrue(empty($ads),
+      "No ad has been reported as deleted upon purge.", $this->group);
 
     $node2 = node_load($node->nid, NULL, TRUE);
-    $this->assertTrue(isset($node2->nid) && $node2->nid == $node->nid, 'Node is still present in database after purge.', $this->group);
+    $this->assertTrue(isset($node2->nid) && $node2->nid == $node->nid,
+      'Node is still present in database after purge.', $this->group);
 
     // 5. Try purge one week beyond expiration with normal one day grace.
     $this->group = "Finite";
@@ -688,11 +660,14 @@ class ClassifiedBasicTest extends ClassifiedAbstractTest {
     $ads = _classified_scheduled_build_purge($future);
 
     // 6. Ensure purge was performed. Format: {uid: {nid: title, ...}, ...}.
-    $this->assertTrue(count($ads) == 1, "Purges happened for one account.", $this->group);
+    $this->assertTrue(count($ads) == 1, "Purges happened for one account.",
+      $this->group);
     $purges = reset($ads);
     $this->assertTrue(count($purges) == 1, "One node was purged", $this->group);
-    $this->assertEqual(key($purges), $node->nid, "Nid of purged node is correct", $this->group);
-    $this->assertEqual(current($purges), $node->title, "Title of purged node is correct", $this->group);
+    $this->assertEqual(key($purges), $node->nid,
+      "Nid of purged node is correct", $this->group);
+    $this->assertEqual(current($purges), $node->title,
+      "Title of purged node is correct", $this->group);
     $node2 = node_load($node->nid, NULL, TRUE);
     $this->assertFalse($node2, "Node is no longer in database", $this->group);
   }
@@ -703,12 +678,11 @@ class ClassifiedBasicTest extends ClassifiedAbstractTest {
   public function testSecurity146738() {
     $this->group = 'XSS';
 
-    // 1. Get the Classified vocabulary id and field name.
+    // 1. Get the Classified vocabulary id.
     $vid = _classified_get('vid');
-    $category_field_name = _classified_get('field-category');
 
     // 2. Create a term in it with a XSS attempt,
-    $name=<<<XSS
+    $name = <<<XSS
 term<script type="text/javascript">alert('XSS');</script>name
 XSS;
 
@@ -719,7 +693,8 @@ XSS;
     );
     $status = taxonomy_term_save($term);
     $tid = $term->tid;
-    $this->assertEqual($status, SAVED_NEW, t('Term @tid created in default vocabulary.', array('@tid' => $tid)), 'setup');
+    $this->assertEqual($status, SAVED_NEW,
+      t('Term @tid created in default vocabulary.', array('@tid' => $tid)), 'setup');
 
     // 3. Create an administrator using the Classified admin panel.
     $this->createUsers(array('admin'));
@@ -729,4 +704,5 @@ XSS;
     $this->assertNoRaw($name);
     $this->assertRaw(check_plain($name));
   }
+
 }

@@ -1,12 +1,13 @@
 <?php
+
 /**
  * @file
- * Scheduled operations for classified.module
+ * Scheduled operations for classified.module.
  *
  * Can be invoked from the web UI or from Drush:
- * - purge
- * - expiration
- * - notifications
+ * - purge,
+ * - expiration,
+ * - notifications.
  *
  * @copyright (c) 2010-2011 Ouest Systemes Informatiques (OSInet)
  *
@@ -33,7 +34,7 @@ function _classified_get_time($time = NULL) {
  *
  * The test on n.type is not required, since the inner join will only return
  * such nodes anyway, but allows the query to take advantage of the core index
- * on node.type
+ * on node.type.
  *
  * Reset notify time to 0 because this field is only used for interim
  * notifications, not expire/purge.
@@ -47,6 +48,8 @@ function _classified_get_time($time = NULL) {
  *
  * @return array
  *   A per-user array of per-nid expired nodes titles.
+ *
+ * @throws \Exception
  */
 function _classified_scheduled_build_expire($time = NULL) {
 
@@ -100,12 +103,20 @@ function _classified_scheduled_build_expire($time = NULL) {
       watchdog_exception('classified', $e);
       throw $e;
     }
+
+    if (function_exists('_trigger_node')) {
+      $nodes = node_load_multiple($nids);
+      foreach ($nodes as $node) {
+        _trigger_node($node, 'node_update');
+      }
+    }
+
     // DBTNG controlled commit.
     unset($transaction);
     watchdog('classified', 'Expiration unpublished @count ads: @expired', array(
-        '@count' => $touched,
-        '@expired' => var_export($expired, TRUE),
-      ), WATCHDOG_INFO);
+      '@count' => $touched,
+      '@expired' => var_export($expired, TRUE),
+    ), WATCHDOG_INFO);
   }
   else {
     watchdog('classified', 'Expiration check did not find any ad to expire.',
@@ -144,6 +155,7 @@ function _classified_scheduled_build_notify($kind, $time = NULL) {
   }
 
   $now = _classified_get_time($time);
+  /** @var \SelectQueryInterface $q */
   $q = db_select('node', 'n')->comment(__FUNCTION__);
   $cn = $q->innerJoin('classified_node', 'cn', 'n.nid = cn.nid');
   $q->fields('n', array('nid', 'uid', 'title'));
@@ -196,7 +208,7 @@ function _classified_scheduled_build_notify($kind, $time = NULL) {
   }
 
   $updated = array();
-  foreach ($notified as $uid => $user_notified) {
+  foreach ($notified as $user_notified) {
     foreach (array_keys($user_notified) as $nid) {
       $updated[] = $nid;
     }
@@ -208,29 +220,32 @@ function _classified_scheduled_build_notify($kind, $time = NULL) {
     ->condition('nid', $updated, 'IN')
     ->execute();
   watchdog('classified', 'Updated notification timestamp on @count ads.', array(
-    '@count' => count($updated), WATCHDOG_INFO));
+    '@count' => count($updated),
+  ), WATCHDOG_INFO);
 
   return $notified;
 }
 
 /**
- * Purge nodes past their expiration date + grace period
+ * Purge nodes past their expiration date + grace period.
  *
- * Selected nodes: expires + grace < now => expires < now - grace
+ * Selected nodes: expires + grace < now => expires < now - grace.
  *
  * The test on n.type is not required, since the inner join will only return
  * such nodes anyway, but allows the query to take advantage of the core index
- * on node.type
+ * on node.type.
  *
  * There is no addTag('node_access') because this is an administrative
  * operation, that can be triggered by any user and needs to access all matching
- * nodes, not only those for which access is granted
+ * nodes, not only those for which access is granted.
  *
  * @param int $time
  *   A UNIX timestamp. Normally not set: this was added for testing purposes.
  *
  * @return array
  *   A per-user array of per-nid node titles to be deleted.
+ *
+ * @throws \Exception
  */
 function _classified_scheduled_build_purge($time = NULL) {
   $grace = _classified_get('grace');
@@ -294,10 +309,12 @@ function _classified_scheduled_build_purge($time = NULL) {
 }
 
 /**
- * Page callback for expirations
+ * Page callback for expirations.
  *
  * @return string
  *   A string instead of a render array, because there is not much to say.
+ *
+ * @throws \Exception
  */
 function _classified_scheduled_page_expire() {
   // Do not display results.
@@ -308,7 +325,7 @@ function _classified_scheduled_page_expire() {
 }
 
 /**
- * Page callback for notifications
+ * Page callback for notifications.
  *
  * @param string $kind
  *   A notification kind from _classified_get_notify_kinds().
@@ -330,6 +347,8 @@ function _classified_scheduled_page_notify($kind) {
  *
  * @return string
  *   A string instead of a render array, because there is not much to say.
+ *
+ * @throws \Exception
  */
 function _classified_scheduled_page_purge() {
   // Do not display results.

@@ -38,33 +38,28 @@ function _modules_weight_prepare_delta($weight) {
 /**
  * Return the modules list.
  *
- * @param bool $force
+ * @param bool $show_core_modules
  *   Force to show the core modules.
  *
  * @return array
  *   The modules list.
  */
-function _modules_weight_modules_list($force = FALSE) {
+function _modules_weight_modules_list($show_core_modules = FALSE) {
   $modules = [];
   // Get current list of modules.
   $installed_modules = system_get_info('module');
 
-  if ($force) {
-    $show_system_modules = TRUE;
-  }
-  else {
-    // Getting the config to know if we should show or not the core modules.
-    $show_system_modules = variable_get('modules_weight_show_system_modules');
-  }
+  // Getting the modules weight.
+  $modules_weight = _modules_weight_get_modules_weight();
 
   // Iterate through each of the modules.
   foreach ($installed_modules as $module_name => $module_info) {
     // We don't want to show the hidden modules, or the Core modules
     // (if the configuration is set to FALSE).
-    if (!isset($module_info['hidden']) && ($show_system_modules || $module_info['package'] != 'Core')) {
+    if (!isset($module_info['hidden']) && ($show_core_modules || $module_info['package'] != 'Core')) {
       $modules[$module_name]['name'] = $module_info['name'];
       $modules[$module_name]['description'] = $module_info['description'];
-      $modules[$module_name]['weight'] = _modules_weight_module_get_weight($module_name);
+      $modules[$module_name]['weight'] = $modules_weight[$module_name];
       $modules[$module_name]['package'] = $module_info['package'];
     }
   }
@@ -75,7 +70,7 @@ function _modules_weight_modules_list($force = FALSE) {
 }
 
 /**
- * Sets weight of a particular module.
+ * Sets the weight of a particular module.
  *
  * @param string $module
  *   The name of the module (without the .module extension).
@@ -86,13 +81,14 @@ function _modules_weight_module_set_weight($module, $weight) {
   // The query.
   $query = "UPDATE {system}
             SET weight = :weight
-            WHERE type = 'module' AND name = :name";
+            WHERE type = 'module'
+              AND name = :name";
   // Executing the query.
   db_query($query, array(':weight' => $weight, ':name' => $module));
 }
 
 /**
- * Gets weight of a particular module.
+ * Gets the weight of a particular module.
  *
  * @param string $module
  *   The name of the module (without the .module extension).
@@ -104,9 +100,29 @@ function _modules_weight_module_get_weight($module) {
   // The query.
   $query = "SELECT weight
             FROM {system}
-            WHERE type = 'module' AND name = :name";
+            WHERE type = 'module'
+              AND name = :name";
   // Executing the query and getting the module weight.
   $weight = db_query($query, array(':name' => $module))->fetchObject()->weight;
+
+  return $weight;
+}
+
+/**
+ * Return the modules weight.
+ *
+ * @return array
+ *   An array with the modules weight keyed by module machine name.
+ */
+function _modules_weight_get_modules_weight() {
+  // The query.
+  $query = "SELECT name,
+                   weight
+            FROM {system}
+            WHERE type = 'module'
+              AND status = 1";
+  // Executing the query and getting the modules weight.
+  $weight = db_query($query)->fetchAllKeyed();
 
   return $weight;
 }

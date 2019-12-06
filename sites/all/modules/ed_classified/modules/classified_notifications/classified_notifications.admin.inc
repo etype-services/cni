@@ -1,11 +1,10 @@
 <?php
+
 /**
  * @file
  * Admin page(s) for the classified module.
  *
  * @copyright (c) 2010 Ouest Systemes Informatiques (OSInet)
- *
- * @author Frederic G. MARAND <fgm@osinet.fr>
  *
  * @license General Public License version 2 or later
  *
@@ -38,7 +37,7 @@ function classified_notifications_admin_settings($form, &$form_state) {
     'pre-purge' => t('Pre-purge'),
     'purge' => t('Purge'),
   );
-  $weight = - count($sections);
+  $weight = -count($sections);
 
   foreach ($sections as $name => $title) {
     $wrapper = $name . '-wrapper';
@@ -63,20 +62,20 @@ function classified_notifications_admin_settings($form, &$form_state) {
     );
   }
 
-    // Display the user documentation of placeholders supported by
-    // this module, as a description on the last pattern
-    // @see theme_token_tree()
-    $form['token_help'] = array(
-      '#title' => t('Replacement patterns'),
-      '#type' => 'fieldset',
-      '#collapsible' => TRUE,
-      '#collapsed' => TRUE,
-    );
-    $form['token_help']['help'] = array(
-      '#theme' => 'token_tree',
-      '#token_types' => array('current-date', 'site', 'user'),
-      '#global_types' => FALSE,
-    );
+  // Display the user documentation of placeholders supported by
+  // this module, as a description on the last pattern.
+  // @see theme_token_tree()
+  $form['token_help'] = array(
+    '#title' => t('Replacement patterns'),
+    '#type' => 'fieldset',
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE,
+  );
+  $form['token_help']['help'] = array(
+    '#theme' => 'token_tree',
+    '#token_types' => array('current-date', 'site', 'user'),
+    '#global_types' => FALSE,
+  );
 
   return system_settings_form($form);
 }

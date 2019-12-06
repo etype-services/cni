@@ -1,7 +1,8 @@
 <?php
+
 /**
  * @file
- * Installer for Optional notification features for classified module
+ * Installer for Optional notification features for classified module.
  *
  * Copyright 2011 Ouest Systemes Informatiques (OSInet)
  *
@@ -23,7 +24,7 @@ function classified_notifications_install() {
 /**
  * Implements hook_uninstall().
  *
- * - Delete queue
+ * - Delete queue.
  */
 function classified_notifications_uninstall() {
   $queue = DrupalQueue::get('classified_notifications', TRUE);

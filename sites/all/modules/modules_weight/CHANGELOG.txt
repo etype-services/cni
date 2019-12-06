@@ -1,28 +1,46 @@
-Modules Weight 7.1.11, 2018-03-28
----------------------------------
-Changes since 7.1.10:
+Modules Weight 7.x-1.12, 2018-05-10
+-----------------------------------
+Changes since 7.x-1.11:
+
+- #3014352 by adriancid: Add the project sponsors to the README.txt file.
+- #3014308: Format the sql queries.
+- #2969333 by adriancid: Fix the module version in the CHANGELOG.txt.
+- #2968546 by adriancid: Add color to the reorder option messages.
+- #2968529 by adriancid: Simplify the logic expression to detect if there are no
+  changes in the status of the mw-show-system-modules command.
+- #2961843 by adriancid: Add a help text in the Modules Weight page.
+- #2961542 by adriancid: Improve the no weight changed validation in the modules
+  weight list form.
+- #2961809 by adriancid: Add a new helper function named 
+  _modules_weight_get_modules_weight() to get the modules weight.
+- #2961582 by adriancid: Don't check the modules_weight_show_system_modules
+  variable inside the _modules_weight_modules_list function
+
+Modules Weight 7.x-1.11, 2018-03-28
+-----------------------------------
+Changes since 7.x-1.10:
 
 - #2954774 by adriancid: Load helper function only when they're needed.
 - #2954769 by adriancid: Typo in constants.
 
-Modules Weight 7.1.10, 2018-01-10
----------------------------------
-Changes since 7.1.9:
+Modules Weight 7.x-1.10, 2018-01-10
+-----------------------------------
+Changes since 7.x-1.9:
 
 - #2933083 by NancyDru, adriancid: Sort the modules list by weight and name.
 
-Modules Weight 7.1.9, 2017-12-04
---------------------------------
-Changes since 7.1.8:
+Modules Weight 7.x-1.9, 2017-12-04
+----------------------------------
+Changes since 7.x-1.8:
 
 - #2927608 by adriancid: The variables defined by the module should have the
   module name as prefix.
 - #2927600 by adriancid: Incorrect names for hook_install and hook_uninstall
   implementations.
 
-Modules Weight 7.1.8, 2017-11-28
---------------------------------
-Changes since 7.1.7:
+Modules Weight 7.x-1.8, 2017-11-28
+----------------------------------
+Changes since 7.x-1.7:
 
 - #2923157 by adriancid: Show the names of the modules to which the weight was
   modified.
@@ -36,9 +54,9 @@ Changes since 7.1.7:
   InternalFunctions::prepareDelta method. 
 - #2921651 by adriancid: Put the internal utility functions in another file.
 
-Modules Weight 7.1.7, 2017-10-27
---------------------------------
-Changes since 7.1.6:
+Modules Weight 7.x-1.7, 2017-10-27
+----------------------------------
+Changes since 7.x-1.6:
 
 - #2919180 by adriancid: Update functions docblocks.
 - #2919176 by adriancid: Don't show the weight element title.
@@ -51,9 +69,9 @@ Changes since 7.1.6:
 - #2918575 by adriancid: Hide the module package in mobile devices. 
 - #2918506 by adriancid: Hide the module description in mobile devices. 
 
-Modules Weight 7.1.6, 2017-10-23
---------------------------------
-Changes since 7.1.5:
+Modules Weight 7.x-1.6, 2017-10-23
+----------------------------------
+Changes since 7.x-1.5:
 
 - #2918308: by adriancid: Change the --force option in mw-reorder drush command
   by a confirmation question.
@@ -73,9 +91,9 @@ Changes since 7.1.5:
 - #2915198 by adriancid: Made visible the drush command definition from the
   module help page.
 
-Modules Weight 7.1.5, 2017-10-05
---------------------------------
-Changes since 7.1.4:
+Modules Weight 7.x-1.5, 2017-10-05
+----------------------------------
+Changes since 7.x-1.4:
 
 - #2914123 by adriancid: Fix link to configure page.
 - #2905463 by adriancid: Create the module help page.
@@ -110,35 +128,35 @@ Changes since 7.1.4:
   lower than -100.
 - by mamoun.othman: Fixed menu callback name typo.
 
-Modules Weight 7.1.4, 2014-08-01
---------------------------------
-Changes since 7.1.3:
+Modules Weight 7.x-1.4, 2014-08-01
+----------------------------------
+Changes since 7.x-1.3:
 
 - by mamoun.othman: Removed tabledragg functionlity due to bug caused by
   tabledragg.js when re-order one element.
 - by mamoun.othman: Added a check on module weight old value.
 
-Modules Weight 7.1.3, 2013-06-15
---------------------------------
-Changes since 7.1.2:
+Modules Weight 7.x-1.3, 2013-06-15
+----------------------------------
+Changes since 7.x-1.2:
 
 - by mamoun.othman: Add functionality allow to show system modules in the
   configuration page.
 
-Modules Weight 7.1.2, 2013-03-19
---------------------------------
-Changes since 7.1.1:
+Modules Weight 7.x-1.2, 2013-03-19
+----------------------------------
+Changes since 7.x-1.1:
 
 - by mamoun.othman: fixing modules order in the admin interface, modify 
   README.txt file.
 
-Modules Weight 7.1.1, 2013-03-19
---------------------------------
-Changes since 7.1.0:
+Modules Weight 7.x-1.1, 2013-03-19
+----------------------------------
+Changes since 7.x-1.0:
 
 - by mamoun.othman: exclude core modules from the modules list, add package
   name to modules list.
 
-Modules Weight 7.1.0, 2013-03-10
---------------------------------
+Modules Weight 7.x-1.0, 2013-03-10
+----------------------------------
 - Initial release.
